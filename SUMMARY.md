@@ -8,6 +8,7 @@
     * [Crypto Exercise Area](adworld/crypto-execrise-area.md)
     * [Web Exercise Area](adworld/web-execrise-area.md)
     * [PWN Exercise Area](adworld/pwn-exercise-area.md)
+    * [Reverse Exercise Area](adworld/reverse-execrise-area.md)
 * [BUUOJ](buuoj/README.md)
 
 
