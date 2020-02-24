@@ -8,7 +8,7 @@
 
 \(凭着高超的Google+Baidu Hack技巧拿到了2500分最终水到了Rank:75\)
 
-![](/assets/hackergame2019.jpg)
+![](/assets/images/hackergame2019.jpg)
 
 收货：
 

