@@ -28,7 +28,6 @@ branches:
   only:
     - master # 只对 master 分支进行构建
 
-# GitHub Pages 部署
 deploy:
   provider: pages
   skip_cleanup: true
