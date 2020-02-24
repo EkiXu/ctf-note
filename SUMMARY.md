@@ -2,6 +2,9 @@
 
 * [About](README.md)
 * [Library](library/README.md)
+  * [Steganography](library/steganography.md)
+  * [GDB Tutorial](library/gdb-tutorial.md)
+  * [SQL Inject](library/sqli.md)
 * [Contest](contest/README.md)
   * [TSCTF-J 2019](contest/tsctf-j2019.md)
   * [NCTF 2019](contest/nctf2019.md)
