@@ -6,7 +6,7 @@
 
 最后靠着魔改的shellcode代码强行续到了一万分（汇编还是太菜）
 
-![](/assets/images/hackergame2019.jpg)
+![](/assets/images/tsctf-j2019.jpg)
 
 收货：
 
