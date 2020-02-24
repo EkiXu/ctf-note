@@ -27,7 +27,8 @@
 		"donate",
 		"pageview-count",
 		"code",
-		"popup"
+		"lightbox",
+		"auto-scroll-table"
 	],
 	"pluginsConfig": {
 		"theme-default": {
