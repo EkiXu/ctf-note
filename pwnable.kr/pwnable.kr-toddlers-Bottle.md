@@ -6,11 +6,11 @@
 想着去水一水pwn的新手题找找自信。。。。
 结果还是被虐。。。。
 
-![1578280544967](C:\Users\Eki\Documents\1578280544967.jpeg)
+![我的做题历程](/assets/images/909866567.jpeg)
 
 最终总算是艰难的做完了
 
-![捕获1](C:\Users\Eki\Documents\捕获1.JPG)
+![结果](/assets/images/3176360730.jpg)
 
 收货：
 
