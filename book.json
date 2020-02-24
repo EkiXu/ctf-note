@@ -18,14 +18,23 @@
 		"-lunr", "-search", "search-plus",
 		"custom-favicon",
 		"ga",
-		"multipart"
+		"multipart",
+		"advanced-emoji",
+		"github",
+		"-sharing",
+		"sharing-plus",
+		"klipse",
+		"donate",
+		"pageview-count",
+		"code",
+		"popup"
 	],
 	"pluginsConfig": {
 		"theme-default": {
 			"showLevel": false
 		},
 		"tbfed-pagefooter": {
-			"copyright": "&copy Ozem's OI-notes 2016-2017 CC-by-nc-sa 4.0。",
+			"copyright": "&copy Eki's CTF-notes 2019-2020 CC-by-nc-sa 4.0。",
 			"modify_label": "本书最后更新于：",
 			"modify_format": "YYYY-MM-DD HH:mm:ss"
 		},
@@ -46,7 +55,32 @@
 		},
 		"favicon": "/assets/images/favicon.ico",
 		"ga": {
-			"token": "UA-97077326-1"
+			"token": "UA-156105693-2"
+		},
+		"github": {
+            "url": "https://github.com/ekixu"
+        },
+		"sharing": {
+			"douban": false,
+			"facebook": false,
+			"google": true,
+			"pocket": false,
+			"qq": false,
+			"qzone": true,
+			"twitter": true,
+			"weibo": true,
+		 "all": [
+			  "douban", "facebook", "google", "instapaper", "linkedin","twitter", "weibo", 
+			  "messenger","qq", "qzone","viber","whatsapp"
+		  ]
+		},
+		"donate": {
+			"wechat": "https://ctf.ieki.xyz/assets/images/wechat.jpg",
+			"alipay": "https://ctf.ieki.xyz/assets/images/alipay.jpg",
+			"title": "",
+			"button": "赏",
+			"alipayText": "支付宝打赏",
+			"wechatText": "微信打赏"
 		}
 	}
 }
