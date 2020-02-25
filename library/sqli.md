@@ -280,5 +280,7 @@ thr7.start()
     ``set sql_mode=PIPES_AS_CONCAT;`` 
 ## 参考资料
 
-https://xz.aliyun.com/t/7169#toc-47
+对MYSQL注入相关内容及部分Trick的归类小结
+
+[https://xz.aliyun.com/t/7169](https://xz.aliyun.com/t/7169)
 

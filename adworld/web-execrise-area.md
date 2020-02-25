@@ -161,7 +161,7 @@ X-Forwarded-For：123.123.123.123
 
 用burp_suite 字典爆破
 
-![](/assets/images/weakauth.jpg)
+![](/assets/images/intruder.jpg)
 
 ## 0x0A webshell
 
