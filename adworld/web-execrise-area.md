@@ -24,7 +24,7 @@ chrome 浏览器直接加 view-source:头
 
 用hackbar或者burp方便的修改get和post值
 
-[![img](https://ctf.ieki.xyz/assets/images/0x02.JPG)](https://ctf.ieki.xyz/assets/images/0x02.JPG)
+![](/assets/images/0x02.jpg)
 
 ## 0x03 robots
 
@@ -97,7 +97,7 @@ console.log(dechiffre("\x35\x35\x2c\x35\x36\x2c\x35\x34\x2c\x37\x39\x2c\x31\x31\
 
 参数pass_enc根本没用啊
 
-p+的都是tab[2]的值，而tab[2]里的都是x35的值。。。。
+p+的都是tab\[2\]的值，而tab\[2\]里的都是x35的值。。。。
 
 所以改写了一下脚本
 
@@ -161,7 +161,7 @@ X-Forwarded-For：123.123.123.123
 
 用burp_suite 字典爆破
 
-[![img](C:\Users\Eki\Projects\ctf-notes\assets\images\weakauth.JPG)](https://ctf.ieki.xyz/assets/images/weakauth.JPG)
+![](/assets/images/weakauth.jpg)
 
 ## 0x0A webshell
 

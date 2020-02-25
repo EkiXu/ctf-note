@@ -43,5 +43,5 @@
   * [SWPU 2019](buuoj/swpu-2019.md)
   * [SUCTF 2019](buuoj/suctf2019.md)
 * [pwnable.kr](pwnable.kr/README.md)
-  * [Toddler's Bottle](pwnable.kr/pwnable.kr-toddlers-Bottle.md)
+  * [Toddler's Bottle](pwnable.kr/pwnable.kr-toddlers-bottle.md)
 
