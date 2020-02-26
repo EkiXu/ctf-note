@@ -161,4 +161,4 @@ payload=1';RENAME TABLE `words` TO `words1`;RENAME TABLE `1919810931114514` TO `
 
 两种解法：[https://blog.zeddyu.info/2019/06/04/2019qwb/#%E9%9A%8F%E4%BE%BF%E6%B3%A8](https://blog.zeddyu.info/2019/06/04/2019qwb/#随便注)
 
-char的解法:[https://skysec.top/2019/05/25/2019-%E5%BC%BA%E7%BD%91%E6%9D%AFonline-Web-Writeup/#%E9%9A%8F%E4%BE%BF%E6%B3%A8](
+char的解法:[https://skysec.top/2019/05/25/2019-%E5%BC%BA%E7%BD%91%E6%9D%AFonline-Web-Writeup/#%E9%9A%8F%E4%BE%BF%E6%B3%A8](https://skysec.top/2019/05/25/2019-%E5%BC%BA%E7%BD%91%E6%9D%AFonline-Web-Writeup/#%E9%9A%8F%E4%BE%BF%E6%B3%A8)

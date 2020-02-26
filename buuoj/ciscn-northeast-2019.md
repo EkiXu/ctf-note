@@ -122,7 +122,7 @@ if (strlen($filename) < 40 && $file->open($filename)) {
 
 通过User调用File中的close()读取flag但是要经FileList绕一下，不然没有回显
 
-![1697845-20191103115356073-910114969](C:\Users\Eki\Documents\1697845-20191103115356073-910114969.png)
+![](/assets/images/dropbox.png)
 
 > ```
 > 无非就是 脚本执行完毕后，执行$db的close()的方法（来关闭数据库连接），但话说回来，没有括号里的话，这句话依然成立，而且这个'close'与File类中的close()方法同名。所以，当db的值为一个FileList对象时，User对象析构之时，会触发FileList->close()，但FileList里没有这个方法，于是调用_call函数，进而执行file_get_contents($filename)，读取了文件内容。整个链的结构也很简单清晰：在我们控制$db为一个FileList对象的情况下，$user->__destruct() => $db->close() => $db->__call('close') => $file->close() => $results=file_get_contents($filename) => FileList->__destruct()输出$result。

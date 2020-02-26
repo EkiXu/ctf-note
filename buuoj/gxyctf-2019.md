@@ -1,3 +1,5 @@
+# GXYCTF 2019
+
 ## 0x01 [GXYCTF2019]Ping Ping Ping
 
 **命令执行变量拼接**
@@ -279,3 +281,35 @@ AddType application/x-httpd-php .jpg
 
 有趣的.htaccess :
 [https://skysec.top/2017/09/06/%E6%9C%89%E8%B6%A3%E7%9A%84-htaccess/](https://skysec.top/2017/09/06/%E6%9C%89%E8%B6%A3%E7%9A%84-htaccess/)
+
+## 0x04 Strongest Mind
+
+写脚本自动提交答案
+
+```python
+#coding=utf-8
+import requests
+import re
+import time
+url="http://7e06e031-f0c4-460e-a008-c160f5dcc242.node3.buuoj.cn/"
+
+rule=re.compile(r"\d* [-+*/] \d*")
+
+s=requests.Session()
+req=s.get(url=url)
+
+
+for i in range(1000):
+    text=rule.findall(req.text)[0]
+    data={
+        "answer":str(eval(text)),
+    }
+    #print data
+    req=s.post(url=url,data=data)
+    time.sleep(0.5)
+    while(req.status_code!=requests.codes.ok):
+        req=s.post(url=url,data=data)
+        time.sleep(0.5)
+    print req.text
+print req.text
+```
