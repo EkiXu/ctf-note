@@ -36,7 +36,7 @@
 		},
 		"tbfed-pagefooter": {
 			"copyright": "&copy Eki's CTF-notes 2019-2020 CC-by-nc-sa 4.0。",
-			"modify_label": "本书最后更新于：",
+			"modify_label": "本网站最后修订于：",
 			"modify_format": "YYYY-MM-DD HH:mm:ss"
 		},
 		"expandable-chapters": {},

@@ -1452,7 +1452,7 @@ gdb-peda$ x /10 0x00401570 #查看虚表 结合ida 可发现 0x0040117a 存放�
 
 具体过程如下图
 
-![img](https://upload-images.jianshu.io/upload_images/4238783-8fe291bbf89d374c..jpg?imageMogr2/auto-orient/strip|imageView2/2/w/720/format/webp)
+![img](/assets/images/uaf.jpg)
 
 ### 分析源码
 
@@ -1661,7 +1661,7 @@ io.interactive()
 
 ### 前置知识 DWORD SHOOT
 
-![卸载结点的过程图](C:\Users\Eki\Documents\remove_node.jpg)
+![卸载结点的过程图](/assets/images/remove_node.jpg)
 
 unlink正常情况下的操作示意图
 
@@ -1678,7 +1678,7 @@ void unlink(OBJ* P){
 
 
 
-![DWORD SHOOT发生的原理](https://introspelliam.github.io/images/2017-06-26/dword_shoot.jpg)
+![DWORD SHOOT发生的原理](/assets/images/dword_shoot.jpg)
 
 
 
