@@ -21,14 +21,14 @@
 		"multipart",
 		"advanced-emoji",
 		"github",
-		"-sharing",
-		"sharing-plus",
+		"-sharing","sharing-plus",
 		"klipse",
 		"donate",
 		"pageview-count",
 		"code",
 		"lightbox",
-		"auto-scroll-table"
+		"auto-scroll-table",
+		"prism", "-highlight"
 	],
 	"pluginsConfig": {
 		"theme-default": {
@@ -82,6 +82,11 @@
 			"button": "赏",
 			"alipayText": "支付宝打赏",
 			"wechatText": "微信打赏"
+		},
+		"prism": {
+			"css": [
+			  "prismjs/themes/prism-coy.css"
+			]
 		}
 	}
 }
