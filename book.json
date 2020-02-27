@@ -27,8 +27,7 @@
 		"pageview-count",
 		"code",
 		"lightbox",
-		"auto-scroll-table",
-		"prism", "-highlight"
+		"auto-scroll-table"
 	],
 	"pluginsConfig": {
 		"theme-default": {
@@ -83,10 +82,5 @@
 			"alipayText": "支付宝打赏",
 			"wechatText": "微信打赏"
 		},
-		"prism": {
-			"css": [
-			  "prismjs/themes/prism-coy.css"
-			]
-		}
 	}
 }
