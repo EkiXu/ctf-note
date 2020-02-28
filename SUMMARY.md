@@ -47,8 +47,8 @@
   * [RCTF 2015](buuoj/rctf-2015.md)
 * [pwnable.kr](pwnable.kr/README.md)
   * [Toddler's Bottle](pwnable.kr/toddlers-bottle.md)
-* [Vulnhub](vulnuhb/README.md)
-  * [DC-9](vulnuhb/dc-9.md)
-  * [five86-1](vulnuhb/five86-1.md)
-  * [wakanda](vulnuhb/wakanda.md)
+* [Vulnhub](vulnhub/README.md)
+  * [DC-9](vulnhub/dc-9.md)
+  * [five86-1](vulnhub/five86-1.md)
+  * [wakanda](vulnhub/wakanda.md)
 
