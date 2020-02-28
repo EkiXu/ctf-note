@@ -50,6 +50,5 @@
 * [Vulnhub](vulnuhb/README.md)
   * [DC-9](vulnuhb/dc-9.md)
   * [five86-1](vulnuhb/five86-1.md)
-  * [UA-Literally-Vulnerable](vulnuhb/ua-literally-vulnerable.md)
   * [wakanda](vulnuhb/wakanda.md)
 
