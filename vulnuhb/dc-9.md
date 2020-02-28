@@ -10,7 +10,7 @@
 
 不过也因此学到了很多工具的用法和一些fuzz技巧
 
-![Screenshot_2020-01-15_17-15-44](C:\Users\Eki\Projects\ctf-notes\assets\images\Screenshot_2020-01-15_17-15-44.png)
+![Screenshot_2020-01-15_17-15-44](/assets/images/Screenshot_2020-01-15_17-15-44.png)
 
 ## 渗透记录
 
@@ -51,7 +51,7 @@ Network Distance: 1 hop
 
 登陆是个管理界面可以查询
 
-![image-20200115151231167](C:\Users\Eki\Projects\ctf-notes\assets\images\image-20200115151231167.png)
+![image-20200115151231167](/assets/images/image-20200115151231167.png)
 
 1‘ or '1'='1返回所有记录，存在注入点
 
@@ -116,7 +116,7 @@ Table: Users
 
 登上去以后发现能Add Record
 
-![image-20200115154745245](C:\Users\Eki\Projects\ctf-notes\assets\images\image-20200115154745245.png)
+![image-20200115154745245](/assets/images/image-20200115154745245.png)
 
 最下方居然有个File does not exist
 
@@ -130,7 +130,7 @@ http://192.168.31.222/addrecord.php?file=../../../../../../../etc/passwd
 
 发现底部果然返回了文件内容
 
-![image-20200115155021258](C:\Users\Eki\Projects\ctf-notes\assets\images\image-20200115155021258.png)
+![image-20200115155021258](/assets/images/image-20200115155021258.png)
 
 都加x了,没啥用
 

@@ -6,7 +6,7 @@
 
 最终成果
 
-![Screenshot_2020-01-16_15-58-55](C:\Users\Eki\Projects\ctf-notes\assets\images\Screenshot_2020-01-16_15-58-55.png)
+![Screenshot_2020-01-16_15-58-55](/assets/images/Screenshot_2020-01-16_15-58-55.png)
 
 ## 渗透记录
 
@@ -89,7 +89,7 @@ echo "192.168.0.3 literally.vulnerable" >> /etc/hosts
 
 绑定完以后正常多了
 
-![Screenshot_2020-01-16_12-28-41](C:\Users\Eki\Projects\ctf-notes\assets\images\Screenshot_2020-01-16_12-28-41.png)
+![Screenshot_2020-01-16_12-28-41](/assets/images/Screenshot_2020-01-16_12-28-41.png)
 
 转了一圈发现没有啥注入点
 
@@ -220,7 +220,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 
 而且有趣的是现在网站的标题变成了Literally Vulnerable
 
-![Screenshot_2020-01-16_12-28-50](C:\Users\Eki\Projects\ctf-notes\assets\images\Screenshot_2020-01-16_12-28-50.png)
+![Screenshot_2020-01-16_12-28-50](/assets/images/Screenshot_2020-01-16_12-28-50.png)
 
 再用wpscan扫一下
 
@@ -348,13 +348,13 @@ Interesting Finding(s):
 
 登陆试试
 
-![Screenshot_2020-01-16_12-37-46](C:\Users\Eki\Projects\ctf-notes\assets\images\Screenshot_2020-01-16_12-37-46.png)
+![Screenshot_2020-01-16_12-37-46](/assets/images/Screenshot_2020-01-16_12-37-46.png)
 
 在密码保护页面里找到了notadmin的密码Pa$$w0rd13!&
 
 登陆以后看起来我们拿到了wordpress的管理员用户
 
-![Screenshot_2020-01-16_12-41-48](C:\Users\Eki\Projects\ctf-notes\assets\images\Screenshot_2020-01-16_12-41-48.png)
+![Screenshot_2020-01-16_12-41-48](/assets/images/Screenshot_2020-01-16_12-41-48.png)
 
 然后就可以用msf拿到shell了
 
