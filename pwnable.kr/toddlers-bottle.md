@@ -384,7 +384,7 @@ int main(){
 
 可以利用pipe进行进程间通信
 
-![[Visualizing a pipe]](http://unixwiz.net/images/unix-pipe.gif)
+![Visualizing a pipe](/assets/images/unix-pipe.gif)
 
 具体过程如下
 
@@ -1344,15 +1344,15 @@ vptr每个对象都会有一个，而vptable是每个类有一个，vptr指向vt
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```
 
-![img](https://upload-images.jianshu.io/upload_images/4238783-4981354c9e925f2b..jpg?imageMogr2/auto-orient/strip|imageView2/2/w/375/format/webp)
+![img](/assets/images/vtable-1.jpg)
 
 **单一继承，无虚函数重载**
 
-![img](https://upload-images.jianshu.io/upload_images/4238783-e33fce320e9fd343..jpg?imageMogr2/auto-orient/strip|imageView2/2/w/322/format/webp)
+![img](/assets/images/vtable-2.jpg)
 
 **单一继承，重载了虚函数**
 
-![img](https://upload-images.jianshu.io/upload_images/4238783-d88e550c9ca9c958..jpg?imageMogr2/auto-orient/strip|imageView2/2/w/339/format/webp)
+![img](/assets/images/vtable-3.jpg)
 
 
 所以在本题中，我们可以通过修改Man类重载的虚函数地址指向从Human拷贝过来的give_shell函数

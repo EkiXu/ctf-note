@@ -5,6 +5,7 @@
   * [Steganography](library/steganography.md)
   * [GDB Tutorial](library/gdb-tutorial.md)
   * [SQL Inject](library/sqli.md)
+  * [PHP](library/php.md)
 * [Contest](contest/README.md)
   * [Hackergame 2019](contest/hackergame-2019.md)
   * [TSCTF-J 2019](contest/tsctf-j2019.md)
@@ -46,4 +47,9 @@
   * [RCTF 2015](buuoj/rctf-2015.md)
 * [pwnable.kr](pwnable.kr/README.md)
   * [Toddler's Bottle](pwnable.kr/toddlers-bottle.md)
+* [Vulnhub](vulnuhb/README.md)
+  * [DC-9](vulnuhb/dc-9.md)
+  * [five86-1](vulnuhb/five86-1.md)
+  * [UA-Literally-Vulnerable](vulnuhb/ua-literally-vulnerable.md)
+  * [wakanda](vulnuhb/wakanda.md)
 
