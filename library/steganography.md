@@ -2,7 +2,7 @@
 
 ## 图片隐写
 
-> 常用到的工具 binwalk foremost stegSolve outguess JPHS Photoshop
+> 常用到的工具 binwalk foremost stegSolve stegdetect outguess JPHS Photoshop
 
 ### 直接隐写
 

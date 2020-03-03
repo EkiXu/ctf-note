@@ -46,6 +46,7 @@
   * [BJDCTF 2020](buuoj/bjdctf2020.md)
   * [RCTF 2015](buuoj/rctf-2015.md)
   * [ByteCTF 2019](buuoj/bytectf-2019.md)
+  * [强网杯 2019](buuoj/qiangwangbei-2019.md)
 * [pwnable.kr](pwnable.kr/README.md)
   * [Toddler's Bottle](pwnable.kr/toddlers-bottle.md)
 * [Vulnhub](vulnhub/README.md)

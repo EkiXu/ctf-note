@@ -36,6 +36,7 @@ __wakeup()//将在反序列化之后立即被调用
 __get()//获得一个类的成员变量时调用
 __set()//设置一个类的成员变量时调用
 __invoke()//调用函数的方式调用一个对象时的回应方法
+__call()//当调用一个对象中的不能用的方法的时候就会执行这个函数
 ```
 
 ## public、protected与private在序列化时的区别
@@ -130,7 +131,7 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
     \x00\x00\x8a\x39\x8a\x39
     ```
 - 增加使用php解析的文件后缀(.jpg)
-    
+  
     ```
     application/x-httpd-php .jpg
     ```
@@ -146,14 +147,14 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 - **利用php_value注入php配置**
 
     - 在所有php前后注入恶意php文件
-        
+      
         ```
         php_value auto_prepend_file "<phpFileDir>"
         php_value auto_append_file "<phpFileDir>"
         ```
 
     - 利用prce参数绕过preg_match
-        
+      
         ```
         php_value pcre.backtrack_limit 0
         php_value pcre.jit 0 
@@ -162,9 +163,9 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
         任意匹配均返回``FALSE``
         
         > https://www.php.net/manual/zh/pcre.configuration.php
-  
+    
     - 利用UTF-7编码绕过日志html编码
-       
+      
        ```
         php_value zend.multibyte 1
         php_value zend.script_encoding "UTF-7"
@@ -173,10 +174,10 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 
       ```
         php_value include_path "/tmp"
-      ``` 
+      ```
     - 利用``error log``写本地文件 (html编码)
 
         ```
         php_value error_log /tmp/fl3g.php
         php_value error_reporting 32767
-        ``` 
+        ```
