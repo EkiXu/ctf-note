@@ -149,8 +149,8 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
     - 在所有php前后注入恶意php文件
       
         ```
-        php_value auto_prepend_file "<phpFileDir>"
-        php_value auto_append_file "<phpFileDir>"
+        php_value auto_prepend_file "<FileDir>"
+        php_value auto_append_file "<FileDir>"
         ```
 
     - 利用prce参数绕过preg_match
