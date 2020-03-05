@@ -32,7 +32,7 @@
   * [SUCTF 2019](buuoj/suctf-2019.md)
   * [CISCN 2019 华北赛区](buuoj/ciscn-northeast-2019.md)
   * [CISCN 2019 初赛](buuoj/ciscn-pre-2019.md)
-  * [CISCN 2019 Fiinal](buuoj/ciscn-final-2019.md)
+  * [CISCN 2019 Final](buuoj/ciscn-final-2019.md)
   * [De1CTF 2019](buuoj/de1ctf-2019.md)
   * [网鼎杯](buuoj/wangdinbei-2018.md)
   * [RoarCTF 2019](buuoj/roarctf-2019.md)
