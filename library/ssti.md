@@ -2,7 +2,6 @@
 
 ## Python
 
-
 ### Flask/Jinja2
 
 ### Django

@@ -6,6 +6,8 @@
   * [GDB Tutorial](library/gdb-tutorial.md)
   * [SQL Inject](library/sqli.md)
   * [PHP](library/php.md)
+  * [SSTI](library/ssti.md)
+  * [Shell](library/shell.md)
 * [Contest](contest/README.md)
   * [Hackergame 2019](contest/hackergame-2019.md)
   * [TSCTF-J 2019](contest/tsctf-j2019.md)
