@@ -135,7 +135,7 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 - 增加使用php解析的文件后缀(.jpg)
   
     ```
-    application/x-httpd-php .jpg
+    AddType application/x-httpd-php .jpg
     ```
 - 增加使用php解析的文件
   

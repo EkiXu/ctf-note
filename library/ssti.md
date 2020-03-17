@@ -22,6 +22,10 @@
 
 ### Smarty
 
+参考资料:
+
+https://www.jianshu.com/p/eb8d0137a7d3
+
 ### Blade
 
 ## 参考资料
