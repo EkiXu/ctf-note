@@ -56,6 +56,7 @@
   * [FBCTF 2019](buuoj/fbctf-2019.md)
   * [GYCTF 2020](buuoj/gyctf-2020.md)
   * [CISCN2019 华东南赛区](buuoj/ciscn-southeast-2019.md)
+  * [BsidesCTF 2019](buuoj/bsidescf-2019.md)
 * [pwnable.kr](pwnable.kr/README.md)
   * [Toddler's Bottle](pwnable.kr/toddlers-bottle.md)
 * [Vulnhub](vulnhub/README.md)
