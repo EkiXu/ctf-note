@@ -97,7 +97,7 @@ echo $a;
 O:4:"Name":2:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;}
 ```
 
-## 3.``__wakeup()``方法绕过
+## ``__wakeup()``方法绕过
 
 作用：
 与``__sleep()``函数相反，``__sleep()``函数，是在序序列化时被自动调用。``__wakeup()``函数，在反序列化时，被自动调用。

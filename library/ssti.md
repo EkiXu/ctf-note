@@ -28,6 +28,26 @@ https://www.jianshu.com/p/eb8d0137a7d3
 
 ### Blade
 
+## Ruby
+
+```
+$~:is equivalent to ::last_match;
+
+$&:contains the complete matched text;
+
+$`:contains string before match;
+
+$':contains string after match;
+
+$1, $2 and so on contain text matching first, second, etc capture group;
+
+$+:contains last capture group.
+```
+
+### ERB
+
+
+
 ## 参考资料
 
 一篇文章带你理解漏洞之SSTI漏洞:
