@@ -185,3 +185,14 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
         php_value error_log /tmp/fl3g.php
         php_value error_reporting 32767
         ```
+## parse_url 绕过
+
+- path部分以``///``开头返回``bool(false)``
+
+
+## get_defined_vars()
+    获取文件中全部变量，包括include
+
+## 函数名取反绕过
+
+## data://协议

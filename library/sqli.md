@@ -39,6 +39,9 @@ select group_concat(table_name) from mysql.innodb_table_stats
 
 * `like` bypass `=`
 
+* 利用双hex(保证纯数字字符)注入
+  ``'%2B(select hex(hex(database())))%2B'0``
+
 * `select .` bypass 一般是堆叠注入
 
   * 利用show

