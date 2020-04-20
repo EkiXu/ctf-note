@@ -13,6 +13,7 @@
   * [JavaScript](library/js.md)
   * [Python](library/python.md)
   * [BASH](library/bash.md)
+  * [Forensics](library/forensics.md)
 * [Contest](contest/README.md)
   * [Hackergame 2019](contest/hackergame-2019.md)
   * [TSCTF-J 2019](contest/tsctf-j2019.md)

