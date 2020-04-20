@@ -31,7 +31,7 @@ Exp
 
 ## Mixer
 
-AES EBC 构造密文
+AES ECB 构造密文
 
 根据提示is_admin是个整数
 

