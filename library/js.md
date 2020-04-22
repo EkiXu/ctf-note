@@ -1,6 +1,16 @@
 # JavaScript Node js
 
-## 数组绕过
+## Fuzz
+
+- ``Object.getOwnPropertyNames(this)`` 得到依赖包名
+
+- ``Error().stack`` 抛出栈错误
+
+## 绕过
+
+- 数组绕过
+
+- `\x70\x72\x6f\x74\x6f\x74\x79\x70\x65` 编码绕过
 
 ## 原型链污染
 
