@@ -4,6 +4,9 @@
 
 ### 各种单表代换
 
+- 猪圈
+- 象形文字
+
 [quipquip.com](https://quipqiup.com/)
 
 ### codemoji
@@ -44,3 +47,26 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 - 标头空加密
 - 签名密钥泄露
+
+## 编码
+
+- base family:base85 base64 base58 base32 base16
+- rot13
+- 与佛论禅
+- 社会主义核心价值观编码
+
+## 程序语言
+
+- Rockstar 
+- jsfuck
+- brainfuck
+- reMorse
+- Asciidots
+- ArnoldC
+- Velato
+- Grass
+- ...
+
+20 种最奇怪的编程语言:https://zhuanlan.zhihu.com/p/36829236
+
+十大另类程序语言:http://www.matrix67.com/blog/archives/255

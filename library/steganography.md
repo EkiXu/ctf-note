@@ -174,7 +174,9 @@ if __name__ == '__main__':
 
 ### whitespace隐写
 
-### 宽字符隐写
+### 零宽字符隐写
+
+http://zero.rovelast.com/
 
 ## 音频隐写
 

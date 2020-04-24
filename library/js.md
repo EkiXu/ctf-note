@@ -26,6 +26,7 @@ https://3nd.xyz/2019/09/10/Summary/Javascript-Prototype-Attack/#0x07-%E5%8F%82%E
 ```js
 Buffer(100)
 ```
+
 升级版
 ```js
 for (var step = 0; step < 100000; step++) {

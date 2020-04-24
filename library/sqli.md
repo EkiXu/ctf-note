@@ -306,8 +306,55 @@ thr7.start()
 
 mysql查询的时候将会忽略字符串尾部的空格
 
+## 关于Sqlite
+
+sqlite每个db文件就是一个数据库，不存在``information_schema``数据库，但存在类似作用的表``sqlite_master``。
+
+该表记录了该库下的所有表，索引，表的创建sql
+
+```sql
+select group_concat(name) from sqlite_master where type='table'  #读取表名
+select group_concat(sql) from sqlite_master where type='table' and name='<table name>' #读取字段
+```
+
+``OR EXISTS({0} LIKE \"{1}%\" limit 1).format(sql,tmp)`` #匹配以{1}开头的数据
+
+在sqlite3 中，abs 函数有一个整数溢出的报错，如果 abs 的参数是 ``-9223372036854775808 (0x8000000000000000)`` 就会报错，同样如果是正数也会报错
+
+与mysql不同 sqlite中十六进制会被转换为十进制
+
+所以sqlite中字符串无法使用十六进制绕过
+
+但是仍可以使用函数绕过，但因不存在mysql中ord,ascii等，sqlite中应该使用char与hex
+
+```sql
+select * from sqlite_master where type=char(0x74,0x61,0x62,0x6c,0x65);
+select * from sqlite_master where type='table';
+```
+
+bypass if
+
+```sql
+select case (1) when 1 then 2 else 0
+select ifnull(nullif(1,2),3) 
+```
+
+>ifnull(X,Y)
+>
+>The ifnull() function returns a copy of its first non-NULL argument, or NULL if both arguments are NULL. Ifnull() must have exactly 2 arguments. The ifnull() function is equivalent to coalesce() with two arguments.
+>
+>nullif(X,Y)
+>
+>The nullif(X,Y) function returns its first argument if the arguments are different and NULL if the arguments are the same. The nullif(X,Y) function searches its arguments from left to right for an argument that defines a collating function and uses that collating function for all string comparisons. If neither argument to nullif() defines a collating function then the BINARY is used.
+
+
+
 ## 参考资料
 
 对MYSQL注入相关内容及部分Trick的归类小结
 
 [https://xz.aliyun.com/t/7169](https://xz.aliyun.com/t/7169)
+
+sqlite 全函数查询
+
+https://www.sqlite.org/lang_corefunc.html

