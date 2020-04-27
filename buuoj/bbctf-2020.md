@@ -100,3 +100,15 @@ if __name__ == "__main__":
 可以利用``secure_filename``上传.htaccess，试了一下发现能用php，一句话getshell
 
 注意要访问的是``/uploads_apache``来进行apache解析
+
+emmm 然后找flag
+
+``/``么得``./``么得，``find /``也找不到,那么看看内网....
+
+连上shell用蚁剑的插件扫扫....
+
+然后发现在子网某个ip的1337端口是open的
+
+没有curl 用wget打一下，发现是个网页，然后提示``./flag.txt``
+
+在wget一次就拿到flag了
