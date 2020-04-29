@@ -13,6 +13,7 @@
 * WEB
   * SQL注入
   * 绕过技巧
+  * 注入参数fuzz工具 Arjun
 * PWN
   * Shellcode
   * 栈溢出
