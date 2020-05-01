@@ -68,6 +68,8 @@
   * [BsidesCTF 2019](buuoj/bsidescf-2019.md)
   * [BJDCTF 2nd](buuoj/bjd-2nd.md)
   * [FireShellCTF 2020](buuoj/fireshellctf-2020.md)
+  * [GWCTF 2020](buuoj/gyctf-2020.md)
+  * [WatervrCTF](buuoj/watevrctf-2019.md)
 * [pwnable.kr](pwnable.kr/README.md)
   * [Toddler's Bottle](pwnable.kr/toddlers-bottle.md)
 * [Ethernaut](ethernaut/README.md)
