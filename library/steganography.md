@@ -2,11 +2,13 @@
 
 ## 图片隐写
 
-> 常用到的工具 binwalk foremost stegSolve stegdetect outguess JPHS Photoshop
+> 常用到的工具 binwalk foremost stegSolve stegdetect outguess JPHS zsteg Photoshop
 
 ### 直接隐写
 
 #### exif隐写
+
+Tool: exiftool
 
 直接在图片属性中放置flag
 
@@ -26,19 +28,25 @@ LSB隐写 原理 LSB隐写就是修改RGB颜色分量的最低二进制位也就
 
 原理 利用JPEG的DCT系数的冗余 解决方法 使用outguess 工具解密
 
+## silenteye 隐写
+
+主要利用LSB
+
 ### 文件“上”隐写
 
 #### 部分显示图片
 
 原理 PNG IHDR 前8字节的内容可以更改一张图片的高度或者宽度使得一张图片显示不完整从而达到隐藏信息的目的 解决办法 Kali中不可以打开，提示文件头错误，而Windows自带的图片查看器可以打开，就提醒了我们IHDR被人篡改过 利用winhex 修改文件头使图片完全显示
 
+JPG也可能隐藏宽高
+
 #### GIF 时间轴隐藏
 
-原理 由于GIF的动态特性，由一帧帧的图片构成，所以每一帧的图片，多帧图片间的结合，都成了隐藏信息的一种载体。解决方法 利用Photoshop 或者 StegSolve的 Analyse -&gt; Frame Brower
+原理 由于GIF的动态特性，由一帧帧的图片构成，所以每一帧的图片，多帧图片间的结合，都成了隐藏信息的一种载体。解决方法 利用Photoshop 或者 StegSolve的 Analyse -> Frame Brower
 
 ### 双图片隐写
 
-双图片异或和 解决方法 StegSolve的 Analyse -&gt; Imgine Combiner
+双图片异或和 解决方法 StegSolve的 Analyse -> Imgine Combiner
 
 ### 双图层
 

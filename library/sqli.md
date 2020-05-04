@@ -282,7 +282,15 @@ thr7.start()
   * 时间盲注
 
     和布尔盲注类似，不过因为没有回显，采用网页响应时间来判定数据
+    
     利用``SLEEP(n)``
+    
+    绕过
+    ```sql
+    benchmark(1000000,sha(1))
+    ```
+
+    参考资料：https://www.anquanke.com/post/id/170626
 
   * 修改 ``||``(或)运算符为字符串连接符
     ``set sql_mode=PIPES_AS_CONCAT;`` 
