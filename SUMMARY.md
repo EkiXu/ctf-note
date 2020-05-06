@@ -74,6 +74,7 @@
   * [WatervrCTF](buuoj/watevrctf-2019.md)
   * [CISCN2019 华东南赛区](buuoj/ciscn-southeast-2019.md)
   * [BsidesCTF 2019](buuoj/bsidescf-2019.md)
+  * [RCTF 2019](buuoj/rctf-2019.md)
 * [pwnable.kr](pwnable.kr/README.md)
   * [Toddler's Bottle](pwnable.kr/toddlers-bottle.md)
 * [Ethernaut](ethernaut/README.md)
