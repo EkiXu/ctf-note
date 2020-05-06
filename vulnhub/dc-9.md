@@ -53,7 +53,7 @@ Network Distance: 1 hop
 
 ![image-20200115151231167](/assets/images/image-20200115151231167.png)
 
-1‘ or '1'='1返回所有记录，存在注入点
+``1' or '1'='1``返回所有记录，存在注入点
 
 用sqlmap跑一跑
 
