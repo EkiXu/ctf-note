@@ -227,4 +227,7 @@ print("[+]Result : ->"+ret+"<-")
 
 ``f"{__import__('time').sleep(1)}"``
 
-## 参考资料
+## 拓展资料
+
+Hackergame2019 不同寻常的 Python 考试 ：
+https://github.com/ustclug/hackergame2019-writeups/blob/master/official/%E4%B8%8D%E5%90%8C%E5%AF%BB%E5%B8%B8%E7%9A%84_Python_%E8%80%83%E8%AF%95/README.md
