@@ -10,6 +10,9 @@
    
 - 弗吉尼亚密码
 
+- 词频分析
+  https://www.boxentriq.com/code-breaking/frequency-analysis 
+
 通解 [quipquip.com](https://quipqiup.com/)
 
 ### codemoji

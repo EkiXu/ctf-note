@@ -85,7 +85,7 @@
 
 ## htshell
 
-参考链接 https://github.com/wireghoul/htshells/tree/master/info
+参考链接 https://github.com/wireghoul/htshells/
 
 
 ## 参考资料
