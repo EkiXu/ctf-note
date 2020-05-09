@@ -80,7 +80,6 @@ select group_concat(table_name) from mysql.innodb_table_stats
     handler <tablename> open as <handlername>; #指定数据表进行载入并将返回句柄重命名
     handler <handlername> read first; #读取指定表/句柄的首行数据
     handler <handlername> read next; #读取指定表/句柄的下一行数据
-    handler <handlername> read next; #读取指定表/句柄的下一行数据
     ...
     handler <handlername> close; #关闭句柄
     ```

