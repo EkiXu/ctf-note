@@ -83,3 +83,17 @@ https://github.com/volatilityfoundation/volatility/wiki/Command-Reference
 内存取证工具 volatility 使用说明：
 
 https://www.restran.net/2017/08/10/memory-forensics-tool-volatility/
+
+
+## 文件恢复
+
+### Zlib
+
+```
+choosing windowBits
+But zlib can decompress all those formats:
+
+to (de-)compress deflate format, use wbits = -zlib.MAX_WBITS
+to (de-)compress zlib format, use wbits = zlib.MAX_WBITS
+to (de-)compress gzip format, use wbits = zlib.MAX_WBITS | 16
+```
