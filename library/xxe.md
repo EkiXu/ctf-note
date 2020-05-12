@@ -92,6 +92,14 @@ DTD payload
 
 ## 参考资料
 
+一篇文章带你深入理解漏洞之 XXE 漏洞
+
 https://xz.aliyun.com/t/3357
 
+Blind XXE详解与Google CTF一道题分析 
+
 https://www.freebuf.com/vuls/207639.html
+
+DTD Cheat Sheet 
+
+https://web-in-security.blogspot.com/2016/03/xxe-cheat-sheet.html
