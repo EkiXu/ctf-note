@@ -1,4 +1,4 @@
-# JavaScript Node js
+# JavaScript
 
 ## Fuzz
 
@@ -44,7 +44,14 @@ for (var step = 0; step < 100000; step++) {
 buf;
 ```
 
-
 ### 参考资料
 
 https://github.com/ChALkeR/notes/blob/master/Buffer-knows-everything.md
+
+## NPM 包管理安全检测
+
+```
+npm audit
+```
+
+Vulnerablity Database: https://snyk.io/vuln

