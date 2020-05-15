@@ -121,6 +121,18 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 
 ## parse_url 绕过
 
+示例
+
+```eval-php
+<?php
+$url = 'http://username:password@hostname/path?arg=value#anchor';
+
+print_r(parse_url($url));
+
+echo parse_url($url, PHP_URL_PATH);
+?>
+```
+
 - path部分以``///``开头返回``bool(false)``
 
 
@@ -277,6 +289,18 @@ $____.=$__,
 $_=$$____,
 $_["__"]($_["_"])]?>//$_POST["__"]($_POST["_"])
 ```
+
+还可以用 ``<?=?>`` 替代分号逗号
+
+### 参考资料
+
+一些不包含数字和字母的webshell：
+
+https://www.leavesongs.com/PENETRATION/webshell-without-alphanum.html
+
+PHP回调后门：
+
+https://www.leavesongs.com/PENETRATION/php-callback-backdoor.html
 
 ## LFI
 
