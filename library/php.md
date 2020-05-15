@@ -124,13 +124,11 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 示例
 
 ```eval-php
-<?php
 $url = 'http://username:password@hostname/path?arg=value#anchor';
 
 print_r(parse_url($url));
 
 echo parse_url($url, PHP_URL_PATH);
-?>
 ```
 
 - path部分以``///``开头返回``bool(false)``
