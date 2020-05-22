@@ -121,16 +121,6 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 
 ## parse_url 绕过
 
-示例
-
-```eval-php
-$url = 'http://username:password@hostname/path?arg=value#anchor';
-
-print_r(parse_url($url));
-
-echo parse_url($url, PHP_URL_PATH);
-```
-
 - path部分以``///``开头返回``bool(false)``
 
 
@@ -288,7 +278,7 @@ $_=$$____,
 $_["__"]($_["_"])]?>//$_POST["__"]($_POST["_"])
 ```
 
-还可以用 ``<?=?>`` 替代分号逗号
+还可以用 ``<?=?> 替代分号逗号
 
 ### 参考资料
 
@@ -429,8 +419,17 @@ error_reporting(0);
 #$id= "$admin";
 #show_source(__FILE__);
 #if(unserialize($id) === "$admin")
-$a = new Exception("<script>alert("xss");/script>");
+$a = new Exception("<script>alert('xss');/script>");
 $b = serialize($a);
 $id = $b;
 print unserialize($id);
+```
+
+
+- ZipArchive
+
+```
+<?php
+
+?>
 ```
