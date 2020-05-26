@@ -428,8 +428,32 @@ print unserialize($id);
 
 - ZipArchive
 
-```
-<?php
+利用``open``函数实现任意文件删除
 
+```php
+<?php
+//ZipArchive::OVERWRITE ZipArchive::CREATE 
+$zip = new ZipArchive;
+$res = $zip->open('test.zip', ZipArchive::CREATE);
+if ($res === TRUE) {
+    $zip->addFromString('test.txt', 'file content goes here');
+    $zip->addFile('data.txt', 'entryname.txt');
+    $zip->close();
+    echo 'ok';
+} else {
+    echo 'failed';
+}
+//$res = $zip->open('test.zip', ZipArchive::OVERWRITE);
 ?>
 ```
+
+## Bypass ``disabled_function``
+
+### LD_PRELOAD
+
+#### Exp
+
+https://github.com/ianxtianxt/bypass_disablefunc_via_LD_PRELOAD
+
+## php 7.4 FFI
+

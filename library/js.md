@@ -20,6 +20,15 @@
 '1' == 1
 ```
 
+## 函数“缺陷”
+
+- setTimeout(callback, delay[, ...args])
+
+    当 delay 大于 2147483647 或小于 1 时，则 delay 将会被设置为 1。 非整数的 delay 会被截断为整数。
+
+    如果 callback 不是函数，则抛出 TypeError。
+
+
 ## 原型链污染
 
 ### 参考资料
@@ -54,4 +63,14 @@ https://github.com/ChALkeR/notes/blob/master/Buffer-knows-everything.md
 npm audit
 ```
 
-Vulnerablity Database: https://snyk.io/vuln
+## 拓展资料
+
+nodejs 语法手册 http://nodejs.cn/api/
+
+Vulnerablity Database: 
+
+https://snyk.io/vuln
+
+https://github.com/advisories
+
+https://www.npmjs.com/advisories
