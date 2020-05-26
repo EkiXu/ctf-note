@@ -455,5 +455,6 @@ if ($res === TRUE) {
 
 https://github.com/ianxtianxt/bypass_disablefunc_via_LD_PRELOAD
 
-## php 7.4 FFI
+### php 7.4 FFI
 
+## rand() 安全性问题 
