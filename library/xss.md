@@ -6,6 +6,10 @@
 
 ### SVG
 
+```html
+
+```
+
 ### GIF
 
 ### JPG
@@ -15,3 +19,9 @@
 参考链接 https://xz.aliyun.com/t/7530
 
 ## CSP相关
+
+## 扩展资料
+
+Cross-site scripting (XSS) cheat sheet：
+
+https://portswigger.net/web-security/cross-site-scripting/cheat-sheet

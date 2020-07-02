@@ -96,19 +96,19 @@ c       c       e       h       g
 
 RSA加密过程
 
-n=p\times q*n*=*p*×*q*
+$n=p\times q$
 
-\phi(n)=(p-1)(q-1)*ϕ*(*n*)=(*p*−1)(*q*−1)
+$\phi(n)=(p-1)(q-1)$
 
-e \in (1,\phi(n))*e*∈(1,*ϕ*(*n*))
+$ e\in (1,\phi(n))$
 
-ed\equiv 1 \pmod {\phi(n)} \Leftrightarrow ed=k\phi(n)+1*e**d*≡1(mod**ϕ**(*n*))⇔*e**d*=*k**ϕ*(*n*)+1
+$$ ed\equiv 1 \pmod {\phi(n)} \Leftrightarrow ed=k\phi(n)+1$$
 
-a^{\phi(n)}\equiv 1 \pmod n*a**ϕ*(*n*)≡1(mod**n**)
+$$a^{\phi(n)}\equiv 1 \pmod n$$
 
-a^{k\phi(n)+1} \equiv a \pmod n*a**k**ϕ*(*n*)+1≡*a*(mod**n**)
+$$a^{k\phi(n)+1} \equiv a \pmod n$$
 
-a^{ed} \equiv a \pmod n*a**e**d*≡*a*(mod**n**)
+$$a^{ed} \equiv a \pmod n$$
 
 若$c\equiv a^e \pmod n$则$c^d\equiv {a^{ed}} \equiv a \pmod n$
 

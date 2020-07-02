@@ -70,3 +70,28 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 - rot13
 - 与佛论禅
 - 社会主义核心价值观编码
+
+
+## 现代密码
+
+### RSA
+
+RSA加密过程
+
+$n=p\times q$
+
+$\phi(n)=(p-1)(q-1)$
+
+$ e\in (1,\phi(n))$
+
+$ ed\equiv 1 \pmod {\phi(n)} \Leftrightarrow ed=k\phi(n)+1$
+
+$a^{\phi(n)}\equiv 1 \pmod n$
+
+$a^{k\phi(n)+1} \equiv a \pmod n$
+
+$a^{ed} \equiv a \pmod n$
+
+若$c\equiv a^e \pmod n$则$c^d\equiv {a^{ed}} \equiv a \pmod n$
+
+$assume\ dp\equiv d(mod\ (p-1)),dq\equiv d(mod\ (q-1))$
