@@ -28,6 +28,7 @@
   * [2020数字中国创新大赛虎符网络安全赛](contest/hfctf-2020.md)
   * [NPUCTF 2020](contest/npuctf-2020.md)
   * [GKCTF 2020](contest/gkctf-2020.md)
+  * [SCTF 2020](contest/sctf-2020.md)
 * [ADworld](adworld/README.md)
   * [Misc Exercise Area](adworld/misc-exercise-area.md)
   * [Crypto Exercise Area](adworld/crypto-execrise-area.md)
