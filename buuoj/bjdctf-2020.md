@@ -14,7 +14,7 @@ Poc:``{{system("<cmd>")}}``
 
 和上题一样是模板注入，不过注入点在Cookie里
 
-渲染引擎也换成了基于Python的Twig
+渲染引擎也换成了Twig
 
 从网上找到的 Twig poc
 ```
