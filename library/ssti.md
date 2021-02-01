@@ -208,7 +208,7 @@ Jinja2对模板做了特殊处理,通过``A['__init__']``也可以访问A的方�
 	{% endif %}
 {% endfor %}
 ```
-- ``{% print %}`` 输出
+- &lcub;&percnt; print &percnt;&rcub; 输出
 
 
 ### Flask/Jinja2
