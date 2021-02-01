@@ -58,6 +58,10 @@ for ($ascii1 = 0; $ascii1 < 256; $ascii1++) {
 ?> 
 ```
 
+### HTTP 走私
+
+https://mengsec.com/2019/10/10/http-request-smugging/
+
 ## FTP
 
 ```
