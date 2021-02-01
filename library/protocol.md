@@ -39,6 +39,76 @@ Warning|	关于消息实体的警告信息|	Warn: 199 Miscellaneous warning|
 X-REAL-IP|||
 Client-IP|||
 
+### URLENCODE 相关
+
+URLCODE二次编码绕过
+
+```php
+<?php 
+$char = 'r'; #构造r的二次编码 
+for ($ascii1 = 0; $ascii1 < 256; $ascii1++) { 
+    for ($ascii2 = 0; $ascii2 < 256; $ascii2++) { 
+        $aaa = '%'.$ascii1.'%'.$ascii2; 
+        if(urldecode(urldecode($aaa)) == $char){ 
+            echo $char.': '.$aaa; 
+            echo "\n"; 
+        } 
+    } 
+} 
+?> 
+```
+
+## FTP
+
+```
+TYPE I # 按二进制传输
+PORT 127,0,0,1,0,1 # IP + 端口：0*256+1
+RETR xxx #发送本地文件到目的地址
+STOR xxx #接收目标文件到本地地址
+```
+
+```python
+# FTP Listen
+import socket
+
+HOST = '0.0.0.0'
+PORT = 20000
+blocksize = 4096
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.bind((HOST, PORT))
+    s.listen()
+    conn, addr = s.accept()
+    with conn:
+        while 1:
+            data = conn.recv(blocksize)
+            print(data)
+            if not data:
+                break
+    print('end.')
+```
+
+```python
+#FTP Send
+import socket
+
+HOST = '0.0.0.0'  
+PORT = 20000        
+blocksize = 4096
+fp = open('test2.bin', 'rb')
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.bind((HOST, PORT))
+    print('start listen...')
+    s.listen()
+    conn, addr = s.accept()
+    with conn:
+        while 1:
+            buf = fp.read(blocksize)
+            if not buf:
+                fp.close()
+                break
+            conn.sendall(buf)
+    print('end.')
+```
 
 ## TLS
 

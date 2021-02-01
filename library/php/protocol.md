@@ -4,9 +4,13 @@
 
 接收POST RAW 
 
+需要打开 ``url_allow_fopen`` ``url_allow_include ``
+
 ## ``data://``
 
 ``data://text/plain,<phpcode>``
+
+需要打开 ``url_allow_fopen`` ``url_allow_include ``
 
 ## ``php://filter``简单理解：
 
@@ -22,6 +26,7 @@ php://filter 是php中独有的一个协议，可以作为一个中间流来处�
 | <；两个链的筛选列表>       | 任何没有以 read= 或 write= 作前缀 的筛选器列表会视情况应用于读或写链。 |      |
 
 > Trick： read 和write 里 可以塞垃圾字符
+> php://filter面对不可用的规则是报个Warning，然后跳过继续执行
 
 ### string.strip_tags
 
@@ -83,3 +88,7 @@ php://filter/write=string.strip_tags|convert.base64-decode/resource=?>PD9waHAgQG
 php 可用过滤器列表 ：https://www.php.net/manual/en/filters.php
 
 探索php://filter在实战当中的奇技淫巧 ： https://www.anquanke.com/post/id/202510
+
+file_put_content和死亡·杂糅代码之缘 https://xz.aliyun.com/t/8163
+
+关于file_put_contents的一些小测试 https://cyc1e183.github.io/2020/04/03/%E5%85%B3%E4%BA%8Efile_put_contents%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%B5%8B%E8%AF%95/

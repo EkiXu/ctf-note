@@ -5,7 +5,7 @@
   * [Steganography](library/steganography.md)
   * [GDB Tutorial](library/gdb-tutorial.md)
   * [SQL Inject](library/sqli.md)
-  * [PHP]
+  * PHP
     * [Functions](library/php/function.md)
     * [Protocol](library/php/protocol.md)
     * [ACE](library/php/ace.md)
@@ -57,7 +57,8 @@
   * [CISCN 2019 初赛](buuoj/ciscn-pre-2019.md)
   * [CISCN 2019 Final](buuoj/ciscn-final-2019.md)
   * [De1CTF 2019](buuoj/de1ctf-2019.md)
-  * [网鼎杯 2018](buuoj/wangdinbei-2018.md)
+  * [网鼎杯 2018](buuoj/wangdingcup-2018.md)
+  * [网鼎杯 2019](buuoj/wangdingcup-2019.md)
   * [RoarCTF 2019](buuoj/roarctf-2019.md)
   * [0CTF 2019](buuoj/0ctf-2016.md)
   * [GXYCTF 2019](buuoj/gxyctf-2019.md)
