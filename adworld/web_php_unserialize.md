@@ -58,7 +58,7 @@ if (isset($_GET['var'])) {
 
 或者也可以直接用脚本
 
-```
+```php
 <?php
 class Demo {
     private $file = 'index.php';

