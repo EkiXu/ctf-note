@@ -1,4 +1,8 @@
-# 协议相关
+# 网络协议相关
+
+## 工具
+
+Wireshark
 
 ## HTTP
 
@@ -39,23 +43,14 @@ Warning|	关于消息实体的警告信息|	Warn: 199 Miscellaneous warning|
 X-REAL-IP|||
 Client-IP|||
 
-### URLENCODE 相关
+一个基本的请求TCP报文
 
-URLCODE二次编码绕过
-
-```php
-<?php 
-$char = 'r'; #构造r的二次编码 
-for ($ascii1 = 0; $ascii1 < 256; $ascii1++) { 
-    for ($ascii2 = 0; $ascii2 < 256; $ascii2++) { 
-        $aaa = '%'.$ascii1.'%'.$ascii2; 
-        if(urldecode(urldecode($aaa)) == $char){ 
-            echo $char.': '.$aaa; 
-            echo "\n"; 
-        } 
-    } 
-} 
-?> 
+```
+GET /?test=123 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36
+Accept: */*
+Host: xxx.com
+Connection: close
 ```
 
 ### HTTP 走私
@@ -64,7 +59,12 @@ https://mengsec.com/2019/10/10/http-request-smugging/
 
 ## FTP
 
+基于tcp,发送的也是tcp包，可以利用他作为ssrf的跳板
+
 ```
+USER xxx #用户名
+PASS xxx #密码
+CWD xxx #切换文件夹
 TYPE I # 按二进制传输
 PORT 127,0,0,1,0,1 # IP + 端口：0*256+1
 RETR xxx #发送本地文件到目的地址
@@ -114,14 +114,37 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     print('end.')
 ```
 
-## TLS
+通过``pyftplibd``库可以实现一个简单的ftp服务器
+
+```python
+from pyftpdlib.authorizers import DummyAuthorizer
+from pyftpdlib.handlers import FTPHandler
+from pyftpdlib.servers import FTPServer
+
+
+authorizer = DummyAuthorizer()
+
+authorizer.add_user("admin", "admin888", ".",perm="elrafmwMT")
+authorizer.add_anonymous(".")
+
+handler = FTPHandler
+handler.permit_foreign_addresses = True
+handler.passive_ports = range(2000, 2030)
+handler.authorizer = authorizer
+
+server = FTPServer(("0.0.0.0", 8899), handler)
+server.serve_forever()
+```
+
 
 ## Gopher
+
+tcp协议，经典ssrf跳板协议
 
 - 格式
 
     ```
-    gopher://127.0.0.1:70/_ + TCP/IP数据
+    gopher://127.0.0.1:70/_ + TCP/IP数据(URLENCODE)
     ```
 
     ``_``可以是任意字符，作为连接符占位
@@ -238,3 +261,24 @@ if __name__ == "__main__":
 对万金油gopher协议的理解与应用
 
 https://k-ring.github.io/2019/05/31/%E5%AF%B9%E4%B8%87%E9%87%91%E6%B2%B9gopher%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8E%E5%BA%94%E7%94%A8/
+
+
+## RESP协议
+
+redis采取基于TCP的RESP协议进行通信
+
+用SET命令来举例说明RESP协议的格式。
+
+```
+redis> SET mykey "Hello World"
+"OK"
+```
+
+实际发送的请求数据：
+
+```
+*3\r\n$3\r\nSET\r\n$5\r\nmykey\r\n$5\r\nHello\r\n
+实际收到的响应数据：
+
++OK\r\n
+```

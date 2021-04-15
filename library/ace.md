@@ -103,6 +103,7 @@ a=l;b=s;$a$b
 ```bash
 ca''t fl''ag
 cat$@t fl$@ag
+cat fl[a]g
 ca\t f\lag
 ```
 
