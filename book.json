@@ -12,7 +12,6 @@
 		"splitter",
 		"katex",
 		"tbfed-pagefooter",
-		"sitemap",
 		"theme-comscore",
 		"anchor-navigation-ex",
 		"-lunr", "-search", "search-plus",
@@ -39,9 +38,6 @@
 			"modify_format": "YYYY-MM-DD HH:mm:ss"
 		},
 		"expandable-chapters": {},
-		"sitemap": {
-			"hostname": "https://ctf.ieki.xyz/"
-		},
 		"anchor-navigation-ex": {
 			"showLevel": false,
 			"associatedWithSummary": false,
