@@ -2,12 +2,11 @@
 
 ## 你的名字
 
-``{{1+1}}``报错提示了python后端
+&lcub;&lcub;1+1&rcub;&rcub;报错提示了python后端
 
 发现config被置空了
 
 那么可以利用config来bypass if等东西
-
 
 ## mypassword
 

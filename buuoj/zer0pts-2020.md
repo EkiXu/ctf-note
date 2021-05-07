@@ -103,7 +103,7 @@ def valid_url(url):
 
 POC:
 ```
-Referer:  http://37785aff-4b7b-4655-8a7f-b86e7af93f88.node3.buuoj.cn/{{7*7}}
+Referer:  http://37785aff-4b7b-4655-8a7f-b86e7af93f88.node3.buuoj.cn/%7b%7b%31%2b%31%7d%7d
 ```
 
 限制了payload长度...
