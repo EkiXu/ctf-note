@@ -355,6 +355,33 @@ union select
       ```
     * group by + with rollup 绕过二次密码检验
       分组rollup后参数为NULL 
+
+## 关于Mysql
+
+### 空白字符绕过
+
+在php中\s会匹配0x09,0x0a,0x0b,0x0c,0x0d,0x20
+
+但是在mysql中空白字符为  0x09,0x0a,0x0b,0x0c,0x0d,0x20,0xa0 
+
+可以实现空白字符绕过
+
+### EXP报错溢出
+
+```
+mysql> select exp(709);
++-----------------------+
+| exp(709)              |
++-----------------------+
+| 8.218407461554972e307 |
++-----------------------+
+1 row in set (0.00 sec) 
+
+mysql> select exp(710);
+ERROR 1690 (22003): DOUBLE value is out of range in 'exp(710)'
+```
+
+
 ## 关于Sqlite
 
 sqlite每个db文件就是一个数据库，不存在``information_schema``数据库，但存在类似作用的表``sqlite_master``。

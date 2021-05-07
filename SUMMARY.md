@@ -13,6 +13,7 @@
     * [Misc](library/php/misc.md) 
   * [Apache .htaccess](library/htaccess.md)
   * [SSTI](library/ssti.md)
+  * [SSRF](library/ssrf.md)
   * [XXE](library/xxe.md)
   * [XSS](library/xss.md)
   * [Shell](library/shell.md)

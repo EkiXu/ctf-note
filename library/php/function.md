@@ -94,3 +94,29 @@ php源码分析 require_once 绕过不能重复包含文件的限制：https://w
     ```
 
 2. 数组绕过
+
+
+## is_numeric()
+
+用于判断是否是数字，通常配合数值判断
+
+```php
+is_numeric(@$a["param1"])?exit:NULL;
+if(@$a["param1"]){
+    ($a["param1"]>2017)?$v1=1:NULL;
+}
+```
+
+```php
+$pos = array_search("nudt",$a["param2"]);
+$pos ==false?die("nope"):NULL;
+foreach($a["param2"] as $key=>$val){
+        $val==="nudt"?die("nope"):NULL;
+    }
+//param2中需要匹配到nudt然而是弱类型，0==任何字符串，用0可以过掉弱类型检查字符串
+```
+
+
+## eregi
+
+存在\x00截断的问题

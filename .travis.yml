@@ -20,7 +20,7 @@ install:
 # 构建脚本
 script:
     # 自定义输出目录 gitbook build src dest
-  - gitbook build . ./build
+  - gitbook build . ./build --gitbook=2.6.2
   # - gitbook build . ./build/$CUSTOM_PATH
 
 # 分支白名单

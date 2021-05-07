@@ -22,3 +22,7 @@ ${7*7}
 /../
 ../../../../../../../../../etc/passwd
 ```
+
+## 参考资料
+
+https://github.com/EkiXu/ArbitraryFileReadList
