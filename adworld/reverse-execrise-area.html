@@ -1,0 +1,2365 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Reverse Exercise Area · Eki's CTF</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eki">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="easy_tornado.html" />
+    
+    
+    <link rel="prev" href="pwn-exercise-area.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ieki.xyz" target="_blank" class="custom-link">主站 Eki's Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../library/">
+            
+                <a href="../library/">
+            
+                    
+                    Library
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../library/steganography.html">
+            
+                <a href="../library/steganography.html">
+            
+                    
+                    Steganography
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../library/gdb-tutorial.html">
+            
+                <a href="../library/gdb-tutorial.html">
+            
+                    
+                    GDB Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../library/sqli.html">
+            
+                <a href="../library/sqli.html">
+            
+                    
+                    SQL Inject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    PHP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../library/php/function.html">
+            
+                <a href="../library/php/function.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../library/php/protocol.html">
+            
+                <a href="../library/php/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../library/php/ace.html">
+            
+                <a href="../library/php/ace.html">
+            
+                    
+                    ACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../library/php/serialize.html">
+            
+                <a href="../library/php/serialize.html">
+            
+                    
+                    Serialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../library/php/misc.html">
+            
+                <a href="../library/php/misc.html">
+            
+                    
+                    Misc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../library/htaccess.html">
+            
+                <a href="../library/htaccess.html">
+            
+                    
+                    Apache .htaccess
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../library/ssti.html">
+            
+                <a href="../library/ssti.html">
+            
+                    
+                    SSTI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../library/ssrf.html">
+            
+                <a href="../library/ssrf.html">
+            
+                    
+                    SSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../library/xxe.html">
+            
+                <a href="../library/xxe.html">
+            
+                    
+                    XXE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../library/xss.html">
+            
+                <a href="../library/xss.html">
+            
+                    
+                    XSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../library/shell.html">
+            
+                <a href="../library/shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../library/crypto.html">
+            
+                <a href="../library/crypto.html">
+            
+                    
+                    Crypto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../library/js.html">
+            
+                <a href="../library/js.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../library/python.html">
+            
+                <a href="../library/python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../library/bash.html">
+            
+                <a href="../library/bash.html">
+            
+                    
+                    BASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../library/forensics.html">
+            
+                <a href="../library/forensics.html">
+            
+                    
+                    Forensics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../library/pentest.html">
+            
+                <a href="../library/pentest.html">
+            
+                    
+                    Pentest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../library/protocol.html">
+            
+                <a href="../library/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../library/misc.html">
+            
+                <a href="../library/misc.html">
+            
+                    
+                    MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../library/awd.html">
+            
+                <a href="../library/awd.html">
+            
+                    
+                    AWD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../contest/">
+            
+                <a href="../contest/">
+            
+                    
+                    Contest
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../contest/hfctf-2021.html">
+            
+                <a href="../contest/hfctf-2021.html">
+            
+                    
+                    2021数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../contest/hackergame-2019.html">
+            
+                <a href="../contest/hackergame-2019.html">
+            
+                    
+                    Hackergame 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../contest/tsctf-j2019.html">
+            
+                <a href="../contest/tsctf-j2019.html">
+            
+                    
+                    TSCTF-J 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../contest/nctf2019.html">
+            
+                <a href="../contest/nctf2019.html">
+            
+                    
+                    NCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../contest/isoon-2019.html">
+            
+                <a href="../contest/isoon-2019.html">
+            
+                    
+                    ISOON 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../contest/mrctf-2020.html">
+            
+                <a href="../contest/mrctf-2020.html">
+            
+                    
+                    MRCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../contest/hfctf-2020.html">
+            
+                <a href="../contest/hfctf-2020.html">
+            
+                    
+                    2020数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../contest/npuctf-2020.html">
+            
+                <a href="../contest/npuctf-2020.html">
+            
+                    
+                    NPUCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../contest/gkctf-2020.html">
+            
+                <a href="../contest/gkctf-2020.html">
+            
+                    
+                    GKCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../contest/sctf-2020.html">
+            
+                <a href="../contest/sctf-2020.html">
+            
+                    
+                    SCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ADworld
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="misc-exercise-area.html">
+            
+                <a href="misc-exercise-area.html">
+            
+                    
+                    Misc Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="crypto-execrise-area.html">
+            
+                <a href="crypto-execrise-area.html">
+            
+                    
+                    Crypto Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="web-execrise-area.html">
+            
+                <a href="web-execrise-area.html">
+            
+                    
+                    Web Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="pwn-exercise-area.html">
+            
+                <a href="pwn-exercise-area.html">
+            
+                    
+                    PWN Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5" data-path="reverse-execrise-area.html">
+            
+                <a href="reverse-execrise-area.html">
+            
+                    
+                    Reverse Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="easy_tornado.html">
+            
+                <a href="easy_tornado.html">
+            
+                    
+                    Easy Tornado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="i-got-id-200.html">
+            
+                <a href="i-got-id-200.html">
+            
+                    
+                    i-got-id-200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="ics-02.html">
+            
+                <a href="ics-02.html">
+            
+                    
+                    ics-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="ics-07.html">
+            
+                <a href="ics-07.html">
+            
+                    
+                    ics-07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="shrine.html">
+            
+                <a href="shrine.html">
+            
+                    
+                    shrine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="super_sqli.html">
+            
+                <a href="super_sqli.html">
+            
+                    
+                    super_sqli
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="web_php_unserialize.html">
+            
+                <a href="web_php_unserialize.html">
+            
+                    
+                    Web_php_unserialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="web_php_wrong_nginx_config.html">
+            
+                <a href="web_php_wrong_nginx_config.html">
+            
+                    
+                    web_php_wrong_nginx_config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="web_python_template_injection.html">
+            
+                <a href="web_python_template_injection.html">
+            
+                    
+                    Web_python_template_injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="wtf.sh-150.html">
+            
+                <a href="wtf.sh-150.html">
+            
+                    
+                    wtf.sh-150
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="zhuanxv.html">
+            
+                <a href="zhuanxv.html">
+            
+                    
+                    Zhuanxv
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../buuoj/">
+            
+                <a href="../buuoj/">
+            
+                    
+                    BUUOJ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../buuoj/ciscn-northeast-2019.html">
+            
+                <a href="../buuoj/ciscn-northeast-2019.html">
+            
+                    
+                    CISCN 2019 华北赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../buuoj/ciscn-pre-2019.html">
+            
+                <a href="../buuoj/ciscn-pre-2019.html">
+            
+                    
+                    CISCN 2019 初赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../buuoj/ciscn-final-2019.html">
+            
+                <a href="../buuoj/ciscn-final-2019.html">
+            
+                    
+                    CISCN 2019 Final
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../buuoj/wangdingcup-2018.html">
+            
+                <a href="../buuoj/wangdingcup-2018.html">
+            
+                    
+                    网鼎杯 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../buuoj/wangdingcup-2019.html">
+            
+                <a href="../buuoj/wangdingcup-2019.html">
+            
+                    
+                    网鼎杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../buuoj/roarctf-2019.html">
+            
+                <a href="../buuoj/roarctf-2019.html">
+            
+                    
+                    RoarCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../buuoj/0ctf-2016.html">
+            
+                <a href="../buuoj/0ctf-2016.html">
+            
+                    
+                    0CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../buuoj/gxyctf-2019.html">
+            
+                <a href="../buuoj/gxyctf-2019.html">
+            
+                    
+                    GXYCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../buuoj/hitcon-2017.html">
+            
+                <a href="../buuoj/hitcon-2017.html">
+            
+                    
+                    Hitcon 2017
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../buuoj/jikedatiaozhan-2019.html">
+            
+                <a href="../buuoj/jikedatiaozhan-2019.html">
+            
+                    
+                    极客大挑战2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../buuoj/lctf-2018.html">
+            
+                <a href="../buuoj/lctf-2018.html">
+            
+                    
+                    LCTF 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../buuoj/swpu-2019.html">
+            
+                <a href="../buuoj/swpu-2019.html">
+            
+                    
+                    SWPU 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../buuoj/bjdctf-2020.html">
+            
+                <a href="../buuoj/bjdctf-2020.html">
+            
+                    
+                    BJDCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../buuoj/rctf-2015.html">
+            
+                <a href="../buuoj/rctf-2015.html">
+            
+                    
+                    RCTF 2015
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../buuoj/bytectf-2019.html">
+            
+                <a href="../buuoj/bytectf-2019.html">
+            
+                    
+                    ByteCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../buuoj/qiangwangbei-2019.html">
+            
+                <a href="../buuoj/qiangwangbei-2019.html">
+            
+                    
+                    强网杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.21" data-path="../buuoj/ddctf-2019.html">
+            
+                <a href="../buuoj/ddctf-2019.html">
+            
+                    
+                    DDCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.22" data-path="../buuoj/eis-2019.html">
+            
+                <a href="../buuoj/eis-2019.html">
+            
+                    
+                    EIS 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.23" data-path="../buuoj/vn-2020.html">
+            
+                <a href="../buuoj/vn-2020.html">
+            
+                    
+                    V&N 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.24" data-path="../buuoj/fbctf-2019.html">
+            
+                <a href="../buuoj/fbctf-2019.html">
+            
+                    
+                    FBCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.25" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GYCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.26" data-path="../buuoj/bjd-2nd.html">
+            
+                <a href="../buuoj/bjd-2nd.html">
+            
+                    
+                    BJDCTF 2nd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.27" data-path="../buuoj/fireshellctf-2020.html">
+            
+                <a href="../buuoj/fireshellctf-2020.html">
+            
+                    
+                    FireShellCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.28" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GWCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.29" data-path="../buuoj/watevrctf-2019.html">
+            
+                <a href="../buuoj/watevrctf-2019.html">
+            
+                    
+                    WatervrCTF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.30" data-path="../buuoj/ciscn-southeast-2019.html">
+            
+                <a href="../buuoj/ciscn-southeast-2019.html">
+            
+                    
+                    CISCN2019 华东南赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.31" data-path="../buuoj/bsidescf-2019.html">
+            
+                <a href="../buuoj/bsidescf-2019.html">
+            
+                    
+                    BsidesCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.32" data-path="../buuoj/rctf-2019.html">
+            
+                <a href="../buuoj/rctf-2019.html">
+            
+                    
+                    RCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../pwnable.kr/">
+            
+                <a href="../pwnable.kr/">
+            
+                    
+                    pwnable.kr
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../pwnable.kr/toddlers-bottle.html">
+            
+                <a href="../pwnable.kr/toddlers-bottle.html">
+            
+                    
+                    Toddler's Bottle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ethernaut/">
+            
+                <a href="../ethernaut/">
+            
+                    
+                    Ethernaut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../vulnhub/">
+            
+                <a href="../vulnhub/">
+            
+                    
+                    Vulnhub
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../vulnhub/dc-9.html">
+            
+                <a href="../vulnhub/dc-9.html">
+            
+                    
+                    DC-9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../vulnhub/five86-1.html">
+            
+                <a href="../vulnhub/five86-1.html">
+            
+                    
+                    five86-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../vulnhub/wakanda.html">
+            
+                <a href="../vulnhub/wakanda.html">
+            
+                    
+                    wakanda
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Reverse Exercise Area</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#reverse-execrise-area"><b></b>Reverse Execrise Area</a></li><ul><li><span class="title-icon "></span><a href="#0x00-&#x524D;&#x8A00;"><b></b>0x00 &#x524D;&#x8A00;</a></li><li><span class="title-icon "></span><a href="#0x01-re1"><b></b>0x01 re1</a></li><li><span class="title-icon "></span><a href="#0x02-game"><b></b>0x02 game</a></li><ul><li><span class="title-icon "></span><a href="#&#x9759;&#x6001;&#x5206;&#x6790;"><b></b>&#x9759;&#x6001;&#x5206;&#x6790;</a></li><li><span class="title-icon "></span><a href="#&#x5B9E;&#x65F6;&#x4FEE;&#x6539;&#x5185;&#x5B58;"><b></b>&#x5B9E;&#x65F6;&#x4FEE;&#x6539;&#x5185;&#x5B58;</a></li><li><span class="title-icon "></span><a href="#ida-pro-patch-program"><b></b>IDA Pro Patch Program</a></li></ul><li><span class="title-icon "></span><a href="#0x03-helloctf"><b></b>0x03 Hello,CTF</a></li><li><span class="title-icon "></span><a href="#0x04--open-source"><b></b>0x04  open-source</a></li><li><span class="title-icon "></span><a href="#0x05--simple-unpack"><b></b>0x05  simple-unpack</a></li><li><span class="title-icon "></span><a href="#0x06--logmein"><b></b>0x06  logmein</a></li><li><span class="title-icon "></span><a href="#0x07--insanity"><b></b>0x07  insanity</a></li><li><span class="title-icon "></span><a href="#0x08--no-strings-attached"><b></b>0x08  no-strings-attached</a></li><li><span class="title-icon "></span><a href="#0x09--csaw2013reversing2"><b></b>0x09  csaw2013reversing2</a></li><li><span class="title-icon "></span><a href="#0x0a--getit"><b></b>0x0A  getit</a></li><li><span class="title-icon "></span><a href="#0x0b-pythontrade"><b></b>0x0B Python_trade</a></li><li><span class="title-icon "></span><a href="#0x0c-maze"><b></b>0x0C maze</a></li></ul></ul></div><a href="#reverse-execrise-area" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="reverse-execrise-area"><a name="reverse-execrise-area" class="anchor-navigation-ex-anchor" href="#reverse-execrise-area"><i class="fa fa-link" aria-hidden="true"></i></a>Reverse Execrise Area</h1>
+<h2 id="0x00-&#x524D;&#x8A00;"><a name="0x00-&#x524D;&#x8A00;" class="anchor-navigation-ex-anchor" href="#0x00-&#x524D;&#x8A00;"><i class="fa fa-link" aria-hidden="true"></i></a>0x00 &#x524D;&#x8A00;</h2>
+<p>&#x9006;&#x5411;&#x9CA8;&#x6211;&#xFF0C;&#x7528;&#x5404;&#x79CD;&#x5947;&#x602A;&#x7684;&#x6280;&#x5DE7;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x5B58;&#x6570;&#x636E;&#xFF0C;&#x5199;&#x51FD;&#x6570;&#xFF0C;</p>
+<p>&#x611F;&#x89C9;&#x81EA;&#x5DF1;&#x5B66;&#x7684;&#x53EF;&#x80FD;&#x662F;&#x5047;&#x7684;C&#x8BED;&#x8A00;&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;</p>
+<p>&#x6536;&#x8D27;&#xFF1A;</p>
+<ul>
+<li>strings &#x7684;&#x7528;&#x6CD5;</li>
+<li>IDA pro Patch Program&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x6539;&#x53D8;&#x7A0B;&#x5E8F;&#x903B;&#x8F91;</li>
+<li>sprintf&#x7684;&#x7528;&#x6CD5;</li>
+<li>64&#x4F4D;int&#x5206;&#x5272;32&#x4F4D;&#x6570;&#x636E;&#x7684;&#x5199;&#x6CD5;</li>
+<li>gdb&#x8C03;&#x8BD5;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;</li>
+<li>upx &#x7B80;&#x5355;&#x8131;&#x58F3;</li>
+</ul>
+<p>Todo:</p>
+<ul>
+<li>Ollydbg &#x8C03;&#x8BD5;&#x65B9;&#x6CD5;</li>
+<li>&#x5176;&#x4ED6;C&#x7684;&#x5947;&#x602A;&#x5199;&#x6CD5;</li>
+<li>ESP&#x5B9A;&#x5F8B; &#x8131;&#x58F3;&#x65B9;&#x6CD5;</li>
+</ul>
+<h2 id="0x01-re1"><a name="0x01-re1" class="anchor-navigation-ex-anchor" href="#0x01-re1"><i class="fa fa-link" aria-hidden="true"></i></a>0x01 re1</h2>
+<p>&#x5165;&#x95E8;&#x9006;&#x5411;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x653E;&#x8FDB;ida pro&#x91CC;&#x5728;strings view&#x91CC;&#x627E;flag</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x7528;strings&#x5DE5;&#x5177;&#x627E;</p>
+<pre><code class="lang-bash">strings re1.exe |grep {*}
+</code></pre>
+<h2 id="0x02-game"><a name="0x02-game" class="anchor-navigation-ex-anchor" href="#0x02-game"><i class="fa fa-link" aria-hidden="true"></i></a>0x02 game</h2>
+<p>&#x4E00;&#x4E2A;&#x7FFB;&#x8F6C;&#x7684;&#x5C0F;&#x6E38;&#x620F;</p>
+<p>&#x62D6;&#x8FDB;IDA &#x53D1;&#x73B0;&#x53EA;&#x8981;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#xFF08;7&#x4E2A;&#x706F;&#x5168;&#x4EAE;&#xFF09;&#x7A0B;&#x5E8F;&#x5C31;&#x4F1A;&#x8F93;&#x51FA;flag&#xFF08;&#x52A0;&#x5BC6;&#x8FC7;&#xFF09;</p>
+<p>&#x601D;&#x8DEF;</p>
+<h3 id="&#x9759;&#x6001;&#x5206;&#x6790;"><a name="&#x9759;&#x6001;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x9759;&#x6001;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9759;&#x6001;&#x5206;&#x6790;</h3>
+<p>&#x627E;&#x5230;&#x7A0B;&#x5E8F;&#x4E2D;&#x8F93;&#x51FA;flag&#x7684;&#x7A0B;&#x5E8F;&#x6BB5;&#xFF0C;&#x81EA;&#x5DF1;&#x5199;&#x811A;&#x672C;&#x8F93;&#x51FA;&#x4E00;&#x904D;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+  <span class="hljs-keyword">char</span> v[<span class="hljs-number">200</span>];
+  v[<span class="hljs-number">59</span>] = <span class="hljs-number">18</span>;
+  v[<span class="hljs-number">60</span>] = <span class="hljs-number">64</span>;
+  v[<span class="hljs-number">61</span>] = <span class="hljs-number">98</span>;
+  v[<span class="hljs-number">62</span>] = <span class="hljs-number">5</span>;
+  v[<span class="hljs-number">63</span>] = <span class="hljs-number">2</span>;
+  v[<span class="hljs-number">64</span>] = <span class="hljs-number">4</span>;
+  v[<span class="hljs-number">65</span>] = <span class="hljs-number">6</span>;
+  v[<span class="hljs-number">66</span>] = <span class="hljs-number">3</span>;
+  v[<span class="hljs-number">67</span>] = <span class="hljs-number">6</span>;
+  v[<span class="hljs-number">68</span>] = <span class="hljs-number">48</span>;
+  v[<span class="hljs-number">69</span>] = <span class="hljs-number">49</span>;
+  v[<span class="hljs-number">70</span>] = <span class="hljs-number">65</span>;
+  v[<span class="hljs-number">71</span>] = <span class="hljs-number">32</span>;
+  v[<span class="hljs-number">72</span>] = <span class="hljs-number">12</span>;
+  v[<span class="hljs-number">73</span>] = <span class="hljs-number">48</span>;
+  v[<span class="hljs-number">74</span>] = <span class="hljs-number">65</span>;
+  v[<span class="hljs-number">75</span>] = <span class="hljs-number">31</span>;
+  v[<span class="hljs-number">76</span>] = <span class="hljs-number">78</span>;
+  v[<span class="hljs-number">77</span>] = <span class="hljs-number">62</span>;
+  v[<span class="hljs-number">78</span>] = <span class="hljs-number">32</span>;
+  v[<span class="hljs-number">79</span>] = <span class="hljs-number">49</span>;
+  v[<span class="hljs-number">80</span>] = <span class="hljs-number">32</span>;
+  v[<span class="hljs-number">81</span>] = <span class="hljs-number">1</span>;
+  v[<span class="hljs-number">82</span>] = <span class="hljs-number">57</span>;
+  v[<span class="hljs-number">83</span>] = <span class="hljs-number">96</span>;
+  v[<span class="hljs-number">84</span>] = <span class="hljs-number">3</span>;
+  v[<span class="hljs-number">85</span>] = <span class="hljs-number">21</span>;
+  v[<span class="hljs-number">86</span>] = <span class="hljs-number">9</span>;
+  v[<span class="hljs-number">87</span>] = <span class="hljs-number">4</span>;
+  v[<span class="hljs-number">88</span>] = <span class="hljs-number">62</span>;
+  v[<span class="hljs-number">89</span>] = <span class="hljs-number">3</span>;
+  v[<span class="hljs-number">90</span>] = <span class="hljs-number">5</span>;
+  v[<span class="hljs-number">91</span>] = <span class="hljs-number">4</span>;
+  v[<span class="hljs-number">92</span>] = <span class="hljs-number">1</span>;
+  v[<span class="hljs-number">93</span>] = <span class="hljs-number">2</span>;
+  v[<span class="hljs-number">94</span>] = <span class="hljs-number">3</span>;
+  v[<span class="hljs-number">95</span>] = <span class="hljs-number">44</span>;
+  v[<span class="hljs-number">96</span>] = <span class="hljs-number">65</span>;
+  v[<span class="hljs-number">97</span>] = <span class="hljs-number">78</span>;
+  v[<span class="hljs-number">98</span>] = <span class="hljs-number">32</span>;
+  v[<span class="hljs-number">99</span>] = <span class="hljs-number">16</span>;
+  v[<span class="hljs-number">100</span>] = <span class="hljs-number">97</span>;
+  v[<span class="hljs-number">101</span>] = <span class="hljs-number">54</span>;
+  v[<span class="hljs-number">102</span>] = <span class="hljs-number">16</span>;
+  v[<span class="hljs-number">103</span>] = <span class="hljs-number">44</span>;
+  v[<span class="hljs-number">104</span>] = <span class="hljs-number">52</span>;
+  v[<span class="hljs-number">105</span>] = <span class="hljs-number">32</span>;
+  v[<span class="hljs-number">106</span>] = <span class="hljs-number">64</span>;
+  v[<span class="hljs-number">107</span>] = <span class="hljs-number">89</span>;
+  v[<span class="hljs-number">108</span>] = <span class="hljs-number">45</span>;
+  v[<span class="hljs-number">109</span>] = <span class="hljs-number">32</span>;
+  v[<span class="hljs-number">110</span>] = <span class="hljs-number">65</span>;
+  v[<span class="hljs-number">111</span>] = <span class="hljs-number">15</span>;
+  v[<span class="hljs-number">112</span>] = <span class="hljs-number">34</span>;
+  v[<span class="hljs-number">113</span>] = <span class="hljs-number">18</span>;
+  v[<span class="hljs-number">114</span>] = <span class="hljs-number">16</span>;
+  v[<span class="hljs-number">115</span>] = <span class="hljs-number">0</span>;
+  v[<span class="hljs-number">2</span>] = <span class="hljs-number">123</span>;
+  v[<span class="hljs-number">3</span>] = <span class="hljs-number">32</span>;
+  v[<span class="hljs-number">4</span>] = <span class="hljs-number">18</span>;
+  v[<span class="hljs-number">5</span>] = <span class="hljs-number">98</span>;
+  v[<span class="hljs-number">6</span>] = <span class="hljs-number">119</span>;
+  v[<span class="hljs-number">7</span>] = <span class="hljs-number">108</span>;
+  v[<span class="hljs-number">8</span>] = <span class="hljs-number">65</span>;
+  v[<span class="hljs-number">9</span>] = <span class="hljs-number">41</span>;
+  v[<span class="hljs-number">10</span>] = <span class="hljs-number">124</span>;
+  v[<span class="hljs-number">11</span>] = <span class="hljs-number">80</span>;
+  v[<span class="hljs-number">12</span>] = <span class="hljs-number">125</span>;
+  v[<span class="hljs-number">13</span>] = <span class="hljs-number">38</span>;
+  v[<span class="hljs-number">14</span>] = <span class="hljs-number">124</span>;
+  v[<span class="hljs-number">15</span>] = <span class="hljs-number">111</span>;
+  v[<span class="hljs-number">16</span>] = <span class="hljs-number">74</span>;
+  v[<span class="hljs-number">17</span>] = <span class="hljs-number">49</span>;
+  v[<span class="hljs-number">18</span>] = <span class="hljs-number">83</span>;
+  v[<span class="hljs-number">19</span>] = <span class="hljs-number">108</span>;
+  v[<span class="hljs-number">20</span>] = <span class="hljs-number">94</span>;
+  v[<span class="hljs-number">21</span>] = <span class="hljs-number">108</span>;
+  v[<span class="hljs-number">22</span>] = <span class="hljs-number">84</span>;
+  v[<span class="hljs-number">23</span>] = <span class="hljs-number">6</span>;
+  v[<span class="hljs-number">24</span>] = <span class="hljs-number">96</span>;
+  v[<span class="hljs-number">25</span>] = <span class="hljs-number">83</span>;
+  v[<span class="hljs-number">26</span>] = <span class="hljs-number">44</span>;
+  v[<span class="hljs-number">27</span>] = <span class="hljs-number">121</span>;
+  v[<span class="hljs-number">28</span>] = <span class="hljs-number">104</span>;
+  v[<span class="hljs-number">29</span>] = <span class="hljs-number">110</span>;
+  v[<span class="hljs-number">30</span>] = <span class="hljs-number">32</span>;
+  v[<span class="hljs-number">31</span>] = <span class="hljs-number">95</span>;
+  v[<span class="hljs-number">32</span>] = <span class="hljs-number">117</span>;
+  v[<span class="hljs-number">33</span>] = <span class="hljs-number">101</span>;
+  v[<span class="hljs-number">34</span>] = <span class="hljs-number">99</span>;
+  v[<span class="hljs-number">35</span>] = <span class="hljs-number">123</span>;
+  v[<span class="hljs-number">36</span>] = <span class="hljs-number">127</span>;
+  v[<span class="hljs-number">37</span>] = <span class="hljs-number">119</span>;
+  v[<span class="hljs-number">38</span>] = <span class="hljs-number">96</span>;
+  v[<span class="hljs-number">39</span>] = <span class="hljs-number">48</span>;
+  v[<span class="hljs-number">40</span>] = <span class="hljs-number">107</span>;
+  v[<span class="hljs-number">41</span>] = <span class="hljs-number">71</span>;
+  v[<span class="hljs-number">42</span>] = <span class="hljs-number">92</span>;
+  v[<span class="hljs-number">43</span>] = <span class="hljs-number">29</span>;
+  v[<span class="hljs-number">44</span>] = <span class="hljs-number">81</span>;
+  v[<span class="hljs-number">45</span>] = <span class="hljs-number">107</span>;
+  v[<span class="hljs-number">46</span>] = <span class="hljs-number">90</span>;
+  v[<span class="hljs-number">47</span>] = <span class="hljs-number">85</span>;
+  v[<span class="hljs-number">48</span>] = <span class="hljs-number">64</span>;
+  v[<span class="hljs-number">49</span>] = <span class="hljs-number">12</span>;
+  v[<span class="hljs-number">50</span>] = <span class="hljs-number">43</span>;
+  v[<span class="hljs-number">51</span>] = <span class="hljs-number">76</span>;
+  v[<span class="hljs-number">52</span>] = <span class="hljs-number">86</span>;
+  v[<span class="hljs-number">53</span>] = <span class="hljs-number">13</span>;
+  v[<span class="hljs-number">54</span>] = <span class="hljs-number">114</span>;
+  v[<span class="hljs-number">55</span>] = <span class="hljs-number">1</span>;
+  v[<span class="hljs-number">56</span>] = <span class="hljs-number">117</span>;
+  v[<span class="hljs-number">57</span>] = <span class="hljs-number">126</span>;
+  v[<span class="hljs-number">58</span>] = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">for</span> ( <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">56</span>; ++i )
+  {
+    *(v+<span class="hljs-number">2</span> + i) ^= *(v+<span class="hljs-number">59</span> + i);
+    *(v+<span class="hljs-number">2</span> + i) ^= <span class="hljs-number">0x13</span>u;
+  }
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>,v+<span class="hljs-number">2</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h3 id="&#x5B9E;&#x65F6;&#x4FEE;&#x6539;&#x5185;&#x5B58;"><a name="&#x5B9E;&#x65F6;&#x4FEE;&#x6539;&#x5185;&#x5B58;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x65F6;&#x4FEE;&#x6539;&#x5185;&#x5B58;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x65F6;&#x4FEE;&#x6539;&#x5185;&#x5B58;</h3>
+<p>&#x5229;&#x7528;CheatEngine&#x4FEE;&#x6539;&#x5185;&#x5B58;&#x4E2D;&#x5B58;&#x50A8;&#x706F;&#x4EAE;&#x7684;&#x503C;&#xFF0C;&#x4F7F;&#x4E4B;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7136;&#x540E;&#x8F93;&#x51FA;flag</p>
+<h3 id="ida-pro-patch-program"><a name="ida-pro-patch-program" class="anchor-navigation-ex-anchor" href="#ida-pro-patch-program"><i class="fa fa-link" aria-hidden="true"></i></a>IDA Pro Patch Program</h3>
+<p>&#x628A;&#x6807;&#x53F7;3-7&#x7684;&#x6C47;&#x7F16;&#x6761;&#x4EF6;jnz &#x4FEE;&#x6539;&#x4E3A;jz</p>
+<p>&#x76F8;&#x5F53;&#x4E8E;&#x53D8;&#x6210;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">if</span> ( byte_532E28[<span class="hljs-number">0</span>] == <span class="hljs-number">1</span>
+      &amp;&amp; byte_532E28[<span class="hljs-number">1</span>] == <span class="hljs-number">1</span>
+      &amp;&amp; byte_532E28[<span class="hljs-number">2</span>] == <span class="hljs-number">1</span>
+      &amp;&amp; byte_532E28[<span class="hljs-number">3</span>] != <span class="hljs-number">1</span>
+      &amp;&amp; byte_532E28[<span class="hljs-number">4</span>] != <span class="hljs-number">1</span>
+      &amp;&amp; byte_532E28[<span class="hljs-number">5</span>] != <span class="hljs-number">1</span>
+      &amp;&amp; byte_532E28[<span class="hljs-number">6</span>] != <span class="hljs-number">1</span>
+      &amp;&amp; byte_532E28[<span class="hljs-number">7</span>] != <span class="hljs-number">1</span> )
+    {
+      sub_457AB4();
+    }
+</code></pre>
+<p>&#x7136;&#x540E;&#x89E3;&#x6CD5;&#x5C31;&#x5F88;&#x597D;&#x5F97;&#x5230;&#x4E86;</p>
+<h2 id="0x03-helloctf"><a name="0x03-helloctf" class="anchor-navigation-ex-anchor" href="#0x03-helloctf"><i class="fa fa-link" aria-hidden="true"></i></a>0x03 Hello,CTF</h2>
+<p>&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x53D1;&#x73B0;&#x8981;&#x8BA9;&#x6211;&#x4EEC;&#x8F93;&#x5165;&#x5E8F;&#x5217;&#x53F7;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x554A;</p>
+<p>&#x62D6;&#x8FDB;IDA</p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5E8F;&#x5217;&#x53F7;&#x6B63;&#x786E;&#x4E0E;&#x5426;&#x662F;&#x8FD9;&#x6837;&#x5224;&#x65AD;&#x7684;</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">strcpy</span>(&amp;v13, <span class="hljs-string">&quot;437261636b4d654a757374466f7246756e&quot;</span>);
+  <span class="hljs-keyword">while</span> ( <span class="hljs-number">1</span> )
+  {
+    <span class="hljs-built_in">memset</span>(&amp;v10, <span class="hljs-number">0</span>, <span class="hljs-number">0x20</span>u);
+    v11 = <span class="hljs-number">0</span>;
+    v12 = <span class="hljs-number">0</span>;
+    sub_40134B(aPleaseInputYou, v6);
+    <span class="hljs-built_in">scanf</span>(aS, v9);
+    <span class="hljs-keyword">if</span> ( <span class="hljs-built_in">strlen</span>(v9) &gt; <span class="hljs-number">0x11</span> )
+      <span class="hljs-keyword">break</span>;
+    v3 = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">do</span>
+    {
+      v4 = v9[v3];
+      <span class="hljs-keyword">if</span> ( !v4 )
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-built_in">sprintf</span>(&amp;v8, asc_408044, v4);
+      <span class="hljs-built_in">strcat</span>(&amp;v10, &amp;v8);
+      ++v3;
+    }
+    <span class="hljs-keyword">while</span> ( v3 &lt; <span class="hljs-number">17</span> );
+    <span class="hljs-keyword">if</span> ( !<span class="hljs-built_in">strcmp</span>(&amp;v10, &amp;v13) )
+      sub_40134B(aSuccess, v7);
+    <span class="hljs-keyword">else</span>
+      sub_40134B(aWrong, v7);
+  }
+</code></pre>
+<p>&#x6839;&#x636E;sprintf&#x7684;&#x7528;&#x6CD5;</p>
+<blockquote>
+<p>int sprintf(char <em>str, const char </em>format, ...)</p>
+<p> &#x53D1;&#x9001;&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;&#x5230; <strong>str</strong> &#x6240;&#x6307;&#x5411;&#x7684;&#x5B57;&#x7B26;&#x4E32; </p>
+</blockquote>
+<p>&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x9006;&#x63A8;&#x5E8F;&#x5217;&#x53F7;&#x7684;hex&#x662F;&#x8FD9;&#x73A9;&#x610F;</p>
+<pre><code>43 72 61 63 6b 4d 65 4a 75 73 74 46 6f 72 46 75 6e
+</code></pre><p>&#x8F6C;&#x6210;ASCII&#x5C31;&#x5B8C;&#x4E8B;&#x4E86;</p>
+<h2 id="0x04--open-source"><a name="0x04--open-source" class="anchor-navigation-ex-anchor" href="#0x04--open-source"><i class="fa fa-link" aria-hidden="true"></i></a>0x04  open-source</h2>
+<p>&#x6839;&#x636E;&#x6E90;&#x7801;&#x5185;&#x5BB9;&#x76F4;&#x63A5;&#x6574;&#x5C31;&#x5B8C;&#x4E86;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span> </span>{
+
+    <span class="hljs-keyword">int</span> first = <span class="hljs-number">0xcafe</span>;
+    <span class="hljs-keyword">int</span> second=<span class="hljs-number">25</span>;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> hash = first * <span class="hljs-number">31337</span> + (second % <span class="hljs-number">17</span>) * <span class="hljs-number">11</span> + <span class="hljs-built_in">strlen</span>(<span class="hljs-string">&quot;h4cky0u&quot;</span>) - <span class="hljs-number">1615810207</span>;
+
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Get your key: &quot;</span>);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%x\n&quot;</span>, hash);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h2 id="0x05--simple-unpack"><a name="0x05--simple-unpack" class="anchor-navigation-ex-anchor" href="#0x05--simple-unpack"><i class="fa fa-link" aria-hidden="true"></i></a>0x05  simple-unpack</h2>
+<p>&#x9898;&#x76EE;<del>&#x6697;</del>&#x660E;&#x793A;&#x4E86;</p>
+<p>&#x4F7F;&#x7528; upx -d &#x628A;&#x7A0B;&#x5E8F;&#x8131;&#x58F3;&#x7136;&#x540E;&#x540C;0x01&#x5904;&#x7406;</p>
+<h2 id="0x06--logmein"><a name="0x06--logmein" class="anchor-navigation-ex-anchor" href="#0x06--logmein"><i class="fa fa-link" aria-hidden="true"></i></a>0x06  logmein</h2>
+<p>&#x771F;&#x7B97;&#x6CD5;&#x9006;&#x5411;</p>
+<p>&#x62D6;&#x8FDB;IDA pro&#x5206;&#x6790;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">void</span> __fastcall __<span class="hljs-function">noreturn <span class="hljs-title">main</span><span class="hljs-params">(__int64 a1, <span class="hljs-keyword">char</span> **a2, <span class="hljs-keyword">char</span> **a3)</span>
+</span>{
+  <span class="hljs-keyword">size_t</span> v3; <span class="hljs-comment">// rsi</span>
+  <span class="hljs-keyword">int</span> i; <span class="hljs-comment">// [rsp+3Ch] [rbp-54h]</span>
+  <span class="hljs-keyword">char</span> s[<span class="hljs-number">36</span>]; <span class="hljs-comment">// [rsp+40h] [rbp-50h]</span>
+  <span class="hljs-keyword">int</span> v6; <span class="hljs-comment">// [rsp+64h] [rbp-2Ch]</span>
+  __int64 v7; <span class="hljs-comment">// [rsp+68h] [rbp-28h]</span>
+  <span class="hljs-keyword">char</span> v8[<span class="hljs-number">8</span>]; <span class="hljs-comment">// [rsp+70h] [rbp-20h]</span>
+  <span class="hljs-keyword">int</span> v9; <span class="hljs-comment">// [rsp+8Ch] [rbp-4h]</span>
+
+  v9 = <span class="hljs-number">0</span>;
+  <span class="hljs-built_in">strcpy</span>(v8, <span class="hljs-string">&quot;:\&quot;AL_RT^L*.?+6/46&quot;</span>);
+  v7 = <span class="hljs-number">0x65626D61726168</span>LL;
+  v6 = <span class="hljs-number">7</span>;
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Enter your guess: &quot;</span>);
+  __isoc99_scanf(<span class="hljs-string">&quot;%32s&quot;</span>, s);
+  v3 = <span class="hljs-built_in">strlen</span>(s);
+  <span class="hljs-keyword">if</span> ( v3 &lt; <span class="hljs-built_in">strlen</span>(v8) )
+    fail();
+  <span class="hljs-keyword">for</span> ( i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">strlen</span>(s); ++i )
+  {
+    <span class="hljs-keyword">if</span> ( i &gt;= <span class="hljs-built_in">strlen</span>(v8) )
+      fail();
+    <span class="hljs-keyword">if</span> ( s[i] != (<span class="hljs-keyword">char</span>)(*((_BYTE *)&amp;v7 + i % v6) ^ v8[i]) )
+      fail();
+  }
+  sub_4007F0();
+}
+</code></pre>
+<p>&#x8FD9;&#x6B21;&#x4ECD;&#x7136;&#x662F;&#x5BF9;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x5BC6;&#x6587;&#x8FDB;&#x884C;&#x89E3;&#x5BC6;&#x6240;&#x4EE5;&#x7406;&#x8BBA;&#x4E0A;&#x4E5F;&#x53EF;gdp&#x8C03;&#x8BD5;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x62FF;&#x5230;flag</p>
+<p>&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x4ED6;&#x662F;&#x4E00;&#x4E2A;&#x4E2A;&#x7B97;&#x7684;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7528;&#x8FD8;&#x662F;&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x7684;&#x89E3;&#x5BC6;&#x811A;&#x672C;</p>
+<p>&#x5176;&#x4E2D;</p>
+<pre><code class="lang-cpp">*((_BYTE *)&amp;v7 + i % v6
+</code></pre>
+<p>&#x76F8;&#x5F53;&#x4E8E;&#x628A;v7&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4; &#x53C8;&#x56E0;&#x4E3A;&#x662F;&#x5C0F;&#x6BB5;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x89E3;&#x7801;&#x7684;&#x65F6;&#x5019;&#x4F4D;&#x7F6E;&#x5F97;&#x5012;&#x8FC7;&#x6765;&#xFF08;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x4E00;&#x5F00;&#x59CB;&#x600E;&#x4E48;&#x90FD;&#x89E3;&#x4E0D;&#x51FA;&#x6765;&#xFF09;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">size_t</span> v3; <span class="hljs-comment">// rsi</span>
+    <span class="hljs-keyword">int</span> i; <span class="hljs-comment">// [rsp+3Ch] [rbp-54h]</span>
+    <span class="hljs-keyword">char</span> s[<span class="hljs-number">36</span>]; <span class="hljs-comment">// [rsp+40h] [rbp-50h]</span>
+    <span class="hljs-keyword">int</span> v6; <span class="hljs-comment">// [rsp+64h] [rbp-2Ch]</span>
+    <span class="hljs-comment">//__int64 v7; // [rsp+68h] [rbp-28h]</span>
+    <span class="hljs-keyword">char</span> v8[<span class="hljs-number">16</span>]; <span class="hljs-comment">// [rsp+70h] [rbp-20h]</span>
+    <span class="hljs-keyword">int</span> v9; <span class="hljs-comment">// [rsp+8Ch] [rbp-4h]</span>
+
+    v9 = <span class="hljs-number">0</span>;
+    <span class="hljs-built_in">strcpy</span>(v8, <span class="hljs-string">&quot;:\&quot;AL_RT^L*.?+6/46&quot;</span>);
+    <span class="hljs-keyword">char</span> v7[<span class="hljs-number">7</span>] = {<span class="hljs-number">0x68</span>,<span class="hljs-number">0x61</span>,<span class="hljs-number">0x72</span>,<span class="hljs-number">0x61</span>,<span class="hljs-number">0x6D</span>,<span class="hljs-number">0x62</span>,<span class="hljs-number">0x65</span>};
+    <span class="hljs-comment">//strrev(v7);</span>
+    v6 = <span class="hljs-number">7</span>;
+    <span class="hljs-comment">//__isoc99_scanf(&quot;%32s&quot;, s);</span>
+    <span class="hljs-comment">//v3 = strlen(s);</span>
+    <span class="hljs-keyword">for</span> ( i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">strlen</span>(v8); ++i ){
+        s[i] = v7[i%v6]^v8[i];
+    }
+    <span class="hljs-comment">//printf(&quot;%s&quot;,v7);</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>,s);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>&#x540E;&#x6765;&#x770B;&#x4E86;&#x5927;&#x4F6C;&#x7684;WP &#x53D1;&#x73B0;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">size_t</span> v3; <span class="hljs-comment">// rsi</span>
+    <span class="hljs-keyword">int</span> i; <span class="hljs-comment">// [rsp+3Ch] [rbp-54h]</span>
+    <span class="hljs-keyword">char</span> s[<span class="hljs-number">36</span>]; <span class="hljs-comment">// [rsp+40h] [rbp-50h]</span>
+    <span class="hljs-keyword">int</span> v6; <span class="hljs-comment">// [rsp+64h] [rbp-2Ch]</span>
+    <span class="hljs-comment">//__int64 v7; // [rsp+68h] [rbp-28h]</span>
+    <span class="hljs-keyword">char</span> v8[<span class="hljs-number">16</span>]; <span class="hljs-comment">// [rsp+70h] [rbp-20h]</span>
+    <span class="hljs-keyword">int</span> v9; <span class="hljs-comment">// [rsp+8Ch] [rbp-4h]</span>
+
+    v9 = <span class="hljs-number">0</span>;
+    <span class="hljs-built_in">strcpy</span>(v8, <span class="hljs-string">&quot;:\&quot;AL_RT^L*.?+6/46&quot;</span>);
+    <span class="hljs-comment">//char v7[7] = {0x68,0x61,0x72,0x61,0x6D,0x62,0x65};</span>
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> v7=<span class="hljs-number">0x65626D61726168</span>;
+    <span class="hljs-keyword">char</span> *p=(<span class="hljs-keyword">char</span> *)&amp;v7;<span class="hljs-comment">//&#x8F6C;&#x6210;&#x5B57;&#x7B26;&#x6570;&#x7EC4;</span>
+    v6 = <span class="hljs-number">7</span>;
+    <span class="hljs-comment">//__isoc99_scanf(&quot;%32s&quot;, s);</span>
+    <span class="hljs-comment">//v3 = strlen(s);</span>
+    <span class="hljs-keyword">for</span> ( i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">strlen</span>(v8); ++i ){
+        s[i] = p[i%v6]^v8[i];
+    }
+    <span class="hljs-comment">//printf(&quot;%s&quot;,v7);</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>,s);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h2 id="0x07--insanity"><a name="0x07--insanity" class="anchor-navigation-ex-anchor" href="#0x07--insanity"><i class="fa fa-link" aria-hidden="true"></i></a>0x07  insanity</h2>
+<p>&#x9898;&#x76EE;&#x8BF4;&#x8FD9;&#x662F;&#x4E00;&#x9053;&#x7B80;&#x5355;&#x9898;&#xFF0C;&#x679C;&#x7136;&#x662F;&#x4E00;&#x9053;&#x7B80;&#x5355;&#x9898;</p>
+<p>&#x53C8;&#x662F;&#x4E00;&#x9053;string&#x80FD;&#x770B;&#x5230;&#x7684;&#x660E;&#x6587;&#x9898;</p>
+<h2 id="0x08--no-strings-attached"><a name="0x08--no-strings-attached" class="anchor-navigation-ex-anchor" href="#0x08--no-strings-attached"><i class="fa fa-link" aria-hidden="true"></i></a>0x08  no-strings-attached</h2>
+<p>&#x62D6;&#x8FDB;IDA &#x5206;&#x6790;&#x4E00;&#x6CE2;&#x53D1;&#x73B0;&#x53C8;&#x662F;&#x4E2A;&#x89E3;&#x5BC6;&#x9898;</p>
+<p>&#x672C;&#x6765;&#x60F3;&#x548C;&#x524D;&#x51E0;&#x9898;&#x4E00;&#x6837;&#x9759;&#x6001;&#x5206;&#x6790;&#x5199;&#x4E2A;&#x89E3;&#x5BC6;&#x811A;&#x672C;&#x7684;</p>
+<p>&#x4F46;&#x662F;&#x5728;IDA&#x91CC;</p>
+<p>&#x6570;&#x636E;&#x957F;&#x8FD9;&#x6837;</p>
+<pre><code class="lang-assembly">.rodata:08048AA8 s               dd 143Ah                ; DATA XREF: authenticate+11&#x2191;o
+.rodata:08048AAC                 db  36h ; 6
+.rodata:08048AAD                 db  14h
+.rodata:08048AAE                 db    0
+.rodata:08048AAF                 db    0
+.rodata:08048AB0                 db  37h ; 7
+.rodata:08048AB1                 db  14h
+.rodata:08048AB2                 db    0
+.rodata:08048AB3                 db    0
+.rodata:08048AB4                 db  3Bh ; ;
+.rodata:08048AB5                 db  14h
+.rodata:08048AB6                 db    0
+.rodata:08048AB7                 db    0
+.rodata:08048AB8                 db  80h
+.rodata:08048AB9                 db  14h
+.rodata:08048ABA                 db    0
+.rodata:08048ABB                 db    0
+.rodata:08048ABC                 db  7Ah ; z
+.rodata:08048ABD                 db  14h
+.rodata:08048ABE                 db    0
+.rodata:08048ABF                 db    0
+.rodata:08048AC0                 db  71h ; q
+.rodata:08048AC1                 db  14h
+.rodata:08048AC2                 db    0
+.rodata:08048AC3                 db    0
+.rodata:08048AC4                 db  78h ; x
+.rodata:08048AC5                 db  14h
+.rodata:08048AC6                 db    0
+.rodata:08048AC7                 db    0
+.rodata:08048AC8                 db  63h ; c
+.rodata:08048AC9                 db  14h
+.rodata:08048ACA                 db    0
+.rodata:08048ACB                 db    0
+.rodata:08048ACC                 db  66h ; f
+.rodata:08048ACD                 db  14h
+.rodata:08048ACE                 db    0
+.rodata:08048ACF                 db    0
+.rodata:08048AD0                 db  73h ; s
+.rodata:08048AD1                 db  14h
+.rodata:08048AD2                 db    0
+.rodata:08048AD3                 db    0
+.rodata:08048AD4                 db  67h ; g
+.rodata:08048AD5                 db  14h
+.rodata:08048AD6                 db    0
+.rodata:08048AD7                 db    0
+.rodata:08048AD8                 db  62h ; b
+.rodata:08048AD9                 db  14h
+.rodata:08048ADA                 db    0
+.rodata:08048ADB                 db    0
+.rodata:08048ADC                 db  65h ; e
+.rodata:08048ADD                 db  14h
+.rodata:08048ADE                 db    0
+.rodata:08048ADF                 db    0
+.rodata:08048AE0                 db  73h ; s
+.rodata:08048AE1                 db  14h
+.rodata:08048AE2                 db    0
+.rodata:08048AE3                 db    0
+.rodata:08048AE4                 db  60h ; `
+.rodata:08048AE5                 db  14h
+.rodata:08048AE6                 db    0
+.rodata:08048AE7                 db    0
+.rodata:08048AE8                 db  6Bh ; k
+.rodata:08048AE9                 db  14h
+.rodata:08048AEA                 db    0
+.rodata:08048AEB                 db    0
+.rodata:08048AEC                 db  71h ; q
+.rodata:08048AED                 db  14h
+.rodata:08048AEE                 db    0
+.rodata:08048AEF                 db    0
+.rodata:08048AF0                 db  78h ; x
+.rodata:08048AF1                 db  14h
+.rodata:08048AF2                 db    0
+.rodata:08048AF3                 db    0
+.rodata:08048AF4                 db  6Ah ; j
+.rodata:08048AF5                 db  14h
+.rodata:08048AF6                 db    0
+.rodata:08048AF7                 db    0
+.rodata:08048AF8                 db  73h ; s
+.rodata:08048AF9                 db  14h
+.rodata:08048AFA                 db    0
+.rodata:08048AFB                 db    0
+.rodata:08048AFC                 db  70h ; p
+.rodata:08048AFD                 db  14h
+.rodata:08048AFE                 db    0
+.rodata:08048AFF                 db    0
+.rodata:08048B00                 db  64h ; d
+.rodata:08048B01                 db  14h
+.rodata:08048B02                 db    0
+.rodata:08048B03                 db    0
+.rodata:08048B04                 db  78h ; x
+.rodata:08048B05                 db  14h
+.rodata:08048B06                 db    0
+.rodata:08048B07                 db    0
+.rodata:08048B08                 db  6Eh ; n
+.rodata:08048B09                 db  14h
+.rodata:08048B0A                 db    0
+.rodata:08048B0B                 db    0
+.rodata:08048B0C                 db  70h ; p
+.rodata:08048B0D                 db  14h
+.rodata:08048B0E                 db    0
+.rodata:08048B0F                 db    0
+.rodata:08048B10                 db  70h ; p
+.rodata:08048B11                 db  14h
+.rodata:08048B12                 db    0
+.rodata:08048B13                 db    0
+.rodata:08048B14                 db  64h ; d
+.rodata:08048B15                 db  14h
+.rodata:08048B16                 db    0
+.rodata:08048B17                 db    0
+.rodata:08048B18                 db  70h ; p
+.rodata:08048B19                 db  14h
+.rodata:08048B1A                 db    0
+.rodata:08048B1B                 db    0
+.rodata:08048B1C                 db  64h ; d
+.rodata:08048B1D                 db  14h
+.rodata:08048B1E                 db    0
+.rodata:08048B1F                 db    0
+.rodata:08048B20                 db  6Eh ; n
+.rodata:08048B21                 db  14h
+.rodata:08048B22                 db    0
+.rodata:08048B23                 db    0
+.rodata:08048B24                 db  7Bh ; {
+.rodata:08048B25                 db  14h
+.rodata:08048B26                 db    0
+.rodata:08048B27                 db    0
+.rodata:08048B28                 db  76h ; v
+.rodata:08048B29                 db  14h
+.rodata:08048B2A                 db    0
+.rodata:08048B2B                 db    0
+.rodata:08048B2C                 db  78h ; x
+.rodata:08048B2D                 db  14h
+.rodata:08048B2E                 db    0
+.rodata:08048B2F                 db    0
+.rodata:08048B30                 db  6Ah ; j
+.rodata:08048B31                 db  14h
+.rodata:08048B32                 db    0
+.rodata:08048B33                 db    0
+.rodata:08048B34                 db  73h ; s
+.rodata:08048B35                 db  14h
+.rodata:08048B36                 db    0
+.rodata:08048B37                 db    0
+.rodata:08048B38                 db  7Bh ; {
+.rodata:08048B39                 db  14h
+.rodata:08048B3A                 db    0
+.rodata:08048B3B                 db    0
+.rodata:08048B3C                 db  80h
+.rodata:08048B3D                 db  14h
+.rodata:08048B3E                 db    0
+.rodata:08048B3F                 db    0
+.rodata:08048B40                 db    0
+.rodata:08048B41                 db    0
+.rodata:08048B42                 db    0
+.rodata:08048B43                 db    0
+</code></pre>
+<p>&#x5F88;&#x96BE;&#x5BFC;&#x51FA;&#x6765;&#x5199;&#x3002;&#x3002;&#x3002;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#x5230;&#x7A0B;&#x5E8F;&#x4E2D;&#x76F4;&#x63A5;&#x6BD4;&#x8F83;strcmp(ws,s2)</p>
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;gdb&#x52A8;&#x6001;&#x8C03;&#x8BD5;&#x7684;&#x65B9;&#x6CD5;&#x622A;&#x83B7;s2&#x4E5F;&#x5373;&#x8BA1;&#x7B97;&#x51FA;&#x7684;&#x660E;&#x6587;</p>
+<p>&#x5728;IDA pro&#x91CC;&#x5206;&#x6790;&#x51FD;&#x6570;</p>
+<pre><code class="lang-assembly">text:08048708                 push    ebp
+.text:08048709                 mov     ebp, esp
+.text:0804870B                 sub     esp, 8028h
+.text:08048711                 mov     dword ptr [esp+4], offset dword_8048A90 ; wchar_t *
+.text:08048719                 mov     dword ptr [esp], offset s ; s
+.text:08048720                 call    decrypt
+.text:08048725                 mov     [ebp+s2], eax
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;s2&#x7684;&#x6570;&#x636E;&#x662F;&#x4ECE;&#x5BC4;&#x5B58;&#x5668;eax&#x6765;&#x7684;</p>
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x67E5;&#x770B;&#x5BC4;&#x5B58;&#x5668;eax&#x7684;&#x503C;&#x5C31;&#x884C;&#x4E86;</p>
+<pre><code class="lang-bash">gdb no-srtings-attached
+(gdb) <span class="hljs-built_in">break</span> decrypt
+Breakpoint 1 at 0x804865c
+(gdb) run
+Starting program: /root/no-srtings-attached 
+Welcome to cyber malware control software.
+Currently tracking 1373268125 bots worldwide
+
+Breakpoint 1, 0x0804865c <span class="hljs-keyword">in</span> decrypt ()
+(gdb) next
+Single stepping until <span class="hljs-built_in">exit</span> from <span class="hljs-keyword">function</span> decrypt,
+<span class="hljs-built_in">which</span> has no line number information.
+0x08048725 <span class="hljs-keyword">in</span> authenticate ()
+(gdb) x/sw <span class="hljs-variable">$eax</span> <span class="hljs-comment">#sw s&#x8868;&#x793A;&#x4EE5;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x8F93;&#x51FA;w&#x8868;&#x793A;word&#xFF08;4&#x5B57;&#x8282;&#xFF09;&#x5F62;&#x5F0F;(w_char)</span>
+0x804e800:    U<span class="hljs-string">&quot;9447{you_are_an_international_mystery}&quot;</span>
+</code></pre>
+<h2 id="0x09--csaw2013reversing2"><a name="0x09--csaw2013reversing2" class="anchor-navigation-ex-anchor" href="#0x09--csaw2013reversing2"><i class="fa fa-link" aria-hidden="true"></i></a>0x09  csaw2013reversing2</h2>
+<p>&#x62D6;&#x8FDB;IDA pro &#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">int</span> __cdecl __<span class="hljs-function">noreturn <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> **argv, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> **envp)</span>
+</span>{
+  <span class="hljs-keyword">int</span> v3; <span class="hljs-comment">// ecx</span>
+  CHAR *lpMem; <span class="hljs-comment">// [esp+8h] [ebp-Ch]</span>
+  HANDLE hHeap; <span class="hljs-comment">// [esp+10h] [ebp-4h]</span>
+
+  hHeap = HeapCreate(<span class="hljs-number">0x40000</span>u, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+  lpMem = (CHAR *)HeapAlloc(hHeap, <span class="hljs-number">8u</span>, MaxCount + <span class="hljs-number">1</span>);
+  memcpy_s(lpMem, MaxCount, &amp;unk_409B10, MaxCount);
+  <span class="hljs-keyword">if</span> ( sub_40102A() || IsDebuggerPresent() )
+  {
+    __debugbreak();
+    sub_401000(v3 + <span class="hljs-number">4</span>, lpMem);
+    ExitProcess(<span class="hljs-number">0xFFFFFFFF</span>);
+  }
+  MessageBoxA(<span class="hljs-number">0</span>, lpMem + <span class="hljs-number">1</span>, <span class="hljs-string">&quot;Flag&quot;</span>, <span class="hljs-number">2u</span>);
+  HeapFree(hHeap, <span class="hljs-number">0</span>, lpMem);
+  HeapDestroy(hHeap);
+  ExitProcess(<span class="hljs-number">0</span>);
+}
+</code></pre>
+<p>&#x70B9;&#x5F00;sub_40102A()</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sub_40102A</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-keyword">char</span> v0; <span class="hljs-comment">// t1</span>
+
+  v0 = *(_BYTE *)(*(_DWORD *)(__readfsdword(<span class="hljs-number">0x18</span>u) + <span class="hljs-number">48</span>) + <span class="hljs-number">2</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#x90FD;&#x8FDB;&#x4E0D;&#x53BB;if</p>
+<p>&#x5E94;&#x8BE5;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x5BFC;&#x81F4;&#x4E71;&#x7801;&#x4E86;</p>
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x76F4;&#x63A5;Path Program</p>
+<p>&#x628A;&#x8C03;&#x8BD5;&#x4E2D;&#x65AD;&#x7684;&#x6C47;&#x7F16;&#x6307;&#x4EE4;int 3&#x6539;&#x6210;nop&#x7A7A;&#x6307;&#x4EE4;</p>
+<p>&#x7136;&#x540E;&#x628A;jnz&#x6539;&#x6210;jmp&#x65E0;&#x6761;&#x4EF6;&#x8DF3;&#x8F6C;</p>
+<p>&#x7136;&#x540E;&#x5728;&#x628A;loc_401096 &#x7ED3;&#x675F;&#x540E;jmp&#x5230;loc_4010B9&#x4E0A;</p>
+<p>&#x53D8;&#x6210;&#x8FD9;&#x6837;</p>
+<p>&#x7136;&#x540E;&#x5C31;&#x4E0D;&#x4F1A;&#x4E71;&#x7801;&#x4E86;</p>
+<p>PS:</p>
+<p>&#x76F4;&#x63A5;&#x70B9;&#x51FB;&#x7A97;&#x4F53;ctrl+c&#x662F;&#x53EF;&#x4EE5;&#x590D;&#x5236;&#x7A97;&#x4F53;&#x5185;&#x5BB9;&#x7684;&#x3002;&#x3002;&#x3002;&#x3002;</p>
+<h2 id="0x0a--getit"><a name="0x0a--getit" class="anchor-navigation-ex-anchor" href="#0x0a--getit"><i class="fa fa-link" aria-hidden="true"></i></a>0x0A  getit</h2>
+<p>IDA &#x53CD;&#x7F16;&#x8BD1;&#x7684;&#x5F97;&#x5230;</p>
+<pre><code class="lang-cpp">  <span class="hljs-keyword">char</span> v3; <span class="hljs-comment">// al</span>
+  __int64 v5; <span class="hljs-comment">// [rsp+0h] [rbp-40h]</span>
+  <span class="hljs-keyword">int</span> i; <span class="hljs-comment">// [rsp+4h] [rbp-3Ch]</span>
+  FILE *stream; <span class="hljs-comment">// [rsp+8h] [rbp-38h]</span>
+  <span class="hljs-keyword">char</span> filename[<span class="hljs-number">8</span>]; <span class="hljs-comment">// [rsp+10h] [rbp-30h]</span>
+  <span class="hljs-keyword">unsigned</span> __int64 v9; <span class="hljs-comment">// [rsp+28h] [rbp-18h]</span>
+
+  v9 = __readfsqword(<span class="hljs-number">0x28</span>u);
+  LODWORD(v5) = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">while</span> ( (<span class="hljs-keyword">signed</span> <span class="hljs-keyword">int</span>)v5 &lt; <span class="hljs-built_in">strlen</span>(s) )
+  {
+    <span class="hljs-keyword">if</span> ( v5 &amp; <span class="hljs-number">1</span> )
+      v3 = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">else</span>
+      v3 = <span class="hljs-number">-1</span>;
+    *(&amp;t + (<span class="hljs-keyword">signed</span> <span class="hljs-keyword">int</span>)v5 + <span class="hljs-number">10</span>) = s[(<span class="hljs-keyword">signed</span> <span class="hljs-keyword">int</span>)v5] + v3;
+    LODWORD(v5) = v5 + <span class="hljs-number">1</span>;
+  }
+  <span class="hljs-built_in">strcpy</span>(filename, <span class="hljs-string">&quot;/tmp/flag.txt&quot;</span>);
+</code></pre>
+<p>&#x627E;&#x4E00;&#x4E0B;t&#x548C;s</p>
+<pre><code class="lang-assembly">.data:00000000006010E0 t               db &apos;S&apos;                  ; DATA XREF: main+65&#x2191;w
+.data:00000000006010E0                                         ; main+C9&#x2191;o ...
+.data:00000000006010E1 aHarifctf       db &apos;harifCTF{????????????????????????????????}&apos;,0
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x9759;&#x6001;&#x5206;&#x6790;&#x5199;&#x89E3;&#x5BC6;&#x811A;&#x672C;&#x4E86;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-keyword">char</span> s[]=<span class="hljs-string">&quot;c61b68366edeb7bdce3c6820314b7498&quot;</span>;
+<span class="hljs-keyword">char</span> t[]=<span class="hljs-string">&quot;SharifCTF{????????????????????????????????}&quot;</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-keyword">char</span> v3; <span class="hljs-comment">// al</span>
+  __int64 v5; <span class="hljs-comment">// [rsp+0h] [rbp-40h]</span>
+  <span class="hljs-keyword">char</span> filename[<span class="hljs-number">8</span>]; <span class="hljs-comment">// [rsp+10h] [rbp-30h]</span>
+  <span class="hljs-keyword">unsigned</span> __int64 v9; <span class="hljs-comment">// [rsp+28h] [rbp-18h]</span>
+
+  v5 = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">while</span> ( (<span class="hljs-keyword">signed</span> <span class="hljs-keyword">int</span>)v5 &lt; <span class="hljs-built_in">strlen</span>(s) )
+  {
+    <span class="hljs-keyword">if</span> ( v5 &amp; <span class="hljs-number">1</span> )
+      v3 = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">else</span>
+      v3 = <span class="hljs-number">-1</span>;
+    t[v5+<span class="hljs-number">10</span>] = s[v5] + v3;
+    v5++;
+  }
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>,t);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>&#x5360;&#x4E2A;&#x5751;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;&#x52A8;&#x6001;&#x8C03;&#x8BD5;&#x7684;&#x505A;&#x6CD5;</p>
+<h2 id="0x0b-pythontrade"><a name="0x0b-pythontrade" class="anchor-navigation-ex-anchor" href="#0x0b-pythontrade"><i class="fa fa-link" aria-hidden="true"></i></a>0x0B Python_trade</h2>
+<p>pycdc&#x9006;&#x5411;&#x5F97;&#x5230;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> base64
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">encode</span><span class="hljs-params">(message)</span>:</span>
+    s = <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> message:
+        x = ord(i) ^ <span class="hljs-number">32</span>
+        x = x + <span class="hljs-number">16</span>
+        s += chr(x)
+
+    <span class="hljs-keyword">return</span> base64.b64encode(s)
+
+correct = <span class="hljs-string">&apos;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&apos;</span>
+flag = <span class="hljs-string">&apos;&apos;</span>
+<span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Input flag:&apos;</span>
+flag = raw_input()
+<span class="hljs-keyword">if</span> encode(flag) == correct:
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;correct&apos;</span>
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;wrong&apos;</span>
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x89E3;&#x5BC6;&#x811A;&#x672C;&#x5C31;&#x5F88;&#x597D;&#x5199;&#x4E86;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> base64
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decode</span><span class="hljs-params">(message)</span>:</span>
+    message=base64.b64decode(message)
+    s = <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> message:
+        x = ord(i) - <span class="hljs-number">16</span>
+        x = x ^ <span class="hljs-number">32</span>
+        s += chr(x)
+
+    <span class="hljs-keyword">return</span> s
+
+correct = <span class="hljs-string">&apos;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&apos;</span>
+<span class="hljs-keyword">print</span> decode(correct)
+</code></pre>
+<h2 id="0x0c-maze"><a name="0x0c-maze" class="anchor-navigation-ex-anchor" href="#0x0c-maze"><i class="fa fa-link" aria-hidden="true"></i></a>0x0C maze</h2>
+<p>&#x62D6;&#x8FDB;IDA pro &#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-cpp">__int64 __<span class="hljs-function">fastcall <span class="hljs-title">main</span><span class="hljs-params">(__int64 a1, <span class="hljs-keyword">char</span> **a2, <span class="hljs-keyword">char</span> **a3)</span>
+</span>{
+  <span class="hljs-keyword">signed</span> __int64 v3; <span class="hljs-comment">// rbx</span>
+  <span class="hljs-keyword">signed</span> <span class="hljs-keyword">int</span> v4; <span class="hljs-comment">// eax</span>
+  <span class="hljs-keyword">bool</span> v5; <span class="hljs-comment">// bp</span>
+  <span class="hljs-keyword">bool</span> v6; <span class="hljs-comment">// al</span>
+  <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *v7; <span class="hljs-comment">// rdi</span>
+  __int64 v9; <span class="hljs-comment">// [rsp+0h] [rbp-28h]</span>
+
+  v9 = <span class="hljs-number">0L</span>L;
+  <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input flag:&quot;</span>);
+  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, &amp;s1, <span class="hljs-number">0L</span>L);
+  <span class="hljs-keyword">if</span> ( <span class="hljs-built_in">strlen</span>(&amp;s1) != <span class="hljs-number">24</span> || <span class="hljs-built_in">strncmp</span>(&amp;s1, <span class="hljs-string">&quot;nctf{&quot;</span>, <span class="hljs-number">5u</span>LL) || *(&amp;byte_6010BF + <span class="hljs-number">24</span>) != <span class="hljs-string">&apos;}&apos;</span> )
+  {
+LABEL_22:
+    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Wrong flag!&quot;</span>);
+    <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);
+  }
+  v3 = <span class="hljs-number">5L</span>L;
+  <span class="hljs-keyword">if</span> ( <span class="hljs-built_in">strlen</span>(&amp;s1) - <span class="hljs-number">1</span> &gt; <span class="hljs-number">5</span> )
+  {
+    <span class="hljs-keyword">while</span> ( <span class="hljs-number">1</span> )
+    {
+      v4 = *(&amp;s1 + v3);
+      v5 = <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">if</span> ( v4 &gt; <span class="hljs-string">&apos;N&apos;</span> )
+      {
+        v4 = (<span class="hljs-keyword">unsigned</span> __int8)v4;
+        <span class="hljs-keyword">if</span> ( (<span class="hljs-keyword">unsigned</span> __int8)v4 == <span class="hljs-string">&apos;O&apos;</span> )
+        {
+          v6 = sub_400650((_DWORD *)&amp;v9 + <span class="hljs-number">1</span>);
+          <span class="hljs-keyword">goto</span> LABEL_14;
+        }
+        <span class="hljs-keyword">if</span> ( v4 == <span class="hljs-string">&apos;o&apos;</span> )
+        {
+          v6 = sub_400660((<span class="hljs-keyword">int</span> *)&amp;v9 + <span class="hljs-number">1</span>);
+          <span class="hljs-keyword">goto</span> LABEL_14;
+        }
+      }
+      <span class="hljs-keyword">else</span>
+      {
+        v4 = (<span class="hljs-keyword">unsigned</span> __int8)v4;
+        <span class="hljs-keyword">if</span> ( (<span class="hljs-keyword">unsigned</span> __int8)v4 == <span class="hljs-string">&apos;.&apos;</span> )
+        {
+          v6 = sub_400670(&amp;v9);
+          <span class="hljs-keyword">goto</span> LABEL_14;
+        }
+        <span class="hljs-keyword">if</span> ( v4 == <span class="hljs-string">&apos;0&apos;</span> )
+        {
+          v6 = sub_400680((<span class="hljs-keyword">int</span> *)&amp;v9);
+LABEL_14:
+          v5 = v6;
+          <span class="hljs-keyword">goto</span> LABEL_15;
+        }
+      }
+LABEL_15:
+      <span class="hljs-keyword">if</span> ( !(<span class="hljs-keyword">unsigned</span> __int8)sub_400690((__int64)asc_601060, SHIDWORD(v9), v9) )
+        <span class="hljs-keyword">goto</span> LABEL_22;
+      <span class="hljs-keyword">if</span> ( ++v3 &gt;= <span class="hljs-built_in">strlen</span>(&amp;s1) - <span class="hljs-number">1</span> )
+      {
+        <span class="hljs-keyword">if</span> ( v5 )
+          <span class="hljs-keyword">break</span>;
+LABEL_20:
+        v7 = <span class="hljs-string">&quot;Wrong flag!&quot;</span>;
+        <span class="hljs-keyword">goto</span> LABEL_21;
+      }
+    }
+  }
+  <span class="hljs-keyword">if</span> ( asc_601060[<span class="hljs-number">8</span> * (<span class="hljs-keyword">signed</span> <span class="hljs-keyword">int</span>)v9 + SHIDWORD(v9)] != <span class="hljs-string">&apos;#&apos;</span> )
+    <span class="hljs-keyword">goto</span> LABEL_20;
+  v7 = <span class="hljs-string">&quot;Congratulations!&quot;</span>;
+LABEL_21:
+  <span class="hljs-built_in">puts</span>(v7);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0L</span>L;
+}
+</code></pre>
+<p>&#x4E0D;&#x4F1A;SHIDWORD(),</p>
+<p>&#x67E5;&#x4E86;&#x4E00;&#x4E0B;&#x53D1;&#x73B0;&#x662F;IDA pro&#x7684;&#x5B8F;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SHIDWORD(x)  (*((int32*)&amp;(x)+1))</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x5230;x&#x662F;&#x4E2A;int64 &#x6240;&#x4EE5;SHIDWORD(x)&#x5E94;&#x8BE5;&#x5C31;&#x662F;&#x53D6;&#x5B83;&#x7684;&#x524D;32&#x4F4D;&#xFF08;&#x5C0F;&#x7AEF;&#x5B58;&#xFF09;</p>
+<p>&#x5199;&#x4E2A;&#x811A;&#x672C;&#x9A8C;&#x8BC1;&#x4E00;&#x4E0B;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> x=(<span class="hljs-number">15L</span>L&lt;&lt;<span class="hljs-number">32</span>)+<span class="hljs-number">23L</span>L;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld %d\n&quot;</span>,(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>)x,(*((<span class="hljs-keyword">int</span>*)&amp;(x)+<span class="hljs-number">1</span>)));
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+<span class="hljs-comment">//&#x8F93;&#x51FA; 23 15</span>
+</code></pre>
+<p>&#x56E0;&#x4E3A;&#x8981;&#x8BA9;</p>
+<pre><code class="lang-cpp">asc_601060[<span class="hljs-number">8</span> * (<span class="hljs-keyword">signed</span> <span class="hljs-keyword">int</span>)v9 + SHIDWORD(v9)] == <span class="hljs-string">&apos;#&apos;</span>
+</code></pre>
+<p>v9&#x524D;32&#x4F4D;&#x5E94;&#x8BE5;&#x8868;&#x793A;&#x7684;&#x662F;&#x5217;&#xFF0C;&#x800C;v9&#x540E;32&#x4F4D;&#x662F;&#x884C;</p>
+<p>&#x7136;&#x540E;&#x53C8;&#x6709;&#x56DB;&#x4E2A;if&#x6761;&#x4EF6;&#xFF0C;&#x611F;&#x89C9;&#x771F;&#x5C31;&#x662F;&#x4E2A;&#x8FF7;&#x5BAB;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">bool</span> __<span class="hljs-function">fastcall <span class="hljs-title">sub_400650</span><span class="hljs-params">(_DWORD *a1)</span><span class="hljs-comment">//O (_DWORD *)&amp;v9 + 1</span>
+</span>{
+  <span class="hljs-keyword">int</span> v1; <span class="hljs-comment">// eax</span>
+
+  v1 = (*a1)--;<span class="hljs-comment">//&#x5DE6;</span>
+  <span class="hljs-keyword">return</span> v1 &gt; <span class="hljs-number">0</span>;
+}
+<span class="hljs-keyword">bool</span> __<span class="hljs-function">fastcall <span class="hljs-title">sub_400660</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *a1)</span><span class="hljs-comment">//o (int *)&amp;v9 + 1</span>
+</span>{
+  <span class="hljs-keyword">int</span> v1; <span class="hljs-comment">// eax</span>
+
+  v1 = *a1 + <span class="hljs-number">1</span>;<span class="hljs-comment">//&#x53F3;</span>
+  *a1 = v1;
+  <span class="hljs-keyword">return</span> v1 &lt; <span class="hljs-number">8</span>;
+}
+<span class="hljs-keyword">bool</span> __<span class="hljs-function">fastcall <span class="hljs-title">sub_400670</span><span class="hljs-params">(_DWORD *a1)</span><span class="hljs-comment">//. &amp;v9</span>
+</span>{
+  <span class="hljs-keyword">int</span> v1; <span class="hljs-comment">// eax</span>
+
+  v1 = (*a1)--;<span class="hljs-comment">//&#x4E0A;</span>
+  <span class="hljs-keyword">return</span> v1 &gt; <span class="hljs-number">0</span>;
+}
+<span class="hljs-keyword">bool</span> __<span class="hljs-function">fastcall <span class="hljs-title">sub_400680</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *a1)</span><span class="hljs-comment">//0 (int *)&amp;v9</span>
+</span>{
+  <span class="hljs-keyword">int</span> v1; <span class="hljs-comment">// eax</span>
+
+  v1 = *a1 + <span class="hljs-number">1</span>;<span class="hljs-comment">//&#x4E0B;</span>
+  *a1 = v1;
+  <span class="hljs-keyword">return</span> v1 &lt; <span class="hljs-number">8</span>;
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x628A;asc_601060&#x91CC;&#x7684;&#x4E1C;&#x897F;&#x6309;8&#x4E2A;&#x4E00;&#x884C;&#x6574;&#x7406;&#x4E00;&#x4E0B;</p>
+<pre><code>  ******
+*   *  *
+*** * **
+**  * **
+*  *#  *
+** *** *
+**     *
+********
+</code></pre><p>&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;{}&#x91CC;&#x9762;&#x7684;flag&#x90E8;&#x5206;&#x4E86;</p>
+<p>o0oo00O000oooo..OO</p>
+<footer class="page-footer"><span class="copyright">&#xA9; Eki&apos;s CTF-notes 2019-2021 CC-by-nc-sa 4.0&#x3002; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x7F51;&#x7AD9;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
+2021-05-07 16:30:35
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="pwn-exercise-area.html" class="navigation navigation-prev " aria-label="Previous page: PWN Exercise Area">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="easy_tornado.html" class="navigation navigation-next " aria-label="Next page: Easy Tornado">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Reverse Exercise Area","level":"1.4.5","depth":2,"next":{"title":"Easy Tornado","level":"1.4.6","depth":2,"path":"adworld/easy_tornado.md","ref":"adworld/easy_tornado.md","articles":[]},"previous":{"title":"PWN Exercise Area","level":"1.4.4","depth":2,"path":"adworld/pwn-exercise-area.md","ref":"adworld/pwn-exercise-area.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","splitter","katex","tbfed-pagefooter","theme-comscore","anchor-navigation-ex","-lunr","-search","search-plus","custom-favicon","ga","multipart","advanced-emoji","github","-sharing","sharing-plus","klipse","donate","pageview-count","code","lightbox","auto-scroll-table"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Eki's CTF-notes 2019-2021 CC-by-nc-sa 4.0。","modify_label":"本网站最后修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/ekixu"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"multipart":{},"code":{"copyButtons":true},"donate":{"alipay":"https://ctf.ieki.xyz/assets/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://ctf.ieki.xyz/assets/images/wechat.jpg","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":"/assets/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-156105693-2"},"klipse":{"myConfigKey":"it's the default value"},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"Eki","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Eki's CTF","links":{"sidebar":{"主站 Eki's Blog":"https://ieki.xyz"}},"gitbook":"*","description":"CTF笔记"},"file":{"path":"adworld/reverse-execrise-area.md","mtime":"2021-05-07T08:30:35.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-07T08:31:26.574Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

