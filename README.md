@@ -1,3 +1,7 @@
+*由于Gitbook不再维护，本笔记将迁移至blog.ieki.xyz*
+---
+
+
 # Eki's CTF notes ![](https://travis-ci.org/EkiXu/ctf-note.svg?branch=master)
 
 
