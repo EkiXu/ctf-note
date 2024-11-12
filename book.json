@@ -4,7 +4,7 @@
 	"author": "Eki",
 	"links": {
 		"sidebar": {
-			"主站 Eki's Blog": "https://ieki.xyz"
+			"主站 Eki's Blog": "https://eki.im"
 		}
 	},
 	"plugins": [
@@ -71,8 +71,8 @@
 		  ]
 		},
 		"donate": {
-			"wechat": "https://ctf.ieki.xyz/assets/images/wechat.jpg",
-			"alipay": "https://ctf.ieki.xyz/assets/images/alipay.jpg",
+			"wechat": "https://ctf.eki.im/assets/images/wechat.jpg",
+			"alipay": "https://ctf.eki.im/assets/images/alipay.jpg",
 			"title": "",
 			"button": "赏",
 			"alipayText": "支付宝打赏",
